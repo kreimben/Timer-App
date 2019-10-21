@@ -13,12 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
-        let userTouchCurrentPointConverter = UserTouchCurrentPointConverter()
+        
+        let userTouchCurrentPointConverter = MainController()
+//        let aboutTime = AboutTime()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(userTouchCurrentPointConverter))
+            window.rootViewController = UIHostingController(rootView: contentView
+                .environmentObject(userTouchCurrentPointConverter)
+//                .environmentObject(aboutTime)
+            )
             self.window = window
             window.makeKeyAndVisible()
         }

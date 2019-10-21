@@ -1,12 +1,15 @@
 import SwiftUI
-import UIKit
+import Combine
 
 struct ContentView: View {
     
-    @EnvironmentObject var rotationAmount: UserTouchCurrentPointConverter
+    @EnvironmentObject var mainController: MainController
     
-    @ObservedObject var aboutTime = AboutTime()
+    @State var angles: Double = 0
     
+    let userTouchCurrentPointConverter = MainController()
+    
+    lazy var copyBool: Bool = self.mainController.isTimerStarted
     
     var body: some View {
         
@@ -18,12 +21,25 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Text(aboutTime.timeConverter(self.aboutTime.restOfTime))
+                    Text("\(self.mainController.timeConverter())")
                         .font(.system(size: 100))
                         .font(.headline)
                         .foregroundColor(Color.white)
                     
+                    Text("Result Degrees: \(self.mainController.userDegrees)")
+                        .font(.system(size: 20))
+                    
+                    Text("Is timer working? \(self.mainController.isTimerStarted.description)")
+                        .font(.system(size: 30))
+                        .foregroundColor(Color.blue)
+                    
+                    Button("Clear") {
+                        self.mainController.userDegrees = -89
+                    }
+                    .padding()
+                    
                     ZStack {
+                        
                         Circle()
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
                             .frame(width: UIScreen.main.bounds.width * 0.85)
@@ -41,15 +57,33 @@ struct ContentView: View {
                             .gesture(
                                 RotationGesture()
                                     .onChanged { angle in
-                                        
-                                        if self.aboutTime.restOfTime > 0 && self.aboutTime.restOfTime < 1800 {
-                                            self.rotationAmount.currentUser_sDegree = angle.degrees / 15
-                                        } else {
-                                            print("error")
+                                        if self.mainController.isTimerStarted == false { // when timer is not working
+                                            
+                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
+                                                
+                                                self.mainController.userDegrees += (angle.degrees) / 18
+                                                
+                                            } else {
+                                                print("error")
+                                            }
+                                        } else { // when timer is WORKING!!!
+                                            
+                                            self.mainController.endTimer()
+                                            
+                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
+                                                
+                                                self.mainController.userDegrees += (angle.degrees) / 18
+                                                
+                                            } else {
+                                                print("error")
+                                            }
                                         }
                                 }
                                 .onEnded { (_) in
                                     
+                                    self.mainController.floorDegree()
+                                    self.mainController.timerStart()
+                                    self.mainController.floorDegree()
                                 }
                         )
                     }
@@ -63,20 +97,6 @@ struct ContentView: View {
                         .clipShape(Circle())
                 })
             }
-        }
-    }
-}
-
-class AboutTime: ObservableObject {
-    
-    @Published var restOfTime: Int = 1800
-    
-    func timeConverter(_ time: Int) -> String {
-        
-        if restOfTime % 60 > 10 {
-            return "\(restOfTime / 60):\(restOfTime % 60)"
-        } else {
-            return "\(restOfTime / 60):0\(restOfTime % 60)"
         }
     }
 }

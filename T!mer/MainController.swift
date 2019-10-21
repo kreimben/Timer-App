@@ -1,0 +1,53 @@
+import Foundation
+import SwiftUI
+
+class MainController: ObservableObject {
+    
+    @Published var userDegrees: Double = 90.0 {
+        didSet {
+            floor(userDegrees)
+        }
+    }
+    
+    func floorDegree() {
+        
+        self.userDegrees -= Double(Int(Int(self.userDegrees) % 6))
+//        floor(self.userDegrees)
+        self.userDegrees = Double(Int(self.userDegrees))
+    }
+    
+    //MARK:- AboutTimer
+    
+    var scheduledTimer: Timer? = Timer()
+    
+    let finalMinus = 90.0
+    
+    @Published public var isTimerStarted: Bool = false
+    
+    func timeConverter() -> String {
+        if self.isTimerStarted {
+            return String(format: "%02d:%02d", Int(Int((self.userDegrees + self.finalMinus) * 10) - 60) / 60 + 1, Int(Int((self.userDegrees + self.finalMinus) * 10)) % 60)
+        } else {
+            return String(format: "%02d:00", Int(Int((self.userDegrees + self.finalMinus) * 10) - 60) / 60 + 1)
+        }
+    }
+    
+    func timerStart() {
+        self.scheduledTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeUpdater), userInfo: nil, repeats: true)
+        isTimerStarted = true
+    }
+    
+    @objc func timeUpdater() {
+        if 10 * Int(self.userDegrees + self.finalMinus) > 0 {
+            self.userDegrees -= 0.1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        isTimerStarted = false
+        self.scheduledTimer?.invalidate()
+        self.scheduledTimer = nil
+    }
+}
