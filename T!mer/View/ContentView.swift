@@ -3,9 +3,10 @@ import UIKit
 
 struct ContentView: View {
     
-    @State var timeDisplay = "00:00"
-    @State var restOfTime: Double = 1800
-    @State private var alertAnimation: Bool = false
+    @EnvironmentObject var rotationAmount: UserTouchCurrentPointConverter
+    
+    @ObservedObject var aboutTime = AboutTime()
+    
     
     var body: some View {
         
@@ -13,19 +14,45 @@ struct ContentView: View {
             
             ZStack {
                 
-                Color.red.opacity(0.75)
+                Color.red.opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Text(timeDisplay)
+                    Text(aboutTime.timeConverter(self.aboutTime.restOfTime))
                         .font(.system(size: 100))
                         .font(.headline)
                         .foregroundColor(Color.white)
                     
-                    Circle()
-                        .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
-                        .frame(width: UIScreen.main.bounds.width * 0.85)
-                    
+                    ZStack {
+                        Circle()
+                            .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
+                            .frame(width: UIScreen.main.bounds.width * 0.85)
+                        
+                        Circle()
+                            .fill(Color.red.opacity(0.5))
+                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                        
+                        UserTouchCircle()
+                            .frame(width: UIScreen.main.bounds.width * 0.75,height: UIScreen.main.bounds.width * 0.75)
+                        
+                        Circle()
+                            .fill(Color.red.opacity(0.001))
+                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                            .gesture(
+                                RotationGesture()
+                                    .onChanged { angle in
+                                        
+                                        if self.aboutTime.restOfTime > 0 && self.aboutTime.restOfTime < 1800 {
+                                            self.rotationAmount.currentUser_sDegree = angle.degrees / 15
+                                        } else {
+                                            print("error")
+                                        }
+                                }
+                                .onEnded { (_) in
+                                    
+                                }
+                        )
+                    }
                 }
                 .navigationBarTitle(Text("T!mer for Concentration"), displayMode: .inline)
                 .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
@@ -36,6 +63,20 @@ struct ContentView: View {
                         .clipShape(Circle())
                 })
             }
+        }
+    }
+}
+
+class AboutTime: ObservableObject {
+    
+    @Published var restOfTime: Int = 1800
+    
+    func timeConverter(_ time: Int) -> String {
+        
+        if restOfTime % 60 > 10 {
+            return "\(restOfTime / 60):\(restOfTime % 60)"
+        } else {
+            return "\(restOfTime / 60):0\(restOfTime % 60)"
         }
     }
 }
