@@ -12,23 +12,26 @@ class MainController: ObservableObject {
     func floorDegree() {
         
         self.userDegrees -= Double(Int(Int(self.userDegrees) % 6))
-//        floor(self.userDegrees)
         self.userDegrees = Double(Int(self.userDegrees))
     }
     
     //MARK:- AboutTimer
     
     var scheduledTimer: Timer? = Timer()
-    
+    var processedTime: Int = 0
     let finalMinus = 90.0
     
     @Published public var isTimerStarted: Bool = false
     
     func timeConverter() -> String {
         if self.isTimerStarted {
-            return String(format: "%02d:%02d", Int(Int((self.userDegrees + self.finalMinus) * 10) - 60) / 60 + 1, Int(Int((self.userDegrees + self.finalMinus) * 10)) % 60)
+            return String(format: "%02d:%02d", Int(Int((self.userDegrees + self.finalMinus) * 10) / 60), Int(Int((self.userDegrees + self.finalMinus) * 10)) % 60)
         } else {
-            return String(format: "%02d:00", Int(Int((self.userDegrees + self.finalMinus) * 10) - 60) / 60 + 1)
+            self.processedTime = Int(Int((self.userDegrees + self.finalMinus) * 10) / 60)
+
+//            self.userDegrees = Double(self.processedTime) - 90.0
+            
+            return String(format: "%02d:00", Int(Int((self.userDegrees + self.finalMinus) * 10) / 60))
         }
     }
     
@@ -38,7 +41,7 @@ class MainController: ObservableObject {
     }
     
     @objc func timeUpdater() {
-        if 10 * Int(self.userDegrees + self.finalMinus) > 0 {
+        if Double(self.userDegrees + self.finalMinus) > 1 {
             self.userDegrees -= 0.1
         } else {
             endTimer()
@@ -48,6 +51,13 @@ class MainController: ObservableObject {
     func endTimer() {
         isTimerStarted = false
         self.scheduledTimer?.invalidate()
-        self.scheduledTimer = nil
+//        self.scheduledTimer = nil
     }
+    
+    func initTimer() {
+        self.userDegrees = 90
+    }
+    
+    //MARK:- About Ads
+    @Published var isUserPurchased = false
 }

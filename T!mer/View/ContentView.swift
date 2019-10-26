@@ -38,6 +38,7 @@ struct ContentView: View {
                     }
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                     
+                    
                     ZStack {
                         
                         Circle()
@@ -68,6 +69,7 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
+                                                self.mainController.initTimer()
                                             }
                                         } else { // when timer is WORKING!!!
                                             
@@ -79,6 +81,7 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
+                                                self.mainController.initTimer()
                                             }
                                         }
                                 }
@@ -107,11 +110,11 @@ struct ContentView: View {
                         self.interstial.load(req)
                     }
                     Spacer()
-                    BannerVC()
+                    BannerVC(purchased: self.mainController.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
-                .navigationBarTitle(Text("T!mer for Concentration"), displayMode: .inline)
+                .navigationBarTitle(Text("T!mer"), displayMode: .inline)
                 .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
                     Image(systemName: "bell.fill")
                         .foregroundColor(Color.red.opacity(1.0))
@@ -132,16 +135,29 @@ struct ContentView_Previews: PreviewProvider {
 
 final private class BannerVC: UIViewControllerRepresentable {
     
+    var isUserPurchased: Bool
+    
+    init(purchased: Bool) {
+        
+        self.isUserPurchased = purchased
+    }
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<BannerVC>) -> BannerVC.UIViewControllerType {
+        
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         
         let viewController = UIViewController()
-        view.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        view.rootViewController = viewController
-        viewController.view.addSubview(view)
-        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
-        view.load(GADRequest())
         
+        if isUserPurchased  {
+            
+        } else {
+            
+            view.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            view.rootViewController = viewController
+            viewController.view.addSubview(view)
+            viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+            view.load(GADRequest())
+        }
         return viewController
     }
     
