@@ -8,6 +8,7 @@ struct ContentView: View {
     @EnvironmentObject var mainController: MainController
     
     @State var angles: Double = 0
+    @State var interstial: GADInterstitial!
     
     let userTouchCurrentPointConverter = MainController()
     
@@ -89,7 +90,22 @@ struct ContentView: View {
                                 }
                         )
                     }
-                    
+                    Spacer()
+                    Button("Show Interstial Test Ad") {
+                        
+                        if self.interstial.isReady {
+                            
+                            let root = UIApplication.shared.windows.first?.rootViewController
+                            self.interstial.present(fromRootViewController: root!)
+                        } else {
+                            print("Interstial advertisment is not ready")
+                        }
+                    }
+                    .onAppear {
+                        self.interstial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+                        let req = GADRequest()
+                        self.interstial.load(req)
+                    }
                     Spacer()
                     BannerVC()
                         .frame(width: 320, height: 50, alignment: .center)

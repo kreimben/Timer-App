@@ -1,0 +1,6 @@
+framework module Pods_T_mer {
+  umbrella header "Pods-T!mer-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,5 +6,9 @@ to-do list
 3. 버그 있는지 더 살펴보기
 4. 광고와 인앱결제 
 
-google admob Apple ID: ca-app-pub-4942689053880729~6950693605
-google admob Apple Test ID: ca-app-pub-3940256099942544/2934735716
+google admob Apple ID
+    banner ads : ca-app-pub-4942689053880729~6950693605
+    interstial ads: ca-app-pub-4942689053880729~6950693605
+google admob Apple Test ID
+    banner ads : ca-app-pub-3940256099942544/2934735716
+    interstial ads : ca-app-pub-3940256099942544/4411468910
