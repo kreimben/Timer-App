@@ -18,7 +18,7 @@ class MainController: ObservableObject {
     //MARK:- AboutTimer
     
     var scheduledTimer: Timer? = Timer()
-    var processedTime: Int = 0
+    var processedDegrees: Int = 90
     let finalMinus = 90.0
     
     @Published public var isTimerStarted: Bool = false
@@ -27,10 +27,6 @@ class MainController: ObservableObject {
         if self.isTimerStarted {
             return String(format: "%02d:%02d", Int(Int((self.userDegrees + self.finalMinus) * 10) / 60), Int(Int((self.userDegrees + self.finalMinus) * 10)) % 60)
         } else {
-            self.processedTime = Int(Int((self.userDegrees + self.finalMinus) * 10) / 60)
-
-//            self.userDegrees = Double(self.processedTime) - 90.0
-            
             return String(format: "%02d:00", Int(Int((self.userDegrees + self.finalMinus) * 10) / 60))
         }
     }
@@ -54,8 +50,21 @@ class MainController: ObservableObject {
 //        self.scheduledTimer = nil
     }
     
-    func initTimer() {
-        self.userDegrees = 90
+    func arrangeDegrees() {
+        
+        self.processedDegrees = Int(self.userDegrees) - Int(self.userDegrees) % 6
+        
+        print(Double(self.processedDegrees) + self.finalMinus)
+
+        self.userDegrees = Double(self.processedDegrees)
+    }
+    
+    func initTimerToFull() {
+        self.userDegrees = 270
+    }
+    
+    func initTimerToZero() {
+        self.userDegrees = -90
     }
     
     //MARK:- About Ads

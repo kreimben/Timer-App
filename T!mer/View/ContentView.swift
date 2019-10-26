@@ -69,7 +69,12 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
-                                                self.mainController.initTimer()
+//                                                self.mainController.initTimer()
+                                                if (90 + self.mainController.userDegrees) * 10 <= 0 {
+                                                    self.mainController.initTimerToZero()
+                                                } else {
+                                                    self.mainController.initTimerToFull()
+                                                }
                                             }
                                         } else { // when timer is WORKING!!!
                                             
@@ -81,7 +86,12 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
-                                                self.mainController.initTimer()
+//                                                self.mainController.initTimer()
+                                                if (90 + self.mainController.userDegrees) * 10 <= 0 {
+                                                    self.mainController.initTimerToZero()
+                                                } else {
+                                                    self.mainController.initTimerToFull()
+                                                }
                                             }
                                         }
                                 }
@@ -90,6 +100,8 @@ struct ContentView: View {
                                     self.mainController.floorDegree()
                                     self.mainController.timerStart()
                                     self.mainController.floorDegree()
+                                    
+                                    self.mainController.arrangeDegrees()
                                 }
                         )
                     }
