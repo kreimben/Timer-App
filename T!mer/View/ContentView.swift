@@ -1,5 +1,7 @@
 import SwiftUI
 import Combine
+import GoogleMobileAds
+import UIKit
 
 struct ContentView: View {
     
@@ -17,43 +19,43 @@ struct ContentView: View {
             
             ZStack {
                 
-                Color.red.opacity(0.55)
+                Color.blue.opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Text("\(self.mainController.timeConverter())")
-                        .font(.system(size: 100))
-                        .font(.headline)
-                        .foregroundColor(Color.white)
                     
-                    Text("Result Degrees: \(self.mainController.userDegrees)")
-                        .font(.system(size: 20))
-                    
-                    Text("Is timer working? \(self.mainController.isTimerStarted.description)")
-                        .font(.system(size: 30))
-                        .foregroundColor(Color.blue)
-                    
-                    Button("Clear") {
-                        self.mainController.userDegrees = -89
+                    ZStack {
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.15)
+                            .foregroundColor(Color.blue.opacity(0.8))
+                            .cornerRadius(40)
+                        
+                        Text("\(self.mainController.timeConverter())")
+                            .font(.system(size: 100))
+                            .font(.headline)
+                            .foregroundColor(Color.white)
                     }
-                    .padding()
+                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                     
                     ZStack {
                         
                         Circle()
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
                             .frame(width: UIScreen.main.bounds.width * 0.85)
+                            .shadow(radius: 10)
                         
                         Circle()
                             .fill(Color.red.opacity(0.5))
                             .frame(width: UIScreen.main.bounds.width * 0.8)
+                            .shadow(radius: 10)
                         
                         UserTouchCircle()
                             .frame(width: UIScreen.main.bounds.width * 0.75,height: UIScreen.main.bounds.width * 0.75)
                         
                         Circle()
                             .fill(Color.red.opacity(0.001))
-                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                            .frame(width: UIScreen.main.bounds.width * 0.75)
+                            .shadow(radius: 10)
                             .gesture(
                                 RotationGesture()
                                     .onChanged { angle in
@@ -87,6 +89,11 @@ struct ContentView: View {
                                 }
                         )
                     }
+                    
+                    Spacer()
+                    BannerVC()
+                        .frame(width: 320, height: 50, alignment: .center)
+                    
                 }
                 .navigationBarTitle(Text("T!mer for Concentration"), displayMode: .inline)
                 .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
@@ -105,4 +112,22 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+final private class BannerVC: UIViewControllerRepresentable {
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<BannerVC>) -> BannerVC.UIViewControllerType {
+        let view = GADBannerView(adSize: kGADAdSizeBanner)
+        
+        let viewController = UIViewController()
+        view.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        view.rootViewController = viewController
+        viewController.view.addSubview(view)
+        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+        view.load(GADRequest())
+        
+        return viewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
