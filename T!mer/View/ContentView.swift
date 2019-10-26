@@ -69,7 +69,7 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
-//                                                self.mainController.initTimer()
+                                                
                                                 if (90 + self.mainController.userDegrees) * 10 <= 0 {
                                                     self.mainController.initTimerToZero()
                                                 } else {
@@ -86,7 +86,7 @@ struct ContentView: View {
                                                 
                                             } else {
                                                 print("error")
-//                                                self.mainController.initTimer()
+                                                
                                                 if (90 + self.mainController.userDegrees) * 10 <= 0 {
                                                     self.mainController.initTimerToZero()
                                                 } else {

@@ -37,9 +37,10 @@ class MainController: ObservableObject {
     }
     
     @objc func timeUpdater() {
-        if Double(self.userDegrees + self.finalMinus) > 1 {
+        if Double(self.userDegrees + self.finalMinus) > 0.1 {
             self.userDegrees -= 0.1
         } else {
+            self.userDegrees = 0.01 - 90
             endTimer()
         }
     }
@@ -47,14 +48,14 @@ class MainController: ObservableObject {
     func endTimer() {
         isTimerStarted = false
         self.scheduledTimer?.invalidate()
-//        self.scheduledTimer = nil
+        self.scheduledTimer = nil
     }
     
     func arrangeDegrees() {
         
         self.processedDegrees = Int(self.userDegrees) - Int(self.userDegrees) % 6
         
-        print(Double(self.processedDegrees) + self.finalMinus)
+        print("\(Double(self.processedDegrees) + self.finalMinus * 10) seconds")
 
         self.userDegrees = Double(self.processedDegrees)
     }
@@ -64,7 +65,7 @@ class MainController: ObservableObject {
     }
     
     func initTimerToZero() {
-        self.userDegrees = -90
+        self.userDegrees = -89.9
     }
     
     //MARK:- About Ads
