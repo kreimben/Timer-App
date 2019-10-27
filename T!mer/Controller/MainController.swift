@@ -1,5 +1,7 @@
 import Foundation
 import SwiftUI
+import AVFoundation
+import UIKit
 
 class MainController: ObservableObject {
     
@@ -8,6 +10,7 @@ class MainController: ObservableObject {
             floor(userDegrees)
         }
     }
+    
     
     func floorDegree() {
         
@@ -46,6 +49,8 @@ class MainController: ObservableObject {
     }
     
     func endTimer() {
+        
+        
         isTimerStarted = false
         self.scheduledTimer?.invalidate()
         self.scheduledTimer = nil
@@ -56,7 +61,7 @@ class MainController: ObservableObject {
         self.processedDegrees = Int(self.userDegrees) - Int(self.userDegrees) % 6
         
         print("\(Double(self.processedDegrees) + self.finalMinus * 10) seconds")
-
+        
         self.userDegrees = Double(self.processedDegrees)
     }
     
@@ -70,4 +75,20 @@ class MainController: ObservableObject {
     
     //MARK:- About Ads
     @Published var isUserPurchased = false
+    
+    //MARK:- About Player
+    
+    var player: AVAudioPlayer!
+    
+    func playSound() {
+        
+        let url = Bundle.main.url(forResource: "Default Bell", withExtension: "wav")!
+        
+        do {
+            self.player = try AVAudioPlayer(contentsOf: url)
+            self.player?.play()
+        } catch {
+            print("There is error to play sound when timer is done")
+        }
+    }
 }

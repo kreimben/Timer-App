@@ -38,6 +38,10 @@ struct ContentView: View {
                     }
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                     
+                    Button("Sound Play") {
+//                        self.mainController.endTimer()
+                        self.mainController.playSound()
+                    }
                     
                     ZStack {
                         
@@ -105,8 +109,7 @@ struct ContentView: View {
                                 }
                         )
                     }
-                    Spacer()
-                    Button("Show Interstial Test Ad") {
+                    Button("Show Interstitial Test Ad") {
                         
                         if self.interstial.isReady {
                             
@@ -117,7 +120,7 @@ struct ContentView: View {
                         }
                     }
                     .onAppear {
-                        self.interstial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+                        self.interstial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // 전면광고 ID
                         let req = GADRequest()
                         self.interstial.load(req)
                     }
@@ -164,7 +167,7 @@ final private class BannerVC: UIViewControllerRepresentable {
             
         } else {
             
-            view.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID
             view.rootViewController = viewController
             viewController.view.addSubview(view)
             viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
