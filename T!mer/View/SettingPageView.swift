@@ -36,8 +36,6 @@ struct SettingPageView: View {
                         Text(self.soundsArray[index]).tag(index)
                     }
                 }
-                
-                Text("Hello World")
             }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
@@ -49,18 +47,24 @@ final class UserSettings: ObservableObject {
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     
-    @UserDefault(key: "alertSoundIsOn", value: true)
+    @UserDefault(key: "alertSoundIsOn", value: true) // Defining firstly
     var alertSoundIsOn: Bool {
         willSet {
-            objectWillChange.send()
+            objectWillChange.send() // Save value FOREVER
         }
     }
     
-    @UserDefault(key: "soundIndex", value: 0)
+    @UserDefault(key: "soundIndex", value: 0) // Defining firstly
     var soundIndex: Int {
         willSet {
-            objectWillChange.send()
+            objectWillChange.send() // Save value FOREVER
         }
+    }
+    
+    @Published var imageBool: Bool
+    
+    init() {
+        self.imageBool = UserDefaults.standard.bool(forKey: "alertSoundIsOn")
     }
 }
 

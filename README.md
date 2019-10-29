@@ -6,8 +6,7 @@ to-do list
 3. 👌 버그 있는지 더 살펴보기
 4. 👌 광고
 5. 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
-
-request.testDevices = 45fd0c42b3e1109e4e7a2907abca62ee
+6. 👌 백그라운드에서도 시간이 가도록 처리
 
 google admob Apple ID
     Unique ID : ca-app-pub-4942689053880729~6950693605

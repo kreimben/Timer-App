@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		510013792365F59C00FCEE79 /* AlertSoundSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510013782365F59C00FCEE79 /* AlertSoundSettingView.swift */; };
+		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		517F6221234E329F00A05205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6220234E329F00A05205 /* AppDelegate.swift */; };
 		517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6222234E329F00A05205 /* SceneDelegate.swift */; };
 		517F6225234E329F00A05205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6224234E329F00A05205 /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 		510013782365F59C00FCEE79 /* AlertSoundSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSoundSettingView.swift; sourceTree = "<group>"; };
+		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		517F621D234E329F00A05205 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517F6220234E329F00A05205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517F6222234E329F00A05205 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				517F6224234E329F00A05205 /* ContentView.swift */,
 				51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */,
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
+				5167E4532368CD88003005AB /* TrailingButtonView.swift */,
 				510013782365F59C00FCEE79 /* AlertSoundSettingView.swift */,
 			);
 			path = View;
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
+				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
@@ -403,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -424,7 +428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

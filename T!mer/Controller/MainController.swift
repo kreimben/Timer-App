@@ -3,6 +3,7 @@ import SwiftUI
 import AVFoundation
 import UIKit
 import GoogleMobileAds
+import BackgroundTasks
 
 class MainController: ObservableObject {
     
@@ -36,6 +37,8 @@ class MainController: ObservableObject {
     
     func timerStart() {
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeUpdater), userInfo: nil, repeats: true)
+        
+        RunLoop.main.add(self.scheduledTimer!, forMode: .common)
         isTimerStarted = true
     }
     
@@ -45,7 +48,7 @@ class MainController: ObservableObject {
             
             self.userDegrees -= 0.1
         } else {
-         
+            
             playSound()
             self.userDegrees = 0.01 - 90
             endTimer()
@@ -81,28 +84,28 @@ class MainController: ObservableObject {
     
     @Published var isUserPurchased = false
     @State var interstitial: GADInterstitial!
-
+    
     func showInterstitialAds() {
-
-//        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-//
-//        let request = GADRequest()
-//        self.interstitial.load(request)
-//
-//        if self.isUserPurchased {
-//            return
-//        } else {
-//            netShow()
-//        }
+        
+        //        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        //
+        //        let request = GADRequest()
+        //        self.interstitial.load(request)
+        //
+        //        if self.isUserPurchased {
+        //            return
+        //        } else {
+        //            netShow()
+        //        }
     }
-
+    
     private func netShow() {
-
+        
         if self.interstitial.isReady {
-
-            let root = UIApplication.shared.windows.first?.rootViewController
-            self.interstitial.present(fromRootViewController: root!)
-
+            
+            guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
+            self.interstitial.present(fromRootViewController: root)
+            
         } else {
             print("Interstitial advertisment is not ready.")
         }
@@ -112,15 +115,21 @@ class MainController: ObservableObject {
     
     var player: AVAudioPlayer!
     
+    @ObservedObject var userSettings = UserSettings()
+    
     func playSound() {
         
         let url = Bundle.main.url(forResource: "Default Bell", withExtension: "wav")!
         
-        do {
-            self.player = try AVAudioPlayer(contentsOf: url)
-            self.player?.play()
-        } catch {
-            print("There is error to play sound when timer is done")
+        if userSettings.alertSoundIsOn {
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.play()
+            } catch {
+                print("There is error to play sound when timer is done")
+            }
+        } else {
+            
         }
     }
 }

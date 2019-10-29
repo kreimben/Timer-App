@@ -4,6 +4,7 @@ import GoogleMobileAds
 import UIKit
 
 struct ContentView: View {
+    @ObservedObject var userSettings = UserSettings()
     
     @EnvironmentObject var mainController: MainController
     
@@ -37,9 +38,7 @@ struct ContentView: View {
                     }
                     .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
-                    Button("Sound Play") {
-                        self.mainController.playSound()
-                    }
+                    Text("Current state : "+String(userSettings.alertSoundIsOn))
                     
                     ZStack {
                         
@@ -114,13 +113,23 @@ struct ContentView: View {
                     
                 }
                 .navigationBarTitle(Text("T!mer"), displayMode: .inline)
-                .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
-                    Image(systemName: "bell.fill")
-                        .foregroundColor(Color.red.opacity(1.0))
-                        .padding(8)
-                        .background(Color.white.opacity(0.5))
-                        .clipShape(Circle())
-                })
+//                .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
+//
+//                    if userSettings.alertSoundIsOn {
+//                        Image(systemName: "bell.fill")
+//                            .foregroundColor(Color.red.opacity(1.0))
+//                            .padding(8)
+//                            .background(Color.white.opacity(0.5))
+//                            .clipShape(Circle())
+//                    } else {
+//                        Image(systemName: "bell.slash.fill")
+//                            .foregroundColor(Color.red.opacity(1.0))
+//                            .padding(8)
+//                            .background(Color.white.opacity(0.5))
+//                            .clipShape(Circle())
+//                    }
+//                })
+                .navigationBarItems(trailing: TrailingButtonView())
             }
         }
     }
@@ -166,3 +175,4 @@ final private class BannerVC: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
+
