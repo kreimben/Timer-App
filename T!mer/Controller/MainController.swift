@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import AVFoundation
 import UIKit
+import GoogleMobileAds
 
 class MainController: ObservableObject {
     
@@ -10,7 +11,6 @@ class MainController: ObservableObject {
             floor(userDegrees)
         }
     }
-    
     
     func floorDegree() {
         
@@ -40,16 +40,20 @@ class MainController: ObservableObject {
     }
     
     @objc func timeUpdater() {
+        
         if Double(self.userDegrees + self.finalMinus) > 0.1 {
+            
             self.userDegrees -= 0.1
         } else {
+         
+            playSound()
             self.userDegrees = 0.01 - 90
             endTimer()
+            showInterstitialAds()
         }
     }
     
     func endTimer() {
-        
         
         isTimerStarted = false
         self.scheduledTimer?.invalidate()
@@ -74,7 +78,35 @@ class MainController: ObservableObject {
     }
     
     //MARK:- About Ads
+    
     @Published var isUserPurchased = false
+    @State var interstitial: GADInterstitial!
+
+    func showInterstitialAds() {
+
+//        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+//
+//        let request = GADRequest()
+//        self.interstitial.load(request)
+//
+//        if self.isUserPurchased {
+//            return
+//        } else {
+//            netShow()
+//        }
+    }
+
+    private func netShow() {
+
+        if self.interstitial.isReady {
+
+            let root = UIApplication.shared.windows.first?.rootViewController
+            self.interstitial.present(fromRootViewController: root!)
+
+        } else {
+            print("Interstitial advertisment is not ready.")
+        }
+    }
     
     //MARK:- About Player
     

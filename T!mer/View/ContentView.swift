@@ -8,7 +8,6 @@ struct ContentView: View {
     @EnvironmentObject var mainController: MainController
     
     @State var angles: Double = 0
-    @State var interstial: GADInterstitial!
     
     let userTouchCurrentPointConverter = MainController()
     
@@ -29,17 +28,16 @@ struct ContentView: View {
                         Rectangle()
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.15)
                             .foregroundColor(Color.blue.opacity(0.8))
-                            .cornerRadius(40)
+                            .cornerRadius(UIScreen.main.bounds.width * 0.1)
                         
                         Text("\(self.mainController.timeConverter())")
-                            .font(.system(size: 100))
+                            .font(.system(size: UIScreen.main.bounds.width * 0.25))
                             .font(.headline)
                             .foregroundColor(Color.white)
                     }
-                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
                     Button("Sound Play") {
-//                        self.mainController.endTimer()
                         self.mainController.playSound()
                     }
                     
@@ -109,21 +107,7 @@ struct ContentView: View {
                                 }
                         )
                     }
-                    Button("Show Interstitial Test Ad") {
-                        
-                        if self.interstial.isReady {
-                            
-                            let root = UIApplication.shared.windows.first?.rootViewController
-                            self.interstial.present(fromRootViewController: root!)
-                        } else {
-                            print("Interstial advertisment is not ready")
-                        }
-                    }
-                    .onAppear {
-                        self.interstial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // 전면광고 ID
-                        let req = GADRequest()
-                        self.interstial.load(req)
-                    }
+                    
                     Spacer()
                     BannerVC(purchased: self.mainController.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
@@ -140,14 +124,18 @@ struct ContentView: View {
             }
         }
     }
+    
+    
 }
 
+//MARK:- Previews
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
+//MARK:- BannerVC
 final private class BannerVC: UIViewControllerRepresentable {
     
     var isUserPurchased: Bool
