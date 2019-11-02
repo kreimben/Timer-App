@@ -16,12 +16,10 @@ struct UserTouchCircle: View {
                 path.move(to: centerView)
 
                 if self.mainController.userDegrees >= -90 && self.mainController.userDegrees < 270 {
-                    path.addArc(center: centerView, radius: UIScreen.main.bounds.width * (0.75 / 2), startAngle: .degrees(270), endAngle: .degrees(self.mainController.userDegrees), clockwise: false)
+                    path.addArc(center: centerView, radius: UIScreen.main.bounds.width * (0.735 / 2), startAngle: .degrees(270), endAngle: .degrees(self.mainController.userDegrees), clockwise: false)
                 } else {
-                    path.addArc(center: centerView, radius: UIScreen.main.bounds.width * (0.75 / 2), startAngle: .degrees(270), endAngle: .degrees(269.99), clockwise: false)
-
+                    path.addArc(center: centerView, radius: UIScreen.main.bounds.width * (0.735 / 2), startAngle: .degrees(270), endAngle: .degrees(269.99), clockwise: false)
                 }
-                
             }
         }
         .foregroundColor(Color.red)

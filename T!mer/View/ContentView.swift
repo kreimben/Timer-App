@@ -9,11 +9,15 @@ struct ContentView: View {
     @EnvironmentObject var mainController: MainController
     
     @State var angles: Double = 0
+    @State var showingAlert = false
+    
+    var forStroke = UIScreen.main.bounds.width / 18.75
     
     let userTouchCurrentPointConverter = MainController()
     
     lazy var copyBool: Bool = self.mainController.isTimerStarted
     
+    //MARK:- var body: some View
     var body: some View {
         
         NavigationView {
@@ -25,7 +29,7 @@ struct ContentView: View {
                 
                 VStack {
                     
-                    ZStack {
+                    ZStack { //MARK:- Textbox
                         Rectangle()
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.15)
                             .foregroundColor(Color.blue.opacity(0.8))
@@ -38,9 +42,7 @@ struct ContentView: View {
                     }
                     .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
-                    Text("Current state : "+String(userSettings.alertSoundIsOn))
-                    
-                    ZStack {
+                    ZStack { //MARK:- Circle Timer
                         
                         Circle()
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
@@ -49,15 +51,19 @@ struct ContentView: View {
                         
                         Circle()
                             .fill(Color.red.opacity(0.5))
-                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                            .frame(width: UIScreen.main.bounds.width * 0.77)
                             .shadow(radius: 10)
                         
                         UserTouchCircle()
-                            .frame(width: UIScreen.main.bounds.width * 0.75,height: UIScreen.main.bounds.width * 0.75)
+                            .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.width * 0.75)
                         
-                        Circle()
+                        Image("시계 바늘")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
+                        
+                        Circle() // touch center
                             .fill(Color.red.opacity(0.001))
-                            .frame(width: UIScreen.main.bounds.width * 0.75)
+                            .frame(width: UIScreen.main.bounds.width * 0.8)
                             .shadow(radius: 10)
                             .gesture(
                                 RotationGesture()
@@ -66,7 +72,7 @@ struct ContentView: View {
                                             
                                             if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
                                                 
-                                                self.mainController.userDegrees += (angle.degrees) / 18
+                                                self.mainController.userDegrees += (angle.degrees) / 80
                                                 
                                             } else {
                                                 print("error")
@@ -83,7 +89,7 @@ struct ContentView: View {
                                             
                                             if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
                                                 
-                                                self.mainController.userDegrees += (angle.degrees) / 18
+                                                self.mainController.userDegrees += (angle.degrees) / 80
                                                 
                                             } else {
                                                 print("error")
@@ -97,39 +103,44 @@ struct ContentView: View {
                                         }
                                 }
                                 .onEnded { (_) in
+                                    self.showingAlert = true
+                                }
+                        )
+                            .alert(isPresented: self.$showingAlert, content: {Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.mainController.userDegrees + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
                                     
                                     self.mainController.floorDegree()
                                     self.mainController.timerStart()
                                     self.mainController.floorDegree()
                                     
                                     self.mainController.arrangeDegrees()
-                                }
-                        )
+                                })})
                     }
                     
                     Spacer()
+                    //MARK:- Banner ad
                     BannerVC(purchased: self.mainController.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
                 .navigationBarTitle(Text("T!mer"), displayMode: .inline)
-//                .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
-//
-//                    if userSettings.alertSoundIsOn {
-//                        Image(systemName: "bell.fill")
-//                            .foregroundColor(Color.red.opacity(1.0))
-//                            .padding(8)
-//                            .background(Color.white.opacity(0.5))
-//                            .clipShape(Circle())
-//                    } else {
-//                        Image(systemName: "bell.slash.fill")
-//                            .foregroundColor(Color.red.opacity(1.0))
-//                            .padding(8)
-//                            .background(Color.white.opacity(0.5))
-//                            .clipShape(Circle())
-//                    }
-//                })
-                .navigationBarItems(trailing: TrailingButtonView())
+                    
+                    //                .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
+                    //
+                    //                    if userSettings.alertSoundIsOn {
+                    //                        Image(systemName: "bell.fill")
+                    //                            .foregroundColor(Color.red.opacity(1.0))
+                    //                            .padding(8)
+                    //                            .background(Color.white.opacity(0.5))
+                    //                            .clipShape(Circle())
+                    //                    } else {
+                    //                        Image(systemName: "bell.slash.fill")
+                    //                            .foregroundColor(Color.red.opacity(1.0))
+                    //                            .padding(8)
+                    //                            .background(Color.white.opacity(0.5))
+                    //                            .clipShape(Circle())
+                    //                    }
+                    //                })
+                    .navigationBarItems(trailing: TrailingButtonView())
             }
         }
     }

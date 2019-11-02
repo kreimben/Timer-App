@@ -2,6 +2,8 @@ import SwiftUI
 import Foundation
 import Combine
 
+//MARK:- @propertyWrapper "UserDefault<T>
+
 @propertyWrapper
 struct UserDefault<T> {
     
@@ -18,6 +20,8 @@ struct UserDefault<T> {
     }
 }
 
+//MARK:- SettingPageView
+
 struct SettingPageView: View {
     
     var soundsArray = ["Default Bell", "Others", "Others 2", "Others 3", "Others 4", "Others 5"]
@@ -28,12 +32,15 @@ struct SettingPageView: View {
         List {
             Section {
                 Toggle(isOn: $userSettings.alertSoundIsOn) {
-                    Text("Alert when timer is done")
+                    Text("Alert when timer is finish")
                 }
                 
                 Picker(selection: $userSettings.soundIndex, label: Text("Sound")) {
                     ForEach(0 ..< soundsArray.count) { index in
+                        HStack {
+//                        Image(systemName: "playpause.fill")
                         Text(self.soundsArray[index]).tag(index)
+                        }
                     }
                 }
             }
@@ -42,6 +49,8 @@ struct SettingPageView: View {
         .listStyle(GroupedListStyle())
     }
 }
+
+//MARK:- UserSettings
 
 final class UserSettings: ObservableObject {
     

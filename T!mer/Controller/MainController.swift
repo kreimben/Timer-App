@@ -4,6 +4,7 @@ import AVFoundation
 import UIKit
 import GoogleMobileAds
 import BackgroundTasks
+import Combine
 
 class MainController: ObservableObject {
     
@@ -26,6 +27,7 @@ class MainController: ObservableObject {
     let finalMinus = 90.0
     
     @Published public var isTimerStarted: Bool = false
+    @Published public var isTimerEnded: Bool = false
     
     func timeConverter() -> String {
         if self.isTimerStarted {
@@ -59,6 +61,8 @@ class MainController: ObservableObject {
     func endTimer() {
         
         isTimerStarted = false
+        isTimerEnded = true
+        
         self.scheduledTimer?.invalidate()
         self.scheduledTimer = nil
     }
@@ -87,28 +91,25 @@ class MainController: ObservableObject {
     
     func showInterstitialAds() {
         
-        //        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        //
-        //        let request = GADRequest()
-        //        self.interstitial.load(request)
-        //
-        //        if self.isUserPurchased {
-        //            return
-        //        } else {
-        //            netShow()
-        //        }
-    }
-    
-    private func netShow() {
-        
-        if self.interstitial.isReady {
-            
-            guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
-            self.interstitial.present(fromRootViewController: root)
-            
-        } else {
-            print("Interstitial advertisment is not ready.")
-        }
+//        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+//
+//        let request = GADRequest()
+//        self.interstitial.load(request)
+//
+//        if self.isUserPurchased {
+//
+//            return
+//        } else {
+//
+//            if self.interstitial.isReady {
+//
+//                guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
+//                self.interstitial.present(fromRootViewController: root)
+//
+//            } else {
+//                print("Interstitial advertisment is not ready.")
+//            }
+//        }
     }
     
     //MARK:- About Player

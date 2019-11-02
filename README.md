@@ -7,6 +7,9 @@ to-do list
 4. 👌 광고
 5. 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 6. 👌 백그라운드에서도 시간이 가도록 처리
+7. 꾹 누르면 SettingPageView보이게 하기
+8. launchscreen 만들기 (되도록 애니메이션)
+9. Adding "Is it cool?"
 
 google admob Apple ID
     Unique ID : ca-app-pub-4942689053880729~6950693605
