@@ -9,7 +9,7 @@ struct PickerView: View {
     var soundsArray: [SoundsArray] = [
         SoundsArray(soundName: "Default Notification Sound"),
         SoundsArray(soundName: "Bicycle Bell"),
-        SoundsArray(soundName: "Bell - store door"),
+        SoundsArray(soundName: "Bell - Store door"),
         SoundsArray(soundName: "Cookoo"),
         SoundsArray(soundName: "Tower bell")
     ]

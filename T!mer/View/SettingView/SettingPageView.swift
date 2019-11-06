@@ -22,9 +22,6 @@ struct SettingPageView: View {
     var body: some View {
         List {
             Section(header: Text("About sound")) {
-                Toggle(isOn: $userSettings.alertSoundIsOn) {
-                    Text("Alert when timer is finish")
-                }
                 
                 PickerView()
             }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51307F7D2373440300791A97 /* Default Bell.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F792373440300791A97 /* Default Bell.MA4 */; };
+		51307F7E2373440300791A97 /* Tower bell.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7A2373440300791A97 /* Tower bell.MA4 */; };
+		51307F7F2373440300791A97 /* Bell store door.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7B2373440300791A97 /* Bell store door.MA4 */; };
+		51307F802373440300791A97 /* Cookoo.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7C2373440300791A97 /* Cookoo.MA4 */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		517F6221234E329F00A05205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6220234E329F00A05205 /* AppDelegate.swift */; };
 		517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6222234E329F00A05205 /* SceneDelegate.swift */; };
@@ -18,10 +22,6 @@
 		5188B0502370135800A2258F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188B04F2370135800A2258F /* UserSettings.swift */; };
 		5188B07923703CED00A2258F /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188B07823703CED00A2258F /* PickerView.swift */; };
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
-		51DC64B72364948C00B8CDA3 /* Default Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51DC64B62364948C00B8CDA3 /* Default Bell.wav */; };
-		51E2EDE0236F2B1200907956 /* Bell store door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 51E2EDDC236F2B1100907956 /* Bell store door.mp3 */; };
-		51E2EDE2236F2B1200907956 /* Tower bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 51E2EDDE236F2B1200907956 /* Tower bell.mp3 */; };
-		51E2EDE3236F2B1200907956 /* Cookoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 51E2EDDF236F2B1200907956 /* Cookoo.mp3 */; };
 		51E8A0B8236DD6AC009520C7 /* SlashPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */; };
 		51ED30A2236E731B00F9CF69 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED30A1236E731B00F9CF69 /* UserHapticFeedback.swift */; };
 		51EF54F3235D5E4C007A9E8D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF54F2235D5E4C007A9E8D /* MainController.swift */; };
@@ -30,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		51307F792373440300791A97 /* Default Bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell.MA4"; sourceTree = "<group>"; };
+		51307F7A2373440300791A97 /* Tower bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell.MA4"; sourceTree = "<group>"; };
+		51307F7B2373440300791A97 /* Bell store door.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door.MA4"; sourceTree = "<group>"; };
+		51307F7C2373440300791A97 /* Cookoo.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo.MA4; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		517F621D234E329F00A05205 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517F6220234E329F00A05205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,10 +48,6 @@
 		5188B07823703CED00A2258F /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = "/Users/aksidionkreimben/Documents/Repository/iOS Repository/T!mer/T!mer/View/SettingView/PickerView.swift"; sourceTree = "<absolute>"; };
 		51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		51DC64B62364948C00B8CDA3 /* Default Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Default Bell.wav"; sourceTree = "<group>"; };
-		51E2EDDC236F2B1100907956 /* Bell store door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bell store door.mp3"; sourceTree = "<group>"; };
-		51E2EDDE236F2B1200907956 /* Tower bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tower bell.mp3"; sourceTree = "<group>"; };
-		51E2EDDF236F2B1200907956 /* Cookoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cookoo.mp3; sourceTree = "<group>"; };
 		51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashPathView.swift; sourceTree = "<group>"; };
 		51ED30A1236E731B00F9CF69 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51EF54F2235D5E4C007A9E8D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -152,10 +152,10 @@
 		51E2EDE5236F2B2400907956 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				51DC64B62364948C00B8CDA3 /* Default Bell.wav */,
-				51E2EDDC236F2B1100907956 /* Bell store door.mp3 */,
-				51E2EDDF236F2B1200907956 /* Cookoo.mp3 */,
-				51E2EDDE236F2B1200907956 /* Tower bell.mp3 */,
+				51307F7B2373440300791A97 /* Bell store door.MA4 */,
+				51307F7C2373440300791A97 /* Cookoo.MA4 */,
+				51307F792373440300791A97 /* Default Bell.MA4 */,
+				51307F7A2373440300791A97 /* Tower bell.MA4 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -237,13 +237,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51DC64B72364948C00B8CDA3 /* Default Bell.wav in Resources */,
+				51307F802373440300791A97 /* Cookoo.MA4 in Resources */,
+				51307F7D2373440300791A97 /* Default Bell.MA4 in Resources */,
+				51307F7E2373440300791A97 /* Tower bell.MA4 in Resources */,
 				517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */,
-				51E2EDE3236F2B1200907956 /* Cookoo.mp3 in Resources */,
-				51E2EDE2236F2B1200907956 /* Tower bell.mp3 in Resources */,
+				51307F7F2373440300791A97 /* Bell store door.MA4 in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				517F6227234E32A100A05205 /* Assets.xcassets in Resources */,
-				51E2EDE0236F2B1200907956 /* Bell store door.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

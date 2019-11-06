@@ -9,6 +9,8 @@ import UserNotifications
 
 class MainController: ObservableObject {
     
+    @ObservedObject var userSettings = UserSettings()
+    
     @Published var userDegrees: Double = 90.0 {
         didSet {
             floor(userDegrees)
@@ -43,10 +45,10 @@ class MainController: ObservableObject {
 
     let center = UNUserNotificationCenter.current()
     
-    let bicycleNotificationSound = UNNotificationSoundName("Default Bell")
-    let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door")
-    let cookooNotificationSound = UNNotificationSoundName("Cookoo")
-    let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
+    let bicycleNotificationSound = UNNotificationSoundName("Default Bell.MA4")
+    let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door.MA4")
+    let cookooNotificationSound = UNNotificationSoundName("Cookoo.MA4")
+    let towerBellNotificationSound = UNNotificationSoundName("Tower bell.MA4")
     
     func timerStart() {
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeUpdater), userInfo: nil, repeats: true)
@@ -55,9 +57,19 @@ class MainController: ObservableObject {
         
         //MARK:- Setting UserNotifications
         
+        let setTimerAgainUserNotificationActionButton = UNNotificationAction(identifier: "SET_TIMER_AGAIN", title: "Set T!mer again", options: .foreground)
+        let dismissUserNotificationActionButton = UNNotificationAction(identifier: "DISMISS", title: "Dismiss", options: .foreground)
+        
+        let category = UNNotificationCategory(identifier: "finishNotificationCategory", actions: [setTimerAgainUserNotificationActionButton, dismissUserNotificationActionButton], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
+        
+        
+        
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
         content.body = "Your T!mer is done!"
+        content.categoryIdentifier = "finishNotificationCategory"
         
         switch self.userSettings.soundIndex {
         case 0:
@@ -76,6 +88,8 @@ class MainController: ObservableObject {
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (self.userDegrees + 90) * 10, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        
         
         center.add(request) { (error) in
             print("UNNotificationCenter add error: \(String(describing: error))")
@@ -126,7 +140,7 @@ class MainController: ObservableObject {
     
     @Published var newDate = Date()
     
-    @Published var intervalSinceOldDate = 0.0
+//    @Published var intervalSinceOldDate = 0.0
     
     
     
@@ -150,20 +164,7 @@ class MainController: ObservableObject {
         print("            ㄴstoredTime: \(self.userSettings.storedTime)")
         
         
-//        syncTime()
     }
-    
-//    func syncTime() {
-//
-//        if self.isTimerStarted {
-//            if self.userDegrees > self.userSettings.storedTime / 10 {
-//
-//                self.userDegrees -= self.userSettings.storedTime / 10 // ERROR!!!!!
-//                print("-------------Before adjust background time: \(self.intervalSinceOldDate)")
-//
-//            }
-//        }
-//    }
     
     //MARK:- About Ads
     
@@ -190,27 +191,5 @@ class MainController: ObservableObject {
         //                print("Interstitial advertisment is not ready.")
         //            }
         //        }
-    }
-    
-    //MARK:- About Player
-    
-    var player: AVAudioPlayer!
-    
-    @ObservedObject var userSettings = UserSettings()
-    
-    func playSound() {
-        
-        let url = Bundle.main.url(forResource: "Default Bell", withExtension: "wav")!
-        
-        if userSettings.alertSoundIsOn {
-            do {
-                self.player = try AVAudioPlayer(contentsOf: url)
-                self.player?.play()
-            } catch {
-                print("There is error to play sound when timer is done")
-            }
-        } else {
-            
-        }
     }
 }

@@ -6,13 +6,6 @@ final class UserSettings: ObservableObject {
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     
-    @UserDefault(key: "alertSoundIsOn", value: true) // Defining firstly
-    var alertSoundIsOn: Bool {
-        willSet {
-            objectWillChange.send() // Save value FOREVER
-        }
-    }
-    
     @UserDefault(key: "soundIndex", value: 0) // Defining firstly
     var soundIndex: Int {
         willSet {

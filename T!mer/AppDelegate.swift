@@ -10,10 +10,11 @@ import UIKit
 import GoogleMobileAds
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
     var mainController: MainController!
-
+    var userSettings: UserSettings!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coloredAppearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-
+        
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         
@@ -32,18 +33,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
-
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         
-        print("configuration for connecting at AppDelegate")
+        UNUserNotificationCenter.current().delegate = self
         
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
@@ -51,7 +52,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("did discard scene sessions at AppDelegate")
     }
-
-
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        switch response.actionIdentifier {
+        case UNNotificationDefaultActionIdentifier:
+            print("UNNotificationDefaultActionIndentifier")
+        case "SET_TIMER_AGAIN":
+            print("SET_TIMER_AGAIN")
+        case "DISMISS":
+            print("DISMISS")
+        default:
+            print("Default case in userNotificationCenter Switch prases")
+            break
+        }
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .sound])
+    }
 }
 

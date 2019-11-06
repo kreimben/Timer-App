@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var angles: Double = 0
     @State var showingAlert = false
     
-//    var userHapticFeedback = UserHapticFeedback()
+    //    var userHapticFeedback = UserHapticFeedback()
     
     var forStroke = UIScreen.main.bounds.width / 18.75
     @State var rotaionAngle: Int = 0
@@ -51,6 +51,7 @@ struct ContentView: View {
                         
                         self.mainController.userDegrees -= self.userSettings.storedTime / 10
                     }
+                    .padding()
                     
                     ZStack { //MARK:- Circle Timer
                         
@@ -84,7 +85,7 @@ struct ContentView: View {
                                         DispatchQueue.global(qos: .background).async {
                                             if Int(Double(self.mainController.userDegrees + 90) * 10) % 60 == 0 {
                                                 DispatchQueue.main.async {
-//                                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
+                                                    //                                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
                                                 }
                                             }
                                         }
@@ -147,17 +148,16 @@ struct ContentView: View {
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
-                .navigationBarTitle(Text("T!mer"), displayMode: .inline)
-                    //                .navigationBarItems(trailing: TrailingButtonView())
+                .navigationBarTitle(self.userSettings.isUserPurchased ? Text("T!mer PRO") : Text("T!mer"), displayMode: .inline)
                     
-                    .navigationBarItems(trailing:
-                        NavigationLink(destination: SettingPageView()) {
-                            Image(systemName: "bell.fill")
-                                .foregroundColor(Color.red.opacity(1.0))
-                                .padding(8)
-                                .background(Color.white.opacity(0.5))
-                                .clipShape(Circle())
-                        }
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: SettingPageView()) {
+                        Image(systemName: "bell.fill")
+                            .foregroundColor(Color.red.opacity(1.0))
+                            .padding(8)
+                            .background(Color.white.opacity(0.5))
+                            .clipShape(Circle())
+                    }
                 )
             }
         }
