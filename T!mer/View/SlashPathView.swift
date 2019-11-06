@@ -10,7 +10,7 @@ struct SlashPathView: View {
                 path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.width))
                 
             }
-            .stroke(Color.red, lineWidth: 3)
+            .stroke(Color.red, lineWidth: 2.5)
         }
     }
 }

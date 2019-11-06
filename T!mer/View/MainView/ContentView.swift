@@ -1,7 +1,10 @@
 import SwiftUI
 import Combine
-import GoogleMobileAds
 import UIKit
+import CoreHaptics
+import GoogleMobileAds
+import Dispatch
+
 
 struct ContentView: View {
     @ObservedObject var userSettings = UserSettings()
@@ -11,11 +14,12 @@ struct ContentView: View {
     @State var angles: Double = 0
     @State var showingAlert = false
     
+//    var userHapticFeedback = UserHapticFeedback()
+    
     var forStroke = UIScreen.main.bounds.width / 18.75
+    @State var rotaionAngle: Int = 0
     
     let userTouchCurrentPointConverter = MainController()
-    
-    lazy var copyBool: Bool = self.mainController.isTimerStarted
     
     //MARK:- var body: some View
     var body: some View {
@@ -41,6 +45,12 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                     }
                     .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
+                    
+                    Button("Adjust") {
+                        print(self.userSettings.storedTime)
+                        
+                        self.mainController.userDegrees -= self.userSettings.storedTime / 10
+                    }
                     
                     ZStack { //MARK:- Circle Timer
                         
@@ -68,9 +78,20 @@ struct ContentView: View {
                             .gesture(
                                 RotationGesture()
                                     .onChanged { angle in
+                                        
+                                        self.rotaionAngle = Int(Double(self.mainController.userDegrees + 90) * 10)
+                                        
+                                        DispatchQueue.global(qos: .background).async {
+                                            if Int(Double(self.mainController.userDegrees + 90) * 10) % 60 == 0 {
+                                                DispatchQueue.main.async {
+//                                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
+                                                }
+                                            }
+                                        }
+                                        
                                         if self.mainController.isTimerStarted == false { // when timer is not working
                                             
-                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
+                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 <= 3600 {
                                                 
                                                 self.mainController.userDegrees += (angle.degrees) / 80
                                                 
@@ -87,7 +108,7 @@ struct ContentView: View {
                                             
                                             self.mainController.endTimer()
                                             
-                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 < 3600 {
+                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 <= 3600 {
                                                 
                                                 self.mainController.userDegrees += (angle.degrees) / 80
                                                 
@@ -101,51 +122,46 @@ struct ContentView: View {
                                                 }
                                             }
                                         }
-                                }
-                                .onEnded { (_) in
-                                    self.showingAlert = true
-                                }
-                        )
-                            .alert(isPresented: self.$showingAlert, content: {Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.mainController.userDegrees + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
+                                } // .onChanged
+                                    .onEnded { (_) in
+                                        self.showingAlert = true
+                                } // .onEnded
+                        ) // .gesture
+                            .alert(isPresented: self.$showingAlert, content: {
+                                Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.mainController.userDegrees + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
                                     
                                     self.mainController.floorDegree()
                                     self.mainController.timerStart()
                                     self.mainController.floorDegree()
                                     
                                     self.mainController.arrangeDegrees()
-                                })})
+                                    })
+                            })
+                        
                     }
+                    
                     
                     Spacer()
                     //MARK:- Banner ad
-                    BannerVC(purchased: self.mainController.isUserPurchased)
+                    BannerVC(purchased: self.userSettings.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
                 .navigationBarTitle(Text("T!mer"), displayMode: .inline)
+                    //                .navigationBarItems(trailing: TrailingButtonView())
                     
-                    //                .navigationBarItems(trailing: NavigationLink(destination: SettingPageView()) {
-                    //
-                    //                    if userSettings.alertSoundIsOn {
-                    //                        Image(systemName: "bell.fill")
-                    //                            .foregroundColor(Color.red.opacity(1.0))
-                    //                            .padding(8)
-                    //                            .background(Color.white.opacity(0.5))
-                    //                            .clipShape(Circle())
-                    //                    } else {
-                    //                        Image(systemName: "bell.slash.fill")
-                    //                            .foregroundColor(Color.red.opacity(1.0))
-                    //                            .padding(8)
-                    //                            .background(Color.white.opacity(0.5))
-                    //                            .clipShape(Circle())
-                    //                    }
-                    //                })
-                    .navigationBarItems(trailing: TrailingButtonView())
+                    .navigationBarItems(trailing:
+                        NavigationLink(destination: SettingPageView()) {
+                            Image(systemName: "bell.fill")
+                                .foregroundColor(Color.red.opacity(1.0))
+                                .padding(8)
+                                .background(Color.white.opacity(0.5))
+                                .clipShape(Circle())
+                        }
+                )
             }
         }
     }
-    
-    
 }
 
 //MARK:- Previews
@@ -158,11 +174,10 @@ struct ContentView_Previews: PreviewProvider {
 //MARK:- BannerVC
 final private class BannerVC: UIViewControllerRepresentable {
     
-    var isUserPurchased: Bool
+    var isUserPurchased: Bool // getting the UserDefaults value from MainController()
     
-    init(purchased: Bool) {
-        
-        self.isUserPurchased = purchased
+    init(purchased isUserPurchased: Bool) {
+        self.isUserPurchased = isUserPurchased
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<BannerVC>) -> BannerVC.UIViewControllerType {
@@ -171,7 +186,7 @@ final private class BannerVC: UIViewControllerRepresentable {
         
         let viewController = UIViewController()
         
-        if isUserPurchased  {
+        if self.isUserPurchased {
             
         } else {
             

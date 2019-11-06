@@ -3,8 +3,9 @@ import SwiftUI
 import AVFoundation
 import UIKit
 import GoogleMobileAds
-import BackgroundTasks
 import Combine
+
+import UserNotifications
 
 class MainController: ObservableObject {
     
@@ -26,6 +27,8 @@ class MainController: ObservableObject {
     var processedDegrees: Int = 90
     let finalMinus = 90.0
     
+//    let settingUserNotifications = SettingUserNotifications()
+    
     @Published public var isTimerStarted: Bool = false
     @Published public var isTimerEnded: Bool = false
     
@@ -37,11 +40,47 @@ class MainController: ObservableObject {
         }
     }
     
+
+    let center = UNUserNotificationCenter.current()
+    
+    let bicycleNotificationSound = UNNotificationSoundName("Default Bell")
+    let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door")
+    let cookooNotificationSound = UNNotificationSoundName("Cookoo")
+    let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
+    
     func timerStart() {
         self.scheduledTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeUpdater), userInfo: nil, repeats: true)
-        
-        RunLoop.main.add(self.scheduledTimer!, forMode: .common)
         isTimerStarted = true
+        print("Timer is STARTED!")
+        
+        //MARK:- Setting UserNotifications
+        
+        let content = UNMutableNotificationContent()
+        content.title = "T!mer done"
+        content.body = "Your T!mer is done!"
+        
+        switch self.userSettings.soundIndex {
+        case 0:
+            content.sound = UNNotificationSound.default
+        case 1:
+            content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
+        case 2:
+            content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
+        case 3:
+            content.sound = UNNotificationSound(named: self.cookooNotificationSound)
+        case 4:
+            content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
+        default:
+            print("------------Error occured in fixing UNNotificationSound.")
+        }
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (self.userDegrees + 90) * 10, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print("UNNotificationCenter add error: \(String(describing: error))")
+        }
+        print("-------------UserNotifications is setting done!")
     }
     
     @objc func timeUpdater() {
@@ -51,10 +90,9 @@ class MainController: ObservableObject {
             self.userDegrees -= 0.1
         } else {
             
-            playSound()
-            self.userDegrees = 0.01 - 90
-            endTimer()
-            showInterstitialAds()
+            self.userDegrees = 0.05 - 90
+            self.endTimer()
+            self.showInterstitialAds()
         }
     }
     
@@ -65,51 +103,93 @@ class MainController: ObservableObject {
         
         self.scheduledTimer?.invalidate()
         self.scheduledTimer = nil
+        
+        print("Timer is ENDED")
     }
     
     func arrangeDegrees() {
         
         self.processedDegrees = Int(self.userDegrees) - Int(self.userDegrees) % 6
         
-        print("\(Double(self.processedDegrees) + self.finalMinus * 10) seconds")
-        
         self.userDegrees = Double(self.processedDegrees)
     }
     
     func initTimerToFull() {
-        self.userDegrees = 270
+        self.userDegrees = 269.99
     }
     
     func initTimerToZero() {
-        self.userDegrees = -89.9
+        self.userDegrees = -89.99
     }
+    
+    //MARK:- For scene delegate
+    
+    @Published var newDate = Date()
+    
+    @Published var intervalSinceOldDate = 0.0
+    
+    
+    
+    func whenEnterBackground() {
+        
+        print("-------------excute \"whenEnterBackgound()\"")
+        
+        self.userSettings.oldDate = Date.init()
+        print("            ㄴoldTime: \(self.userSettings.oldDate)")
+    }
+    
+    func updateTimerForSceneDelegate() {
+        
+        print("-------------excute \"updateTimerForSceneDelegate()\"")
+        
+        self.newDate = Date()
+        
+        self.userSettings.storedTime = self.userSettings.oldDate.distance(to: self.newDate)
+        
+        print("            ㄴnewTime: \(self.newDate)")
+        print("            ㄴstoredTime: \(self.userSettings.storedTime)")
+        
+        
+//        syncTime()
+    }
+    
+//    func syncTime() {
+//
+//        if self.isTimerStarted {
+//            if self.userDegrees > self.userSettings.storedTime / 10 {
+//
+//                self.userDegrees -= self.userSettings.storedTime / 10 // ERROR!!!!!
+//                print("-------------Before adjust background time: \(self.intervalSinceOldDate)")
+//
+//            }
+//        }
+//    }
     
     //MARK:- About Ads
     
-    @Published var isUserPurchased = false
     @State var interstitial: GADInterstitial!
     
     func showInterstitialAds() {
         
-//        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-//
-//        let request = GADRequest()
-//        self.interstitial.load(request)
-//
-//        if self.isUserPurchased {
-//
-//            return
-//        } else {
-//
-//            if self.interstitial.isReady {
-//
-//                guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
-//                self.interstitial.present(fromRootViewController: root)
-//
-//            } else {
-//                print("Interstitial advertisment is not ready.")
-//            }
-//        }
+        //        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        //
+        //        let request = GADRequest()
+        //        self.interstitial.load(request)
+        //
+        //        if self.isUserPurchased {
+        //
+        //            return
+        //        } else {
+        //
+        //            if self.interstitial.isReady {
+        //
+        //                guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
+        //                self.interstitial.present(fromRootViewController: root)
+        //
+        //            } else {
+        //                print("Interstitial advertisment is not ready.")
+        //            }
+        //        }
     }
     
     //MARK:- About Player
