@@ -52,22 +52,6 @@ struct SettingPageView: View {
                 
             }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
-                
-            .onAppear() {
-                
-                if self.userSettings.userDonotCheckedOurAppCannotSupportPerfectBackgroundTask == false &&
-                self.userSettings.forCheckFirstAlert == true {
-                    self.userSettings.userDonotCheckedOurAppCannotSupportPerfectBackgroundTask = true
-                }
-            }
-                
-//            .alert(isPresented: self.$userSettings.userDonotCheckedOurAppCannotSupportPerfectBackgroundTask) {
-//
-//                Alert(title: Text("Caution") , message: Text("Unfortunately, We can't support background timer feature perfectly due to some kinds of reasons and bugs yet.\nSorry!"), primaryButton: .default(Text("OK")), secondaryButton: .destructive(Text("Don't show again")) {
-//                    self.userSettings.userDonotCheckedOurAppCannotSupportPerfectBackgroundTask = false
-//                    self.userSettings.forCheckFirstAlert = false
-//                    })
-//            }
         }
         .listStyle(GroupedListStyle())
         

@@ -13,20 +13,6 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "userDonotCheckedOurAppCannotSupportPerfectBackgroundTask", value: true)
-    var userDonotCheckedOurAppCannotSupportPerfectBackgroundTask: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    @UserDefault(key: "forCheckFirstAlert", value: true)
-    var forCheckFirstAlert: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
     @UserDefault(key: "storedTime", value: 5.0)
     var storedTime: Double {
         willSet {
