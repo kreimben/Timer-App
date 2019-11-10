@@ -7,8 +7,9 @@ to-do list
 1. 👌 광고
 1. 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 1. 👌 백그라운드에서도 시간이 가도록 처리
-1. launchscreen 만들기 (되도록 애니메이션)
+1. 👌 launchscreen 만들기 (되도록 애니메이션)
 1. 👌 check notification sound
+1. isTimerStarted == false 될때 색 상의 하기
 
 google admob Apple ID
     Unique ID : ca-app-pub-4942689053880729~6950693605

@@ -13,24 +13,29 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "storedTime", value: 5.0)
-    var storedTime: Double {
-        willSet {
-            objectWillChange.send()
-            
-            print("            ㄴstoredTime: \(self.storedTime)")
-        }
-    }
-    
-    @UserDefault(key: "oldDate", value: Date())
-    var oldDate: Date {
+    @UserDefault(key: "restOfTime", value: 0.0)
+    var restOfTime: Double {
         willSet {
             objectWillChange.send()
         }
     }
     
-    @UserDefault(key: "isAppInActiveButBeforeAdjustTime", value: true)
-    var isAppInActiveButBeforeAdjustTime: Bool {
+    @UserDefault(key: "oldTime", value: Date())
+    var oldTime: Date {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @UserDefault(key: "timeInterval", value: 0.0)
+    var timeInterval: Double {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @UserDefault(key: "backgroundTimeIntervalSynchronized", value: true)
+    var backgroundTimeIntervalSynchronized: Bool {
         willSet {
             objectWillChange.send()
         }

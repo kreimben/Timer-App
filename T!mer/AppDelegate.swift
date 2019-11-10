@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         mainController = MainController()
         
+        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true

@@ -19,6 +19,7 @@ struct SettingPageView: View {
     
     @ObservedObject var userSettings = UserSettings()
     
+    @Environment(\.presentationMode) var presentation
     var body: some View {
         List {
             Section(header: Text("About sound")) {

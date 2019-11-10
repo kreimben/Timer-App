@@ -11,15 +11,26 @@ struct ContentView: View {
     
     @EnvironmentObject var mainController: MainController
     
-    @State var angles: Double = 0
     @State var showingAlert = false
+    
+//    @State var isTimerStarted = false
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     //    var userHapticFeedback = UserHapticFeedback()
     
-    var forStroke = UIScreen.main.bounds.width / 18.75
-    @State var rotaionAngle: Int = 0
+    //MARK: For DragGesture
     
-    let userTouchCurrentPointConverter = MainController()
+    @GestureState var dragAmount = CGPoint.zero
+    @State var currentPoint = CGPoint.zero
+    @State var center = CGPoint.zero
+    @State var atan2Var: CGFloat = 0.0
+    
+    @State var circleColor = Color.red
+    
+    @State var gestureAllowed = false
+    
+    //    @EnvironmentObject var userTouchController: UserTouchController
+    @ObservedObject var userTouchController = UserTouchController()
     
     //MARK:- var body: some View
     var body: some View {
@@ -39,21 +50,43 @@ struct ContentView: View {
                             .foregroundColor(Color.blue.opacity(0.8))
                             .cornerRadius(UIScreen.main.bounds.width * 0.1)
                         
-                        Text("\(self.mainController.timeConverter())")
+                        
+                        Text("\(String(format: "%02d:%02d", Int(((self.userSettings.restOfTime + 90) * 10) / 60), Int((self.userSettings.restOfTime + 90) * 10) % 60))")
                             .font(.system(size: UIScreen.main.bounds.width * 0.25))
                             .font(.headline)
                             .foregroundColor(Color.white)
+                            .onReceive(timer) { input in
+                                
+                                if !self.userSettings.backgroundTimeIntervalSynchronized {
+                                    
+                                    if (self.userSettings.restOfTime + 90) * 10 > self.userSettings.timeInterval {
+                                        self.userSettings.restOfTime -= self.userSettings.timeInterval * 0.1
+                                        self.atan2Var -= CGFloat((self.userSettings.timeInterval * 0.1) * (Double.pi / 180))
+                                        print("                  Timer is SYNCHRONIZED!")
+                                    } else {
+                                        self.userSettings.restOfTime = -90
+                                        self.atan2Var = CGFloat(0)
+                                    }
+                                    
+                                    self.userSettings.backgroundTimeIntervalSynchronized = true
+                                    print("                  backgroundTimerIntervalSynchronized become TRUE")
+                                    
+                                    self.userSettings.timeInterval = 0
+                                    print("            timeInterval is \(self.userSettings.timeInterval) now")
+                                }
+                                
+                                if self.mainController.isTimerStarted {
+                                    if (self.userSettings.restOfTime + 90) > 0 {
+                                        
+                                        self.atan2Var -= 0.1 * (CGFloat.pi / 180)
+                                        self.userSettings.restOfTime -= 0.1
+                                    }
+                                }
+                        }
                     }
                     .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
-                    Button("Adjust") {
-                        print(self.userSettings.storedTime)
-                        
-                        self.mainController.userDegrees -= self.userSettings.storedTime / 10
-                    }
-                    .padding()
-                    
-                    ZStack { //MARK:- Circle Timer
+                    ZStack(alignment: .center) { //MARK:- Circle Timer
                         
                         Circle()
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
@@ -65,80 +98,89 @@ struct ContentView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.77)
                             .shadow(radius: 10)
                         
-                        UserTouchCircle()
-                            .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.width * 0.75)
+                        UserTouchCircle(center: self.$center, atan2: self.$atan2Var, CircleColor: self.$circleColor)
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
                         
                         Image("시계 바늘")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
                         
-                        Circle() // touch center
+                        Circle() // Touch Center
                             .fill(Color.red.opacity(0.001))
-                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
                             .shadow(radius: 10)
+                            .onLongPressGesture(minimumDuration: 0.6, maximumDistance: 5) {
+                                
+                                print("onLongPressGesture is excuted.")
+                                print("gesture allowed status: \(self.gestureAllowed)")
+                                
+                                if self.mainController.isTimerStarted {
+                                    self.mainController.isTimerStarted = false
+                                    self.circleColor = Color.red.opacity(0.5)
+                                    print("isTimerStarted gonna FALSE")
+                                } else {
+                                    
+                                }
+                        }
                             .gesture(
-                                RotationGesture()
-                                    .onChanged { angle in
-                                        
-                                        self.rotaionAngle = Int(Double(self.mainController.userDegrees + 90) * 10)
-                                        
-                                        DispatchQueue.global(qos: .background).async {
-                                            if Int(Double(self.mainController.userDegrees + 90) * 10) % 60 == 0 {
-                                                DispatchQueue.main.async {
-                                                    //                                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
-                                                }
+                                    DragGesture().updating($dragAmount) { value, state, transaction in
+
+                                        if !self.mainController.isTimerStarted {
+                                            
+                                            self.gestureAllowed = true
+                                            
+                                            state = value.location
+
+                                            DispatchQueue.main.async {
+                                                self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
+
+                                                self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
+
+                                                self.userSettings.restOfTime = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
                                             }
                                         }
+                                    }
+                                    .onChanged { (_) in
+//                                        self.isTimerStarted = false
                                         
-                                        if self.mainController.isTimerStarted == false { // when timer is not working
-                                            
-                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 <= 3600 {
-                                                
-                                                self.mainController.userDegrees += (angle.degrees) / 80
-                                                
-                                            } else {
-                                                print("error")
-                                                
-                                                if (90 + self.mainController.userDegrees) * 10 <= 0 {
-                                                    self.mainController.initTimerToZero()
-                                                } else {
-                                                    self.mainController.initTimerToFull()
-                                                }
-                                            }
-                                        } else { // when timer is WORKING!!!
-                                            
-                                            self.mainController.endTimer()
-                                            
-                                            if (90 + self.mainController.userDegrees) * 10 >= 0 && (90 + self.mainController.userDegrees) * 10 <= 3600 {
-                                                
-                                                self.mainController.userDegrees += (angle.degrees) / 80
-                                                
-                                            } else {
-                                                print("error")
-                                                
-                                                if (90 + self.mainController.userDegrees) * 10 <= 0 {
-                                                    self.mainController.initTimerToZero()
-                                                } else {
-                                                    self.mainController.initTimerToFull()
-                                                }
-                                            }
+                                        if self.gestureAllowed {
+                                        
+                                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                            print("    Pended UserNotifiaction is removed")
                                         }
-                                } // .onChanged
+                                    }
                                     .onEnded { (_) in
-                                        self.showingAlert = true
-                                } // .onEnded
-                        ) // .gesture
+                                        
+                                        if self.gestureAllowed {
+                                            
+                                            if self.userSettings.restOfTime >= 0 {
+                                                
+                                                self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) - (Int(self.userSettings.restOfTime) % 6))
+                                            } else {
+                                                
+                                                self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) + (Int(self.userSettings.restOfTime) % 6))
+                                            }
+                                            
+                                            let degreeForConvert = (self.userSettings.restOfTime + 90)
+
+                                            self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
+                                            
+                                            self.showingAlert = true
+                                        }
+                                }
+                            ) // .gesture
                             .alert(isPresented: self.$showingAlert, content: {
-                                Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.mainController.userDegrees + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
+                                
+                                Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.userSettings.restOfTime + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
                                     
-                                    self.mainController.floorDegree()
-                                    self.mainController.timerStart()
-                                    self.mainController.floorDegree()
+                                    self.mainController.setNotificationWhenTimerStart()
+                                    self.mainController.isTimerStarted = true
                                     
-                                    self.mainController.arrangeDegrees()
+                                    self.gestureAllowed = false
+                                    self.circleColor = Color.red.opacity(1.0)
+                                    
                                     })
                             })
-                        
                     }
                     
                     
