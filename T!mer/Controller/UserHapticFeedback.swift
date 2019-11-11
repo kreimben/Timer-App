@@ -3,16 +3,7 @@ import SwiftUI
 import CoreHaptics
 
 class UserHapticFeedback {
-
-    var engine: CHHapticEngine?
-
-    lazy var intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
-    lazy var sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 1)
-
-
-    var player: CHHapticPatternPlayer?
-
-
+    
     init() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
 
@@ -52,6 +43,13 @@ class UserHapticFeedback {
             print("Failed to play pattern: \(error.localizedDescription).")
         }
     }
+
+    var engine: CHHapticEngine?
+
+    lazy var intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
+    lazy var sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 1)
+
+    var player: CHHapticPatternPlayer?
 
     func hapticFeedbackWhenUserRotatesDial() {
 

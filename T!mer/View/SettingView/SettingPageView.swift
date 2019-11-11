@@ -17,6 +17,8 @@ struct SoundsArray: Identifiable, Hashable {
 
 struct SettingPageView: View {
     
+    @State var showingModal = false
+    
     @ObservedObject var userSettings = UserSettings()
     
     @Environment(\.presentationMode) var presentation
@@ -47,10 +49,13 @@ struct SettingPageView: View {
                     Text("1.0.0")
                 }
                 
-                NavigationLink(destination: Text("About \"Erlkoenig Soft\"")) {
-                    Text("About \"Erlkoenig Soft\"")
+                Button(action: {
+                    self.showingModal = true
+                }) {
+                    Text("About Erlkoenig Soft")
+                }.sheet(isPresented: $showingModal) {
+                    SafariView(url: URL(string: "http://www.erlkoenig-soft.com"))
                 }
-                
             }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/aksidionkreimben/Documents/Repository/iOS Repository/T!mer/T!mer/View/SettingView/PickerView.swift">
-   </FileRef>
-   <FileRef
       location = "group:T!mer.xcodeproj">
    </FileRef>
    <FileRef

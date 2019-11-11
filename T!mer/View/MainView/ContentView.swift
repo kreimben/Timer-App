@@ -16,7 +16,7 @@ struct ContentView: View {
 //    @State var isTimerStarted = false
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-    //    var userHapticFeedback = UserHapticFeedback()
+    var userHapticFeedback = UserHapticFeedback()
     
     //MARK: For DragGesture
     
@@ -26,6 +26,7 @@ struct ContentView: View {
     @State var atan2Var: CGFloat = 0.0
     
     @State var circleColor = Color.red
+    @State var circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
     
     @State var gestureAllowed = false
     
@@ -95,6 +96,10 @@ struct ContentView: View {
                                         self.circleColor = Color.red.opacity(0.5)
                                     }
                                 }
+                                
+//                                if self.gestureAllowed {
+//                                    self.circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
+//                                }
                         }
                     }
                     .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
@@ -111,7 +116,7 @@ struct ContentView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.77)
                             .shadow(radius: 10)
                         
-                        UserTouchCircle(center: self.$center, atan2: self.$atan2Var, CircleColor: self.$circleColor)
+                        UserTouchCircle(center: self.$center, atan2: self.$atan2Var, circleColor: self.$circleColor, circleRadius: self.$circleRadius)
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
                         
                         Image("시계 바늘")
@@ -128,12 +133,19 @@ struct ContentView: View {
                                 print("gesture allowed status: \(self.gestureAllowed)")
                                 
                                 if self.mainController.isTimerStarted {
+                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
+                                    
                                     self.mainController.isTimerStarted = false
                                     self.circleColor = Color.red.opacity(0.5)
                                     print("isTimerStarted gonna FALSE")
                                 } else {
                                     
                                 }
+                                
+//                                withAnimation(.spring(response: 0.57, dampingFraction: 10, blendDuration: 10)) {
+//                                    self.circleRadius -= CGFloat(UIScreen.main.bounds.width * 0.2 / 2)
+//                                }
+//                                self.animation(.spring(response: 0.57, dampingFraction: 10, blendDuration: 10))
                         }
                             .gesture(
                                     DragGesture().updating($dragAmount) { value, state, transaction in
@@ -154,7 +166,6 @@ struct ContentView: View {
                                         }
                                     }
                                     .onChanged { (_) in
-//                                        self.isTimerStarted = false
                                         
                                         if self.gestureAllowed {
                                         

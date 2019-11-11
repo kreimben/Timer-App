@@ -7,7 +7,8 @@ struct UserTouchCircle: View {
     
     @Binding var center: CGPoint
     @Binding var atan2: CGFloat
-    @Binding var CircleColor: Color
+    @Binding var circleColor: Color
+    @Binding var circleRadius: CGFloat
     
     @EnvironmentObject var mainController: MainController
     
@@ -25,11 +26,11 @@ struct UserTouchCircle: View {
                     
                 path.move(to: self.center)
                     
-                path.addArc(center: self.center, radius: UIScreen.main.bounds.width * (0.73 / 2), startAngle: .degrees(-90), endAngle: .degrees(self.atan2ToDegrees(tan: self.atan2)), clockwise: false)
+                path.addArc(center: self.center, radius: self.circleRadius/*UIScreen.main.bounds.width * (0.73 / 2)*/, startAngle: .degrees(-90), endAngle: .degrees(self.atan2ToDegrees(tan: self.atan2)), clockwise: false)
                 
             }
         }
-        .foregroundColor(self.CircleColor)
+        .foregroundColor(self.circleColor)
     }
     
     func atan2ToDegrees(tan: CGFloat) -> Double {

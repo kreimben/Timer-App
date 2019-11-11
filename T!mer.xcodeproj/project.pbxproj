@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51113A5E237939BF005309D7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* PickerView.swift */; };
 		51307F7D2373440300791A97 /* Default Bell.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F792373440300791A97 /* Default Bell.MA4 */; };
 		51307F7E2373440300791A97 /* Tower bell.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7A2373440300791A97 /* Tower bell.MA4 */; };
 		51307F7F2373440300791A97 /* Bell store door.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7B2373440300791A97 /* Bell store door.MA4 */; };
 		51307F802373440300791A97 /* Cookoo.MA4 in Resources */ = {isa = PBXBuildFile; fileRef = 51307F7C2373440300791A97 /* Cookoo.MA4 */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
+		517917EC237936700074E5D9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517917EB237936700074E5D9 /* SafariView.swift */; };
 		517F6221234E329F00A05205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6220234E329F00A05205 /* AppDelegate.swift */; };
 		517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6222234E329F00A05205 /* SceneDelegate.swift */; };
 		517F6225234E329F00A05205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6224234E329F00A05205 /* ContentView.swift */; };
@@ -20,7 +22,6 @@
 		517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F622B234E32A100A05205 /* LaunchScreen.storyboard */; };
 		5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180DD97234E419D0074AECC /* SettingPageView.swift */; };
 		5188B0502370135800A2258F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188B04F2370135800A2258F /* UserSettings.swift */; };
-		5188B07923703CED00A2258F /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188B07823703CED00A2258F /* PickerView.swift */; };
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51E8A0B8236DD6AC009520C7 /* SlashPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */; };
 		51ED30A2236E731B00F9CF69 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED30A1236E731B00F9CF69 /* UserHapticFeedback.swift */; };
@@ -30,11 +31,13 @@
 
 /* Begin PBXFileReference section */
 		1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		51113A5D237939BE005309D7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		51307F792373440300791A97 /* Default Bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell.MA4"; sourceTree = "<group>"; };
 		51307F7A2373440300791A97 /* Tower bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell.MA4"; sourceTree = "<group>"; };
 		51307F7B2373440300791A97 /* Bell store door.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door.MA4"; sourceTree = "<group>"; };
 		51307F7C2373440300791A97 /* Cookoo.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo.MA4; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
+		517917EB237936700074E5D9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		517F621D234E329F00A05205 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517F6220234E329F00A05205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517F6222234E329F00A05205 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		517F622E234E32A100A05205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5180DD97234E419D0074AECC /* SettingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageView.swift; sourceTree = "<group>"; };
 		5188B04F2370135800A2258F /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettings.swift; path = "T!mer/Controller/UserSettings.swift"; sourceTree = SOURCE_ROOT; };
-		5188B07823703CED00A2258F /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = "/Users/aksidionkreimben/Documents/Repository/iOS Repository/T!mer/T!mer/View/SettingView/PickerView.swift"; sourceTree = "<absolute>"; };
 		51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashPathView.swift; sourceTree = "<group>"; };
@@ -144,7 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
-				5188B07823703CED00A2258F /* PickerView.swift */,
+				51113A5D237939BE005309D7 /* PickerView.swift */,
+				517917EB237936700074E5D9 /* SafariView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -300,11 +303,12 @@
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51ED30A2236E731B00F9CF69 /* UserHapticFeedback.swift in Sources */,
+				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
+				51113A5E237939BF005309D7 /* PickerView.swift in Sources */,
 				51EF54F3235D5E4C007A9E8D /* MainController.swift in Sources */,
-				5188B07923703CED00A2258F /* PickerView.swift in Sources */,
 				51E8A0B8236DD6AC009520C7 /* SlashPathView.swift in Sources */,
 				5188B0502370135800A2258F /* UserSettings.swift in Sources */,
 			);
