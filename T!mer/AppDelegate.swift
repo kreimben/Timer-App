@@ -56,17 +56,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        switch response.actionIdentifier {
-        case UNNotificationDefaultActionIdentifier:
-            print("UNNotificationDefaultActionIndentifier")
-        case "SET_TIMER_AGAIN":
-            print("SET_TIMER_AGAIN")
-        case "DISMISS":
-            print("DISMISS")
-        default:
-            print("Default case in userNotificationCenter Switch prases")
-            break
-        }
+//        switch response.actionIdentifier {
+//        case UNNotificationDefaultActionIdentifier:
+//            print("UNNotificationDefaultActionIndentifier")
+//        case "SET_TIMER_AGAIN":
+//            print("SET_TIMER_AGAIN")
+//        case "DISMISS":
+//            print("DISMISS")
+//        default:
+//            print("Default case in userNotificationCenter Switch prases")
+//            break
+//        }
         
         completionHandler()
     }

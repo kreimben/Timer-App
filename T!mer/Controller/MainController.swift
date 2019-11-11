@@ -25,12 +25,12 @@ class MainController: ObservableObject {
     
     func setNotificationWhenTimerStart() {
         
-        let setTimerAgainUserNotificationActionButton = UNNotificationAction(identifier: "SET_TIMER_AGAIN", title: "Set T!mer again", options: .foreground)
-        let dismissUserNotificationActionButton = UNNotificationAction(identifier: "DISMISS", title: "Dismiss", options: .foreground)
-        
-        let category = UNNotificationCategory(identifier: "finishNotificationCategory", actions: [setTimerAgainUserNotificationActionButton, dismissUserNotificationActionButton], intentIdentifiers: [])
-        
-        center.setNotificationCategories([category])
+//        let setTimerAgainUserNotificationActionButton = UNNotificationAction(identifier: "SET_TIMER_AGAIN", title: "Set T!mer again", options: .foreground)
+//        let dismissUserNotificationActionButton = UNNotificationAction(identifier: "DISMISS", title: "Dismiss", options: .foreground)
+//        
+//        let category = UNNotificationCategory(identifier: "finishNotificationCategory", actions: [setTimerAgainUserNotificationActionButton, dismissUserNotificationActionButton], intentIdentifiers: [])
+//        
+//        center.setNotificationCategories([category])
         
         
         
@@ -78,17 +78,6 @@ class MainController: ObservableObject {
         self.userSettings.oldTime = Date.init()
         print("            ㄴoldTime: \(self.userSettings.oldTime)")
     }
-    
-//    func whenEnterForeground() {
-//        
-//        print("-------------excute \"whenEnterForeground()\"")
-//        
-//        self.newDate = Date()
-//
-//        self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: self.newDate)
-//        
-//        print("            ㄴtimeInterval: \(self.userSettings.timeInterval)")
-//    }
     
     //MARK:- About Ads
     

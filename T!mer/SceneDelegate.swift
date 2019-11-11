@@ -67,10 +67,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to undo the changes made on entering the background.
         
         print("scene will enter foreground")
-        
-//        self.mainController.whenEnterForeground()
-        
-        
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
