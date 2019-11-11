@@ -53,8 +53,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         
         print("scene did become active")
-        
-        self.mainController.whenEnterForeground()
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
@@ -69,6 +67,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to undo the changes made on entering the background.
         
         print("scene will enter foreground")
+        
+//        self.mainController.whenEnterForeground()
+        
+        
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -77,11 +79,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         print("scene did enter background")
         
-        print("        isTimerStarted: \(self.mainController.isTimerStarted)")
-        
         
         self.userSettings.backgroundTimeIntervalSynchronized = false
-        print("      backgroundTimeIntervalSynchronized: \(self.userSettings.backgroundTimeIntervalSynchronized)")
+        print("        backgroundTimeIntervalSynchronized: \(self.userSettings.backgroundTimeIntervalSynchronized)")
         
         self.mainController.whenEnterBackground()
         

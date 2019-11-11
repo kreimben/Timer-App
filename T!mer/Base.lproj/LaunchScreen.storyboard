@@ -16,7 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T!mer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-pV-8mD">
-                                <rect key="frame" x="95.5" y="394" width="223" height="108"/>
+                                <rect key="frame" x="95.5" y="174" width="223" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LcK-pV-8mD" secondAttribute="height" multiplier="223:108" id="T1G-0B-Vxh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -24,8 +27,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LcK-pV-8mD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5jl-wh-WsE"/>
                             <constraint firstItem="LcK-pV-8mD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IXP-Iy-jF8"/>
+                            <constraint firstItem="LcK-pV-8mD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="iUk-GJ-Ql7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

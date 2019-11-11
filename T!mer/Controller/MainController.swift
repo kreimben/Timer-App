@@ -79,18 +79,16 @@ class MainController: ObservableObject {
         print("            ㄴoldTime: \(self.userSettings.oldTime)")
     }
     
-    func whenEnterForeground() {
-        
-        print("-------------excute \"whenEnterForeground()\"")
-        
-        self.newDate = Date()
-        
-        self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: self.newDate)
-        
-        print("            ㄴtimeInterval: \(self.userSettings.timeInterval)")
-        
-        
-    }
+//    func whenEnterForeground() {
+//        
+//        print("-------------excute \"whenEnterForeground()\"")
+//        
+//        self.newDate = Date()
+//
+//        self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: self.newDate)
+//        
+//        print("            ㄴtimeInterval: \(self.userSettings.timeInterval)")
+//    }
     
     //MARK:- About Ads
     

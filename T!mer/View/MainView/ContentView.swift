@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var showingAlert = false
     
 //    @State var isTimerStarted = false
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     //    var userHapticFeedback = UserHapticFeedback()
     
@@ -51,7 +51,7 @@ struct ContentView: View {
                             .cornerRadius(UIScreen.main.bounds.width * 0.1)
                         
                         
-                        Text("\(String(format: "%02d:%02d", Int(((self.userSettings.restOfTime + 90) * 10) / 60), Int((self.userSettings.restOfTime + 90) * 10) % 60))")
+                        Text("\(self.mainController.isTimerStarted ? String(format: "%02d:%02d", Int(((self.userSettings.restOfTime + 90) * 10) / 60), Int((self.userSettings.restOfTime + 90) * 10) % 60) : String(format: "%02d:00", Int(((self.userSettings.restOfTime + 90) * 10) / 60))    )")
                             .font(.system(size: UIScreen.main.bounds.width * 0.25))
                             .font(.headline)
                             .foregroundColor(Color.white)
@@ -59,7 +59,14 @@ struct ContentView: View {
                                 
                                 if !self.userSettings.backgroundTimeIntervalSynchronized {
                                     
+                                    let newDate = Date()
+                                    self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: newDate)
+                                    
+                                    print("////////////REST OF TIME: \((self.userSettings.restOfTime + 90) * 10)")
+                                    print("////////////TIME INTERVAL: \(self.userSettings.timeInterval)")
+                                    
                                     if (self.userSettings.restOfTime + 90) * 10 > self.userSettings.timeInterval {
+                                        
                                         self.userSettings.restOfTime -= self.userSettings.timeInterval * 0.1
                                         self.atan2Var -= CGFloat((self.userSettings.timeInterval * 0.1) * (Double.pi / 180))
                                         print("                  Timer is SYNCHRONIZED!")
@@ -72,14 +79,20 @@ struct ContentView: View {
                                     print("                  backgroundTimerIntervalSynchronized become TRUE")
                                     
                                     self.userSettings.timeInterval = 0
-                                    print("            timeInterval is \(self.userSettings.timeInterval) now")
+                                    print("                  timeInterval is \(self.userSettings.timeInterval) now")
                                 }
                                 
                                 if self.mainController.isTimerStarted {
+                                    
                                     if (self.userSettings.restOfTime + 90) > 0 {
                                         
                                         self.atan2Var -= 0.1 * (CGFloat.pi / 180)
                                         self.userSettings.restOfTime -= 0.1
+                                    } else { // when timer is done!
+                                        
+                                        self.mainController.isTimerStarted = false
+                                        self.gestureAllowed = true
+                                        self.circleColor = Color.red.opacity(0.5)
                                     }
                                 }
                         }
@@ -146,7 +159,6 @@ struct ContentView: View {
                                         if self.gestureAllowed {
                                         
                                             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                                            print("    Pended UserNotifiaction is removed")
                                         }
                                     }
                                     .onEnded { (_) in
@@ -159,6 +171,14 @@ struct ContentView: View {
                                             } else {
                                                 
                                                 self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) + (Int(self.userSettings.restOfTime) % 6))
+                                                
+                                                if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 20 {
+                                                    
+                                                    self.userSettings.restOfTime -= 2
+                                                } else if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 40 {
+                                                    
+                                                    self.userSettings.restOfTime -= 4
+                                                }
                                             }
                                             
                                             let degreeForConvert = (self.userSettings.restOfTime + 90)
@@ -171,15 +191,19 @@ struct ContentView: View {
                             ) // .gesture
                             .alert(isPresented: self.$showingAlert, content: {
                                 
-                                Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.userSettings.restOfTime + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
-                                    
-                                    self.mainController.setNotificationWhenTimerStart()
-                                    self.mainController.isTimerStarted = true
-                                    
-                                    self.gestureAllowed = false
-                                    self.circleColor = Color.red.opacity(1.0)
-                                    
-                                    })
+                                if ((self.userSettings.restOfTime + 90) * 10) / 60 > 0 { // which is MINUTE
+                                    return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int((self.userSettings.restOfTime + 90) * 10)/60) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
+                                        
+                                        self.mainController.setNotificationWhenTimerStart()
+                                        self.mainController.isTimerStarted = true
+                                        
+                                        self.gestureAllowed = false
+                                        self.circleColor = Color.red.opacity(1.0)
+                                        
+                                        })
+                                } else {
+                                    return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
+                                }
                             })
                     }
                     
