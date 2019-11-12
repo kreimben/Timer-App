@@ -47,13 +47,13 @@ struct ContentView: View {
                     
                     ZStack { //MARK:- Textbox
                         Rectangle()
-                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.15)
+                            .frame(width: 340/*UIScreen.main.bounds.width * 0.8*/, height: 140/*UIScreen.main.bounds.height * 0.15*/)
                             .foregroundColor(Color.blue.opacity(0.8))
-                            .cornerRadius(UIScreen.main.bounds.width * 0.1)
+                            .cornerRadius(30/*UIScreen.main.bounds.width * 0.07*/)
                         
                         
                         Text("\(self.mainController.isTimerStarted ? String(format: "%02d:%02d", Int(((self.userSettings.restOfTime + 90) * 10) / 60), Int((self.userSettings.restOfTime + 90) * 10) % 60) : String(format: "%02d:00", Int(((self.userSettings.restOfTime + 90) * 10) / 60))    )")
-                            .font(.system(size: UIScreen.main.bounds.width * 0.25))
+                            .font(.system(size: 110/*UIScreen.main.bounds.width * 0.2*/))
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
@@ -96,13 +96,9 @@ struct ContentView: View {
                                         self.circleColor = Color.red.opacity(0.5)
                                     }
                                 }
-                                
-//                                if self.gestureAllowed {
-//                                    self.circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
-//                                }
                         }
                     }
-                    .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 50/*UIScreen.main.bounds.height * 0.1*/, leading: 0, bottom: 0, trailing: 0))
                     
                     ZStack(alignment: .center) { //MARK:- Circle Timer
                         
@@ -238,6 +234,7 @@ struct ContentView: View {
                 )
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
