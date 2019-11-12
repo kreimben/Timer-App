@@ -36,6 +36,7 @@
 		51307F7A2373440300791A97 /* Tower bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell.MA4"; sourceTree = "<group>"; };
 		51307F7B2373440300791A97 /* Bell store door.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door.MA4"; sourceTree = "<group>"; };
 		51307F7C2373440300791A97 /* Cookoo.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo.MA4; sourceTree = "<group>"; };
+		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		517917EB237936700074E5D9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		517F621D234E329F00A05205 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +102,7 @@
 		517F621F234E329F00A05205 /* T!mer */ = {
 			isa = PBXGroup;
 			children = (
+				5136238A237AA1D300744BDD /* T!mer.entitlements */,
 				517F6220234E329F00A05205 /* AppDelegate.swift */,
 				517F6222234E329F00A05205 /* SceneDelegate.swift */,
 				51E2EDE5236F2B2400907956 /* Sound */,
@@ -447,7 +449,9 @@
 			baseConfigurationReference = 1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 8WAQAQ3Z29;
 				ENABLE_PREVIEWS = YES;
@@ -459,6 +463,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,7 +474,9 @@
 			baseConfigurationReference = 77778D1CC728672FCFF5FBEB /* Pods-T!mer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 8WAQAQ3Z29;
 				ENABLE_PREVIEWS = YES;
@@ -481,6 +488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
