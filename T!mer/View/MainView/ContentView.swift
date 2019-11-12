@@ -13,7 +13,7 @@ struct ContentView: View {
     
     @State var showingAlert = false
     
-//    @State var isTimerStarted = false
+    //    @State var isTimerStarted = false
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     var userHapticFeedback = UserHapticFeedback()
@@ -30,7 +30,6 @@ struct ContentView: View {
     
     @State var gestureAllowed = false
     
-    //    @EnvironmentObject var userTouchController: UserTouchController
     @ObservedObject var userTouchController = UserTouchController()
     
     //MARK:- var body: some View
@@ -58,42 +57,44 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
                                 
-                                if !self.userSettings.backgroundTimeIntervalSynchronized {
-                                    
-                                    let newDate = Date()
-                                    self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: newDate)
-                                    
-                                    print("////////////REST OF TIME: \((self.userSettings.restOfTime + 90) * 10)")
-                                    print("////////////TIME INTERVAL: \(self.userSettings.timeInterval)")
-                                    
-                                    if (self.userSettings.restOfTime + 90) * 10 > self.userSettings.timeInterval {
+                                DispatchQueue.global(qos: .background).async {
+                                    if !self.userSettings.backgroundTimeIntervalSynchronized {
                                         
-                                        self.userSettings.restOfTime -= self.userSettings.timeInterval * 0.1
-                                        self.atan2Var -= CGFloat((self.userSettings.timeInterval * 0.1) * (Double.pi / 180))
-                                        print("                  Timer is SYNCHRONIZED!")
-                                    } else {
-                                        self.userSettings.restOfTime = -90
-                                        self.atan2Var = CGFloat(0)
+                                        let newDate = Date()
+                                        self.userSettings.timeInterval = self.userSettings.oldTime.distance(to: newDate)
+                                        
+                                        print("////////////REST OF TIME: \((self.userSettings.restOfTime + 90) * 10)")
+                                        print("////////////TIME INTERVAL: \(self.userSettings.timeInterval)")
+                                        
+                                        if (self.userSettings.restOfTime + 90) * 10 > self.userSettings.timeInterval {
+                                            
+                                            self.userSettings.restOfTime -= self.userSettings.timeInterval * 0.1
+                                            self.atan2Var -= CGFloat((self.userSettings.timeInterval * 0.1) * (Double.pi / 180))
+                                            print("                  Timer is SYNCHRONIZED!")
+                                        } else {
+                                            self.userSettings.restOfTime = -90
+                                            self.atan2Var = CGFloat(0)
+                                        }
+                                        
+                                        self.userSettings.backgroundTimeIntervalSynchronized = true
+                                        print("                  backgroundTimerIntervalSynchronized become TRUE")
+                                        
+                                        self.userSettings.timeInterval = 0
+                                        print("                  timeInterval is \(self.userSettings.timeInterval) now")
                                     }
                                     
-                                    self.userSettings.backgroundTimeIntervalSynchronized = true
-                                    print("                  backgroundTimerIntervalSynchronized become TRUE")
-                                    
-                                    self.userSettings.timeInterval = 0
-                                    print("                  timeInterval is \(self.userSettings.timeInterval) now")
-                                }
-                                
-                                if self.mainController.isTimerStarted {
-                                    
-                                    if (self.userSettings.restOfTime + 90) > 0 {
+                                    if self.mainController.isTimerStarted {
                                         
-                                        self.atan2Var -= 0.1 * (CGFloat.pi / 180)
-                                        self.userSettings.restOfTime -= 0.1
-                                    } else { // when timer is done!
-                                        
-                                        self.mainController.isTimerStarted = false
-                                        self.gestureAllowed = true
-                                        self.circleColor = Color.red.opacity(0.5)
+                                        if (self.userSettings.restOfTime + 90) > 0 {
+                                            
+                                            self.atan2Var -= 0.1 * (CGFloat.pi / 180)
+                                            self.userSettings.restOfTime -= 0.1
+                                        } else { // when timer is done!
+                                            
+                                            self.mainController.isTimerStarted = false
+                                            self.gestureAllowed = true
+                                            self.circleColor = Color.red.opacity(0.5)
+                                        }
                                     }
                                 }
                         }
@@ -138,64 +139,62 @@ struct ContentView: View {
                                     
                                 }
                                 
-//                                withAnimation(.spring(response: 0.57, dampingFraction: 10, blendDuration: 10)) {
-//                                    self.circleRadius -= CGFloat(UIScreen.main.bounds.width * 0.2 / 2)
-//                                }
-//                                self.animation(.spring(response: 0.57, dampingFraction: 10, blendDuration: 10))
                         }
-                            .gesture(
-                                    DragGesture().updating($dragAmount) { value, state, transaction in
-
-                                        if !self.mainController.isTimerStarted {
-                                            
-                                            self.gestureAllowed = true
-                                            
-                                            state = value.location
-
-                                            DispatchQueue.main.async {
-                                                self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
-
-                                                self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
-
-                                                self.userSettings.restOfTime = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
-                                            }
-                                        }
+                        .gesture(
+                            DragGesture().updating($dragAmount) { value, state, transaction in
+                                
+                                if !self.mainController.isTimerStarted {
+                                    
+                                    self.gestureAllowed = true
+                                    
+                                    state = value.location
+                                    
+                                    DispatchQueue.main.async {
+                                        self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
+                                        
+                                        self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
+                                        
+                                        self.userSettings.restOfTime = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
                                     }
-                                    .onChanged { (_) in
-                                        
-                                        if self.gestureAllowed {
-                                        
-                                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                                        }
-                                    }
-                                    .onEnded { (_) in
-                                        
-                                        if self.gestureAllowed {
-                                            
-                                            if self.userSettings.restOfTime >= 0 {
-                                                
-                                                self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) - (Int(self.userSettings.restOfTime) % 6))
-                                            } else {
-                                                
-                                                self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) + (Int(self.userSettings.restOfTime) % 6))
-                                                
-                                                if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 20 {
-                                                    
-                                                    self.userSettings.restOfTime -= 2
-                                                } else if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 40 {
-                                                    
-                                                    self.userSettings.restOfTime -= 4
-                                                }
-                                            }
-                                            
-                                            let degreeForConvert = (self.userSettings.restOfTime + 90)
-
-                                            self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
-                                            
-                                            self.showingAlert = true
-                                        }
                                 }
-                            ) // .gesture
+                            }
+                            .onChanged { (_) in
+                                
+                                if self.gestureAllowed {
+                                    
+                                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                }
+                            }
+                            .onEnded { (_) in
+                                
+                                if self.gestureAllowed {
+                                    
+                                    if self.userSettings.restOfTime >= 0 {
+                                        
+                                        self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) - (Int(self.userSettings.restOfTime) % 6))
+                                    } else {
+                                        
+                                        self.userSettings.restOfTime = Double(Int(self.userSettings.restOfTime) + (Int(self.userSettings.restOfTime) % 6))
+                                        
+                                        if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 20 {
+                                            
+                                            self.userSettings.restOfTime -= 2
+                                        } else if ((( Int(self.userSettings.restOfTime) + 90) * 10) % 60) == 40 {
+                                            
+                                            self.userSettings.restOfTime -= 4
+                                        }
+                                    }
+                                    
+                                    let degreeForConvert = (self.userSettings.restOfTime + 90)
+                                    
+                                    self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
+                                    
+                                    self.userHapticFeedback.hapticFeedbackWhenUserRotatesDial()
+                                    
+                                    self.showingAlert = true
+                                }
+                            }
+                        ) // .gesture
                             .alert(isPresented: self.$showingAlert, content: {
                                 
                                 if ((self.userSettings.restOfTime + 90) * 10) / 60 > 0 { // which is MINUTE
