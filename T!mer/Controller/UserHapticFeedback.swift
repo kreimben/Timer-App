@@ -51,7 +51,7 @@ class UserHapticFeedback {
 
     var player: CHHapticPatternPlayer?
 
-    func hapticFeedbackWhenUserRotatesDial() {
+    func hapticFeedbackPlay() {
 
         do {
             try player?.start(atTime: 0)

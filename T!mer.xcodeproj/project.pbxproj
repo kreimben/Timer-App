@@ -25,7 +25,6 @@
 		51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
-		51E8A0B8236DD6AC009520C7 /* SlashPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */; };
 		ACCA3D709C48FDBF32DA1554 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98321D10714CD76EDDD22457 /* Pods_T_mer.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashPathView.swift; sourceTree = "<group>"; };
 		77778D1CC728672FCFF5FBEB /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
 		98321D10714CD76EDDD22457 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,7 +127,6 @@
 			children = (
 				5188B05323701C8100A2258F /* MainView */,
 				5188B05423701C9700A2258F /* SettingView */,
-				51E8A0B7236DD6AC009520C7 /* SlashPathView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
 				51113A5E237939BF005309D7 /* PickerView.swift in Sources */,
-				51E8A0B8236DD6AC009520C7 /* SlashPathView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

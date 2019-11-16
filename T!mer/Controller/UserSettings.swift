@@ -13,31 +13,34 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "restOfTime", value: 0.0)
-    var restOfTime: Double {
+    @UserDefault(key: "timeInputBeforeConvert", value: 0.0)
+    var timeInputBeforeConvert: Double {
         willSet {
-            objectWillChange.send()
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
         }
     }
     
-    @UserDefault(key: "oldTime", value: Date())
-    var oldTime: Date {
+    @UserDefault(key: "notificationTime", value: Date())
+    var notificationTime: Date {
         willSet {
-            objectWillChange.send()
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
+        }
+    }
+    @UserDefault(key: "initialNotificationTime", value: 0.0)
+    var initialNotificationTime: Double {
+        willSet {
+            self.objectWillChange.send()
         }
     }
     
-    @UserDefault(key: "timeInterval", value: 0.0)
-    var timeInterval: Double {
+    @UserDefault(key: "isTimerStarted", value: false)
+    var isTimerStarted: Bool {
         willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    @UserDefault(key: "backgroundTimeIntervalSynchronized", value: true)
-    var backgroundTimeIntervalSynchronized: Bool {
-        willSet {
-            objectWillChange.send()
+            self.objectWillChange.send()
         }
     }
     

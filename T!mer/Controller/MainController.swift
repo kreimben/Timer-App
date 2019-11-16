@@ -12,7 +12,7 @@ class MainController: ObservableObject {
     
     //MARK:- AboutTimer
     
-    @Published var isTimerStarted = false
+//    @Published var isTimerStarted = false
     
     @ObservedObject var userTouchController = UserTouchController()
 
@@ -31,8 +31,6 @@ class MainController: ObservableObject {
 //        let category = UNNotificationCategory(identifier: "finishNotificationCategory", actions: [setTimerAgainUserNotificationActionButton, dismissUserNotificationActionButton], intentIdentifiers: [])
 //        
 //        center.setNotificationCategories([category])
-        
-        
         
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
@@ -54,7 +52,7 @@ class MainController: ObservableObject {
             print("------------Error occured in fixing UNNotificationSound.")
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (self.userSettings.restOfTime + 90) * 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime /*(self.userSettings.timeInputBeforeConvert + 90) * 10*/, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         
@@ -65,19 +63,6 @@ class MainController: ObservableObject {
         print("-------------UserNotifications is setting done!")
     }
     
-    
-    //MARK:- For scene delegate
-    
-    var newDate = Date()
-//    @Published var timeInterval = 0.0
-    
-    func whenEnterBackground() {
-        
-        print("-------------excute \"whenEnterBackgound()\"")
-        
-        self.userSettings.oldTime = Date.init()
-        print("            ㄴoldTime: \(self.userSettings.oldTime)")
-    }
     
     //MARK:- About Ads
     
