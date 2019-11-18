@@ -24,7 +24,7 @@ struct SettingPageView: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
         List {
-            Section(header: Text("About sound")) {
+            Section(header: Text("About sound"), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
                 
                 PickerView()
             }
