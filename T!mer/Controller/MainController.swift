@@ -25,13 +25,6 @@ class MainController: ObservableObject {
     
     func setNotificationWhenTimerStart() {
         
-//        let setTimerAgainUserNotificationActionButton = UNNotificationAction(identifier: "SET_TIMER_AGAIN", title: "Set T!mer again", options: .foreground)
-//        let dismissUserNotificationActionButton = UNNotificationAction(identifier: "DISMISS", title: "Dismiss", options: .foreground)
-//        
-//        let category = UNNotificationCategory(identifier: "finishNotificationCategory", actions: [setTimerAgainUserNotificationActionButton, dismissUserNotificationActionButton], intentIdentifiers: [])
-//        
-//        center.setNotificationCategories([category])
-        
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
         content.body = "Your T!mer is done!"
@@ -52,7 +45,7 @@ class MainController: ObservableObject {
             print("------------Error occured in fixing UNNotificationSound.")
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime /*(self.userSettings.timeInputBeforeConvert + 90) * 10*/, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         

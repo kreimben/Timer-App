@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Icon-1024 without background color" translatesAutoresizingMaskIntoConstraints="NO" id="dR0-4L-GGb">
-                                <rect key="frame" x="9.6666666666666572" y="407.66666666666674" width="394.66666666666674" height="394.33333333333326"/>
+                                <rect key="frame" x="57" y="287.66666666666669" width="300" height="300.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Nch-fC-N9z"/>
                                     <constraint firstAttribute="width" secondItem="dR0-4L-GGb" secondAttribute="height" multiplier="1:1" id="Ny3-l2-rG9"/>
@@ -24,24 +24,13 @@
                                     <constraint firstAttribute="width" secondItem="dR0-4L-GGb" secondAttribute="height" multiplier="1:1" id="z73-6l-YN7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T!mer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-pV-8mD">
-                                <rect key="frame" x="95.666666666666686" y="94" width="223" height="108"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="LcK-pV-8mD" secondAttribute="height" multiplier="223:108" id="NIK-yW-0Rw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="90"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dR0-4L-GGb" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="125:284" id="2aZ-pL-MAD"/>
                             <constraint firstItem="dR0-4L-GGb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mhi-Wj-5fK"/>
-                            <constraint firstItem="LcK-pV-8mD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="STb-ob-Kfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dR0-4L-GGb" secondAttribute="bottom" constant="60" id="UUd-ca-S0Q"/>
                             <constraint firstItem="dR0-4L-GGb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d1d-Dp-gWj"/>
-                            <constraint firstItem="LcK-pV-8mD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="zpy-21-eTU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

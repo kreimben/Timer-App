@@ -16,7 +16,6 @@ struct ContentView: View {
     
     @State var showingAlert = false
     
-    //    @State var isTimerStarted = false
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     var userHapticFeedback = UserHapticFeedback()
