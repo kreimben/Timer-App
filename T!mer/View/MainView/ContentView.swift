@@ -18,7 +18,7 @@ struct ContentView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-    var userHapticFeedback = UserHapticFeedback()
+    @State var userHapticFeedback = UserHapticFeedback()
     
     //MARK: For DragGesture
     
@@ -58,6 +58,8 @@ struct ContentView: View {
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
+                                
+                                self.userHapticFeedback = UserHapticFeedback()
                                 
                                 DispatchQueue.main.async {
                                     
