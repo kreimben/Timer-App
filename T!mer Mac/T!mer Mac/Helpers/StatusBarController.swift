@@ -23,7 +23,7 @@ class StatusBarController
         statusBarButton = statusItem.button!
         self.popover = popover
         
-        statusBarButton.image = NSImage(named: NSImage.Name("App Icon-1024 without background color"))
+        statusBarButton.image = NSImage(named: NSImage.Name("Main base frame"))
         statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
         statusBarButton.image?.isTemplate = true
         
