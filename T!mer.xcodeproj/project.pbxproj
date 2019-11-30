@@ -159,7 +159,8 @@
 				51307F792373440300791A97 /* Default Bell.MA4 */,
 				51307F7A2373440300791A97 /* Tower bell.MA4 */,
 			);
-			path = Sound;
+			name = Sound;
+			path = "../T!mer Mac/T!mer Mac/Helpers/Sound";
 			sourceTree = "<group>";
 		};
 		6A1D2889177B2E5398CF0223 /* Frameworks */ = {
