@@ -19,6 +19,11 @@
 		516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DC23925BEB00EAAC0E /* UserSettings.swift */; };
 		516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E423925C8800EAAC0E /* UserTouchCircle.swift */; };
 		516B71E82392CEEC00EAAC0E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E62392CEEC00EAAC0E /* PreferenceViewController.swift */; };
+		516B72012393A9B800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71FD2393A9B800EAAC0E /* Default Bell */; };
+		516B72022393A9B800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71FE2393A9B800EAAC0E /* Tower bell */; };
+		516B72032393A9B800EAAC0E /* Bell store door in Resources */ = {isa = PBXBuildFile; fileRef = 516B71FF2393A9B800EAAC0E /* Bell store door */; };
+		516B72042393A9B800EAAC0E /* Cookoo in Resources */ = {isa = PBXBuildFile; fileRef = 516B72002393A9B800EAAC0E /* Cookoo */; };
+		516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +40,17 @@
 		516B71D02392570D00EAAC0E /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		516B71DA23925B9400EAAC0E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		516B71DC23925BEB00EAAC0E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		516B71DE23925C1E00EAAC0E /* Bell store door.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door.MA4"; sourceTree = "<group>"; };
-		516B71DF23925C1E00EAAC0E /* Cookoo.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo.MA4; sourceTree = "<group>"; };
-		516B71E023925C1E00EAAC0E /* Default Bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell.MA4"; sourceTree = "<group>"; };
-		516B71E123925C1E00EAAC0E /* Tower bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell.MA4"; sourceTree = "<group>"; };
 		516B71E423925C8800EAAC0E /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		516B71E62392CEEC00EAAC0E /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		516B71EE2393A91700EAAC0E /* Bell store door.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bell store door.MA4"; path = "T!mer Mac/Helpers/Sound/Bell store door.MA4"; sourceTree = "<group>"; };
+		516B71EF2393A91700EAAC0E /* Cookoo.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cookoo.MA4; path = "T!mer Mac/Helpers/Sound/Cookoo.MA4"; sourceTree = "<group>"; };
+		516B71F02393A91700EAAC0E /* Default Bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Default Bell.MA4"; path = "T!mer Mac/Helpers/Sound/Default Bell.MA4"; sourceTree = "<group>"; };
+		516B71F12393A91700EAAC0E /* Tower bell.MA4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tower bell.MA4"; path = "T!mer Mac/Helpers/Sound/Tower bell.MA4"; sourceTree = "<group>"; };
+		516B71FD2393A9B800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
+		516B71FE2393A9B800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
+		516B71FF2393A9B800EAAC0E /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
+		516B72002393A9B800EAAC0E /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
+		516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../../../T!mer/Controller/UserHapticFeedback.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +86,9 @@
 				516B71B423924F6000EAAC0E /* AppDelegate.swift */,
 				516B71CD2392568000EAAC0E /* NSView(Controller) */,
 				516B71D323925B1B00EAAC0E /* Controller */,
+				516B71FC2393A9B800EAAC0E /* Sound */,
 				516B71E323925C7A00EAAC0E /* MainView */,
 				516B71D22392581B00EAAC0E /* Helpers */,
-				516B71E223925C1E00EAAC0E /* Sound */,
 				516B71B823924F6300EAAC0E /* Assets.xcassets */,
 				516B71C023924F6300EAAC0E /* Info.plist */,
 				516B71C123924F6300EAAC0E /* T_mer_Mac.entitlements */,
@@ -108,6 +118,7 @@
 		516B71D22392581B00EAAC0E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				516B71F22393A91700EAAC0E /* Sound */,
 				516B71CE239256F500EAAC0E /* StatusBarController.swift */,
 				516B71D02392570D00EAAC0E /* EventMonitor.swift */,
 			);
@@ -118,20 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				516B71DA23925B9400EAAC0E /* MainController.swift */,
+				516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */,
 				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		516B71E223925C1E00EAAC0E /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				516B71DE23925C1E00EAAC0E /* Bell store door.MA4 */,
-				516B71DF23925C1E00EAAC0E /* Cookoo.MA4 */,
-				516B71E023925C1E00EAAC0E /* Default Bell.MA4 */,
-				516B71E123925C1E00EAAC0E /* Tower bell.MA4 */,
-			);
-			path = Sound;
 			sourceTree = "<group>";
 		};
 		516B71E323925C7A00EAAC0E /* MainView */ = {
@@ -141,6 +142,29 @@
 				516B71E423925C8800EAAC0E /* UserTouchCircle.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		516B71F22393A91700EAAC0E /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				516B71EE2393A91700EAAC0E /* Bell store door.MA4 */,
+				516B71EF2393A91700EAAC0E /* Cookoo.MA4 */,
+				516B71F02393A91700EAAC0E /* Default Bell.MA4 */,
+				516B71F12393A91700EAAC0E /* Tower bell.MA4 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		516B71FC2393A9B800EAAC0E /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				516B71FD2393A9B800EAAC0E /* Default Bell */,
+				516B71FE2393A9B800EAAC0E /* Tower bell */,
+				516B71FF2393A9B800EAAC0E /* Bell store door */,
+				516B72002393A9B800EAAC0E /* Cookoo */,
+			);
+			name = Sound;
+			path = "../../T!mer/Sound";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +225,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516B72042393A9B800EAAC0E /* Cookoo in Resources */,
+				516B72012393A9B800EAAC0E /* Default Bell in Resources */,
+				516B72032393A9B800EAAC0E /* Bell store door in Resources */,
 				516B71BF23924F6300EAAC0E /* Main.storyboard in Resources */,
 				516B71BC23924F6300EAAC0E /* Preview Assets.xcassets in Resources */,
+				516B72022393A9B800EAAC0E /* Tower bell in Resources */,
 				516B71B923924F6300EAAC0E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +244,7 @@
 			files = (
 				516B71E82392CEEC00EAAC0E /* PreferenceViewController.swift in Sources */,
 				516B71CB2392565300EAAC0E /* MainViewController.swift in Sources */,
+				516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */,
 				516B71D12392570D00EAAC0E /* EventMonitor.swift in Sources */,
 				516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */,
 				516B71B723924F6000EAAC0E /* ContentView.swift in Sources */,

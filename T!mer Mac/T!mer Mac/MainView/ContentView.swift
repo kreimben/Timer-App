@@ -83,8 +83,9 @@ struct ContentView: View {
                     HStack {
                         
                         Button("Preferences...") {
-                            
-                            
+
+                            print("button pressed")
+                            PreferenceRepresentaion()
                         }.padding()
                         
                         Spacer()
@@ -93,10 +94,6 @@ struct ContentView: View {
                             
                             NSApplication.shared.terminate(self)
                         }.padding()
-                        
-//                        Text("If you want to change notification sound, please set the sound before staring timer.")
-//                            .padding()
-//                            .font(.system(size: 12))
                     }
                 }
                 

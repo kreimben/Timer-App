@@ -49,6 +49,7 @@ class MainController: ObservableObject {
         default:
             print("------------Error occured in fixing UNNotificationSound.")
         }
+        print("Notification Sound is set as a \(content.sound)\nSound Index is \(self.userSettings.soundIndex)")
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -56,8 +57,8 @@ class MainController: ObservableObject {
         
         
         center.add(request) { (error) in
-            print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
+            print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
         }
-        print("-------------UserNotifications is setting done!")
+        print("UserNotifications is setting done!")
     }
 }

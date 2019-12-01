@@ -8,7 +8,9 @@
 
 import Cocoa
 import SwiftUI
-import Combine
+import AppKit
+import AVKit
+import AVFoundation
 
 class PreferenceViewController: NSViewController {
     
@@ -41,6 +43,8 @@ extension PreferenceViewController {
             "Cookoo",
             "Tower bell"
         ])
+        
+        notificationSoundPopupButton.selectItem(at: userSettings.soundIndex)
     }
 }
 
@@ -50,5 +54,33 @@ extension PreferenceViewController {
         
         self.userSettings.soundIndex = sender.indexOfSelectedItem
         print("UserSettings's soundIndex: \(sender.indexOfSelectedItem)")
+        
+        guard let path = Bundle.main.path(forResource: "Cookoo", ofType: "MA4") else {
+            return print("error to set notification sound path.")
+        }
+        
+        do {
+            
+            let player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            player.play()
+        } catch {
+            print("\(error)")
+        }
+    }
+}
+
+struct PreferenceRepresentaion: NSViewControllerRepresentable {
+    
+    typealias NSViewControllerType = PreferenceViewController
+    
+    func makeNSViewController(context: NSViewControllerRepresentableContext<PreferenceRepresentaion>) -> NSViewControllerType {
+        
+        print("PreferenceRepresentaion Clicked")
+        return PreferenceViewController()
+    }
+
+    func updateNSViewController(_ preferenceViewController: NSViewControllerType, context: NSViewControllerRepresentableContext<PreferenceRepresentaion>) {
+
     }
 }
