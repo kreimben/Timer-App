@@ -22,11 +22,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
-                                            <connections>
-                                                <segue destination="U16-ds-gVc" kind="show" id="qSJ-gL-XEZ"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -70,72 +66,6 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
-        </scene>
-        <!--Preference View Controller-->
-        <scene sceneID="Xtl-yd-8YY">
-            <objects>
-                <viewController storyboardIdentifier="Preference" id="U16-ds-gVc" customClass="PreferenceViewController" customModule="T_mer_Mac" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="1jL-yJ-KQR">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RBT-Lh-wM5">
-                                <rect key="frame" x="127" y="237" width="196" height="48"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Preferences" id="lh1-BQ-CPI">
-                                    <font key="font" size="35" name="AvenirNext-Medium"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-F9-gwd">
-                                <rect key="frame" x="139" y="194" width="294" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Default Notification Sound" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VVf-ca-nVw" id="9aT-Z2-MQF">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <menu key="menu" id="8wO-u0-ETD">
-                                        <items>
-                                            <menuItem title="Default Notification Sound" state="on" id="VVf-ca-nVw"/>
-                                            <menuItem title="Item 2" id="EwL-gH-1km"/>
-                                            <menuItem title="Item 3" id="WTo-gI-1oo"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="settingNotificationSound:" target="U16-ds-gVc" id="Msb-5p-0U8"/>
-                                </connections>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBr-A1-Yp3">
-                                <rect key="frame" x="20" y="197" width="115" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Notification sound" id="XsM-yA-aeN">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLm-jd-lbD">
-                                <rect key="frame" x="22" y="136" width="410" height="53"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" alignment="left" title="If you want to change notification sound, please set the sound before starting timer" id="XYx-AC-HsA">
-                                    <font key="font" metaFont="label" size="11"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="RBT-Lh-wM5" firstAttribute="top" secondItem="1jL-yJ-KQR" secondAttribute="top" constant="15" id="YnB-1c-iQF"/>
-                            <constraint firstItem="RBT-Lh-wM5" firstAttribute="centerX" secondItem="1jL-yJ-KQR" secondAttribute="centerX" id="ofj-M1-qbn"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="notificationSoundPopupButton" destination="sOV-F9-gwd" id="9Ft-vE-gc1"/>
-                    </connections>
-                </viewController>
-                <customObject id="urL-aH-qe8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="547" y="302"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="8Ws-PV-qJT">

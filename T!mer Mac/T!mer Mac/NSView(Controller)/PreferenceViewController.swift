@@ -17,7 +17,7 @@ class PreferenceViewController: NSViewController {
     @ObservedObject var userSettings = UserSettings()
     
     @IBOutlet var notificationSoundPopupButton: NSPopUpButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -26,7 +26,9 @@ class PreferenceViewController: NSViewController {
         self.view.layer?.backgroundColor = NSColor(red: 0, green: 0.55, blue: 1, alpha: 0.8).cgColor
         
         self.forInitialization()
+        
     }
+    
     
 }
 
@@ -55,32 +57,31 @@ extension PreferenceViewController {
         self.userSettings.soundIndex = sender.indexOfSelectedItem
         print("UserSettings's soundIndex: \(sender.indexOfSelectedItem)")
         
-        guard let path = Bundle.main.path(forResource: "Cookoo", ofType: "MA4") else {
-            return print("error to set notification sound path.")
+        var path = String("")
+        
+        switch (self.userSettings.soundIndex) {
+        case 1:
+            path = Bundle.main.path(forResource: "Default Bell", ofType: nil)!
+        case 2:
+            path = Bundle.main.path(forResource: "Bell store door", ofType: nil)!
+        case 3:
+            path = Bundle.main.path(forResource: "Cookoo", ofType: nil)!
+        case 4:
+            path = Bundle.main.path(forResource: "Tower bell", ofType: nil)!
+        default:
+            print("default notification sound")
         }
+        
+        print(path)
         
         do {
             
             let player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             
             player.play()
+            print("Played!")
         } catch {
             print("\(error)")
         }
-    }
-}
-
-struct PreferenceRepresentaion: NSViewControllerRepresentable {
-    
-    typealias NSViewControllerType = PreferenceViewController
-    
-    func makeNSViewController(context: NSViewControllerRepresentableContext<PreferenceRepresentaion>) -> NSViewControllerType {
-        
-        print("PreferenceRepresentaion Clicked")
-        return PreferenceViewController()
-    }
-
-    func updateNSViewController(_ preferenceViewController: NSViewControllerType, context: NSViewControllerRepresentableContext<PreferenceRepresentaion>) {
-
     }
 }

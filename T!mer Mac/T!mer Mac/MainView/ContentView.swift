@@ -13,6 +13,8 @@ import UserNotifications
 
 struct ContentView: View {
     
+    @State var preferenceSheet: Bool = false
+    
     @State var timeDisplay: TimeInterval = 0
     
     @ObservedObject var userSettings = UserSettings()
@@ -82,11 +84,18 @@ struct ContentView: View {
                     
                     HStack {
                         
-                        Button("Preferences...") {
-
+                        Button(action: {
+                            
                             print("button pressed")
-                            PreferenceRepresentaion()
-                        }.padding()
+                            self.preferenceSheet = true
+                        }) {
+                            Text("Preferences...")
+                        }
+                        .padding()
+                        .sheet(isPresented: $preferenceSheet) {
+//                            Text("Hello World")
+                            PreferenceView()
+                        }
                         
                         Spacer()
                         
