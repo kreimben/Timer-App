@@ -10,6 +10,8 @@ import SwiftUI
 
 struct PreferenceView: View {
     
+    @ObservedObject var userSettings = UserSettings()
+    
     @State var statusBarTimeToggle: Bool = true
     @State var staturBarIconToggle: Bool = true
     
@@ -53,45 +55,42 @@ struct PreferenceView: View {
                     Text(self.sounds[$0]).tag($0)
                 }
             }
-            .padding([.leading, .trailing], 10)
+            .padding([.leading, .trailing], 15)
             
-            HStack {
-                Button(action: {
-                    
-                    print("Instagram button pressed")
-                }) {
-                    Image("instagram-logo")
-                        .resizable()
-                        .frame(width: 80, height: 55)
-                        .padding(.trailing, 30)
-                }.buttonStyle(PlainButtonStyle())
                 
-                Button(action: {
-                    
-                    print("Website button pressed")
-                }) {
-                    Text("Visit Kreimben.com")
-                }
+            Button(action: {
+                
+                print("Website button pressed")
+            }) {
+                Text("Visit Kreimben.com")
             }
+            .buttonStyle(LinkButtonStyle())
+            .padding(10)
             
             Button("Done") {
                 
-                self.userDefaults.set(self.selectedSound, forKey: "selectedSound")
-                print("\tStroing selected sound to UserDefaults at Done button.\n\tNumber(UserDefaults): \(self.userDefaults.integer(forKey: "selectedSound"))")
+                //MARK:- Text time display setting
                 
+                
+                //MARK:- Circle time display setting
+                
+                
+                //MARK:- Setting sound index
+                self.userSettings.soundIndex = self.selectedSound
+                print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
                 self.presentationMode.wrappedValue.dismiss()
             }
             .onAppear {
                 
-                self.selectedSound = self.userDefaults.integer(forKey: "selectedSound")
-                print("\tSetting selected sound from UserDefaults at onAppear of \"Done\" button\n\tNumber(selectedSound): \(self.selectedSound)")
+                self.selectedSound = self.userSettings.soundIndex
+                print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
             }
             
             
             
             
         }
-            .frame(width: 450, height: 280)
+            .frame(width: 450, height: 275)
     }
 }
 
