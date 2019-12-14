@@ -76,7 +76,6 @@ struct ContentView: View {
                                         
                                         self.userSettings.isTimerStarted = false
                                         self.circleColor = Color.red.opacity(0.5)
-//                                        self.userSettings.timeInputBeforeConvert = -90
                                     }
                                 }
                         }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct PreferenceView: View {
     
@@ -31,7 +32,7 @@ struct PreferenceView: View {
         VStack {
             Text("Preferences...")
                 .font(.custom("Avenir Next Medium", size: 35))
-                .padding(.top, 15)
+                .padding(.top, 13)
             
             VStack(alignment: .leading) {
                 
@@ -57,7 +58,16 @@ struct PreferenceView: View {
             }
             .padding([.leading, .trailing], 15)
             
-                
+            Text("If you want to change notification sound,")
+                .padding([.leading, .trailing], 15)
+                .font(.system(size: 11))
+                .foregroundColor(Color.gray)
+            Text("please set the sound before starting timer.")
+                .padding([.leading, .trailing], 15)
+                .font(.system(size: 11))
+                .foregroundColor(Color.gray)
+            
+            
             Button(action: {
                 
                 print("Website button pressed")
@@ -65,7 +75,7 @@ struct PreferenceView: View {
                 Text("Visit Kreimben.com")
             }
             .buttonStyle(LinkButtonStyle())
-            .padding(10)
+            .padding([.top], 8)
             
             Button("Done") {
                 
@@ -80,17 +90,15 @@ struct PreferenceView: View {
                 print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
                 self.presentationMode.wrappedValue.dismiss()
             }
+            .padding([.bottom], 8)
             .onAppear {
                 
                 self.selectedSound = self.userSettings.soundIndex
                 print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
             }
             
-            
-            
-            
         }
-            .frame(width: 450, height: 275)
+        .frame(width: 450, height: 275)
     }
 }
 

@@ -101,6 +101,8 @@ struct ContentView: View {
                         
                         Button("Quit") {
                             
+                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                            print("All of pending notification requests is removed.")
                             NSApplication.shared.terminate(self)
                         }.padding()
                     }
