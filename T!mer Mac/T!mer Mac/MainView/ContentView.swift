@@ -93,7 +93,6 @@ struct ContentView: View {
                         }
                         .padding()
                         .sheet(isPresented: $preferenceSheet) {
-//                            Text("Hello World")
                             PreferenceView()
                         }
                         

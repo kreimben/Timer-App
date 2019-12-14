@@ -18,10 +18,10 @@ class MainController: ObservableObject {
 
     let center = UNUserNotificationCenter.current()
     
-    let bicycleNotificationSound = UNNotificationSoundName("Default Bell.MA4")
-    let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door.MA4")
-    let cookooNotificationSound = UNNotificationSoundName("Cookoo.MA4")
-    let towerBellNotificationSound = UNNotificationSoundName("Tower bell.MA4")
+    let bicycleNotificationSound = UNNotificationSoundName("Default Bell")
+    let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door")
+    let cookooNotificationSound = UNNotificationSoundName("Cookoo")
+    let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
     
     func setNotificationWhenTimerStart() {
         
@@ -51,9 +51,9 @@ class MainController: ObservableObject {
         
         
         center.add(request) { (error) in
-            print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
+            print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
         }
-        print("-------------UserNotifications is setting done!")
+        print("UserNotifications is setting done!")
     }
     
     
