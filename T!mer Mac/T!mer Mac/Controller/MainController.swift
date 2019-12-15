@@ -38,19 +38,14 @@ class MainController: ObservableObject {
         switch self.userSettings.soundIndex {
         case 0:
             content.sound = UNNotificationSound.default
-            print("default sound")
         case 1:
             content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
-            print("bicycle sound")
         case 2:
             content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
-            print("bell sound")
         case 3:
             content.sound = UNNotificationSound(named: self.cookooNotificationSound)
-            print("cookoo sound")
         case 4:
             content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
-            print("tower bell sound")
         default:
             print("------------Error occured in fixing UNNotificationSound.")
         }
