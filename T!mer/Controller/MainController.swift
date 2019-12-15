@@ -30,20 +30,22 @@ class MainController: ObservableObject {
         content.body = "Your T!mer is done!"
         content.categoryIdentifier = "finishNotificationCategory"
         
-        switch self.userSettings.soundIndex {
-        case 0:
-            content.sound = UNNotificationSound.default
-        case 1:
-            content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
-        case 2:
-            content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
-        case 3:
-            content.sound = UNNotificationSound(named: self.cookooNotificationSound)
-        case 4:
-            content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
-        default:
-            print("------------Error occured in fixing UNNotificationSound.")
-        }
+//        switch self.userSettings.soundIndex {
+//        case 0:
+//            content.sound = UNNotificationSound.default
+//        case 1:
+//            content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
+//        case 2:
+//            content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
+//        case 3:
+//            content.sound = UNNotificationSound(named: self.cookooNotificationSound)
+//        case 4:
+//            content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
+//        default:
+//            print("------------Error occured in fixing UNNotificationSound.")
+//        }
+        
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("exodusHoney.ma4"))
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
