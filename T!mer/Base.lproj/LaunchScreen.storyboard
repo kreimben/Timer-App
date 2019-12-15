@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,21 +16,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Icon-1024 without background color" translatesAutoresizingMaskIntoConstraints="NO" id="dR0-4L-GGb">
-                                <rect key="frame" x="57" y="287.66666666666669" width="300" height="300.00000000000006"/>
+                                <rect key="frame" x="32" y="273" width="350" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Nch-fC-N9z"/>
-                                    <constraint firstAttribute="width" secondItem="dR0-4L-GGb" secondAttribute="height" multiplier="1:1" id="Ny3-l2-rG9"/>
-                                    <constraint firstAttribute="height" constant="300" id="YKI-Mb-0CC"/>
-                                    <constraint firstAttribute="width" secondItem="dR0-4L-GGb" secondAttribute="height" multiplier="1:1" id="z73-6l-YN7"/>
+                                    <constraint firstAttribute="width" constant="350" id="Jxq-qQ-plv"/>
+                                    <constraint firstAttribute="height" constant="350" id="VCW-73-jtM"/>
+                                    <constraint firstAttribute="width" secondItem="dR0-4L-GGb" secondAttribute="height" multiplier="1:1" id="rCM-h4-A3t"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dR0-4L-GGb" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="125:284" id="2aZ-pL-MAD"/>
-                            <constraint firstItem="dR0-4L-GGb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mhi-Wj-5fK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dR0-4L-GGb" secondAttribute="bottom" constant="60" id="UUd-ca-S0Q"/>
-                            <constraint firstItem="dR0-4L-GGb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d1d-Dp-gWj"/>
+                            <constraint firstItem="dR0-4L-GGb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Wnd-aT-9Pa"/>
+                            <constraint firstItem="dR0-4L-GGb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="efE-NW-uTF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
