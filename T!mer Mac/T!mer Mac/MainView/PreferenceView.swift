@@ -51,26 +51,30 @@ struct PreferenceView: View {
                 }
             }
             
-            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
-                ForEach(0 ..< self.sounds.count, id: \.self) {
-                    Text(self.sounds[$0]).tag($0)
-                }
-            }
-            .padding([.leading, .trailing], 15)
-            
-            Text("If you want to change notification sound,")
-                .padding([.leading, .trailing], 15)
-                .font(.system(size: 11))
-                .foregroundColor(Color.gray)
-            Text("please set the sound before starting timer.")
-                .padding([.leading, .trailing], 15)
-                .font(.system(size: 11))
-                .foregroundColor(Color.gray)
+//            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
+//                ForEach(0 ..< self.sounds.count, id: \.self) {
+//                    Text(self.sounds[$0]).tag($0)
+//                }
+//            }
+//            .padding([.leading, .trailing], 15)
+//
+//            Text("If you want to change notification sound,")
+//                .padding([.leading, .trailing], 15)
+//                .font(.system(size: 11))
+//                .foregroundColor(Color.gray)
+//            Text("please set the sound before starting timer.")
+//                .padding([.leading, .trailing], 15)
+//                .font(.system(size: 11))
+//                .foregroundColor(Color.gray)
             
             
             Button(action: {
                 
                 print("Website button pressed")
+                
+                if let url = URL(string: "http://www.kreimben.com") {
+                    NSWorkspace.shared.open(url)
+                }
             }) {
                 Text("Visit Kreimben.com")
             }
