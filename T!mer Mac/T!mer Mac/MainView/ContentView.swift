@@ -219,7 +219,7 @@ struct ContentView: View {
                                 return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
                             }
                         })
-                }
+                }.padding(.trailing, 7)
             }
         }
         .frame(width: 500, height: 300)

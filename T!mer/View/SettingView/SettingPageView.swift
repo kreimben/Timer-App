@@ -42,21 +42,21 @@ struct SettingPageView: View {
                 
             }
             
-//            Section(header: Text("General")) {
-//                HStack {
-//                    Text("Version")
-//                    Spacer()
-//                    Text("1.0.0")
-//                }
-//
-//                Button(action: {
-//                    self.showingModal = true
-//                }) {
-//                    Text("About Erlkoenig Soft")
-//                }.sheet(isPresented: $showingModal) {
-//                    SafariView(url: URL(string: "http://www.erlkoenig-soft.com"))
-//                }
-//            }
+            Section(header: Text("General")) {
+                HStack {
+                    Text("Version")
+                    Spacer()
+                    Text("1.0.0")
+                }
+
+                Button(action: {
+                    self.showingModal = true
+                }) {
+                    Text("Visit Kreimben.com")
+                }.sheet(isPresented: $showingModal) {
+                    SafariView(url: URL(string: "http://www.kreimben.com"))
+                }
+            }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
         .listStyle(GroupedListStyle())
