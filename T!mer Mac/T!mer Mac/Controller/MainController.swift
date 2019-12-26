@@ -17,7 +17,7 @@ class MainController: ObservableObject {
     @ObservedObject var userSettings = UserSettings()
     
     //MARK:- AboutTimer
-    
+    @Published var timeDisplay: TimeInterval = 0
     
     @ObservedObject var userTouchController = UserTouchController()
 

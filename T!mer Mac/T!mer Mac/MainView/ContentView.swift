@@ -15,9 +15,8 @@ struct ContentView: View {
     
     @State var preferenceSheet: Bool = false
     
-    @State var timeDisplay: TimeInterval = 0
-    
     @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var statusBarController = StatusBarController()
     
     @EnvironmentObject var mainController: MainController
     
@@ -55,7 +54,7 @@ struct ContentView: View {
                             .foregroundColor(Color.blue.opacity(0.8))
                             .cornerRadius(30)
                         
-                        Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
+                        Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
                             .font(.system(size: 75))
                             .font(.headline)
                             .foregroundColor(Color.white)
@@ -63,12 +62,13 @@ struct ContentView: View {
                                 
                                 DispatchQueue.main.async {
                                     
+                                    // About TIMER!
                                     if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
                                         
                                         if Date().distance(to: self.userSettings.notificationTime) > 0 {
                                             
-                                            self.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
-                                            self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
+                                            self.mainController.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
+                                            self.atan2Var = CGFloat((self.mainController.timeDisplay / 10) * (Double.pi / 180))
                                         }
                                         
                                         
@@ -76,8 +76,20 @@ struct ContentView: View {
                                         
                                         self.userSettings.isTimerStarted = false
                                         self.circleColor = Color.red.opacity(0.5)
-                                        //                                        self.userSettings.timeInputBeforeConvert = -90
                                     }
+                                    
+                                    //MARK:- About StatusBar! (String Time / onReceive)
+                                    if self.userSettings.displayStringTime && self.userSettings.isTimerStarted {
+
+                                        self.statusBarController.statusBarButton.title = ""
+
+                                        self.statusBarController.statusBarButton.title = String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60)
+                                    } else { // timer is off or not let display string time on preferences menu...
+
+                                        self.statusBarController.statusBarButton.title = ""
+                                        self.statusBarController.statusBarButton.title = "T!mer"
+                                    }
+                                    
                                 }
                         }
                     }
@@ -105,6 +117,12 @@ struct ContentView: View {
                             NSApplication.shared.terminate(self)
                         }.padding()
                     }
+                    
+//                    Button("Change Title") {
+//
+//                        let statusBar = NSStatusBar.init()
+//                        let statusBarItem = NSStatusItem()
+//                    }
                 }
                 
                 ZStack(alignment: .center) { //MARK:- Circle Timer
@@ -219,7 +237,7 @@ struct ContentView: View {
                                 return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
                             }
                         })
-                }.padding(.trailing, 7)
+                }.padding(.trailing, 6)
             }
         }
         .frame(width: 500, height: 300)

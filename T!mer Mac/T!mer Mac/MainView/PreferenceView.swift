@@ -8,13 +8,12 @@
 
 import SwiftUI
 import UserNotifications
+import AppKit
 
 struct PreferenceView: View {
     
     @ObservedObject var userSettings = UserSettings()
-    
-    @State var statusBarTimeToggle: Bool = true
-    @State var staturBarIconToggle: Bool = true
+    @EnvironmentObject var mainController: MainController
     
     var userDefaults = UserDefaults()
     @State var selectedSound = 0
@@ -42,11 +41,11 @@ struct PreferenceView: View {
                     .foregroundColor(Color.gray)
                     .padding(.top, 10)
                 
-                Toggle(isOn: $statusBarTimeToggle) {
+                Toggle(isOn: self.$userSettings.displayStringTime) {
                     Text("Display remain time")
                 }
                 
-                Toggle(isOn: $staturBarIconToggle) {
+                Toggle(isOn: self.$userSettings.displayVisualTime) {
                     Text("Display visualized time")
                 }
             }
@@ -83,18 +82,12 @@ struct PreferenceView: View {
             
             Button("Done") {
                 
-                //MARK:- Text time display setting
-                
-                
-                //MARK:- Circle time display setting
-                
-                
                 //MARK:- Setting sound index
                 self.userSettings.soundIndex = self.selectedSound
                 print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
                 self.presentationMode.wrappedValue.dismiss()
             }
-            .padding([.bottom], 8)
+            .padding(.bottom, 8)
             .onAppear {
                 
                 self.selectedSound = self.userSettings.soundIndex

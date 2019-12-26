@@ -13,25 +13,23 @@ import UserNotifications
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    let statusButton = NSStatusBarButton()
     let popover = NSPopover()
     
-    var statusBar: StatusBarController?
-    
     let mainController = MainController()
-    
+
     var window: NSWindow!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
+        
         let contentView = ContentView()
 
         popover.contentViewController = MainViewController()
         popover.contentSize = NSSize(width: 500, height: 300)
         popover.contentViewController?.view = NSHostingView(rootView: contentView.environmentObject(mainController))
         
-        statusBar = StatusBarController.init(popover)
+        StatusBarController.popover = self.popover
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
@@ -41,6 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print("UserNotifications request authorization: \(error.debugDescription)")
             }
         }
+        
     }
     
 
