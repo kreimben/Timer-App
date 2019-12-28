@@ -52,22 +52,8 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "isUserPurchased", value: false)
-    var isUserPurchased: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
     @UserDefault(key: "displayStringTime", value: true)
     var displayStringTime: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    @UserDefault(key: "displayVisualTime", value: true)
-    var displayVisualTime: Bool {
         willSet {
             objectWillChange.send()
         }

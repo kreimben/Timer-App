@@ -44,10 +44,6 @@ struct PreferenceView: View {
                 Toggle(isOn: self.$userSettings.displayStringTime) {
                     Text("Display remain time")
                 }
-                
-                Toggle(isOn: self.$userSettings.displayVisualTime) {
-                    Text("Display visualized time")
-                }
             }
             
 //            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
