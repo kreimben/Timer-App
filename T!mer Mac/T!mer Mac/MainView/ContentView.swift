@@ -117,12 +117,6 @@ struct ContentView: View {
                             NSApplication.shared.terminate(self)
                         }.padding()
                     }
-                    
-//                    Button("Change Title") {
-//
-//                        let statusBar = NSStatusBar.init()
-//                        let statusBarItem = NSStatusItem()
-//                    }
                 }
                 
                 ZStack(alignment: .center) { //MARK:- Circle Timer

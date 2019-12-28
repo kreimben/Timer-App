@@ -20,7 +20,6 @@
 		516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DC23925BEB00EAAC0E /* UserSettings.swift */; };
 		516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E423925C8800EAAC0E /* UserTouchCircle.swift */; };
 		516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */; };
-		51F3CF8223B642980075831E /* IconImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F3CF8123B642980075831E /* IconImageGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 		51F383BD23A5F629005CA777 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
 		51F383BE23A5F629005CA777 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
 		51F383C023A5F629005CA777 /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
-		51F3CF8123B642980075831E /* IconImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +121,6 @@
 				516B71DA23925B9400EAAC0E /* MainController.swift */,
 				516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */,
 				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
-				51F3CF8123B642980075831E /* IconImageGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				516B71CB2392565300EAAC0E /* MainViewController.swift in Sources */,
-				51F3CF8223B642980075831E /* IconImageGenerator.swift in Sources */,
 				516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */,
 				516B71D12392570D00EAAC0E /* EventMonitor.swift in Sources */,
 				5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */,
