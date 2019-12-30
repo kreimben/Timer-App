@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 import Combine
-
 import UserNotifications
 
 class MainController: ObservableObject {

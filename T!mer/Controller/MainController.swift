@@ -12,8 +12,6 @@ class MainController: ObservableObject {
     
     //MARK:- AboutTimer
     
-//    @Published var isTimerStarted = false
-    
     @ObservedObject var userTouchController = UserTouchController()
 
     let center = UNUserNotificationCenter.current()
@@ -54,33 +52,5 @@ class MainController: ObservableObject {
             print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
         }
         print("UserNotifications is setting done!")
-    }
-    
-    
-    //MARK:- About Ads
-    
-    @State var interstitial: GADInterstitial!
-    
-    func showInterstitialAds() {
-        
-        //        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        //
-        //        let request = GADRequest()
-        //        self.interstitial.load(request)
-        //
-        //        if self.isUserPurchased {
-        //
-        //            return
-        //        } else {
-        //
-        //            if self.interstitial.isReady {
-        //
-        //                guard let root = UIApplication.shared.windows.first?.rootViewController else { return }
-        //                self.interstitial.present(fromRootViewController: root)
-        //
-        //            } else {
-        //                print("Interstitial advertisment is not ready.")
-        //            }
-        //        }
     }
 }

@@ -5,10 +5,14 @@
 //  Created by Aksidion Kreimben on 12/4/19.
 //  Copyright © 2019 Aksidion Kreimben. All rights reserved.
 //
+//UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+//print("All of pending notification requests is removed.")
+//NSApplication.shared.terminate(self)
 
 import SwiftUI
 import UserNotifications
 import AppKit
+import Combine
 
 struct PreferenceView: View {
     
@@ -26,6 +30,8 @@ struct PreferenceView: View {
     ]
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var quitAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -46,21 +52,21 @@ struct PreferenceView: View {
                 }
             }
             
-//            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
-//                ForEach(0 ..< self.sounds.count, id: \.self) {
-//                    Text(self.sounds[$0]).tag($0)
-//                }
-//            }
-//            .padding([.leading, .trailing], 15)
-//
-//            Text("If you want to change notification sound,")
-//                .padding([.leading, .trailing], 15)
-//                .font(.system(size: 11))
-//                .foregroundColor(Color.gray)
-//            Text("please set the sound before starting timer.")
-//                .padding([.leading, .trailing], 15)
-//                .font(.system(size: 11))
-//                .foregroundColor(Color.gray)
+            //            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
+            //                ForEach(0 ..< self.sounds.count, id: \.self) {
+            //                    Text(self.sounds[$0]).tag($0)
+            //                }
+            //            }
+            //            .padding([.leading, .trailing], 15)
+            //
+            //            Text("If you want to change notification sound,")
+            //                .padding([.leading, .trailing], 15)
+            //                .font(.system(size: 11))
+            //                .foregroundColor(Color.gray)
+            //            Text("please set the sound before starting timer.")
+            //                .padding([.leading, .trailing], 15)
+            //                .font(.system(size: 11))
+            //                .foregroundColor(Color.gray)
             
             
             Button(action: {
@@ -83,7 +89,7 @@ struct PreferenceView: View {
                 print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
                 self.presentationMode.wrappedValue.dismiss()
             }
-            .padding(.bottom, 8)
+            .padding()
             .onAppear {
                 
                 self.selectedSound = self.userSettings.soundIndex

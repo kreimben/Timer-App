@@ -12,6 +12,12 @@ import Combine
 
 final class UserSettings: ObservableObject {
     
+    @Published var isTerminate: Bool = false {
+        willSet {
+            print(newValue)
+        }
+    }
+    
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     @UserDefault(key: "soundIndex", value: 0) // Defining firstly

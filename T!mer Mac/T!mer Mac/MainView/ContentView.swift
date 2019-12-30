@@ -60,36 +60,32 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
                                 
-                                DispatchQueue.main.async {
+                                //MARK:- About TIMER!
+                                if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
                                     
-                                    // About TIMER!
-                                    if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
+                                    if Date().distance(to: self.userSettings.notificationTime) > 0 {
                                         
-                                        if Date().distance(to: self.userSettings.notificationTime) > 0 {
-                                            
-                                            self.mainController.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
-                                            self.atan2Var = CGFloat((self.mainController.timeDisplay / 10) * (Double.pi / 180))
-                                        }
-                                        
-                                        
-                                    } else {
-                                        
-                                        self.userSettings.isTimerStarted = false
-                                        self.circleColor = Color.red.opacity(0.5)
+                                        self.mainController.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
+                                        self.atan2Var = CGFloat((self.mainController.timeDisplay / 10) * (Double.pi / 180))
                                     }
                                     
-                                    //MARK:- About StatusBar! (String Time / onReceive)
-                                    if self.userSettings.displayStringTime && self.userSettings.isTimerStarted {
-
-                                        self.statusBarController.statusBarButton.title = ""
-
-                                        self.statusBarController.statusBarButton.title = String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60)
-                                    } else { // timer is off or not let display string time on preferences menu...
-
-                                        self.statusBarController.statusBarButton.title = ""
-                                        self.statusBarController.statusBarButton.title = "T!mer"
-                                    }
                                     
+                                } else {
+                                    
+                                    self.userSettings.isTimerStarted = false
+                                    self.circleColor = Color.red.opacity(0.5)
+                                }
+                                
+                                //MARK:- About StatusBar! (String Time / onReceive)
+                                if self.userSettings.displayStringTime && self.userSettings.isTimerStarted {
+                                    
+                                    self.statusBarController.statusBarButton.title = ""
+                                    
+                                    self.statusBarController.statusBarButton.title = String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60)
+                                } else { // timer is off or not let display string time on preferences menu...
+                                    
+                                    self.statusBarController.statusBarButton.title = ""
+                                    self.statusBarController.statusBarButton.title = "T!mer"
                                 }
                         }
                     }
@@ -107,15 +103,6 @@ struct ContentView: View {
                         .sheet(isPresented: $preferenceSheet) {
                             PreferenceView()
                         }
-                        
-                        Spacer()
-                        
-                        Button("Quit") {
-                            
-                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                            print("All of pending notification requests is removed.")
-                            NSApplication.shared.terminate(self)
-                        }.padding()
                     }
                 }
                 
