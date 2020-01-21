@@ -5,7 +5,6 @@ to-do list
 - [x] 아이패드 해상도 대응하기
 - [x] 버그 있는지 더 살펴보기
 - [x] 광고
-인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 - [x] 백그라운드에서도 시간이 가도록 처리 => 완전히 처리 완료!!!
 - [x] launchscreen 만들기 (되도록 애니메이션)
 - [x] check notification sound
@@ -14,6 +13,7 @@ to-do list
 - [x] 중간에 onLongPressGesture 과정 할때 작아지고 진동 일으키는 애니메이션 완성하기 => 진동은 완성, shrink animation은 글쎄?
 - [x] 각도가 변할 때 진동 울리는것 포기! => 너무 느려서 포기!
 - [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
+- [ ] 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 
 google admob Apple ID
     Unique ID : ca-app-pub-4942689053880729~6950693605
