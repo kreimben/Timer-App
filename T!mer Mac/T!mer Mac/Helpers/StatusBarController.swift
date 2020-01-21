@@ -1,5 +1,6 @@
 import AppKit
 import SwiftUI
+import UserNotifications
 
 class StatusBarController: ObservableObject {
     private var statusBar: NSStatusBar
@@ -29,33 +30,60 @@ class StatusBarController: ObservableObject {
     
     @objc func togglePopover(sender: AnyObject) {
         
-        if(StatusBarController.popover.isShown) {
-            
+        switch (NSApp.currentEvent!.type) {
+        case .leftMouseUp:
+            if(StatusBarController.popover.isShown) {
+
             hidePopover(sender)
-        }
-        else {
-            
+            }
+            else {
+
             showPopover(sender)
+            }
+            
+        default:
+            
+            let quitAlert = NSAlert()
+            quitAlert.messageText = "Quit"
+            quitAlert.informativeText = "Do you want to quit this app?"
+
+            quitAlert.addButton(withTitle: "Quit")
+            quitAlert.buttons[0].target = self
+            quitAlert.buttons[0].action = #selector(quitApp)
+
+            quitAlert.addButton(withTitle: "Cancel")
+            quitAlert.buttons[1].target = self
+
+            quitAlert.showsSuppressionButton = true
+
+            quitAlert.runModal()
         }
     }
-
+    
     func showPopover(_ sender: AnyObject) {
         
         StatusBarController.popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
         eventMonitor?.start()
     }
-
+    
     func hidePopover(_ sender: AnyObject) {
         
         StatusBarController.popover.performClose(sender)
         eventMonitor?.stop()
     }
-
+    
     func mouseEventHandler(_ event: NSEvent?) {
         
         if(StatusBarController.popover.isShown) {
             
             hidePopover(event!)
         }
+    }
+    
+    @objc func quitApp() {
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        print("All of pending notification requests is removed while app is quitted.")
+        NSApplication.shared.terminate(self)
     }
 }
