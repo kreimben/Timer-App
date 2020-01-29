@@ -21,15 +21,31 @@
 		517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517F6229234E32A100A05205 /* Preview Assets.xcassets */; };
 		517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F622B234E32A100A05205 /* LaunchScreen.storyboard */; };
 		5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180DD97234E419D0074AECC /* SettingPageView.swift */; };
+		5183F13D23E16CF0003C2095 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
-		ACCA3D709C48FDBF32DA1554 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98321D10714CD76EDDD22457 /* Pods_T_mer.framework */; };
+		66AC978320917BB4391FED43 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5183F13E23E16CF0003C2095 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5183F13D23E16CF0003C2095 /* BuildFile in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
+		3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
@@ -52,8 +68,7 @@
 		51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		77778D1CC728672FCFF5FBEB /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
-		98321D10714CD76EDDD22457 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA3D709C48FDBF32DA1554 /* Pods_T_mer.framework in Frameworks */,
+				66AC978320917BB4391FED43 /* Pods_T_mer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +111,7 @@
 				517F621F234E329F00A05205 /* T!mer */,
 				517F621E234E329F00A05205 /* Products */,
 				9703E6DB9B95217C7A8B3E7F /* Pods */,
-				6A1D2889177B2E5398CF0223 /* Frameworks */,
+				8B639722B9B9195751ED024E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,10 +177,10 @@
 			path = SettingView;
 			sourceTree = "<group>";
 		};
-		6A1D2889177B2E5398CF0223 /* Frameworks */ = {
+		8B639722B9B9195751ED024E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98321D10714CD76EDDD22457 /* Pods_T_mer.framework */,
+				3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,8 +188,8 @@
 		9703E6DB9B95217C7A8B3E7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */,
-				77778D1CC728672FCFF5FBEB /* Pods-T!mer.release.xcconfig */,
+				B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */,
+				216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -186,19 +201,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517F6231234E32A100A05205 /* Build configuration list for PBXNativeTarget "T!mer" */;
 			buildPhases = (
-				43C611B5EC20A3C33B143A19 /* [CP] Check Pods Manifest.lock */,
+				E9F549E379F9619BD31A83FE /* [CP] Check Pods Manifest.lock */,
 				517F6219234E329F00A05205 /* Sources */,
 				517F621A234E329F00A05205 /* Frameworks */,
 				517F621B234E329F00A05205 /* Resources */,
-				32E865A82EA766B092C2D6D2 /* [CP] Embed Pods Frameworks */,
+				5183F13E23E16CF0003C2095 /* Embed Frameworks */,
+				6454E400643CA8634C49B785 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "T!mer";
-			packageProductDependencies = (
-			);
 			productName = "T!mer";
 			productReference = 517F621D234E329F00A05205 /* T!mer.app */;
 			productType = "com.apple.product-type.application";
@@ -254,7 +268,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32E865A82EA766B092C2D6D2 /* [CP] Embed Pods Frameworks */ = {
+		6454E400643CA8634C49B785 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,7 +285,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-T!mer/Pods-T!mer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		43C611B5EC20A3C33B143A19 /* [CP] Check Pods Manifest.lock */ = {
+		E9F549E379F9619BD31A83FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,7 +458,7 @@
 		};
 		517F6232234E32A100A05205 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FD93FB3075AD8509CBD2C62 /* Pods-T!mer.debug.xcconfig */;
+			baseConfigurationReference = B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
@@ -468,7 +482,7 @@
 		};
 		517F6233234E32A100A05205 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77778D1CC728672FCFF5FBEB /* Pods-T!mer.release.xcconfig */;
+			baseConfigurationReference = 216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
