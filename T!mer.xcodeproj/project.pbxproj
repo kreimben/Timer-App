@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51113A5E237939BF005309D7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* PickerView.swift */; };
+		513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
+		513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -21,12 +23,10 @@
 		517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517F6229234E32A100A05205 /* Preview Assets.xcassets */; };
 		517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F622B234E32A100A05205 /* LaunchScreen.storyboard */; };
 		5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180DD97234E419D0074AECC /* SettingPageView.swift */; };
-		5183F13D23E16CF0003C2095 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
-		66AC978320917BB4391FED43 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5183F13D23E16CF0003C2095 /* BuildFile in Embed Frameworks */,
+				513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +48,8 @@
 		3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
+		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66AC978320917BB4391FED43 /* Pods_T_mer.framework in Frameworks */,
+				513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,8 @@
 		8B639722B9B9195751ED024E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				513EF2FD23E16E1C0013BC9F /* nanopb.framework */,
+				513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */,
 				3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */,
 			);
 			name = Frameworks;
@@ -460,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
