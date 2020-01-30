@@ -469,7 +469,7 @@
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
-				DEVELOPMENT_TEAM = 8WAQAQ3Z29;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "T!mer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -477,7 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +494,7 @@
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
-				DEVELOPMENT_TEAM = 8WAQAQ3Z29;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "T!mer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -502,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Kreimben.T-mer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
