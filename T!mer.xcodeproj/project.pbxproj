@@ -85,14 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		51611C6623658FD800441AD3 /* Controller */ = {
+		51611C6623658FD800441AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				51E829B1237ABF89002EDEE1 /* MainController.swift */,
 				51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
 			);
-			path = Controller;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		516B71F32393A9A800EAAC0E /* Sound */ = {
@@ -131,7 +131,7 @@
 				5136238A237AA1D300744BDD /* T!mer.entitlements */,
 				517F6220234E329F00A05205 /* AppDelegate.swift */,
 				517F6222234E329F00A05205 /* SceneDelegate.swift */,
-				51611C6623658FD800441AD3 /* Controller */,
+				51611C6623658FD800441AD3 /* Models */,
 				5180DD99234E41A20074AECC /* View */,
 				516B71F32393A9A800EAAC0E /* Sound */,
 				517F6226234E32A100A05205 /* Assets.xcassets */,
@@ -468,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -477,6 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -493,6 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -502,6 +505,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
