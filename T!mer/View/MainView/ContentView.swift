@@ -2,9 +2,9 @@ import SwiftUI
 import Combine
 import UIKit
 import CoreHaptics
-import GoogleMobileAds
 import Dispatch
 
+import GoogleMobileAds
 
 struct ContentView: View {
     

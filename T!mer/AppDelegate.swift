@@ -1,12 +1,6 @@
-//
-//  AppDelegate.swift
-//  T!mer
-//
-//  Created by Aksidion Kreimben on 10/10/19.
-//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
-//
-
 import UIKit
+import StoreKit
+
 import GoogleMobileAds
 
 @UIApplicationMain
@@ -62,3 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
+//
+//  AppDelegate.swift
+//  T!mer
+//
+//  Created by Aksidion Kreimben on 10/10/19.
+//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
+//

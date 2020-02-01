@@ -1,9 +1,8 @@
 import SwiftUI
 import Combine
+import UserNotifications
 
 import GoogleMobileAds
-
-import UserNotifications
 
 class MainController: ObservableObject {
     
