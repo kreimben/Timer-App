@@ -16,21 +16,10 @@
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
 - [ ] 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 
-google admob Apple ID
-    Unique ID : ca-app-pub-4942689053880729~6950693605
+## google admob Apple ID
+Unique ID : ca-app-pub-4942689053880729~6950693605
     
-google admob Apple Test ID
-    banner ads : ca-app-pub-3940256099942544/2934735716
-    interstial ads : ca-app-pub-3940256099942544/4411468910
-
-googld admob Android ID
-    ca-app-pub-4942689053880729~6195196896
-
-
-Debug Simulator
-
-## How to implement background timer sync
-1. 타이머 설정시 initialNotificationTime을 설정(고정값)
-2. Notification 시간은 Date() + initialNotificationTime => 알림 시간
-3. timeInterval = (notificationTime) - (Date()) => restOfTime by asynchronous
+## google admob Apple **Test** ID
+banner ads : ca-app-pub-3940256099942544/2934735716
+interstial ads : ca-app-pub-3940256099942544/4411468910
 
