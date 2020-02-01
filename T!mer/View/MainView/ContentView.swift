@@ -126,6 +126,17 @@ struct ContentView: View {
                                     print("isTimerStarted gonna FALSE")
                                     
                                     UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
+                                    
+                                    self.userHapticFeedback.hapticFeedbackPlay()
+                                    
+                                    self.userSettings.notificationTime = Date().addingTimeInterval(3600)
+                                    
+                                    self.mainController.setNotificationWhenTimerStart(timeInterval: 3600)
+                                    self.userSettings.isTimerStarted = true
+                                    
+                                    self.gestureAllowed = false
+                                    self.circleColor = Color.red.opacity(1.0)
                                 }
                         }
                         .gesture(
@@ -186,7 +197,7 @@ struct ContentView: View {
                                         
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
                                         
-                                        self.mainController.setNotificationWhenTimerStart()
+                                        self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
                                         self.userSettings.isTimerStarted = true
                                         
                                         self.gestureAllowed = false

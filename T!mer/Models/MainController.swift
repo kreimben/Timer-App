@@ -1,8 +1,7 @@
-import Foundation
 import SwiftUI
-import UIKit
-import GoogleMobileAds
 import Combine
+
+import GoogleMobileAds
 
 import UserNotifications
 
@@ -21,7 +20,7 @@ class MainController: ObservableObject {
     let cookooNotificationSound = UNNotificationSoundName("Cookoo")
     let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
     
-    func setNotificationWhenTimerStart() {
+    func setNotificationWhenTimerStart(timeInterval: Double) {
         
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
@@ -43,7 +42,7 @@ class MainController: ObservableObject {
             print("------------Error occured in fixing UNNotificationSound.")
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.userSettings.initialNotificationTime, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval/*self.userSettings.initialNotificationTime*/, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         
