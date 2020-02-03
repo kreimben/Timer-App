@@ -1,7 +1,6 @@
 import UIKit
 import SwiftUI
 import Foundation
-
 import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -36,6 +35,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             
             print("\(granted)")
+        }
+        
+        if let shortcutItem = connectionOptions.shortcutItem { // When The App Hasn’t Been Loaded.
+            
+            shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
         }
     }
     
@@ -73,3 +77,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+extension SceneDelegate {
+    
+    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) { // When The App Has Been Loaded.
+        
+        shortcutSettingTimer(shortcutIte≈mType: shortcutItem.type.description)
+    }
+    
+    func shortcutSettingTimer(shortcutItemType type: String) {
+        
+        print("Shortcut Action: \(type)")
+        
+        if self.userSettings.isTimerStarted {
+            
+            self.userSettings.isTimerStarted = false
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        }
+        
+        switch type {
+            
+        case "Set 15 Minutes":
+            self.userSettings.initialNotificationTime = 15 * 60
+        case "Set 30 Minutes":
+            self.userSettings.initialNotificationTime = 30 * 60
+        case "Set 45 Minutes":
+            self.userSettings.initialNotificationTime = 45 * 60
+        case "Set 60 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 60
+        default:
+            print("Error: shortcut settings")
+        }
+        
+        self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+        
+        self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
+        self.userSettings.isTimerStarted = true
+        
+        ContentView().shortcutVisualSettings()
+    }
+}

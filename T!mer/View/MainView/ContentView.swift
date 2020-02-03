@@ -193,7 +193,7 @@ struct ContentView: View {
                             .alert(isPresented: self.$showingAlert, content: {
                                 
                                 if self.userSettings.initialNotificationTime > 0 { // which is MINUTE
-                                    return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
+                                    return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { //MARK: OK Button!
                                         
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
                                         
@@ -231,6 +231,12 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func shortcutVisualSettings() {
+        
+        self.gestureAllowed = false
+        self.circleColor = Color.red.opacity(1.0)
     }
 }
 

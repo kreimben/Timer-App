@@ -55,6 +55,41 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Set 60 Minutes</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Set 60 Minutes</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Set 45 Minutes</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Set 45 Minutes</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Set 30 Minutes</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Set 30 Minutes</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Set 15 Minutes</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Set 15 Minutes</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
