@@ -22,26 +22,29 @@ struct SettingPageView: View {
     @ObservedObject var userSettings = UserSettings()
     
     @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         List {
             Section(header: Text("About sound"), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
-                
+
                 PickerView()
             }
-            
+
             Section(header: Text("About purchase")) {
                 Button("Remove Ads") {
                     self.userSettings.isUserPurchased.toggle()
                 }
                 Button(action: {
-                    
+
+                    print("Restore In-app Purchase")
+                    StoreObserver.shared.restore()
                 }) {
                     Text("Restore in-app purchase")
                         .foregroundColor(Color.red)
                 }
-                
+
             }
-            
+
             Section(header: Text("General")) {
                 HStack {
                     Text("Version")
@@ -60,12 +63,8 @@ struct SettingPageView: View {
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
         .listStyle(GroupedListStyle())
-        
     }
 }
-
-
-
 
 //MARK:- SettingPageView_Previews
 

@@ -25,7 +25,7 @@ class IAPManager: NSObject {
     fileprivate var productRequest: SKProductsRequest!
 
     /// Keeps track of all valid products (these products are available for sale in the App Store) and of all invalid product identifiers.
-    fileprivate var storeResponse = [Section]()
+    fileprivate var storeResponse = [SKSection]()
 
     weak var delegate: StoreManagerDelegate?
     
@@ -87,13 +87,13 @@ extension IAPManager: SKProductsRequestDelegate {
         // products contains products whose identifiers have been recognized by the App Store. As such, they can be purchased.
         if !response.products.isEmpty {
             availableProducts = response.products
-            storeResponse.append(Section(type: .availableProducts, elements: availableProducts))
+            storeResponse.append(SKSection(type: .availableProducts, elements: availableProducts))
         }
 
         // invalidProductIdentifiers contains all product identifiers not recognized by the App Store.
         if !response.invalidProductIdentifiers.isEmpty {
             invalidProductIdentifiers = response.invalidProductIdentifiers
-            storeResponse.append(Section(type: .invalidProductIdentifiers, elements: invalidProductIdentifiers))
+            storeResponse.append(SKSection(type: .invalidProductIdentifiers, elements: invalidProductIdentifiers))
         }
 
         if !storeResponse.isEmpty {
@@ -121,7 +121,7 @@ extension IAPManager: SKRequestDelegate {
 
 protocol StoreManagerDelegate: AnyObject {
     /// Provides the delegate with the App Store's response.
-    func storeManagerDidReceiveResponse(_ response: [Section])
+    func storeManagerDidReceiveResponse(_ response: [SKSection])
 
     /// Provides the delegate with the error encountered during the product request.
     func storeManagerDidReceiveMessage(_ message: String)
@@ -130,15 +130,15 @@ protocol StoreManagerDelegate: AnyObject {
 // MARK: - AnyDataTypes
 
 /// A structure that is used to represent a list of products or purchases.
-struct Section {
+struct SKSection {
     /// Products/Purchases are organized by category.
-    var type: SectionType
+    var type: SKSectionType
     /// List of products/purchases.
     var elements = [Any]()
 }
 
 /// An enumeration of all the types of products or purchases.
-enum SectionType: String, CustomStringConvertible {
+enum SKSectionType: String, CustomStringConvertible {
     #if os (macOS)
     case availableProducts = "Available Products"
     case invalidProductIdentifiers = "Invalid Product Identifiers"
