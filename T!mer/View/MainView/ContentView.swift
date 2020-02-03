@@ -8,6 +8,8 @@ import GoogleMobileAds
 
 struct ContentView: View {
     
+    //MARK: For Timer
+    
     @State var timeDisplay: TimeInterval = 0
     
     @ObservedObject var userSettings = UserSettings()
@@ -19,6 +21,10 @@ struct ContentView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     @State var userHapticFeedback = UserHapticFeedback()
+    
+    //MARK: For Interstitial Ads
+    
+    @State var interstitial: GADInterstitial!
     
     //MARK: For DragGesture
     
@@ -82,6 +88,13 @@ struct ContentView: View {
                         
                     }
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                        .onAppear { //MARK: Interstitial ready
+                            
+                            self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // test id
+                            let request = GADRequest()
+                            self.interstitial.load(request)
+                            
+                    }
                     
                     ZStack(alignment: .center) { //MARK:- Circle Timer
                         
@@ -203,6 +216,20 @@ struct ContentView: View {
                                         self.gestureAllowed = false
                                         self.circleColor = Color.red.opacity(1.0)
                                         
+                                        //MARK: Interstitial
+                                        if self.interstitial.isReady {
+                                            
+                                            let rangeLimit = self.userSettings.initialNotificationTime
+                                            let limit: Double = Double.random(in: 0 ..< rangeLimit)
+                                            print("Random Range is: \(limit)")
+                                            let time: DispatchTime = DispatchTime.now() + limit
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: time) {
+                                                
+                                                let root = UIApplication.shared.windows.first?.rootViewController
+                                                self.interstitial.present(fromRootViewController: root!)
+                                            }
+                                        }
                                         })
                                 } else { // when userset timer 0 minute.
                                     return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
