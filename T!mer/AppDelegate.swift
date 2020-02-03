@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UNUserNotificationCenter.current().delegate = self
         
+        SKPaymentQueue.default().add(StoreObserver.shared)
+        
         return true
     }
     
@@ -50,6 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("did discard scene sessions at AppDelegate")
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+        SKPaymentQueue.default().remove(StoreObserver.shared)
+    }
+    
+    //MARK: UserNotificationCenter Background Setting Function
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
         completionHandler([.alert, .sound])

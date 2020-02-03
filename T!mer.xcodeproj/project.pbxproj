@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		51113A5E237939BF005309D7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* PickerView.swift */; };
 		51214AB523E8487B00FB3332 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AB423E8487B00FB3332 /* IAPManager.swift */; };
+		51214AB723E84A1600FB3332 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AB623E84A1600FB3332 /* StoreObserver.swift */; };
+		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
+		51214ABB23E852F800FB3332 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214ABA23E852F800FB3332 /* Messages.swift */; };
 		513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
 		513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
@@ -50,6 +53,9 @@
 		3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		51214AB423E8487B00FB3332 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		51214AB623E84A1600FB3332 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
+		51214ABA23E852F800FB3332 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,13 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51214ABC23E8530F00FB3332 /* StoreKit Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				51214AB423E8487B00FB3332 /* IAPManager.swift */,
+				51214AB623E84A1600FB3332 /* StoreObserver.swift */,
+				51214ABA23E852F800FB3332 /* Messages.swift */,
+			);
+			path = "StoreKit Implementation";
+			sourceTree = "<group>";
+		};
 		51611C6623658FD800441AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				51E829B1237ABF89002EDEE1 /* MainController.swift */,
 				51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
-				51214AB423E8487B00FB3332 /* IAPManager.swift */,
+				51214ABC23E8530F00FB3332 /* StoreKit Implementation */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +160,7 @@
 				517F622B234E32A100A05205 /* LaunchScreen.storyboard */,
 				517F622E234E32A100A05205 /* Info.plist */,
 				517F6228234E32A100A05205 /* Preview Content */,
+				51214AB823E84E0E00FB3332 /* ProductIDs.plist */,
 			);
 			path = "T!mer";
 			sourceTree = "<group>";
@@ -269,6 +286,7 @@
 				516B71FB2393A9A800EAAC0E /* Cookoo in Resources */,
 				516B71F82393A9A800EAAC0E /* Default Bell in Resources */,
 				516B71FA2393A9A800EAAC0E /* Bell store door in Resources */,
+				51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */,
 				517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				516B71F92393A9A800EAAC0E /* Tower bell in Resources */,
@@ -326,7 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				51214AB523E8487B00FB3332 /* IAPManager.swift in Sources */,
+				51214AB723E84A1600FB3332 /* StoreObserver.swift in Sources */,
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
+				51214ABB23E852F800FB3332 /* Messages.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
