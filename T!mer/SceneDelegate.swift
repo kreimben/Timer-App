@@ -81,7 +81,7 @@ extension SceneDelegate {
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) { // When The App Has Been Loaded.
         
-        shortcutSettingTimer(shortcutIte≈mType: shortcutItem.type.description)
+        shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
     }
     
     func shortcutSettingTimer(shortcutItemType type: String) {
