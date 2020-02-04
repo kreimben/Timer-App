@@ -11,6 +11,7 @@
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214ABE23E908AA00FB3332 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214ABD23E908AA00FB3332 /* IAPManager.swift */; };
 		51214AC023E90E9500FB3332 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214ABF23E90E9500FB3332 /* StoreObserver.swift */; };
+		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
 		513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
@@ -54,6 +55,7 @@
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214ABD23E908AA00FB3332 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		51214ABF23E90E9500FB3332 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			children = (
 				51E829B1237ABF89002EDEE1 /* MainController.swift */,
 				51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */,
+				51214AC123E9143300FB3332 /* Interstitial.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
 				51214ABD23E908AA00FB3332 /* IAPManager.swift */,
 				51214ABF23E90E9500FB3332 /* StoreObserver.swift */,
@@ -345,6 +348,7 @@
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
 				51113A5E237939BF005309D7 /* PickerView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
+				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

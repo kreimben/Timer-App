@@ -139,6 +139,10 @@ struct ContentView: View {
                                     print("isTimerStarted gonna FALSE")
                                     
                                     UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                    
+                                    //MARK: Interstitial
+                                    self.interstitial = Interstitial()
+                                    self.interstitial.showAd()
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
                                     self.userHapticFeedback.hapticFeedbackPlay()
@@ -150,6 +154,10 @@ struct ContentView: View {
                                     
                                     self.gestureAllowed = false
                                     self.circleColor = Color.red.opacity(1.0)
+                                    
+                                    //MARK: Interstitial
+                                    self.interstitial = Interstitial()
+                                    self.interstitial.settingTimer()
                                 }
                         }
                         .gesture(
@@ -254,64 +262,6 @@ struct ContentView: View {
         
         self.gestureAllowed = false
         self.circleColor = Color.red.opacity(1.0)
-    }
-}
-
-final class Interstitial: NSObject, GADInterstitialDelegate {
-    
-    @ObservedObject var userSettings = UserSettings()
-    
-    var interstitialID = "ca-app-pub-3940256099942544/4411468910"
-    var interstitial: GADInterstitial!
-    
-    override init() {
-        super.init()
-        
-        self.interstitial = GADInterstitial(adUnitID: self.interstitialID)
-        LoadInterstitial()
-    }
-    
-    func LoadInterstitial() {
-        
-        let req = GADRequest()
-        self.interstitial.load(req)
-        self.interstitial.delegate = self
-    }
-    
-    func showAd() {
-        
-        if self.interstitial.isReady {
-            
-            let root = UIApplication.shared.windows.first?.rootViewController
-            self.interstitial.present(fromRootViewController: root!)
-        }
-            
-        else{
-            
-            print("Not Ready")
-        }
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        
-        self.interstitial = GADInterstitial(adUnitID: interstitialID)
-        LoadInterstitial()
-    }
-    
-    func settingTimer() {
-        
-        let rangeLimit = self.userSettings.initialNotificationTime
-        let limit: Double = Double.random(in: 0 ..< rangeLimit)
-        print("Random Range is: \(limit)")
-        let time: DispatchTime = DispatchTime.now() + limit
-        
-        if self.userSettings.isTimerStarted {
-            
-            DispatchQueue.main.asyncAfter(deadline: time) {
-                
-                self.showAd()
-            }
-        }
     }
 }
 

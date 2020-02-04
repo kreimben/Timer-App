@@ -114,5 +114,9 @@ extension SceneDelegate {
         self.userSettings.isTimerStarted = true
         
         ContentView().shortcutVisualSettings()
+        
+        //MARK: Interstitial
+        let interstitial = Interstitial()
+        interstitial.settingTimer()
     }
 }
