@@ -17,13 +17,13 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
                 
             case .purchasing: break
             // Do not block your UI. Allow the user to continue using your app.
-            case .deferred: print("Messages.deferred")
+            case .deferred: print("StoreObserver: In-app Purchase deferred")
             // The purchase was successful.
-            case .purchased: print("Purchased")//handlePurchased(transaction)
+            case .purchased: print("StoreObserver: In-app Purchase Purchased")//handlePurchased(transaction)
             // The transaction failed.
-            case .failed: print("Failed")//handleFailed(transaction)
+            case .failed: print("StoreObserver: In-app Purchase Failed")//handleFailed(transaction)
             // There are restored products.
-            case .restored: print("Restored")//handleRestored(transaction)
+            case .restored: print("StoreObserver: In-app Purchase Restored")//handleRestored(transaction)
             @unknown default: fatalError("Messages.unknownDefault")
             }
         }

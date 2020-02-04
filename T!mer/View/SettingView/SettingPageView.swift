@@ -37,6 +37,16 @@ struct SettingPageView: View {
                     
                     print("Buy In-app Purchase")
 //                    self.userSettings.isUserPurchased.toggle()
+                    
+                    if SKPaymentQueue.canMakePayments() {
+                        
+                        let paymentRequest = SKMutablePayment()
+                        paymentRequest.productIdentifier = IAPManager.productID
+                        SKPaymentQueue.default().add(paymentRequest)
+                    } else {
+                        
+                        print("User can't ready for payment!")
+                    }
                 }
                 
                 Button(action: {

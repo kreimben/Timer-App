@@ -7,6 +7,9 @@ class IAPManager: NSObject, SKProductsRequestDelegate {
     
     var request: SKProductsRequest!
     
+    var products = [SKProduct]()
+    static var productID = "com.KreimbenPro.nonConsumable.removeads"
+    
     func validate(productIdentifier: [String]) {
         
         let productIdentifier = Set(productIdentifier)
@@ -15,8 +18,6 @@ class IAPManager: NSObject, SKProductsRequestDelegate {
         request.delegate = self
         request.start()
     }
-    
-    var products = [SKProduct]()
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         
@@ -30,7 +31,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate {
         for invalidIdentifier in response.invalidProductIdentifiers {
             
             /// Handle any invalid product identifiers as appropriate.
-            print(invalidIdentifier)
+            print("Invalid Identifier: \(invalidIdentifier)")
         }
     }
     
