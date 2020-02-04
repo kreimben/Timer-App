@@ -25,19 +25,25 @@ struct SettingPageView: View {
     
     var body: some View {
         List {
+            
             Section(header: Text("About sound"), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
 
                 PickerView()
             }
 
             Section(header: Text("About purchase")) {
+                
                 Button("Remove Ads") {
-                    self.userSettings.isUserPurchased.toggle()
+                    
+                    print("Buy In-app Purchase")
+//                    self.userSettings.isUserPurchased.toggle()
                 }
+                
                 Button(action: {
 
                     print("Restore In-app Purchase")
-                    StoreObserver.shared.restore()
+//                    StoreObserver.shared.restore()
+                    SKPaymentQueue.default().restoreCompletedTransactions() /// For Non-consumable Items
                 }) {
                     Text("Restore in-app purchase")
                         .foregroundColor(Color.red)
