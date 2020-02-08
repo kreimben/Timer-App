@@ -16,6 +16,7 @@
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
 - [ ] 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
 - [ ] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
+- [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 
 ## google admob Apple ID
 Unique ID : ca-app-pub-4942689053880729~6950693605
