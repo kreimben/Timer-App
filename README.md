@@ -14,7 +14,7 @@
 - [x] 각도가 변할 때 진동 울리는것 포기! => 너무 느려서 포기!
 - [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
-- [ ] 인앱결제(인앱결제는 법인 등록 후 개발자 등록 후 처리)
+- [ ] Implement In-app Purchases
 - [ ] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 
