@@ -1,6 +1,7 @@
 #  T!mer app
 
 ## To-do list
+### 1.0
 - [x] 설정페이지 세팅하기 
 - [x] 아이패드 해상도 대응하기
 - [x] 버그 있는지 더 살펴보기
@@ -17,6 +18,9 @@
 - [ ] Implement In-app Purchases
 - [ ] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
+
+### 1.1
+- [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
 ## google admob Apple ID
 Unique ID : ca-app-pub-4942689053880729~6950693605
