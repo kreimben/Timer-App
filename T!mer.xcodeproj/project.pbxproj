@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A5A04388F66A78309C7C05 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F92E7A26B57761D3066A3F /* Pods_T_mer.framework */; };
 		51113A5E237939BF005309D7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* PickerView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
-		513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; };
-		513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				513EF2F923E16E0C0013BC9F /* Pods_T_mer.framework in Embed Frameworks */,
+				513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,8 +47,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
-		3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
@@ -76,7 +74,9 @@
 		51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		61F92E7A26B57761D3066A3F /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C5D7703A61B513C0B562E1 /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
+		C8BB6D96DC3DFC6E714A73C8 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513EF2F823E16E0C0013BC9F /* Pods_T_mer.framework in Frameworks */,
 				51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */,
+				33A5A04388F66A78309C7C05 /* Pods_T_mer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +194,7 @@
 				51DF313523E59A6F008D20D6 /* StoreKit.framework */,
 				513EF2FD23E16E1C0013BC9F /* nanopb.framework */,
 				513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */,
-				3F4DB1391E9B1212B7442FF7 /* Pods_T_mer.framework */,
+				61F92E7A26B57761D3066A3F /* Pods_T_mer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 		9703E6DB9B95217C7A8B3E7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */,
-				216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */,
+				C8BB6D96DC3DFC6E714A73C8 /* Pods-T!mer.debug.xcconfig */,
+				74C5D7703A61B513C0B562E1 /* Pods-T!mer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -215,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517F6231234E32A100A05205 /* Build configuration list for PBXNativeTarget "T!mer" */;
 			buildPhases = (
-				E9F549E379F9619BD31A83FE /* [CP] Check Pods Manifest.lock */,
+				34DDCF0D781D3907AA7AA47F /* [CP] Check Pods Manifest.lock */,
 				517F6219234E329F00A05205 /* Sources */,
 				517F621A234E329F00A05205 /* Frameworks */,
 				517F621B234E329F00A05205 /* Resources */,
 				5183F13E23E16CF0003C2095 /* Embed Frameworks */,
-				6454E400643CA8634C49B785 /* [CP] Embed Pods Frameworks */,
+				21086E478CCE5D279D0E5559 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,7 +283,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6454E400643CA8634C49B785 /* [CP] Embed Pods Frameworks */ = {
+		21086E478CCE5D279D0E5559 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,7 +300,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-T!mer/Pods-T!mer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9F549E379F9619BD31A83FE /* [CP] Check Pods Manifest.lock */ = {
+		34DDCF0D781D3907AA7AA47F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,7 +474,7 @@
 		};
 		517F6232234E32A100A05205 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B68D7B0A0F31E7184F5C2D1D /* Pods-T!mer.debug.xcconfig */;
+			baseConfigurationReference = C8BB6D96DC3DFC6E714A73C8 /* Pods-T!mer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -501,7 +501,7 @@
 		};
 		517F6233234E32A100A05205 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 216A7EC4ECAE5C66450B74EC /* Pods-T!mer.release.xcconfig */;
+			baseConfigurationReference = 74C5D7703A61B513C0B562E1 /* Pods-T!mer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
