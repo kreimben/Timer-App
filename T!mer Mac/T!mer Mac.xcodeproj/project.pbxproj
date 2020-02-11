@@ -19,11 +19,12 @@
 		516B71DB23925B9400EAAC0E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DA23925B9400EAAC0E /* MainController.swift */; };
 		516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DC23925BEB00EAAC0E /* UserSettings.swift */; };
 		516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E423925C8800EAAC0E /* UserTouchCircle.swift */; };
-		516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5130F38E2397A489006D9034 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
+		516AF29F23F289DC002A42C9 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../T!mer/Models/UserHapticFeedback.swift"; sourceTree = "<group>"; };
 		516B71B123924F6000EAAC0E /* T!mer Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		516B71B423924F6000EAAC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		516B71B623924F6000EAAC0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -38,7 +39,6 @@
 		516B71DA23925B9400EAAC0E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		516B71DC23925BEB00EAAC0E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		516B71E423925C8800EAAC0E /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
-		516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../../../T!mer/Controller/UserHapticFeedback.swift"; sourceTree = "<group>"; };
 		51F383BC23A5F629005CA777 /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		51F383BD23A5F629005CA777 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
 		51F383BE23A5F629005CA777 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
@@ -56,11 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		516AF29E23F289DC002A42C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */,
+				516AF29F23F289DC002A42C9 /* T!mer.app */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		516B71A823924F6000EAAC0E = {
 			isa = PBXGroup;
 			children = (
 				516B71B323924F6000EAAC0E /* T!mer Mac */,
 				516B71B223924F6000EAAC0E /* Products */,
+				516AF29E23F289DC002A42C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				516B71DA23925B9400EAAC0E /* MainController.swift */,
-				516B72052393BD3400EAAC0E /* UserHapticFeedback.swift */,
 				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
 			);
 			path = Model;
@@ -218,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				516B71CB2392565300EAAC0E /* MainViewController.swift in Sources */,
-				516B72062393BD3400EAAC0E /* UserHapticFeedback.swift in Sources */,
 				516B71D12392570D00EAAC0E /* EventMonitor.swift in Sources */,
 				5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */,
 				516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */,

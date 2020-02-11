@@ -11,19 +11,19 @@ struct IAPView: View {
     
     init(productID: Binding<String>) {
         
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
-        appearance.shadowColor = .clear
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        //        let appearance = UINavigationBarAppearance()
+        //
+        //        appearance.configureWithOpaqueBackground()
+        //        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        //        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        //        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        //
+        //        UINavigationBar.appearance().standardAppearance = appearance
+        //        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        //
+        //        appearance.shadowColor = .clear
+        //        UINavigationBar.appearance().standardAppearance = appearance
+        //        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
         self._productID = productID
         
@@ -46,50 +46,69 @@ struct IAPView: View {
     }
     
     var body: some View {
+        
         ZStack {
-            
             Color.blue.opacity(0.55).edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Get T!mer Pro").font(.largeTitle).bold()
                 
-                Spacer()
-                
-                HStack {
-                    Text("What is in T!mer \"Pro\"?").font(.headline)
-                    Spacer()
-                }.padding()
-                
-                Text("T!mer Pro enables to remove ads and unlock macOS T!mer")
-                    .padding()
+                ZStack {
+                    
+                    Color.blue.opacity(0.5)
+                    
+                    VStack {
+                        HStack {
+                            Text("• What is in T!mer \"Pro\"?").font(.headline)
+                            Spacer()
+                        }.padding([.leading, .trailing, .top], 10)
+                        
+                        Text("T!mer Pro enables to remove ads and unlock macOS T!mer")
+                            .padding([.leading, .trailing], 6)
+                        
+                        
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Circle()
+                                    .frame(width: 12, height: 12)
+                                
+                                Text("Get removed ads!")
+                            }.padding([.leading, .trailing, .top], 10).padding(.bottom, 5)
+                            
+                            HStack {
+                                Circle()
+                                    .frame(width: 12, height: 12)
+                                
+                                Text("Get macOS T!mer!")
+                            }.padding([.leading, .trailing, .bottom], 10).padding(.top, 5)
+                        }
+                        .foregroundColor(self.userSettings.isUserPurchased ? .green : .red)
+                    }
+                }
+                .cornerRadius(30)
+                .padding([.leading, .trailing], 10)
+                .frame(height: 200)
                 
                 ZStack {
                     Color.blue.opacity(0.5)
                     
-                    VStack {
+                    ZStack {
                         
-                        HStack {
-                            Circle()
-                                .frame(width: 12, height: 12)
+                        VStack {
+                            Text("🎊Buy T!mer Pro, Use macOS T!mer either🎊")
                             
-                            Text("Get removed ads!")
-                        }.padding()
-                        
-                        HStack {
-                            Circle()
-                                .frame(width: 12, height: 12)
+                            Image("macOS T!mer IDLE")
+                                .resizable()
+                                .scaledToFit()
                             
-                            Text("Get macOS T!mer!")
-                        }.padding()
-                    }
-                    .foregroundColor(.green)//self.userSettings.isUserPurchased ? .green : .red)
+                            Image("macOS T!mer RUNNING")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                    }.padding()
                 }
                 .cornerRadius(30)
-                .padding()
-                .frame(height: 200)
-                .shadow(radius: 60)
-                
-                Spacer()
+                .padding([.leading, .trailing], 10)
                 
                 PurchaseButton(productID: $productID)
                 
@@ -134,31 +153,31 @@ fileprivate struct PurchaseButton: View {
             self.userHaptics.hapticFeedbackPlay()
             
             /// Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
-
-//            self.userSettings.isUserPurchased.toggle()
-
-//            SwiftyStoreKit.purchaseProduct(self.productID, quantity: 1, atomically: true) { result in
-//
-//                switch result {
-//
-//                case .success(let purchase):
-//                    print("Purchase Success: \(purchase)")
-//
-//                case .error(let error):
-//                    switch error.code {
-//                    case .unknown: print("Unknown error. Please contact support")
-//                    case .clientInvalid: print("Not allowed to make the payment")
-//                    case .paymentCancelled: break
-//                    case .paymentInvalid: print("The purchase identifier was invalid")
-//                    case .paymentNotAllowed: print("The device is not allowed to make the payment")
-//                    case .storeProductNotAvailable: print("The product is not available in the current storefront")
-//                    case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-//                    case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-//                    case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-//                    default: print((error as NSError).localizedDescription)
-//                    }
-//                }
-//            }
+            
+            //                        self.userSettings.isUserPurchased.toggle()
+            
+            SwiftyStoreKit.purchaseProduct(self.productID, quantity: 1, atomically: true) { result in
+                
+                switch result {
+                    
+                case .success(let purchase):
+                    print("Purchase Success: \(purchase)")
+                    
+                case .error(let error):
+                    switch error.code {
+                    case .unknown: print("Unknown error. Please contact support")
+                    case .clientInvalid: print("Not allowed to make the payment")
+                    case .paymentCancelled: break
+                    case .paymentInvalid: print("The purchase identifier was invalid")
+                    case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                    case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                    case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                    case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                    case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                    default: print((error as NSError).localizedDescription)
+                    }
+                }
+            }
         }) {
             ZStack {
                 

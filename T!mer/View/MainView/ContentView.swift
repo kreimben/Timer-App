@@ -11,18 +11,17 @@ struct ContentView: View {
     init() {
         
         let appearance = UINavigationBarAppearance()
-        
+
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        
+//        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+//        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+
+        appearance.shadowColor = nil
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
-        appearance.shadowColor = .clear
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationController().hidesBarsOnSwipe = true
     }
     
     //MARK: For Timer
