@@ -13,15 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-        
         mainController = MainController()
         
         
@@ -30,11 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            
             /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
-                    
                 case .purchased, .restored:
                     if purchase.needsFinishTransaction {
                         /// Deliver content from server, then:
@@ -44,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     
                 case .failed, .purchasing, .deferred:
                     break /// Do nothing
+                @unknown default:
+                    fatalError("Error to App Delegate")
                 }
             }
         }
