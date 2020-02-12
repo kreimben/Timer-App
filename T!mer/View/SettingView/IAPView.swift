@@ -11,26 +11,12 @@ struct IAPView: View {
     
     init(productID: Binding<String>) {
         
-        //        let appearance = UINavigationBarAppearance()
-        //
-        //        appearance.configureWithOpaqueBackground()
-        //        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        //        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        //        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        //
-        //        UINavigationBar.appearance().standardAppearance = appearance
-        //        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        //
-        //        appearance.shadowColor = .clear
-        //        UINavigationBar.appearance().standardAppearance = appearance
-        //        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
         self._productID = productID
         
         if !(UserSettings().isUserPurchased) {
             
             /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit#retrieve-products-info]
-            SwiftyStoreKit.retrieveProductsInfo(["com.KreimbenPro.nonConsumable.removeads"]) { result in
+            SwiftyStoreKit.retrieveProductsInfo([self.productID/*"com.KreimbenPro.nonConsumable.removeads"*/]) { result in
                 if let product = result.retrievedProducts.first {
                     let priceString = product.localizedPrice!
                     print("Product: \(product.localizedDescription), price: \(priceString)")

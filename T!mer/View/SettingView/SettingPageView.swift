@@ -24,7 +24,7 @@ struct SettingPageView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @State var productID = "com.KreimbenPro.nonConsumable.removeads"
+    @State var productID = "nonConsumable.removeads"  //"com.KreimbenPro.nonConsumable.removeads"
     
     var body: some View {
         List {
