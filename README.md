@@ -22,6 +22,7 @@
 - [ ] Implement In-app Purchases
 - [ ] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
+- [ ] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
 
 ## google admob Apple ID
 Unique ID : ca-app-pub-4942689053880729~6950693605
