@@ -6,7 +6,7 @@ struct PickerView: View {
     @ObservedObject var userSettings = UserSettings()
     
     var soundsArray: [SoundsArray] = [
-        SoundsArray(soundName: "Default Notification Sound"),
+        SoundsArray(soundName: "Default Sound"),
         SoundsArray(soundName: "Bicycle Bell"),
         SoundsArray(soundName: "Bell - Store door"),
         SoundsArray(soundName: "Cookoo"),
