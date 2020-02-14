@@ -37,7 +37,9 @@ struct IAPView: View {
             Color.blue.opacity(0.55).edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("Get T!mer Pro").font(.largeTitle).bold()
+                Text("Get T!mer Pro").font(.largeTitle).bold().foregroundColor(.white)
+                
+                Spacer()
                 
                 ZStack {
                     
@@ -45,58 +47,65 @@ struct IAPView: View {
                     
                     VStack {
                         HStack {
-                            Text("• What is in T!mer \"Pro\"?").font(.headline)
+                            Text("• What is in T!mer ")
+                                .font(.title)
+                                .foregroundColor(.white)
+                            Text("Pro")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .bold()
+                            Text("?")
+                                .font(.title)
+                                .foregroundColor(.white)
                             Spacer()
-                        }.padding([.leading, .trailing, .top], 10)
-                        
-                        Text("T!mer Pro enables to remove ads and unlock macOS T!mer")
-                            .padding([.leading, .trailing], 6)
-                        
-                        
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Circle()
-                                    .frame(width: 12, height: 12)
-                                
-                                Text("Get removed ads!")
-                            }.padding([.leading, .trailing, .top], 10).padding(.bottom, 5)
-                            
-                            HStack {
-                                Circle()
-                                    .frame(width: 12, height: 12)
-                                
-                                Text("Get macOS T!mer!")
-                            }.padding([.leading, .trailing, .bottom], 10).padding(.top, 5)
                         }
-                        .foregroundColor(self.userSettings.isUserPurchased ? .green : .red)
+                        .padding([.top], UIScreen.main.bounds.height * 0.23)
+                        .padding([.leading, .trailing, .bottom])
+                        
+                        Text("T!mer Pro enables to remove ads")
+                            .foregroundColor(.white)
+                            .padding()
+                        
+                        if self.userSettings.isUserPurchased {
+                            VStack {
+                                HStack {
+                                    Circle()
+                                        .frame(width: 12, height: 12)
+                                    
+                                    Text("🎉You're already Pro User🎊")
+                                }
+                                Text("🥳").font(.largeTitle)
+                            }
+                            .padding()
+                            .foregroundColor(.green)
+                        } else {
+                            HStack {
+                                Circle()
+                                    .frame(width: 12, height: 12)
+                                
+                                Text("You're not Pro user YET🙀")
+                            }
+                            .padding()
+                            .foregroundColor(.red)
+                        }
+                        
+                        Spacer()
+                        
+                        Text("• Many of the features that will be added will only be available in \"Pro\" version.")
+                            .padding([.bottom, .leading, .trailing, .bottom], 15)
+                            .foregroundColor(.white)
+                            .font(.caption)
                     }
                 }
                 .cornerRadius(30)
                 .padding([.leading, .trailing], 10)
-                .frame(height: 200)
+                .frame(height: UIScreen.main.bounds.height * 0.65)
+                .shadow(radius: 20)
                 
-                ZStack {
-                    Color.blue.opacity(0.5)
-                    
-                    ZStack {
-                        
-                        VStack {
-                            Text("🎊Buy T!mer Pro, Use macOS T!mer either🎊")
-                            
-                            Image("macOS T!mer IDLE")
-                                .resizable()
-                                .scaledToFit()
-                            
-                            Image("macOS T!mer RUNNING")
-                                .resizable()
-                                .scaledToFit()
-                        }
-                    }.padding()
-                }
-                .cornerRadius(30)
-                .padding([.leading, .trailing], 10)
+                Spacer()
                 
                 PurchaseButton(productID: $productID)
+                    .shadow(radius: 20)
                 
                 Button(action: {
                     
@@ -117,6 +126,7 @@ struct IAPView: View {
                     Text("Restore in-app purchase")
                         .foregroundColor(Color.red)
                 }
+                .padding(.bottom, 10)
             }
         }
         .navigationBarTitle("", displayMode: .inline)
