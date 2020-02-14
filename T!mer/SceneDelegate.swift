@@ -96,12 +96,12 @@ extension SceneDelegate {
         
         switch type {
             
+        case "Set 3 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 3
         case "Set 15 Minutes":
-            self.userSettings.initialNotificationTime = 15 * 60
+            self.userSettings.initialNotificationTime = 60 * 15
         case "Set 30 Minutes":
-            self.userSettings.initialNotificationTime = 30 * 60
-        case "Set 45 Minutes":
-            self.userSettings.initialNotificationTime = 45 * 60
+            self.userSettings.initialNotificationTime = 60 * 30
         case "Set 60 Minutes":
             self.userSettings.initialNotificationTime = 60 * 60
         default:
