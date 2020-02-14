@@ -93,7 +93,6 @@ struct ContentView: View {
                                             self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
                                         }
                                         
-                                        
                                     } else {
                                         
                                         self.userSettings.isTimerStarted = false
@@ -101,16 +100,8 @@ struct ContentView: View {
                                     }
                                 }
                         }
-                        
                     }
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
-//                        .onAppear { //MARK: Interstitial ready
-//
-//                            self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // test id
-//                            let request = GADRequest()
-//                            self.interstitial.load(request)
-//
-//                    }
                     
                     ZStack(alignment: .center) { //MARK:- Circle Timer
                         
@@ -140,7 +131,7 @@ struct ContentView: View {
                                 print("onLongPressGesture is excuted.")
                                 print("gesture allowed status: \(self.gestureAllowed)")
                                 
-                                if self.userSettings.isTimerStarted {
+                                if self.userSettings.isTimerStarted { // Cancle it while timer is working
                                     
                                     self.userHapticFeedback.hapticFeedbackPlay()
                                     
@@ -307,7 +298,7 @@ final private class BannerVC: UIViewControllerRepresentable {
             
         } else {
             
-            view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID
+            view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID (for Test)
             view.rootViewController = viewController
             viewController.view.addSubview(view)
             viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
