@@ -20,7 +20,7 @@
 - [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
 - [ ] Implement In-app Purchases
-- [ ] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
+- [x] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 - [ ] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
 - [ ] Implement CI (especially **Fastlane**)
