@@ -94,6 +94,8 @@ extension SceneDelegate {
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
         
+        self.userSettings.isTimerStarted = true
+        
         switch type {
             
         case "Set 3 Minutes":
@@ -111,7 +113,6 @@ extension SceneDelegate {
         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
         
         self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
-        self.userSettings.isTimerStarted = true
         
         ContentView().shortcutVisualSettings()
         
