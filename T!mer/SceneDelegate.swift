@@ -119,5 +119,7 @@ extension SceneDelegate {
         //MARK: Interstitial
         let interstitial = Interstitial()
         interstitial.settingTimer()
+
+        self.userSettings.isTimerStarted = true
     }
 }
