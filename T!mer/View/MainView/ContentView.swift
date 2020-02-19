@@ -98,6 +98,9 @@ struct ContentView: View {
                                         self.userSettings.isTimerStarted = false
                                         self.circleColor = Color.red.opacity(0.5)
                                     }
+                                
+                                    ///For color setting
+                                    self.VisualSettingsWhileTimerIsWorking()
                                 }
                         }
                     }
@@ -265,7 +268,7 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    func shortcutVisualSettings() {
+    func VisualSettingsWhileTimerIsWorking() {
         
         self.gestureAllowed = false
         self.circleColor = Color.red.opacity(1.0)

@@ -114,7 +114,7 @@ extension SceneDelegate {
         
         self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
         
-        ContentView().shortcutVisualSettings()
+        ContentView().VisualSettingsWhileTimerIsWorking()
         
         //MARK: Interstitial
         let interstitial = Interstitial()
