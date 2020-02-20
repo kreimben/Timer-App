@@ -11,6 +11,7 @@
 		51113A5E237939BF005309D7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* PickerView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
+		513D596123FEA74F00521165 /* T_merUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D596023FEA74F00521165 /* T_merUITests.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
@@ -33,6 +34,16 @@
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		513D596323FEA74F00521165 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 517F621C234E329F00A05205;
+			remoteInfo = "T!mer";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		5183F13E23E16CF0003C2095 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -52,6 +63,9 @@
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
+		513D595E23FEA74F00521165 /* T!merUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		513D596023FEA74F00521165 /* T_merUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merUITests.swift; sourceTree = "<group>"; };
+		513D596223FEA74F00521165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
@@ -82,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		513D595B23FEA74F00521165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F621A234E329F00A05205 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513D595F23FEA74F00521165 /* T!merUITests */ = {
+			isa = PBXGroup;
+			children = (
+				513D596023FEA74F00521165 /* T_merUITests.swift */,
+				513D596223FEA74F00521165 /* Info.plist */,
+			);
+			path = "T!merUITests";
+			sourceTree = "<group>";
+		};
 		51611C6623658FD800441AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +151,7 @@
 			children = (
 				51A6F42C235DC72800571F20 /* README.md */,
 				517F621F234E329F00A05205 /* T!mer */,
+				513D595F23FEA74F00521165 /* T!merUITests */,
 				517F621E234E329F00A05205 /* Products */,
 				9703E6DB9B95217C7A8B3E7F /* Pods */,
 				8B639722B9B9195751ED024E /* Frameworks */,
@@ -131,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				517F621D234E329F00A05205 /* T!mer.app */,
+				513D595E23FEA74F00521165 /* T!merUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +246,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		513D595D23FEA74F00521165 /* T!merUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 513D596523FEA74F00521165 /* Build configuration list for PBXNativeTarget "T!merUITests" */;
+			buildPhases = (
+				513D595A23FEA74F00521165 /* Sources */,
+				513D595B23FEA74F00521165 /* Frameworks */,
+				513D595C23FEA74F00521165 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				513D596423FEA74F00521165 /* PBXTargetDependency */,
+			);
+			name = "T!merUITests";
+			productName = "T!merUITests";
+			productReference = 513D595E23FEA74F00521165 /* T!merUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		517F621C234E329F00A05205 /* T!mer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517F6231234E32A100A05205 /* Build configuration list for PBXNativeTarget "T!mer" */;
@@ -240,10 +290,14 @@
 		517F6215234E329F00A05205 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Aksidion Kreimben";
 				TargetAttributes = {
+					513D595D23FEA74F00521165 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 517F621C234E329F00A05205;
+					};
 					517F621C234E329F00A05205 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -263,11 +317,19 @@
 			projectRoot = "";
 			targets = (
 				517F621C234E329F00A05205 /* T!mer */,
+				513D595D23FEA74F00521165 /* T!merUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		513D595C23FEA74F00521165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F621B234E329F00A05205 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +390,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		513D595A23FEA74F00521165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513D596123FEA74F00521165 /* T_merUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F6219234E329F00A05205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +420,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		513D596423FEA74F00521165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 517F621C234E329F00A05205 /* T!mer */;
+			targetProxy = 513D596323FEA74F00521165 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		517F622B234E32A100A05205 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -362,6 +440,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		513D596623FEA74F00521165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!merUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "T!mer";
+			};
+			name = Debug;
+		};
+		513D596723FEA74F00521165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!merUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "T!mer";
+			};
+			name = Release;
+		};
 		517F622F234E32A100A05205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -533,6 +651,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		513D596523FEA74F00521165 /* Build configuration list for PBXNativeTarget "T!merUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513D596623FEA74F00521165 /* Debug */,
+				513D596723FEA74F00521165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		517F6218234E329F00A05205 /* Build configuration list for PBXProject "T!mer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

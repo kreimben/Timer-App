@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UNUserNotificationCenter.current().delegate = self
         
+        ///FastLane!
+        
+        
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
             for purchase in purchases {
