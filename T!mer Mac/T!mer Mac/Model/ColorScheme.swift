@@ -1,15 +1,22 @@
 import Foundation
 
-enum Colors {
-    case blue, red, yellow, green, purple, black, white, orange
+enum Colors: CaseIterable {
+    case Blue, Red, Yellow, Green, Orange, Purple, Black, White
 }
 
 class ColorScheme {
     
-    func colorGenerator(color: Colors) {
-        
-        
-    }
+    let scheme = [
+        "\(Colors.blue)",
+        "\(Colors.red)",
+        "\(Colors.yellow)",
+        "\(Colors.green)",
+        "\(Colors.orange)",
+        "\(Colors.purple)",
+        "\(Colors.black)",
+        "\(Colors.white)"
+    ]
+    
 }
 
 //
