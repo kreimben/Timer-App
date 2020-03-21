@@ -46,7 +46,7 @@ struct PreferenceView: View {
                     Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
                         Text("Dismiss by clicking outside the app")
                     }
-                    Text("This option will be activated after close the app")
+                    Text("This option will be activated after closing the app")
                         .font(.system(size: 8))
                         .foregroundColor(.gray)
                 }
