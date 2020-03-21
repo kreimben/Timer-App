@@ -49,6 +49,19 @@ struct PreferenceView: View {
                 }
             }
             
+            VStack(alignment: .leading) {
+                
+                Text("Dismiss the app")
+                    .font(.caption)
+                    .font(.system(size: 9))
+                    .foregroundColor(Color.gray)
+                    .padding(.top, 10)
+                
+                Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
+                    Text("Dismiss by clicking outside the app")
+                }
+            }
+            
             //            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
             //                ForEach(0 ..< self.sounds.count, id: \.self) {
             //                    Text(self.sounds[$0]).tag($0)

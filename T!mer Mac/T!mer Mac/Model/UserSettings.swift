@@ -20,13 +20,16 @@ final class UserSettings: ObservableObject {
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     
+    /// @Notification Sound Number Index
     @UserDefault(key: "soundIndex", value: 0) // Defining firstly
     var soundIndex: Int {
         willSet {
             objectWillChange.send() // Save value FOREVER
         }
     }
+    /// @END
     
+    /// @Time converting properties
     @UserDefault(key: "timeInputBeforeConvert", value: 0.0)
     var timeInputBeforeConvert: Double {
         willSet {
@@ -50,7 +53,9 @@ final class UserSettings: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    /// @END
     
+    /// @ETC
     @UserDefault(key: "isTimerStarted", value: false)
     var isTimerStarted: Bool {
         willSet {
@@ -64,6 +69,16 @@ final class UserSettings: ObservableObject {
             objectWillChange.send()
         }
     }
+    /// @END
+    
+    /// @Dismiss by "EventMonitor"
+    @UserDefault(key: "dismissByEventMonitor", value: false)
+    var dismissByEventMonitor: Bool {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    /// @END
     
 }
 

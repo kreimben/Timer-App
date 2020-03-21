@@ -39,10 +39,6 @@
 		516B71DA23925B9400EAAC0E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		516B71DC23925BEB00EAAC0E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		516B71E423925C8800EAAC0E /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
-		51F383BC23A5F629005CA777 /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
-		51F383BD23A5F629005CA777 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
-		51F383BE23A5F629005CA777 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
-		51F383C023A5F629005CA777 /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +84,6 @@
 				516B71B423924F6000EAAC0E /* AppDelegate.swift */,
 				516B71CD2392568000EAAC0E /* NSView(Controller) */,
 				516B71D323925B1B00EAAC0E /* Model */,
-				51F383BA23A5F629005CA777 /* Sound */,
 				516B71E323925C7A00EAAC0E /* MainView */,
 				516B71D22392581B00EAAC0E /* Helpers */,
 				516B71B823924F6300EAAC0E /* Assets.xcassets */,
@@ -142,17 +137,6 @@
 				5130F38E2397A489006D9034 /* PreferenceView.swift */,
 			);
 			path = MainView;
-			sourceTree = "<group>";
-		};
-		51F383BA23A5F629005CA777 /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				51F383BC23A5F629005CA777 /* Default Bell */,
-				51F383BD23A5F629005CA777 /* Tower bell */,
-				51F383BE23A5F629005CA777 /* Bell store door */,
-				51F383C023A5F629005CA777 /* Cookoo */,
-			);
-			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
