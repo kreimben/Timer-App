@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51010CEB242607E000CDB769 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51010CEA242607E000CDB769 /* ColorScheme.swift */; };
 		5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130F38E2397A489006D9034 /* PreferenceView.swift */; };
 		516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B423924F6000EAAC0E /* AppDelegate.swift */; };
 		516B71B723924F6000EAAC0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B623924F6000EAAC0E /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51010CEA242607E000CDB769 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		5130F38E2397A489006D9034 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		516AF29F23F289DC002A42C9 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../T!mer/Models/UserHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				516B71DA23925B9400EAAC0E /* MainController.swift */,
 				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
+				51010CEA242607E000CDB769 /* ColorScheme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */,
 				516B71B723924F6000EAAC0E /* ContentView.swift in Sources */,
 				516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */,
+				51010CEB242607E000CDB769 /* ColorScheme.swift in Sources */,
 				516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */,
 				516B71DB23925B9400EAAC0E /* MainController.swift in Sources */,
 				516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */,
