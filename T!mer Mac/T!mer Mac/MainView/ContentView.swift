@@ -20,12 +20,13 @@ struct ContentView: View {
     
     @EnvironmentObject var mainController: MainController
     
+    // MAEK: AlertBool
     @State var showingAlert = false
+    /// @END
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-    //MARK: For DragGesture
-    
+    // MARK: For DragGesture
     @GestureState var dragAmount = CGPoint.zero
     @State var currentPoint = CGPoint.zero
     @State var center = CGPoint.zero
@@ -35,8 +36,13 @@ struct ContentView: View {
     @State var circleRadius = CGFloat(205 / 2)
     
     @State var gestureAllowed = false
+    /// @END
     
     @ObservedObject var userTouchController = UserTouchController()
+    
+    /// @Environment
+    @Environment(\.presentationMode) var presentationMode
+    /// @END
     
     var body: some View {
         ZStack {
