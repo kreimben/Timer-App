@@ -1,11 +1,3 @@
-//
-//  MainController.swift
-//  T!mer Mac
-//
-//  Created by Aksidion Kreimben on 11/30/19.
-//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
-//
-
 import Foundation
 import SwiftUI
 import Combine
@@ -16,7 +8,7 @@ class MainController: ObservableObject {
     @ObservedObject var userSettings = UserSettings()
     
     //MARK:- AboutTimer
-    @Published var timeDisplay: TimeInterval = 0
+    @Published var timeDisplay: TimeInterval = 0 // NECESSARY VARIABLE
     
     @ObservedObject var userTouchController = UserTouchController()
 
@@ -60,3 +52,11 @@ class MainController: ObservableObject {
         print("UserNotifications is setting done!")
     }
 }
+
+//
+//  MainController.swift
+//  T!mer Mac
+//
+//  Created by Aksidion Kreimben on 11/30/19.
+//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
+//
