@@ -29,6 +29,15 @@ final class UserSettings: ObservableObject {
     }
     /// @END
     
+    /// @Color Number Index
+    @UserDefault(key: "colorIndex", value: 0)
+    var colorIndex: Int {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    /// @END
+    
     /// @Time converting properties
     @UserDefault(key: "timeInputBeforeConvert", value: 0.0)
     var timeInputBeforeConvert: Double {
