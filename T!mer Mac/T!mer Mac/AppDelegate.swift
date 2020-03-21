@@ -13,7 +13,6 @@ import UserNotifications
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusButton = NSStatusBarButton()
     let popover = NSPopover()
     
     let mainController = MainController()
@@ -48,4 +47,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
 }
-

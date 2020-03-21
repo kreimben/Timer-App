@@ -23,47 +23,29 @@ class StatusBarController: ObservableObject {
         statusBarButton.title = "T!mer"
         
         statusBarButton.action = #selector(togglePopover(sender:))
+        statusBarButton.sendAction(on: [.leftMouseDown, .rightMouseDown])
         statusBarButton.target = self
         
+        /// Set Event Monitor
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown], handler: mouseEventHandler)
     }
     
     @objc func togglePopover(sender: AnyObject) {
         
-        switch (NSApp.currentEvent!.type) {
-        case .leftMouseUp:
-            if(StatusBarController.popover.isShown) {
-
+        if(StatusBarController.popover.isShown) {
+            
             hidePopover(sender)
-            }
-            else {
-
+        }
+        else {
+            
             showPopover(sender)
-            }
-            
-        default:
-            
-            let quitAlert = NSAlert()
-            quitAlert.messageText = "Quit"
-            quitAlert.informativeText = "Do you want to quit this app?"
-
-            quitAlert.addButton(withTitle: "Quit")
-            quitAlert.buttons[0].target = self
-            quitAlert.buttons[0].action = #selector(quitApp)
-
-            quitAlert.addButton(withTitle: "Cancel")
-            quitAlert.buttons[1].target = self
-
-            quitAlert.showsSuppressionButton = true
-
-            quitAlert.runModal()
         }
     }
     
     func showPopover(_ sender: AnyObject) {
         
         StatusBarController.popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
-        eventMonitor?.start()
+//        eventMonitor?.start()
     }
     
     func hidePopover(_ sender: AnyObject) {
@@ -72,18 +54,12 @@ class StatusBarController: ObservableObject {
         eventMonitor?.stop()
     }
     
+    // MARK: - Mouse Event Handler
     func mouseEventHandler(_ event: NSEvent?) {
         
         if(StatusBarController.popover.isShown) {
             
             hidePopover(event!)
         }
-    }
-    
-    @objc func quitApp() {
-        
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        print("All of pending notification requests is removed while app is quitted.")
-        NSApplication.shared.terminate(self)
     }
 }
