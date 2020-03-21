@@ -200,24 +200,53 @@ struct ContentView: View {
                             }
                         }
                     ) // .gesture
-                        .alert(isPresented: self.$showingAlert, content: {
+                        .sheet(isPresented: self.$showingAlert) {
                             
-                            if self.userSettings.initialNotificationTime > 0 { // which is MINUTE
-                                return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) {
+                            if self.userSettings.initialNotificationTime > 0 {
+                                
+                                VStack(alignment: .center) {
+                                    Text("Start T!mer").font(.largeTitle).padding()
+                                    Text("Do you want to start T!mer for \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?")
+                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 50, trailing: 10))
                                     
-                                    self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+                                    HStack(alignment: .center) {
+                                        
+                                        Button("Cancel") {
+                                            self.showingAlert = false
+                                        }
+                                        
+                                        Button("OK") {
+                                            
+                                            /// @Set notification time
+                                            self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+                                            /// @END
+                                            
+                                            /// @Start timer starting method
+                                            self.mainController.setNotificationWhenTimerStart()
+                                            /// @END
+                                            /// @Change bool flag
+                                            self.userSettings.isTimerStarted = true
+                                            self.gestureAllowed = false
+                                            /// @END
+                                            /// @Change circle color
+                                            self.circleColor = Color.red.opacity(1.0)
+                                            /// @END
+                                            
+                                            self.showingAlert = false
+                                        }
+                                    }.padding()
+                                }
+                            } else {
+                                VStack(alignment: .center) {
+                                    Text("Nah!").font(.largeTitle).padding()
+                                    Text("T!mer can't be started in 0 minutes.").padding()
                                     
-                                    self.mainController.setNotificationWhenTimerStart()
-                                    self.userSettings.isTimerStarted = true
-                                    
-                                    self.gestureAllowed = false
-                                    self.circleColor = Color.red.opacity(1.0)
-                                    
-                                    })
-                            } else { // when userset timer 0 minute.
-                                return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
+                                    Button("Dismiss") {
+                                        self.showingAlert = false
+                                    }
+                                }
                             }
-                        })
+                    }
                 }.padding(.trailing, 6)
             }
         }
