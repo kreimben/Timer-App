@@ -32,7 +32,7 @@ struct PreferenceView: View {
     
     var body: some View {
         VStack {
-            Text("Preferences...")
+            Text("Preferences")
                 .font(.custom("Avenir Next Medium", size: 35))
                 .padding(.top, 13)
             
