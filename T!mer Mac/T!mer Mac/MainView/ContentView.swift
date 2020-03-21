@@ -97,7 +97,7 @@ struct ContentView: View {
                             print("button pressed")
                             self.preferenceSheet = true
                         }) {
-                            Text("Preferences...")
+                            Text("Preferences")
                         }
                         .padding()
                         .sheet(isPresented: $preferenceSheet) {
