@@ -52,11 +52,10 @@ struct PreferenceView: View {
                             Text("Dismiss by clicking outside the app")
                         }
                         
-                        Text("These options will be activated after closing the app")
+                        Text("This option will be activated after closing the app")
                             .font(.system(size: 11))
                             .foregroundColor(.gray)
                     }
-                    //.padding([.top, .bottom], 8)
                     
                     Picker(selection: $selectedColor, label: Text("Color")) {
                         ForEach(0 ..< Colors.allCases.count, id: \.self) {

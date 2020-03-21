@@ -92,7 +92,7 @@ struct ContentView: View {
                                     self.statusBarController.statusBarButton.title = "T!mer"
                                 }
                         }
-                    }.shadow(radius: 20)
+                    }.shadow(radius: 10)
                     
                     HStack {
                         
@@ -204,14 +204,14 @@ struct ContentView: View {
                             }
                         }
                     ) // .gesture
-                        .sheet(isPresented: self.$showingAlert) {
+                        .sheet(isPresented: self.$showingAlert) { // MARK: Sheet (Alert)
                             
                             if self.userSettings.initialNotificationTime > 0 {
                                 
                                 VStack(alignment: .center) {
                                     Text("Start T!mer").font(.largeTitle).padding()
                                     Text("Do you want to start T!mer for \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?")
-                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 24, trailing: 10))
+                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 16, trailing: 10))
                                     
                                     HStack(alignment: .center) {
                                         
@@ -247,7 +247,7 @@ struct ContentView: View {
                                     
                                     Button("Dismiss") {
                                         self.showingAlert = false
-                                    }
+                                    }.padding()
                                 }
                             }
                     }
