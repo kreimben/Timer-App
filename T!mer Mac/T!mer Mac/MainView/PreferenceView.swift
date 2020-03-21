@@ -37,11 +37,7 @@ struct PreferenceView: View {
         VStack {
             Text("Preferences")
                 .font(.custom("Avenir Next Medium", size: 35))
-                .padding(.top, 13)
-            
-            Text("These options will be activated after closing the app")
-                .font(.system(size: 11))
-                .foregroundColor(.gray)
+                .padding(.top, 4)
             
             ScrollView(.vertical, showsIndicators: true) {
                 
@@ -51,9 +47,16 @@ struct PreferenceView: View {
                         Text("Display remain time when T!mer is running")
                     }
                     
-                    Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
-                        Text("Dismiss by clicking outside the app")
+                    VStack(alignment: .leading) {
+                        Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
+                            Text("Dismiss by clicking outside the app")
+                        }
+                        
+                        Text("These options will be activated after closing the app")
+                            .font(.system(size: 11))
+                            .foregroundColor(.gray)
                     }
+                    //.padding([.top, .bottom], 8)
                     
                     Picker(selection: $selectedColor, label: Text("Color")) {
                         ForEach(0 ..< Colors.allCases.count, id: \.self) {
@@ -61,25 +64,20 @@ struct PreferenceView: View {
                         }
                     }
                     .padding([.top], 10)
+                    
+                    Picker(selection: $selectedSound, label: Text("Select notification sound")) {
+                        ForEach(0 ..< self.sounds.count, id: \.self) {
+                            Text(self.sounds[$0]).tag($0)
+                        }
+                    }
+                    
+                    Text("If you want to change notification sound, please set the sound before starting timer.")
+                        .font(.system(size: 11))
+                        .foregroundColor(Color.gray)
+                        .padding(.bottom)
                 }
             } // ScrollView
-                .padding([.leading, .trailing], 10)
-            
-            //            Picker(selection: $selectedSound, label: Text("Select notification sound")) {
-            //                ForEach(0 ..< self.sounds.count, id: \.self) {
-            //                    Text(self.sounds[$0]).tag($0)
-            //                }
-            //            }
-            //            .padding([.leading, .trailing], 15)
-            //
-            //            Text("If you want to change notification sound,")
-            //                .padding([.leading, .trailing], 15)
-            //                .font(.system(size: 11))
-            //                .foregroundColor(Color.gray)
-            //            Text("please set the sound before starting timer.")
-            //                .padding([.leading, .trailing], 15)
-            //                .font(.system(size: 11))
-            //                .foregroundColor(Color.gray)
+            .padding([.leading, .trailing], 10)
             
             HStack(alignment: .center) {
                 Button(action: {
@@ -93,7 +91,6 @@ struct PreferenceView: View {
                     Text("Visit Kreimben.com")
                 }
                 .buttonStyle(LinkButtonStyle())
-                .padding([.top], 8)
                 
                 Button("Done") {
                     
@@ -109,7 +106,6 @@ struct PreferenceView: View {
                     
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                .padding()
                 .onAppear {
                     
                     // MARK: - Settting sound to this view
@@ -123,7 +119,7 @@ struct PreferenceView: View {
                     /// @END
                     
                 }
-            }
+            }.padding(.bottom, 10)
         }
         .frame(width: 450, height: 275)
     }
