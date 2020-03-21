@@ -36,7 +36,6 @@ struct selectSoundView: View {
     
     var body: some View {
         Text(self.array[index].soundName).tag(index)
-        
     }
 }
 
