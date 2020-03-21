@@ -36,26 +36,11 @@ struct PreferenceView: View {
                 .font(.custom("Avenir Next Medium", size: 35))
                 .padding(.top, 13)
             
-            VStack(alignment: .leading) {
-                
-                Text("Settings about when timer is working...")
-                    .font(.caption)
-                    .font(.system(size: 9))
-                    .foregroundColor(Color.gray)
-                    .padding(.top, 10)
+            VStack(alignment: .leading) { /// For Alignment multiple setting options
                 
                 Toggle(isOn: self.$userSettings.displayStringTime) {
-                    Text("Display remain time")
+                    Text("Display remain time when T!mer is running")
                 }
-            }
-            
-            VStack(alignment: .leading) {
-                
-                Text("Dismiss the app")
-                    .font(.caption)
-                    .font(.system(size: 9))
-                    .foregroundColor(Color.gray)
-                    .padding(.top, 10)
                 
                 Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
                     Text("Dismiss by clicking outside the app")
