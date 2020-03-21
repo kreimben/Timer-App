@@ -42,8 +42,13 @@ struct PreferenceView: View {
                     Text("Display remain time when T!mer is running")
                 }
                 
-                Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
-                    Text("Dismiss by clicking outside the app")
+                VStack {
+                    Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
+                        Text("Dismiss by clicking outside the app")
+                    }
+                    Text("This option will be activated after close the app")
+                        .font(.system(size: 8))
+                        .foregroundColor(.gray)
                 }
             }
             
