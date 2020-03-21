@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		51010CEB242607E000CDB769 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51010CEA242607E000CDB769 /* ColorScheme.swift */; };
+		51010CF2242629F500CDB769 /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CED242629F500CDB769 /* Default Bell */; };
+		51010CF3242629F500CDB769 /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEE242629F500CDB769 /* Tower bell */; };
+		51010CF4242629F500CDB769 /* Bell store door in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEF242629F500CDB769 /* Bell store door */; };
+		51010CF5242629F500CDB769 /* exodusHoney.ma4 in Resources */ = {isa = PBXBuildFile; fileRef = 51010CF0242629F500CDB769 /* exodusHoney.ma4 */; };
+		51010CF6242629F500CDB769 /* Cookoo in Resources */ = {isa = PBXBuildFile; fileRef = 51010CF1242629F500CDB769 /* Cookoo */; };
 		5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130F38E2397A489006D9034 /* PreferenceView.swift */; };
 		516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B423924F6000EAAC0E /* AppDelegate.swift */; };
 		516B71B723924F6000EAAC0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B623924F6000EAAC0E /* ContentView.swift */; };
@@ -24,6 +29,11 @@
 
 /* Begin PBXFileReference section */
 		51010CEA242607E000CDB769 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		51010CED242629F500CDB769 /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
+		51010CEE242629F500CDB769 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
+		51010CEF242629F500CDB769 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
+		51010CF0242629F500CDB769 /* exodusHoney.ma4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = exodusHoney.ma4; sourceTree = "<group>"; };
+		51010CF1242629F500CDB769 /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
 		5130F38E2397A489006D9034 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		516AF29F23F289DC002A42C9 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../T!mer/Models/UserHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -54,6 +64,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51010CEC242629F500CDB769 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				51010CED242629F500CDB769 /* Default Bell */,
+				51010CEE242629F500CDB769 /* Tower bell */,
+				51010CEF242629F500CDB769 /* Bell store door */,
+				51010CF0242629F500CDB769 /* exodusHoney.ma4 */,
+				51010CF1242629F500CDB769 /* Cookoo */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		516AF29E23F289DC002A42C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +108,7 @@
 				516B71B423924F6000EAAC0E /* AppDelegate.swift */,
 				516B71CD2392568000EAAC0E /* NSView(Controller) */,
 				516B71D323925B1B00EAAC0E /* Model */,
+				51010CEC242629F500CDB769 /* Sound */,
 				516B71E323925C7A00EAAC0E /* MainView */,
 				516B71D22392581B00EAAC0E /* Helpers */,
 				516B71B823924F6300EAAC0E /* Assets.xcassets */,
@@ -200,8 +223,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51010CF6242629F500CDB769 /* Cookoo in Resources */,
+				51010CF2242629F500CDB769 /* Default Bell in Resources */,
+				51010CF4242629F500CDB769 /* Bell store door in Resources */,
 				516B71BF23924F6300EAAC0E /* Main.storyboard in Resources */,
 				516B71BC23924F6300EAAC0E /* Preview Assets.xcassets in Resources */,
+				51010CF5242629F500CDB769 /* exodusHoney.ma4 in Resources */,
+				51010CF3242629F500CDB769 /* Tower bell in Resources */,
 				516B71B923924F6300EAAC0E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
