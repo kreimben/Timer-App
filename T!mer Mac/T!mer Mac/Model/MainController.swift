@@ -47,7 +47,9 @@ class MainController: ObservableObject {
         
         
         center.add(request) { (error) in
-            print("UNNotificationCenter add error: \(String(describing: error.debugDescription))")
+            if let err = error {
+                print("UNNotificationCenter add error: \(String(describing: err.localizedDescription))")
+            }
         }
         print("UserNotifications is setting done!")
     }
