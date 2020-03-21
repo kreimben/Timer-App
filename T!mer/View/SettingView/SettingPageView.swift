@@ -34,13 +34,13 @@ struct SettingPageView: View {
                 PickerView()
             }
             
-            Section(header: Text("In-app purchase")) {
-                
-                NavigationLink(destination: IAPView(productID: self.$productID)) {
-                    
-                    Text("Get T!mer Pro").foregroundColor(.blue)
-                }
-            }
+//            Section(header: Text("In-app purchase")) {
+//
+//                NavigationLink(destination: IAPView(productID: self.$productID)) {
+//                    
+//                    Text("Get T!mer Pro").foregroundColor(.blue)
+//                }
+//            }
             
             Section(header: Text("General")) {
                 HStack {
