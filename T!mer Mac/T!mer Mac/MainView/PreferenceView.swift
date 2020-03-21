@@ -5,9 +5,6 @@
 //  Created by Aksidion Kreimben on 12/4/19.
 //  Copyright © 2019 Aksidion Kreimben. All rights reserved.
 //
-//UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-//print("All of pending notification requests is removed.")
-//NSApplication.shared.terminate(self)
 
 import SwiftUI
 import UserNotifications
