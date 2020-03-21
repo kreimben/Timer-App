@@ -64,16 +64,16 @@ struct PreferenceView: View {
                     }
                     .padding([.top], 10)
                     
-                    Picker(selection: $selectedSound, label: Text("Select notification sound")) {
-                        ForEach(0 ..< self.sounds.count, id: \.self) {
-                            Text(self.sounds[$0]).tag($0)
-                        }
-                    }
-                    
-                    Text("If you want to change notification sound, please set the sound before starting timer.")
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.gray)
-                        .padding(.bottom)
+//                    Picker(selection: $selectedSound, label: Text("Select notification sound")) {
+//                        ForEach(0 ..< self.sounds.count, id: \.self) {
+//                            Text(self.sounds[$0]).tag($0)
+//                        }
+//                    }
+//
+//                    Text("If you want to change notification sound, please set the sound before starting timer.")
+//                        .font(.system(size: 11))
+//                        .foregroundColor(Color.gray)
+//                        .padding(.bottom)
                 }
             } // ScrollView
             .padding([.leading, .trailing], 10)
@@ -94,8 +94,8 @@ struct PreferenceView: View {
                 Button("Done") {
                     
                     // MARK: - Setting sound TO USERDEFAULTS
-                    self.userSettings.soundIndex = self.selectedSound
-                    print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
+//                    self.userSettings.soundIndex = self.selectedSound
+//                    print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
                     /// @END
                     
                     // MARK: - Setting color TO USERDEFAULTS
@@ -108,8 +108,8 @@ struct PreferenceView: View {
                 .onAppear {
                     
                     // MARK: - Settting sound to this view
-                    self.selectedSound = self.userSettings.soundIndex
-                    print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
+//                    self.selectedSound = self.userSettings.soundIndex
+//                    print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
                     /// @END
                     
                     // MARK: - Setting color to this view
