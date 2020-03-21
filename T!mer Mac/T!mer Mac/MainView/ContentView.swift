@@ -1,11 +1,3 @@
-//
-//  ContentView.swift
-//  T!mer Mac
-//
-//  Created by Aksidion Kreimben on 11/30/19.
-//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
-//
-
 import SwiftUI
 import Combine
 import Dispatch
@@ -20,8 +12,12 @@ struct ContentView: View {
     
     @EnvironmentObject var mainController: MainController
     
-    // MAEK: AlertBool
+    // MARK: AlertBool
     @State var showingAlert = false
+    /// @END
+    
+    // MARK: backgroundColor
+    @State var backgroundColor = UserDefaults.standard.integer(forKey: "colorIndex")
     /// @END
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
@@ -46,7 +42,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.55)
+            ColorScheme.getColor(self.backgroundColor).opacity(0.55)
                 .edgesIgnoringSafeArea(.all)
             
             HStack {
@@ -57,7 +53,7 @@ struct ContentView: View {
                         
                         Rectangle()
                             .frame(width: 230, height: 100)
-                            .foregroundColor(Color.blue.opacity(0.8))
+                            .foregroundColor(ColorScheme.getColor(self.backgroundColor).opacity(0.8))//Color.blue.opacity(0.8)
                             .cornerRadius(30)
                         
                         Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
@@ -65,6 +61,8 @@ struct ContentView: View {
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
+                                
+                                self.backgroundColor = UserDefaults.standard.object(forKey: "colorIndex") as! Int
                                 
                                 //MARK:- About TIMER!
                                 if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
@@ -94,7 +92,7 @@ struct ContentView: View {
                                     self.statusBarController.statusBarButton.title = "T!mer"
                                 }
                         }
-                    }
+                    }.shadow(radius: 20)
                     
                     HStack {
                         
@@ -266,3 +264,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//
+//  ContentView.swift
+//  T!mer Mac
+//
+//  Created by Aksidion Kreimben on 11/30/19.
+//  Copyright © 2019 Aksidion Kreimben. All rights reserved.
+//

@@ -39,6 +39,10 @@ struct PreferenceView: View {
                 .font(.custom("Avenir Next Medium", size: 35))
                 .padding(.top, 13)
             
+            Text("These options will be activated after closing the app")
+                .font(.system(size: 11))
+                .foregroundColor(.gray)
+            
             ScrollView(.vertical, showsIndicators: true) {
                 
                 VStack(alignment: .leading) { /// For Alignment multiple setting options
@@ -46,14 +50,9 @@ struct PreferenceView: View {
                     Toggle(isOn: self.$userSettings.displayStringTime) {
                         Text("Display remain time when T!mer is running")
                     }
-
-                    VStack {
-                        Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
-                            Text("Dismiss by clicking outside the app")
-                        }
-                        Text("This option will be activated after closing the app")
-                            .font(.system(size: 8))
-                            .foregroundColor(.gray)
+                    
+                    Toggle(isOn: self.$userSettings.dismissByEventMonitor) {
+                        Text("Dismiss by clicking outside the app")
                     }
                     
                     Picker(selection: $selectedColor, label: Text("Color")) {
@@ -82,47 +81,48 @@ struct PreferenceView: View {
             //                .font(.system(size: 11))
             //                .foregroundColor(Color.gray)
             
-            
-            Button(action: {
-                
-                print("Website button pressed")
-                
-                if let url = URL(string: "http://www.kreimben.com") {
-                    NSWorkspace.shared.open(url)
+            HStack(alignment: .center) {
+                Button(action: {
+                    
+                    print("Website button pressed")
+                    
+                    if let url = URL(string: "http://www.kreimben.com") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }) {
+                    Text("Visit Kreimben.com")
                 }
-            }) {
-                Text("Visit Kreimben.com")
-            }
-            .buttonStyle(LinkButtonStyle())
-            .padding([.top], 8)
-            
-            Button("Done") {
+                .buttonStyle(LinkButtonStyle())
+                .padding([.top], 8)
                 
-                // MARK: - Setting sound TO USERDEFAULTS
-                self.userSettings.soundIndex = self.selectedSound
-                print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
-                /// @END
-                
-                // MARK: - Setting color TO USERDEFAULTS
-                self.userSettings.colorIndex = self.selectedColor
-                print("\tStoring selected color to UserDefualt's colorIndex at Done button.\n\tNumber(colorIndex): \(self.userSettings.colorIndex)")
-                /// @END
-                
-                self.presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
-            .onAppear {
-                
-                // MARK: - Settting sound to this view
-                self.selectedSound = self.userSettings.soundIndex
-                print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
-                /// @END
-                
-                // MARK: - Setting color to this view
-                self.selectedColor = self.userSettings.colorIndex
-                print("\tSetting selected color from UserDefault's colorIndex at onAppear of Done button.\n\tNumber(selectedColor): \(self.selectedColor)")
-                /// @END
-                
+                Button("Done") {
+                    
+                    // MARK: - Setting sound TO USERDEFAULTS
+                    self.userSettings.soundIndex = self.selectedSound
+                    print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
+                    /// @END
+                    
+                    // MARK: - Setting color TO USERDEFAULTS
+                    self.userSettings.colorIndex = self.selectedColor
+                    print("\tStoring selected color to UserDefualt's colorIndex at Done button.\n\tNumber(colorIndex): \(self.userSettings.colorIndex)")
+                    /// @END
+                    
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                .padding()
+                .onAppear {
+                    
+                    // MARK: - Settting sound to this view
+                    self.selectedSound = self.userSettings.soundIndex
+                    print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
+                    /// @END
+                    
+                    // MARK: - Setting color to this view
+                    self.selectedColor = self.userSettings.colorIndex
+                    print("\tSetting selected color from UserDefault's colorIndex at onAppear of Done button.\n\tNumber(selectedColor): \(self.selectedColor)")
+                    /// @END
+                    
+                }
             }
         }
         .frame(width: 450, height: 275)
