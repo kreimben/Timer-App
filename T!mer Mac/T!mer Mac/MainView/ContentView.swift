@@ -207,7 +207,7 @@ struct ContentView: View {
                                 VStack(alignment: .center) {
                                     Text("Start T!mer").font(.largeTitle).padding()
                                     Text("Do you want to start T!mer for \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?")
-                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 50, trailing: 10))
+                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 24, trailing: 10))
                                     
                                     HStack(alignment: .center) {
                                         
