@@ -3,11 +3,13 @@ import SwiftUI
 import UserNotifications
 
 class StatusBarController: ObservableObject {
+    /// @Class properties
     private var statusBar: NSStatusBar
     private var statusItem: NSStatusItem
     static var popover = NSPopover()
     @Published var statusBarButton: NSStatusBarButton
     private var eventMonitor: EventMonitor?
+    /// @END
     
     let mainController = MainController()
     
@@ -44,8 +46,11 @@ class StatusBarController: ObservableObject {
     
     func showPopover(_ sender: AnyObject) {
         
-        StatusBarController.popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
-//        eventMonitor?.start()
+        StatusBarController.popover.show(
+            relativeTo: statusBarButton.bounds,
+            of: statusBarButton,
+            preferredEdge: NSRectEdge.maxY)
+        eventMonitor?.start()
     }
     
     func hidePopover(_ sender: AnyObject) {
