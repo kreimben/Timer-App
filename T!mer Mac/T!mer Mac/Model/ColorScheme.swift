@@ -7,14 +7,14 @@ enum Colors: CaseIterable {
 class ColorScheme {
     
     let scheme = [
-        "\(Colors.blue)",
-        "\(Colors.red)",
-        "\(Colors.yellow)",
-        "\(Colors.green)",
-        "\(Colors.orange)",
-        "\(Colors.purple)",
-        "\(Colors.black)",
-        "\(Colors.white)"
+        "\(Colors.Blue)",
+        "\(Colors.Red)",
+        "\(Colors.Yellow)",
+        "\(Colors.Green)",
+        "\(Colors.Orange)",
+        "\(Colors.Purple)",
+        "\(Colors.Black)",
+        "\(Colors.White)"
     ]
     
 }
