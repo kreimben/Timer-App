@@ -16,6 +16,10 @@ struct ContentView: View {
     @State var showingAlert = false
     /// @END
     
+    // MARK: QuestionBool
+    @State var questionBool = false
+    /// @END
+    
     // MARK: backgroundColor
     @State var backgroundColor = UserDefaults.standard.integer(forKey: "colorIndex")
     /// @END
