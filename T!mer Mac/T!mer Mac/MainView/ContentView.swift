@@ -126,16 +126,7 @@ struct ContentView: View {
                         .padding()
                         .sheet(isPresented: self.$questionBool) {
                             
-                            VStack {
-                                Text("Notes!")
-                                    .font(.system(.largeTitle, design: .rounded))
-                                    .padding()
-                                
-                                Button("Done") {
-                                    
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }.padding()
-                            }
+                            NotesView()
                         }
                     }
                 }
