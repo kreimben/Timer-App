@@ -96,7 +96,7 @@ struct ContentView: View {
                                     self.statusBarController.statusBarButton.title = "T!mer"
                                 }
                         }
-                    }.shadow(radius: 10)
+                    }.shadow(radius: 10) // Text Box
                     
                     HStack {
                         
@@ -128,8 +128,8 @@ struct ContentView: View {
                             
                             NotesView()
                         }
-                    }
-                }
+                    } // Bottom Buttons
+                } // Left Elements
                 
                 ZStack(alignment: .center) { //MARK:- Circle Timer
                     
@@ -281,7 +281,7 @@ struct ContentView: View {
                                 }
                             }
                     }
-                }.padding(.trailing, 6)
+                }.padding(.trailing, 6) // Circle Timer
             }
         }
         .frame(width: 500, height: 300)
