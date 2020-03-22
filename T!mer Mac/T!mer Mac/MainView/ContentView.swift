@@ -116,7 +116,7 @@ struct ContentView: View {
                         
                         Button(action: {
                             
-                            
+                            self.questionBool = true
                         }) {
                             Image("question_white")
                                 .resizable()
@@ -124,6 +124,19 @@ struct ContentView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding()
+                        .sheet(isPresented: self.$questionBool) {
+                            
+                            VStack {
+                                Text("Notes!")
+                                    .font(.system(.largeTitle, design: .rounded))
+                                    .padding()
+                                
+                                Button("Done") {
+                                    
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }.padding()
+                            }
+                        }
                     }
                 }
                 
