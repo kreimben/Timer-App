@@ -19,7 +19,7 @@ class MainController: ObservableObject {
     let cookooNotificationSound = UNNotificationSoundName("Cookoo")
     let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
     
-    func setNotificationWhenTimerStart() {
+    func setNotificationWhenTimerStart(timeInterval: Double) {
         
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"

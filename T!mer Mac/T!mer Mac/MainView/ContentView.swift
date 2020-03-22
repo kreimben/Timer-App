@@ -154,7 +154,7 @@ struct ContentView: View {
                         .fill(Color.red.opacity(0.001))
                         .frame(width: 240, height: 240)
                         .shadow(radius: 10)
-                        .onLongPressGesture(minimumDuration: 0.6, maximumDistance: 5) {
+                        .onLongPressGesture(minimumDuration: 0.6, maximumDistance: 5) { // MARK: onLongPressGesture
                             
                             print("onLongPressGesture is excuted.")
                             print("gesture allowed status: \(self.gestureAllowed)")
@@ -172,6 +172,15 @@ struct ContentView: View {
                                 print("isTimerStarted gonna FALSE")
                                 
                                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                            } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
+                                
+                                self.userSettings.notificationTime = Date().addingTimeInterval(3600)
+                                
+                                self.mainController.setNotificationWhenTimerStart(timeInterval: 3600)
+                                self.userSettings.isTimerStarted = true
+                                
+                                self.gestureAllowed = false
+                                self.circleColor = Color.red.opacity(1.0)
                             }
                     }
                     .gesture(
@@ -247,7 +256,7 @@ struct ContentView: View {
                                             /// @END
                                             
                                             /// @Start timer starting method
-                                            self.mainController.setNotificationWhenTimerStart()
+                                            self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
                                             /// @END
                                             /// @Change bool flag
                                             self.userSettings.isTimerStarted = true
