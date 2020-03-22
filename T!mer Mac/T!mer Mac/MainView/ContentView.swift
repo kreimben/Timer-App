@@ -107,6 +107,19 @@ struct ContentView: View {
                         .sheet(isPresented: $preferenceSheet) {
                             PreferenceView()
                         }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            
+                            
+                        }) {
+                            Image("question_white")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding()
                     }
                 }
                 
