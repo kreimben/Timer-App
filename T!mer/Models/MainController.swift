@@ -41,7 +41,7 @@ class MainController: ObservableObject {
             print("------------Error occured in fixing UNNotificationSound.")
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval/*self.userSettings.initialNotificationTime*/, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         
