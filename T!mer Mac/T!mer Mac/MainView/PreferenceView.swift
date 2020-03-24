@@ -54,8 +54,8 @@ struct PreferenceView: View {
                     }
                     
                     Picker(selection: $selectedColor, label: Text("Color")) {
-                        ForEach(0 ..< Colors.allCases.count, id: \.self) {
-                            Text(String(ColorScheme().scheme[$0])).tag($0)
+                        ForEach(0 ..< Colors.allCases.count, id: \.self) { index in
+                            PickerView(index: index).tag(index)
                         }
                     }
                     .padding([.top], 10)
@@ -117,6 +117,24 @@ struct PreferenceView: View {
             }.padding(.bottom, 10)
         }
         .frame(width: 450, height: 275)
+    }
+}
+
+struct PickerView: View {
+    
+    @State var index: Int
+    
+    var body: some View {
+        HStack {
+            Text(String(ColorScheme().scheme[index]))//.tag($0)
+            Spacer()
+            ColorScheme.getColor(index).opacity(0.8)
+                .frame(width: 17, height: 17)
+                .cornerRadius(4)
+                .shadow(radius: 10)
+                .border(ColorScheme.getColor(index).opacity(0.55), width: 5)
+                .cornerRadius(4)
+        }
     }
 }
 

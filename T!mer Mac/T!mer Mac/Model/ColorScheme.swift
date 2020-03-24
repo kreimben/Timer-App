@@ -33,7 +33,6 @@ class ColorScheme {
             return Color.blue
         }
     }
-    
 }
 
 //
