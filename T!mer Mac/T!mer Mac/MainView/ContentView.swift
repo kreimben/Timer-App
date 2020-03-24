@@ -278,7 +278,7 @@ struct ContentView: View {
                                 }
                             }
                     }
-                }.padding(.trailing, 6) // Circle Timer
+                }.padding(.trailing, 6) // Circle Timer Elements
             }
         }
         .frame(width: 500, height: 300)
