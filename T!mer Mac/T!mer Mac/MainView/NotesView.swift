@@ -26,8 +26,6 @@ struct NotesView: View {
                             .font(.system(size: 13, design: .rounded)).bold()
                     }.padding([.top, .bottom])
                     
-                    // TODO: Make main program's screen-shot image and put it on.
-                    
                     Image("main_screenshot")
                         .resizable()
                         .frame(width: 500 * 0.8, height: 300 * 0.8)

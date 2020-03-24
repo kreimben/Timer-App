@@ -102,8 +102,8 @@ struct ContentView: View {
                         
                         Button(action: {
                             
-                            print("button pressed")
                             self.preferenceSheet = true
+                            print("button pressed")
                         }) {
                             Text("Preferences")
                         }
