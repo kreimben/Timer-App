@@ -62,7 +62,7 @@ struct ContentView: View {
         NavigationView {
             
             ZStack {
-                
+                Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
                 ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
                 
