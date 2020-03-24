@@ -28,9 +28,9 @@ struct NotesView: View {
                     
                     // TODO: Make main program's screen-shot image and put it on.
                     
-                    //Image("main_screen_shot")
-                        //.resizable()
-                        //.frame(width: 200, height: 120)
+                    Image("main_screenshot")
+                        .resizable()
+                        .frame(width: 500 * 0.8, height: 300 * 0.8)
                     
                     Text("How to Use T!mer?")
                         .font(.system(.headline))
@@ -42,7 +42,7 @@ struct NotesView: View {
                                 .font(.system(.title, design: .rounded))
                                 .padding()
                             
-                            Text("Don't close this app while opening subviews\nincluding this view and \"Preferences\" view and \"Start T!mer\" view")
+                            Text("Please don't close this app while opening subviews\nincluding this view and \"Preferences\" view and \"Start T!mer\" view")
                                 .font(.system(size: 12))
                                 .padding()
                         }
