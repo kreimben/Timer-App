@@ -99,7 +99,7 @@ struct PreferenceView: View {
                     print("\tStoring selected color to UserDefualt's colorIndex at Done button.\n\tNumber(colorIndex): \(self.userSettings.colorIndex)")
                     /// @END
                     
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.isPresented = false
                 }
                 .onAppear {
                     
