@@ -57,7 +57,7 @@ struct ContentView: View {
                         
                         Rectangle()
                             .frame(width: 230, height: 100)
-                            .foregroundColor(ColorScheme.getColor(self.backgroundColor).opacity(0.8))//Color.blue.opacity(0.8)
+                            .foregroundColor(ColorScheme.getColor(self.backgroundColor).opacity(0.8))
                             .cornerRadius(30)
                         
                         Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(self.mainController.timeDisplay / 60), Int(  self.mainController.timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
