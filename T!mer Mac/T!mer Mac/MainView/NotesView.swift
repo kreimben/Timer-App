@@ -2,8 +2,8 @@ import SwiftUI
 
 struct NotesView: View {
     
-    /// @Environment
-    @Environment(\.presentationMode) var presentationMode
+    /// @Binding about alternating "presentationMode"
+    @Binding var isPresented: Bool
     /// @END
     
     var body: some View {
@@ -51,17 +51,11 @@ struct NotesView: View {
 
             Button("Done") {
                 
-                self.presentationMode.wrappedValue.dismiss()
+                self.isPresented = false
             }
             .padding()
         } // master vstack
     } // var body
-}
-
-struct NotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotesView()
-    }
 }
 
 //

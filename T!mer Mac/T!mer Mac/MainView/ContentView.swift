@@ -40,10 +40,6 @@ struct ContentView: View {
     
     @ObservedObject var userTouchController = UserTouchController()
     
-    /// @Environment
-    @Environment(\.presentationMode) var presentationMode
-    /// @END
-    
     var body: some View {
         ZStack {
             ColorScheme.getColor(self.backgroundColor).opacity(0.55)
@@ -102,21 +98,21 @@ struct ContentView: View {
                         
                         Button(action: {
                             
-                            self.preferenceSheet = true
+                            self.preferenceSheet.toggle()
                             print("button pressed")
                         }) {
                             Text("Preferences")
                         }
                         .padding()
                         .sheet(isPresented: $preferenceSheet) {
-                            PreferenceView()
+                            PreferenceView(isPresented: self.$preferenceSheet)
                         }
                         
                         Spacer()
                         
                         Button(action: {
                             
-                            self.questionBool = true
+                            self.questionBool.toggle()
                         }) {
                             Image("question_white")
                                 .resizable()
@@ -126,7 +122,7 @@ struct ContentView: View {
                         .padding()
                         .sheet(isPresented: self.$questionBool) {
                             
-                            NotesView()
+                            NotesView(isPresented: self.$questionBool)
                         }
                     } // Bottom Buttons
                 } // Left Elements
@@ -229,8 +225,9 @@ struct ContentView: View {
                                 
                                 self.userSettings.initialNotificationTime = degreeForConvert * 10 // 각도에 10을 곱해 초(second)로 전환.
                                 
-                                self.showingAlert = true
-                                
+                                /// @For fixing bug
+                                self.showingAlert.toggle()
+                                /// @END
                             }
                         }
                     ) // .gesture

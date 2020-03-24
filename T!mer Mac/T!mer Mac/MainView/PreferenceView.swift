@@ -25,12 +25,8 @@ struct PreferenceView: View {
     @State var selectedColor = 0
     /// @END
     
-    /// @Environment
-    @Environment(\.presentationMode) var presentationMode
-    /// @END
-    
-    /// @Sheet Bool
-    @State var quitAlert: Bool = false
+    /// @Binding about alternating "presentationMode"
+    @Binding var isPresented: Bool
     /// @END
     
     var body: some View {
@@ -121,12 +117,6 @@ struct PreferenceView: View {
             }.padding(.bottom, 10)
         }
         .frame(width: 450, height: 275)
-    }
-}
-
-struct PreferenceView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreferenceView()
     }
 }
 
