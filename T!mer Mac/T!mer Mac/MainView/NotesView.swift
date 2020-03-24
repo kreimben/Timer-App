@@ -32,10 +32,12 @@ struct NotesView: View {
                     
                     Image("main_screenshot")
                         .resizable()
-                        .frame(width: 500 * 0.8, height: 300 * 0.8)
+                        .frame(width: 500 * 0.8, height: 300 * 0.85)
+                        .padding(.top)
+                        .background(Color.blue.opacity(backgroundColorOpacity))
                     
                     ZStack { // Shortcuts
-                        Color.blue.opacity(backgroundColorOpacity)
+                        Color.green.opacity(backgroundColorOpacity)
                         VStack {
                             Text("Shortcuts")
                                 .font(.system(.title, design: .rounded))
@@ -165,7 +167,6 @@ struct NotesView: View {
                     } // Tips
                 }
             } // ScrollView
-            .frame(width: 400, height: 240)
 
             Button("Done") {
                 
@@ -173,6 +174,7 @@ struct NotesView: View {
             }
             .padding(.bottom)
         } // master vstack
+        .frame(width: 400, height: 500)
     } // var body
 }
 
