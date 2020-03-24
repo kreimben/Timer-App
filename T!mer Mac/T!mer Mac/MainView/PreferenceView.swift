@@ -53,7 +53,7 @@ struct PreferenceView: View {
                             .foregroundColor(.gray)
                     }
                     
-                    Picker(selection: $selectedColor, label: Text("Color")) {
+                    Picker(selection: self.userSettings.colorIndex, label: Text("Color")) {
                         ForEach(0 ..< Colors.allCases.count, id: \.self) { index in
                             PickerView(index: index).tag(index)
                         }

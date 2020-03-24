@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51010CEB242607E000CDB769 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51010CEA242607E000CDB769 /* ColorScheme.swift */; };
 		51010CF2242629F500CDB769 /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CED242629F500CDB769 /* Default Bell */; };
 		51010CF3242629F500CDB769 /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEE242629F500CDB769 /* Tower bell */; };
 		51010CF4242629F500CDB769 /* Bell store door in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEF242629F500CDB769 /* Bell store door */; };
@@ -26,10 +25,10 @@
 		516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DC23925BEB00EAAC0E /* UserSettings.swift */; };
 		516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E423925C8800EAAC0E /* UserTouchCircle.swift */; };
 		519A708A2427298300C44874 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A70892427298300C44874 /* NotesView.swift */; };
+		51D6A188242A2820002AD0DB /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A187242A281F002AD0DB /* ColorScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51010CEA242607E000CDB769 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		51010CED242629F500CDB769 /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		51010CEE242629F500CDB769 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
 		51010CEF242629F500CDB769 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		516B71DC23925BEB00EAAC0E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		516B71E423925C8800EAAC0E /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		519A70892427298300C44874 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		51D6A187242A281F002AD0DB /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 			children = (
 				516B71DA23925B9400EAAC0E /* MainController.swift */,
 				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
-				51010CEA242607E000CDB769 /* ColorScheme.swift */,
+				51D6A187242A281F002AD0DB /* ColorScheme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 				516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */,
 				516B71B723924F6000EAAC0E /* ContentView.swift in Sources */,
 				516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */,
+				51D6A188242A2820002AD0DB /* ColorScheme.swift in Sources */,
 				519A708A2427298300C44874 /* NotesView.swift in Sources */,
-				51010CEB242607E000CDB769 /* ColorScheme.swift in Sources */,
 				516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */,
 				516B71DB23925B9400EAAC0E /* MainController.swift in Sources */,
 				516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */,
