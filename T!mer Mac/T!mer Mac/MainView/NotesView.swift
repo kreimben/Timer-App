@@ -129,6 +129,11 @@ struct NotesView: View {
                                         Spacer()
                                         Text("Stop")
                                     }
+                                    HStack {
+                                        Text("⌘q")
+                                        Spacer()
+                                        Text("Quit")
+                                    }
                                 } // 40, 45, 50, 60 minutes and Stop
                             } // Shortcut Texts
                                 .padding([.leading, .trailing], 8 * 14)
