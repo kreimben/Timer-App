@@ -2,7 +2,7 @@ import SwiftUI
 
 struct NotesView: View {
     
-    /// @Binding about alternating "presentationMode"
+    /// @Binding for alternating "presentationMode"
     @Binding var isPresented: Bool
     /// @END
     

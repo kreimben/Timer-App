@@ -25,7 +25,7 @@ struct PreferenceView: View {
     @State var selectedColor = 0
     /// @END
     
-    /// @Binding about alternating "presentationMode"
+    /// @Binding for alternating "presentationMode"
     @Binding var isPresented: Bool
     /// @END
     
