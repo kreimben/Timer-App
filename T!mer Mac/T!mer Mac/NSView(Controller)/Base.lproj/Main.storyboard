@@ -72,7 +72,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="15 Minutes" keyEquivalent="1" id="hbL-xt-Hny" userLabel="15 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="H3g-PZ-d90"/>
                                             </connections>
@@ -96,7 +96,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="45 Minutes" keyEquivalent="4" id="2FL-mN-Xjy" userLabel="45 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="xp9-wa-tK9"/>
                                             </connections>

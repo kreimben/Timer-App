@@ -81,7 +81,7 @@ struct NotesView: View {
                                         Text("10 Minutes")
                                     } // 10
                                     HStack {
-                                        Text("⌘⌥⌃1")
+                                        Text("⌘⌥⇧1")
                                         Spacer()
                                         Text("15 Minutes")
                                     } // 15
@@ -103,7 +103,7 @@ struct NotesView: View {
                                         Text("40 Minutes")
                                     } // 40
                                     HStack {
-                                        Text("⌘⌥⌃4")
+                                        Text("⌘⌥⇧4")
                                         Spacer()
                                         Text("45 Minutes")
                                     } // 45
