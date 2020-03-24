@@ -31,7 +31,8 @@ struct SettingPageView: View {
             
             Section(header: Text("About sound"), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
                 
-                PickerView()
+                SoundPickerView()
+                ColorPickerView()
             }
             
 //            Section(header: Text("In-app purchase")) {

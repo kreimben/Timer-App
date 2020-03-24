@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct PickerView: View {
+struct SoundPickerView: View {
     
     @ObservedObject var userSettings = UserSettings()
     
@@ -41,6 +41,6 @@ struct selectSoundView: View {
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
-        PickerView()
+        SoundPickerView()
     }
 }
