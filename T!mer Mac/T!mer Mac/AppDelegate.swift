@@ -19,7 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         let contentView = ContentView()
@@ -30,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         StatusBarController.popover = self.popover
         
+        /// @Setting Notification
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print("UserNotifications request authorization: \(error.debugDescription)")
             }
         }
-        
+        /// @END
     }
     
     func applicationDidResignActive(_ notification: Notification) {
