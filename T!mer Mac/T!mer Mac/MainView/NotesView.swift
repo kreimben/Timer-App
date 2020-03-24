@@ -34,7 +34,7 @@ struct NotesView: View {
                         .font(.system(.headline))
                     
                     ZStack { // Shortcuts
-                        Color.blue.opacity(0.5)
+                        Color.blue.opacity(0.7)
                         VStack {
                             Text("Shortcuts")
                                 .font(.system(.title, design: .rounded))
@@ -76,44 +76,44 @@ struct NotesView: View {
                                         Text("5 Minutes")
                                     } // 5
                                     HStack {
-                                        Text("⌘⇧1")
+                                        Text("⌘⌥1")
                                         Spacer()
                                         Text("10 Minutes")
                                     } // 10
                                     HStack {
-                                        Text("⌘⇧⌥1")
+                                        Text("⌘⌥⌃1")
                                         Spacer()
                                         Text("15 Minutes")
                                     } // 15
                                     HStack {
-                                        Text("⌘⇧2")
+                                        Text("⌘⌥2")
                                         Spacer()
                                         Text("20 Minutes")
                                     } // 20
                                     HStack {
-                                        Text("⌘⇧3")
+                                        Text("⌘⌥3")
                                         Spacer()
                                         Text("30 Minutes")
                                     } // 30
                                 } // 1, 2, 3, 4, 5, 10, 15, 20, 30 minutes
                                 Group {
                                     HStack {
-                                        Text("⌘⇧4")
+                                        Text("⌘⌥4")
                                         Spacer()
                                         Text("40 Minutes")
                                     } // 40
                                     HStack {
-                                        Text("⌘⇧⌥4")
+                                        Text("⌘⌥⌃4")
                                         Spacer()
                                         Text("45 Minutes")
                                     } // 45
                                     HStack {
-                                        Text("⌘⇧5")
+                                        Text("⌘⌥5")
                                         Spacer()
                                         Text("50 Minutes")
                                     } // 50
                                     HStack {
-                                        Text("⌘⇧60")
+                                        Text("⌘⌥6")
                                         Spacer()
                                         Text("60 Minutes")
                                     } // 60

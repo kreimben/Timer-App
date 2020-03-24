@@ -63,6 +63,13 @@ extension MainViewController {
         
         ContentView.shared.stopTimer()
     }
+    
+    @IBAction func openPreference(_ sender: NSMenuItem) {
+        
+        print("openPreference pressed")
+        ContentView.shared.preferenceSheet = true
+        print("preferenceSheet: \(ContentView.shared.preferenceSheet)")
+    }
 }
 
 //

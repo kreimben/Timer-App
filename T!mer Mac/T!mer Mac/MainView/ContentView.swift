@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 import Combine
 import Dispatch
@@ -5,7 +6,7 @@ import UserNotifications
 
 struct ContentView: View {
     
-    static let shared = ContentView()
+    static var shared = ContentView()
     
     private init() { }
     

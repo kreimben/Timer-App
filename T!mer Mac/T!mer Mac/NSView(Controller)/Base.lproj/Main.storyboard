@@ -21,6 +21,12 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="UyG-uZ-s1v"/>
+                                        <menuItem title="Preferences..." keyEquivalent="," id="n7n-mo-yPo" userLabel="Preferences...">
+                                            <connections>
+                                                <action selector="openPreference:" target="Ady-hI-5gd" id="i6J-F6-i9w"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Quit T!mer Mac" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
@@ -60,49 +66,49 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="10 Minutes" keyEquivalent="1" id="YOz-gT-gRW" userLabel="10 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="f2S-Cq-PZO"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="15 Minutes" keyEquivalent="1" id="hbL-xt-Hny" userLabel="15 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="H3g-PZ-d90"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="20 Minutes" keyEquivalent="2" id="Zus-hG-oKU" userLabel="20 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="Lue-Xp-V16"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="30 Minutes" keyEquivalent="3" id="Mdo-BZ-U84" userLabel="30 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="FEs-8z-G6h"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="40 Minutes" keyEquivalent="4" id="aQE-Oi-EtE" userLabel="40 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="66D-DE-9ug"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="45 Minutes" keyEquivalent="4" id="2FL-mN-Xjy" userLabel="45 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="xp9-wa-tK9"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="50 Minutes" keyEquivalent="5" id="yxE-rr-AbN" userLabel="50 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="U1j-NJ-VHS"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="60 Minutes" keyEquivalent="6" id="fOx-rW-VTd" userLabel="60 Minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="startTimer:" target="Ady-hI-5gd" id="bKD-ml-kgR"/>
                                             </connections>
@@ -139,7 +145,7 @@
                 </viewController>
                 <customObject id="d6t-dC-SrC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="139"/>
+            <point key="canvasLocation" x="478" y="139"/>
         </scene>
     </scenes>
 </document>
