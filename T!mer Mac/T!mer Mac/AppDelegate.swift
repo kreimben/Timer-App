@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        let contentView = ContentView()
+        let contentView = ContentView.shared
 
         popover.contentViewController = MainViewController()
         popover.contentSize = NSSize(width: 500, height: 300)

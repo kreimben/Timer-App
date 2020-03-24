@@ -5,6 +5,10 @@ import UserNotifications
 
 struct ContentView: View {
     
+    static let shared = ContentView()
+    
+    private init() { }
+    
     @State var preferenceSheet: Bool = false
     
     @ObservedObject var userSettings = UserSettings()
@@ -63,6 +67,12 @@ struct ContentView: View {
                             .onReceive(timer) { input in
                                 
                                 self.backgroundColor = UserDefaults.standard.object(forKey: "colorIndex") as! Int
+                                
+                                if self.userSettings.isTimerStarted {
+                                    self.circleColor = Color.red.opacity(1.0)
+                                } else {
+                                    
+                                }
                                 
                                 //MARK:- About TIMER!
                                 if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
@@ -157,17 +167,7 @@ struct ContentView: View {
                             
                             if self.userSettings.isTimerStarted {
                                 
-                                self.userSettings.isTimerStarted = false
-                                self.circleColor = Color.red.opacity(0.5)
-                                
-                                self.userSettings.notificationTime = Date()
-                                self.atan2Var = CGFloat(0)
-                                self.userSettings.timeInputBeforeConvert = -90
-                                self.userSettings.initialNotificationTime = 0
-                                
-                                print("isTimerStarted gonna FALSE")
-                                
-                                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                self.stopTimer()
                             } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                 
                                 self.userSettings.notificationTime = Date().addingTimeInterval(3600)
@@ -283,12 +283,26 @@ struct ContentView: View {
         }
         .frame(width: 500, height: 300)
     }
-}
+    
+    func VisualSettingsWhileTimerIsWorking() {
+        
+        self.gestureAllowed = false
+    }
+    
+    func stopTimer() {
+        self.userSettings.isTimerStarted = false
+        self.circleColor = Color.red.opacity(0.5)
+        
+        self.userSettings.notificationTime = Date()
+        self.atan2Var = CGFloat(0)
+        self.userSettings.timeInputBeforeConvert = -90
+        self.userSettings.initialNotificationTime = 0
+        
+        print("isTimerStarted gonna FALSE")
 
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        /// @Get rid of all reserved notifications
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        /// @END
     }
 }
 
