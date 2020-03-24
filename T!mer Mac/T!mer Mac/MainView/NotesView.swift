@@ -33,7 +33,7 @@ struct NotesView: View {
                     Text("How to Use T!mer?")
                         .font(.system(.headline))
                     
-                    ZStack { // Notes view
+                    ZStack { // Shortcuts
                         Color.blue.opacity(0.5)
                         VStack {
                             Text("Shortcuts")
@@ -88,7 +88,7 @@ struct NotesView: View {
                                     HStack {
                                         Text("⌘⇧2")
                                         Spacer()
-                                        Text("20 Minuites")
+                                        Text("20 Minutes")
                                     } // 20
                                     HStack {
                                         Text("⌘⇧3")
@@ -128,7 +128,8 @@ struct NotesView: View {
                                 .padding([.leading, .trailing], 8 * 14)
                                 .padding(.bottom)
                         }
-                    }
+                    } // Shortcuts
+                        .padding([.bottom])
                 }
             } // ScrollView
             .frame(width: 400, height: 240)
