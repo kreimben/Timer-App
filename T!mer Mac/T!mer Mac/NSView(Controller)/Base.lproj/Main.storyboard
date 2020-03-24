@@ -32,45 +32,6 @@
                             </menuItem>
                             <menuItem title="Run" id="IdV-aG-l3R">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Run" id="43I-JF-OHH">
-                                    <items>
-                                        <menuItem title="1 minute" keyEquivalent="1" id="hlX-LF-r18">
-                                            <connections>
-                                                <action selector="run1minute:" target="Ady-hI-5gd" id="ziL-Iu-7ZS"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="2 minutes" keyEquivalent="2" id="Imk-ez-1Jy"/>
-                                        <menuItem title="3 minutes" keyEquivalent="3" id="CbB-HV-Yh2"/>
-                                        <menuItem title="4 minutes" keyEquivalent="4" id="GYl-ph-dEk"/>
-                                        <menuItem title="5 minutes" keyEquivalent="5" id="SjB-UV-6cS" userLabel="5 minutes"/>
-                                        <menuItem title="10 minutes" keyEquivalent="1" id="eRr-iY-pqA">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="15 minutes" keyEquivalent="1" id="Fgv-pb-W19">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="20 minutes" keyEquivalent="2" id="2Qr-b9-3hV">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="30 minutes" keyEquivalent="3" id="Xdh-za-blF">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="40 minutes" keyEquivalent="4" id="yec-ra-L0Q">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="45 minutes" keyEquivalent="4" id="Uvb-Pi-t8P" userLabel="45 minutes">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="50 minutes" keyEquivalent="5" id="c7e-PZ-0RS">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem title="60 minutes" keyEquivalent="6" id="EbD-YJ-K4Z">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="ymm-d5-W2j"/>
-                                        <menuItem title="Stop" keyEquivalent="." id="oGp-w2-JQ5"/>
-                                    </items>
-                                </menu>
                             </menuItem>
                         </items>
                     </menu>

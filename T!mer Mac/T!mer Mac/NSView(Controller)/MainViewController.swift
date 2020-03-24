@@ -9,14 +9,6 @@ class MainViewController: NSViewController {
     
 }
 
-extension MainViewController {
-    
-    @IBAction func run1minute(_ sender: Any) {
-        
-        print("Clicked Run 1 Minute")
-    }
-}
-
 //
 //  MainViewController.swift
 //  T!mer Mac
