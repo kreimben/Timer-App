@@ -18,7 +18,13 @@ struct SoundsArray: Identifiable, Hashable {
 
 struct SettingPageView: View {
     
+    /// @Flag
     @State var showingModal = false
+    /// @END
+    
+    /// @Marketin_Version
+    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    /// @END
     
     @ObservedObject var userSettings = UserSettings()
     
@@ -29,7 +35,7 @@ struct SettingPageView: View {
     var body: some View {
         List {
             
-            Section(header: Text("About sound"), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
+            Section(header: Text("Preferences..."), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
                 
                 SoundPickerView()
                 ColorPickerView()
@@ -47,7 +53,7 @@ struct SettingPageView: View {
                 HStack {
                     Text("Version")
                     Spacer()
-                    Text("1.0")
+                    Text(self.appVersion)
                 }
                 
                 Button(action: {

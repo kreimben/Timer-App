@@ -63,7 +63,7 @@ struct ContentView: View {
             
             ZStack {
                 
-                Color.blue.opacity(0.55)
+                ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
@@ -71,7 +71,7 @@ struct ContentView: View {
                     ZStack { //MARK:- Textbox
                         Rectangle()
                             .frame(width: 340, height: 140)
-                            .foregroundColor(Color.blue.opacity(0.8))
+                            .foregroundColor(ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
                         
                         
@@ -103,7 +103,7 @@ struct ContentView: View {
                                     self.VisualSettingsWhileTimerIsWorking()
                                 }
                         }
-                    }
+                    } // TextBox Elements
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                     
                     ZStack(alignment: .center) { //MARK:- Circle Timer
@@ -243,7 +243,7 @@ struct ContentView: View {
                                     return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
                                 }
                             })
-                    }
+                    } // Circle Timer Elements
                     
                     
                     Spacer()
