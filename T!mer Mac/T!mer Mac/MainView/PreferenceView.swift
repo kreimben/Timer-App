@@ -59,7 +59,7 @@ struct PreferenceView: View {
                             .foregroundColor(.gray)
                     }
                     
-                    Picker(selection: self.$selectedColor, label: Text("Color")) {
+                    Picker(selection: self.$userSettings.colorIndex, label: Text("Color")) {
                         ForEach(0 ..< Colors.allCases.count, id: \.self) { index in
                             PickerView(index: index).tag(index)
                         }
@@ -100,30 +100,7 @@ struct PreferenceView: View {
                 
                 Button("Done") {
                     
-                    // MARK: - Setting sound TO USERDEFAULTS
-//                    self.userSettings.soundIndex = self.selectedSound
-//                    print("\tStoring selected sound to UserDefault's soundIndex at Done button.\n\tNumber(soundIndex): \(self.userSettings.soundIndex)")
-                    /// @END
-                    
-                    // MARK: - Setting color TO USERDEFAULTS
-                    self.userSettings.colorIndex = self.selectedColor
-                    print("\tStoring selected color to UserDefualt's colorIndex at Done button.\n\tNumber(colorIndex): \(self.userSettings.colorIndex)")
-                    /// @END
-                    
                     self.isPresented = false
-                }
-                .onAppear {
-                    
-                    // MARK: - Settting sound to this view
-//                    self.selectedSound = self.userSettings.soundIndex
-//                    print("\tSetting selected sound from UserDefault's soundIndex at onAppear of Done button.\n\tNumber(selectedSound): \(self.selectedSound)")
-                    /// @END
-                    
-                    // MARK: - Setting color to this view
-                    self.selectedColor = self.userSettings.colorIndex
-                    print("\tSetting selected color from UserDefault's colorIndex at onAppear of Done button.\n\tNumber(selectedColor): \(self.selectedColor)")
-                    /// @END
-                    
                 }
             }.padding(.bottom, 10)
         }
