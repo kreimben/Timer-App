@@ -240,7 +240,7 @@ struct ContentView: View {
                                         self.interstitial.settingTimer()
                                         })
                                 } else { // when userset timer 0 minute.
-                                    return Alert(title: Text("Nah!"), message: Text("No, No, No!\nYou can't start T!mer\nwhen you select 0 minute."))
+                                    return Alert(title: Text("Nah!"), message: Text("T!mer can't be started in 0 minutes."))
                                 }
                             })
                     } // Circle Timer Elements
