@@ -5,10 +5,16 @@ import Combine
 
 struct PreferenceView: View {
     
+    /// @Reference Variables
     @ObservedObject var userSettings = UserSettings()
     @EnvironmentObject var mainController: MainController
+    /// @END
     
     var userDefaults = UserDefaults()
+    
+    /// @State for app version
+    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    /// @END
     
     /// @Sound Related
     @State var selectedSound = 0
@@ -73,6 +79,11 @@ struct PreferenceView: View {
                 }
             } // ScrollView
             .padding([.leading, .trailing], 10)
+            
+            HStack {
+                Text("App Version")
+                Text(appVersion)
+            }
             
             HStack(alignment: .center) {
                 Button(action: {
