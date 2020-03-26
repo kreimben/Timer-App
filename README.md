@@ -19,11 +19,12 @@
 - [x] 각도가 변할 때 진동 울리는것 포기! => 너무 느려서 포기!
 - [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
-- [ ] Implement In-app Purchases
 - [x] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
+- [x] Implement CI (especially **Fastlane**)
+
 - [ ] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
-- [ ] Implement CI (especially **Fastlane**)
+- [ ] Implement In-app Purchases
 
 ## google admob Apple ID
 Unique ID : ca-app-pub-4942689053880729~6950693605
