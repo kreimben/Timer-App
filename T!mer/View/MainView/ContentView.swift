@@ -143,18 +143,22 @@ struct ContentView: View {
                                     self.userSettings.isTimerStarted = false
                                     self.circleColor = Color.red.opacity(0.5)
                                     
+                                    /// @Adjust after timer is stopped
                                     self.userSettings.notificationTime = Date()
                                     self.atan2Var = CGFloat(0)
                                     self.userSettings.timeInputBeforeConvert = -90
                                     self.userSettings.initialNotificationTime = 0
+                                    self.timeDisplay = 0
+                                    /// @END
                                     
                                     print("isTimerStarted gonna FALSE")
                                     
                                     UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                                     
-                                    //MARK: Interstitial
+                                    /// @Interstitial
                                     self.interstitial = Interstitial()
                                     self.interstitial.showAd()
+                                    /// @END
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
                                     self.userHapticFeedback.hapticFeedbackPlay()
