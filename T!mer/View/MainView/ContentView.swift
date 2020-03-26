@@ -38,19 +38,21 @@ struct ContentView: View {
     
     @State var userHapticFeedback = UserHapticFeedback()
     
-    //MARK: For Interstitial Ads
-    
+    /// @For Interstitial Ads
     @State var interstitial: Interstitial!
+    /// @END
     
-    //MARK: For DragGesture
-    
+    /// @For DragGesture
     @GestureState var dragAmount = CGPoint.zero
     @State var currentPoint = CGPoint.zero
     @State var center = CGPoint.zero
     @State var atan2Var: CGFloat = 0.0
+    /// @END
     
+    /// @Circle related
     @State var circleColor = Color.red
     @State var circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
+    /// @END
     
     @State var gestureAllowed = false
     
