@@ -307,7 +307,12 @@ final private class BannerVC: UIViewControllerRepresentable {
             
         } else {
             
+            #if DEBUG
             view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID (for Test)
+            #else
+            view.adUnitID = "ca-app-pub-4942689053880729/1552889082" // 진짜 배너광고 ID
+            #endif
+            
             view.rootViewController = viewController
             viewController.view.addSubview(view)
             viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)

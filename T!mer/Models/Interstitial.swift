@@ -8,7 +8,12 @@ class Interstitial: NSObject, GADInterstitialDelegate {
     
     @ObservedObject var userSettings = UserSettings()
     
+    #if DEBUG
     private var interstitialID = "ca-app-pub-3940256099942544/4411468910"
+    #else
+    private var interstitialID = "ca-app-pub-4942689053880729/9986747026"
+    #endif
+    
     private var interstitial: GADInterstitial!
     
     override init() {
