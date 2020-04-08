@@ -38,6 +38,16 @@
                ReferencedContainer = "container:T!mer.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "519D6240243E29B700E6C77F"
+               BuildableName = "T!merTests.xctest"
+               BlueprintName = "T!merTests"
+               ReferencedContainer = "container:T!mer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
