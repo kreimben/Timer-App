@@ -1,7 +1,7 @@
-app_identifier("com.KreimbenPro.T-merMac") # The bundle identifier of your app
+app_identifier("com.KreimbenPro.T-mer") # The bundle identifier of your app
 apple_id("aksidion@kreimben.com") # Your Apple email address
 
-itc_team_id("120997661") # App Store Connect Team ID
+itc_team_id("aksidion@gmail.com") # App Store Connect Team ID
 team_id("7KX7M3M3Y5") # Developer Portal Team ID
 
 # For more information about the Appfile, see:

@@ -4,13 +4,8 @@
  devices([
    "iPhone 8",
    "iPhone 8 Plus",
-   "iPhone SE",
    "iPhone 11 Pro",
-   "iPhone 11 Pro Max",
-   "iPad Pro (12.9-inch)",
-   "iPad Pro (9.7-inch)",
-   "iPad Pro (11-inch)"
-#   "Apple TV 1080p"
+   "iPhone 11 Pro Max"
  ])
 
  languages([
@@ -21,7 +16,7 @@
  ])
 
 # The name of the scheme which contains the UI Tests
- scheme("T!mer")
+ scheme("T!merUITests")
 
 # Where should the resulting screenshots be stored?
  output_directory("./screenshots")
