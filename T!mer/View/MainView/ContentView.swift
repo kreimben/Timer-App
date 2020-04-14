@@ -277,7 +277,7 @@ struct ContentView: View {
                 
                 print("UserSettings howManyOpenThisApp: \(self.userSettings.howManyOpenThisApp)")
                 
-                if (self.userSettings.howManyOpenThisApp / 100) == 0 {
+                if ((self.userSettings.howManyOpenThisApp / 100) == 0) && self.userSettings.howManyOpenThisApp > 0 {
                     
                     SKStoreReviewController.requestReview()
                 }
