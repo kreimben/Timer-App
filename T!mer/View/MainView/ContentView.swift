@@ -3,6 +3,7 @@ import Combine
 import UIKit
 import CoreHaptics
 import Dispatch
+import StoreKit
 
 import GoogleMobileAds
 
@@ -269,6 +270,19 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                 )
+            }
+            .onAppear {
+                
+                self.userSettings.howManyOpenThisApp += 1
+                
+                let how = self.userSettings.howManyOpenThisApp
+                
+                print("UserSettings howManyOpenThisApp: \(how)")
+                
+                if (how / 100) == 0 {
+                    
+                    SKStoreReviewController.requestReview()
+                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

@@ -59,6 +59,15 @@ final class UserSettings: ObservableObject {
         }
     }
     
+    /// @Write Review
+    @UserDefault(key: "howManyOpenThisApp", value: 1)
+    var howManyOpenThisApp: Int {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    /// @END
+    
 }
 
 //MARK:- @propertyWrapper "UserDefault<T>
