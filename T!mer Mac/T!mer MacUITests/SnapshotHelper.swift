@@ -165,7 +165,7 @@ open class Snapshot: NSObject {
                 return
             }
 
-            app.typeKey(XCUIKeyboardKeySecondaryFn, modifierFlags: [])
+        app.typeKey(XCUIKeyboardKey.secondaryFn, modifierFlags: [])
         #else
 
             guard self.app != nil else {

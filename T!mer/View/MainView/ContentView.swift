@@ -281,7 +281,7 @@ struct ContentView: View {
                     
                     SKStoreReviewController.requestReview()
                 }
-            }
+            } // Display Review
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
