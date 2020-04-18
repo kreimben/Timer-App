@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47FF253D919D24F8C6B8037F /* Pods_T_mer_Mac_T_mer_MacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144B8CB9241972FC433C1AC5 /* Pods_T_mer_Mac_T_mer_MacUITests.framework */; };
+		51010CF2242629F500CDB769 /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CED242629F500CDB769 /* Default Bell */; };
+		51010CF3242629F500CDB769 /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEE242629F500CDB769 /* Tower bell */; };
+		51010CF4242629F500CDB769 /* Bell store door in Resources */ = {isa = PBXBuildFile; fileRef = 51010CEF242629F500CDB769 /* Bell store door */; };
+		51010CF5242629F500CDB769 /* exodusHoney.ma4 in Resources */ = {isa = PBXBuildFile; fileRef = 51010CF0242629F500CDB769 /* exodusHoney.ma4 */; };
+		51010CF6242629F500CDB769 /* Cookoo in Resources */ = {isa = PBXBuildFile; fileRef = 51010CF1242629F500CDB769 /* Cookoo */; };
+		510FD1D624472595000844FC /* T_mer_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FD1D524472595000844FC /* T_mer_MacUITests.swift */; };
+		510FD1E224472DCE000844FC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FD1E124472DCE000844FC /* SnapshotHelper.swift */; };
+		5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130F38E2397A489006D9034 /* PreferenceView.swift */; };
+		516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B423924F6000EAAC0E /* AppDelegate.swift */; };
+		516B71B723924F6000EAAC0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71B623924F6000EAAC0E /* ContentView.swift */; };
+		516B71B923924F6300EAAC0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516B71B823924F6300EAAC0E /* Assets.xcassets */; };
+		516B71BC23924F6300EAAC0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516B71BB23924F6300EAAC0E /* Preview Assets.xcassets */; };
+		516B71BF23924F6300EAAC0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516B71BD23924F6300EAAC0E /* Main.storyboard */; };
+		516B71CB2392565300EAAC0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71C92392565300EAAC0E /* MainViewController.swift */; };
+		516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71CE239256F500EAAC0E /* StatusBarController.swift */; };
+		516B71D12392570D00EAAC0E /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71D02392570D00EAAC0E /* EventMonitor.swift */; };
+		516B71DB23925B9400EAAC0E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DA23925B9400EAAC0E /* MainController.swift */; };
+		516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71DC23925BEB00EAAC0E /* UserSettings.swift */; };
+		516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B71E423925C8800EAAC0E /* UserTouchCircle.swift */; };
+		519A708A2427298300C44874 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A70892427298300C44874 /* NotesView.swift */; };
+		51D6A188242A2820002AD0DB /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A187242A281F002AD0DB /* ColorScheme.swift */; };
+		56FC5E0D765ABD432A268A25 /* Pods_T_mer_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC70CE5DA69644441FF10CE6 /* Pods_T_mer_Mac.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		510FD1D824472595000844FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 516B71A923924F6000EAAC0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 516B71B023924F6000EAAC0E;
+			remoteInfo = "T!mer Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		144B8CB9241972FC433C1AC5 /* Pods_T_mer_Mac_T_mer_MacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer_Mac_T_mer_MacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51010CED242629F500CDB769 /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
+		51010CEE242629F500CDB769 /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
+		51010CEF242629F500CDB769 /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
+		51010CF0242629F500CDB769 /* exodusHoney.ma4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = exodusHoney.ma4; sourceTree = "<group>"; };
+		51010CF1242629F500CDB769 /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
+		510FD1D324472595000844FC /* T!mer MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!mer MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		510FD1D524472595000844FC /* T_mer_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_mer_MacUITests.swift; sourceTree = "<group>"; };
+		510FD1D724472595000844FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		510FD1E124472DCE000844FC /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		5130F38E2397A489006D9034 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
+		516AF29F23F289DC002A42C9 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHapticFeedback.swift; path = "../T!mer/Models/UserHapticFeedback.swift"; sourceTree = "<group>"; };
+		516B71B123924F6000EAAC0E /* T!mer Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		516B71B423924F6000EAAC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		516B71B623924F6000EAAC0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		516B71B823924F6300EAAC0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		516B71BB23924F6300EAAC0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		516B71BE23924F6300EAAC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		516B71C023924F6300EAAC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		516B71C123924F6300EAAC0E /* T_mer_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = T_mer_Mac.entitlements; sourceTree = "<group>"; };
+		516B71C92392565300EAAC0E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		516B71CE239256F500EAAC0E /* StatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		516B71D02392570D00EAAC0E /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		516B71DA23925B9400EAAC0E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		516B71DC23925BEB00EAAC0E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		516B71E423925C8800EAAC0E /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
+		519A70892427298300C44874 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		51D6A187242A281F002AD0DB /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		720073FD87EFD84D5596C245 /* Pods-T!mer Mac-T!mer MacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer Mac-T!mer MacUITests.debug.xcconfig"; path = "Target Support Files/Pods-T!mer Mac-T!mer MacUITests/Pods-T!mer Mac-T!mer MacUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F8009AD0D8DEFE884CA70AE /* Pods-T!mer Mac-T!mer MacUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer Mac-T!mer MacUITests.release.xcconfig"; path = "Target Support Files/Pods-T!mer Mac-T!mer MacUITests/Pods-T!mer Mac-T!mer MacUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC70CE5DA69644441FF10CE6 /* Pods_T_mer_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1EAFB12478EB240803D773 /* Pods-T!mer Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer Mac.release.xcconfig"; path = "Target Support Files/Pods-T!mer Mac/Pods-T!mer Mac.release.xcconfig"; sourceTree = "<group>"; };
+		CDDA82F0344298D3A7E3C0EB /* Pods-T!mer Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer Mac.debug.xcconfig"; path = "Target Support Files/Pods-T!mer Mac/Pods-T!mer Mac.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		510FD1D024472595000844FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47FF253D919D24F8C6B8037F /* Pods_T_mer_Mac_T_mer_MacUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516B71AE23924F6000EAAC0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56FC5E0D765ABD432A268A25 /* Pods_T_mer_Mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51010CEC242629F500CDB769 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				51010CED242629F500CDB769 /* Default Bell */,
+				51010CEE242629F500CDB769 /* Tower bell */,
+				51010CEF242629F500CDB769 /* Bell store door */,
+				51010CF0242629F500CDB769 /* exodusHoney.ma4 */,
+				51010CF1242629F500CDB769 /* Cookoo */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		510FD1D424472595000844FC /* T!mer MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				510FD1D524472595000844FC /* T_mer_MacUITests.swift */,
+				510FD1E124472DCE000844FC /* SnapshotHelper.swift */,
+				510FD1D724472595000844FC /* Info.plist */,
+			);
+			path = "T!mer MacUITests";
+			sourceTree = "<group>";
+		};
+		516AF29E23F289DC002A42C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				516AF2A123F28A10002A42C9 /* UserHapticFeedback.swift */,
+				516AF29F23F289DC002A42C9 /* T!mer.app */,
+				AC70CE5DA69644441FF10CE6 /* Pods_T_mer_Mac.framework */,
+				144B8CB9241972FC433C1AC5 /* Pods_T_mer_Mac_T_mer_MacUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		516B71A823924F6000EAAC0E = {
+			isa = PBXGroup;
+			children = (
+				516B71B323924F6000EAAC0E /* T!mer Mac */,
+				510FD1D424472595000844FC /* T!mer MacUITests */,
+				516B71B223924F6000EAAC0E /* Products */,
+				516AF29E23F289DC002A42C9 /* Frameworks */,
+				9C3194437525E0A620C9F715 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		516B71B223924F6000EAAC0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				516B71B123924F6000EAAC0E /* T!mer Mac.app */,
+				510FD1D324472595000844FC /* T!mer MacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		516B71B323924F6000EAAC0E /* T!mer Mac */ = {
+			isa = PBXGroup;
+			children = (
+				516B71B423924F6000EAAC0E /* AppDelegate.swift */,
+				516B71CD2392568000EAAC0E /* NSView(Controller) */,
+				516B71D323925B1B00EAAC0E /* Model */,
+				51010CEC242629F500CDB769 /* Sound */,
+				516B71E323925C7A00EAAC0E /* MainView */,
+				516B71D22392581B00EAAC0E /* Helpers */,
+				516B71B823924F6300EAAC0E /* Assets.xcassets */,
+				516B71C023924F6300EAAC0E /* Info.plist */,
+				516B71C123924F6300EAAC0E /* T_mer_Mac.entitlements */,
+				516B71BA23924F6300EAAC0E /* Preview Content */,
+			);
+			path = "T!mer Mac";
+			sourceTree = "<group>";
+		};
+		516B71BA23924F6300EAAC0E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				516B71BB23924F6300EAAC0E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		516B71CD2392568000EAAC0E /* NSView(Controller) */ = {
+			isa = PBXGroup;
+			children = (
+				516B71C92392565300EAAC0E /* MainViewController.swift */,
+				516B71BD23924F6300EAAC0E /* Main.storyboard */,
+			);
+			path = "NSView(Controller)";
+			sourceTree = "<group>";
+		};
+		516B71D22392581B00EAAC0E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				516B71CE239256F500EAAC0E /* StatusBarController.swift */,
+				516B71D02392570D00EAAC0E /* EventMonitor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		516B71D323925B1B00EAAC0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				516B71DA23925B9400EAAC0E /* MainController.swift */,
+				516B71DC23925BEB00EAAC0E /* UserSettings.swift */,
+				51D6A187242A281F002AD0DB /* ColorScheme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		516B71E323925C7A00EAAC0E /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				516B71B623924F6000EAAC0E /* ContentView.swift */,
+				516B71E423925C8800EAAC0E /* UserTouchCircle.swift */,
+				5130F38E2397A489006D9034 /* PreferenceView.swift */,
+				519A70892427298300C44874 /* NotesView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		9C3194437525E0A620C9F715 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA82F0344298D3A7E3C0EB /* Pods-T!mer Mac.debug.xcconfig */,
+				AD1EAFB12478EB240803D773 /* Pods-T!mer Mac.release.xcconfig */,
+				720073FD87EFD84D5596C245 /* Pods-T!mer Mac-T!mer MacUITests.debug.xcconfig */,
+				8F8009AD0D8DEFE884CA70AE /* Pods-T!mer Mac-T!mer MacUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		510FD1D224472595000844FC /* T!mer MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 510FD1DC24472595000844FC /* Build configuration list for PBXNativeTarget "T!mer MacUITests" */;
+			buildPhases = (
+				A6767A712D9AA6F084806D98 /* [CP] Check Pods Manifest.lock */,
+				510FD1CF24472595000844FC /* Sources */,
+				510FD1D024472595000844FC /* Frameworks */,
+				510FD1D124472595000844FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				510FD1D924472595000844FC /* PBXTargetDependency */,
+			);
+			name = "T!mer MacUITests";
+			productName = "T!mer MacUITests";
+			productReference = 510FD1D324472595000844FC /* T!mer MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		516B71B023924F6000EAAC0E /* T!mer Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 516B71C423924F6300EAAC0E /* Build configuration list for PBXNativeTarget "T!mer Mac" */;
+			buildPhases = (
+				3F8E596D39A005C1C875D5CC /* [CP] Check Pods Manifest.lock */,
+				516B71AD23924F6000EAAC0E /* Sources */,
+				516B71AE23924F6000EAAC0E /* Frameworks */,
+				516B71AF23924F6000EAAC0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "T!mer Mac";
+			productName = "T!mer Mac";
+			productReference = 516B71B123924F6000EAAC0E /* T!mer Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		516B71A923924F6000EAAC0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Aksidion Kreimben";
+				TargetAttributes = {
+					510FD1D224472595000844FC = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 516B71B023924F6000EAAC0E;
+					};
+					516B71B023924F6000EAAC0E = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 516B71AC23924F6000EAAC0E /* Build configuration list for PBXProject "T!mer Mac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 516B71A823924F6000EAAC0E;
+			productRefGroup = 516B71B223924F6000EAAC0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				516B71B023924F6000EAAC0E /* T!mer Mac */,
+				510FD1D224472595000844FC /* T!mer MacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		510FD1D124472595000844FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516B71AF23924F6000EAAC0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51010CF6242629F500CDB769 /* Cookoo in Resources */,
+				51010CF2242629F500CDB769 /* Default Bell in Resources */,
+				51010CF4242629F500CDB769 /* Bell store door in Resources */,
+				516B71BF23924F6300EAAC0E /* Main.storyboard in Resources */,
+				516B71BC23924F6300EAAC0E /* Preview Assets.xcassets in Resources */,
+				51010CF5242629F500CDB769 /* exodusHoney.ma4 in Resources */,
+				51010CF3242629F500CDB769 /* Tower bell in Resources */,
+				516B71B923924F6300EAAC0E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F8E596D39A005C1C875D5CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-T!mer Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6767A712D9AA6F084806D98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-T!mer Mac-T!mer MacUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		510FD1CF24472595000844FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				510FD1D624472595000844FC /* T_mer_MacUITests.swift in Sources */,
+				510FD1E224472DCE000844FC /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516B71AD23924F6000EAAC0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516B71CB2392565300EAAC0E /* MainViewController.swift in Sources */,
+				516B71D12392570D00EAAC0E /* EventMonitor.swift in Sources */,
+				5130F38F2397A489006D9034 /* PreferenceView.swift in Sources */,
+				516B71CF239256F500EAAC0E /* StatusBarController.swift in Sources */,
+				516B71B723924F6000EAAC0E /* ContentView.swift in Sources */,
+				516B71E523925C8800EAAC0E /* UserTouchCircle.swift in Sources */,
+				51D6A188242A2820002AD0DB /* ColorScheme.swift in Sources */,
+				519A708A2427298300C44874 /* NotesView.swift in Sources */,
+				516B71DD23925BEB00EAAC0E /* UserSettings.swift in Sources */,
+				516B71DB23925B9400EAAC0E /* MainController.swift in Sources */,
+				516B71B523924F6000EAAC0E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		510FD1D924472595000844FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 516B71B023924F6000EAAC0E /* T!mer Mac */;
+			targetProxy = 510FD1D824472595000844FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		516B71BD23924F6300EAAC0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				516B71BE23924F6300EAAC0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		510FD1DA24472595000844FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 720073FD87EFD84D5596C245 /* Pods-T!mer Mac-T!mer MacUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!mer MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "T!mer Mac";
+			};
+			name = Debug;
+		};
+		510FD1DB24472595000844FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F8009AD0D8DEFE884CA70AE /* Pods-T!mer Mac-T!mer MacUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!mer MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "T!mer Mac";
+			};
+			name = Release;
+		};
+		516B71C223924F6300EAAC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		516B71C323924F6300EAAC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		516B71C523924F6300EAAC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDA82F0344298D3A7E3C0EB /* Pods-T!mer Mac.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "T!mer Mac/T_mer_Mac.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 200415;
+				DEVELOPMENT_ASSET_PATHS = "\"T!mer Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "T!mer Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		516B71C623924F6300EAAC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD1EAFB12478EB240803D773 /* Pods-T!mer Mac.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "T!mer Mac/T_mer_Mac.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 200415;
+				DEVELOPMENT_ASSET_PATHS = "\"T!mer Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "T!mer Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		510FD1DC24472595000844FC /* Build configuration list for PBXNativeTarget "T!mer MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				510FD1DA24472595000844FC /* Debug */,
+				510FD1DB24472595000844FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		516B71AC23924F6000EAAC0E /* Build configuration list for PBXProject "T!mer Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				516B71C223924F6300EAAC0E /* Debug */,
+				516B71C323924F6300EAAC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		516B71C423924F6300EAAC0E /* Build configuration list for PBXNativeTarget "T!mer Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				516B71C523924F6300EAAC0E /* Debug */,
+				516B71C623924F6300EAAC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 516B71A923924F6000EAAC0E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_T_mer_Mac_T_mer_MacUITests {
+  umbrella header "Pods-T!mer Mac-T!mer MacUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

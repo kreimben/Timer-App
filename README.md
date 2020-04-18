@@ -23,7 +23,7 @@
 - [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 - [x] Implement CI (especially **Fastlane**)
 
-- [ ] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
+- [x] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
 - [ ] Implement In-app Purchases
 
 ## google admob Apple ID
