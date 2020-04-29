@@ -7,6 +7,6 @@ target 'T!mer' do
 
   pod 'Google-Mobile-Ads-SDK'
   
-  pod 'SwiftyStoreKit'
+  #pod 'SwiftyStoreKit'
 
 end

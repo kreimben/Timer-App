@@ -2,8 +2,11 @@
 
 ## To-do list
 
-### 1.1
+### Whenever
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
+
+### 1.1
+- [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 
 ### 1.0
 - [x] 설정페이지 세팅하기 
@@ -20,11 +23,10 @@
 - [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
 - [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
 - [x] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
-- [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
 - [x] Implement CI (especially **Fastlane**)
 
 - [x] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
-- [ ] Implement In-app Purchases
+~~ - [ ] Implement In-app Purchases ~~
 
 ## google admob Apple ID
 Unique ID : ca-app-pub-4942689053880729~6950693605
