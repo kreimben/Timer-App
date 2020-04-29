@@ -6,7 +6,8 @@
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
 ### 1.1
-- [ ] Fix haptiptouch framework related code and read documents about CoreHaptics
+- [x] Fix haptiptouch framework related code and read documents about CoreHaptics
+- [ ] Add more notification sound
 
 ### 1.0
 - [x] 설정페이지 세팅하기 

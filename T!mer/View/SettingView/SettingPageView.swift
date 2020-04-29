@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-import SwiftyStoreKit
+//import SwiftyStoreKit
 
 struct SoundsArray: Identifiable, Hashable {
     
@@ -30,7 +30,7 @@ struct SettingPageView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @State var productID = "nonConsumable.removeads"  //"com.KreimbenPro.nonConsumable.removeads"
+//    @State var productID = "nonConsumable.removeads"  //"com.KreimbenPro.nonConsumable.removeads"
     
     var body: some View {
         List {
@@ -64,7 +64,24 @@ struct SettingPageView: View {
                     SafariView(url: URL(string: "http://www.kreimben.com"))
                 }
             }
+                
+                Section(header: Text("Please give me feedback")) {
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Hey, I want to say you something...")
+                }
+            }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
+            
+            #if DEBUG
+            Section(header: Text("For Debug")) {
+                NavigationLink(destination: HapticTouchView()) {
+                    Text("Haptic Touch Test")
+                }
+            }
+            #endif
         }
         .listStyle(GroupedListStyle())
     }

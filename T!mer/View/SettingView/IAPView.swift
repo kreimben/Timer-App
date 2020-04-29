@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-import SwiftyStoreKit
+//import SwiftyStoreKit
 
 struct IAPView: View {
     
@@ -13,22 +13,22 @@ struct IAPView: View {
         
         self._productID = productID
         
-        if !(UserSettings().isUserPurchased) {
+//        if !(UserSettings().isUserPurchased) {
             
             /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit#retrieve-products-info]
-            SwiftyStoreKit.retrieveProductsInfo([self.productID/*"com.KreimbenPro.nonConsumable.removeads"*/]) { result in
-                if let product = result.retrievedProducts.first {
-                    let priceString = product.localizedPrice!
-                    print("Product: \(product.localizedDescription), price: \(priceString)")
-                }
-                else if let invalidProductId = result.invalidProductIDs.first {
-                    print("Invalid product identifier: \(invalidProductId)")
-                }
-                else {
-                    print("Error: \(String(describing: result.error))")
-                }
-            }
-        }
+//            SwiftyStoreKit.retrieveProductsInfo([self.productID/*"com.KreimbenPro.nonConsumable.removeads"*/]) { result in
+//                if let product = result.retrievedProducts.first {
+//                    let priceString = product.localizedPrice!
+//                    print("Product: \(product.localizedDescription), price: \(priceString)")
+//                }
+//                else if let invalidProductId = result.invalidProductIDs.first {
+//                    print("Invalid product identifier: \(invalidProductId)")
+//                }
+//                else {
+//                    print("Error: \(String(describing: result.error))")
+//                }
+//            }
+//        }
     }
     
     var body: some View {
@@ -112,16 +112,16 @@ struct IAPView: View {
                     print("Restore In-app Purchase")
                     
                     /// Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
-                    SwiftyStoreKit.restorePurchases(atomically: true) { results in
-                        
-                        if results.restoreFailedPurchases.count > 0 {
-                            print("Restore Failed: \(results.restoreFailedPurchases)")
-                        } else if results.restoredPurchases.count > 0 {
-                            print("Restore Seccess: \(results.restoredPurchases)")
-                        } else {
-                            print("Nothing to Restore")
-                        }
-                    }
+//                    SwiftyStoreKit.restorePurchases(atomically: true) { results in
+//
+//                        if results.restoreFailedPurchases.count > 0 {
+//                            print("Restore Failed: \(results.restoreFailedPurchases)")
+//                        } else if results.restoredPurchases.count > 0 {
+//                            print("Restore Seccess: \(results.restoredPurchases)")
+//                        } else {
+//                            print("Nothing to Restore")
+//                        }
+//                    }
                 }) {
                     Text("Restore in-app purchase")
                         .foregroundColor(Color.red)
@@ -152,28 +152,28 @@ fileprivate struct PurchaseButton: View {
             
             //                        self.userSettings.isUserPurchased.toggle()
             
-            SwiftyStoreKit.purchaseProduct(self.productID, quantity: 1, atomically: true) { result in
-                
-                switch result {
-                    
-                case .success(let purchase):
-                    print("Purchase Success: \(purchase)")
-                    
-                case .error(let error):
-                    switch error.code {
-                    case .unknown: print("Unknown error. Please contact support")
-                    case .clientInvalid: print("Not allowed to make the payment")
-                    case .paymentCancelled: break
-                    case .paymentInvalid: print("The purchase identifier was invalid")
-                    case .paymentNotAllowed: print("The device is not allowed to make the payment")
-                    case .storeProductNotAvailable: print("The product is not available in the current storefront")
-                    case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-                    case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-                    case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-                    default: print((error as NSError).localizedDescription)
-                    }
-                }
-            }
+//            SwiftyStoreKit.purchaseProduct(self.productID, quantity: 1, atomically: true) { result in
+//
+//                switch result {
+//
+//                case .success(let purchase):
+//                    print("Purchase Success: \(purchase)")
+//
+//                case .error(let error):
+//                    switch error.code {
+//                    case .unknown: print("Unknown error. Please contact support")
+//                    case .clientInvalid: print("Not allowed to make the payment")
+//                    case .paymentCancelled: break
+//                    case .paymentInvalid: print("The purchase identifier was invalid")
+//                    case .paymentNotAllowed: print("The device is not allowed to make the payment")
+//                    case .storeProductNotAvailable: print("The product is not available in the current storefront")
+//                    case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+//                    case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+//                    case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+//                    default: print((error as NSError).localizedDescription)
+//                    }
+//                }
+//            }
         }) {
             ZStack {
                 

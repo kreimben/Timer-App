@@ -9,6 +9,7 @@ import GoogleMobileAds
 
 struct ContentView: View {
     
+    // MARK: - Init()
     init() {
         
         let appearance = UINavigationBarAppearance()
@@ -23,6 +24,8 @@ struct ContentView: View {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
         UINavigationController().hidesBarsOnSwipe = true
+        
+        self.selGen.prepare()
     }
     
     //MARK: For Timer
@@ -37,7 +40,7 @@ struct ContentView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-    @State var userHapticFeedback = UserHapticFeedback()
+//    @State var userHapticFeedback = UserHapticFeedback()
     
     /// @For Interstitial Ads
     @State var interstitial: Interstitial!
@@ -58,6 +61,10 @@ struct ContentView: View {
     @State var gestureAllowed = false
     
     @ObservedObject var userTouchController = UserTouchController()
+    
+    /// @For selection feedback
+    @State var selGen = UISelectionFeedbackGenerator()
+    /// @END
     
     //MARK:- var body: some View
     var body: some View {
@@ -84,7 +91,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
                                 
-                                self.userHapticFeedback = UserHapticFeedback()
+//                                self.userHapticFeedback = UserHapticFeedback() // 매초 반복
                                 
                                 DispatchQueue.main.async {
                                     
@@ -139,7 +146,13 @@ struct ContentView: View {
                                 
                                 if self.userSettings.isTimerStarted { // Cancle it while timer is working
                                     
-                                    self.userHapticFeedback.hapticFeedbackPlay()
+//                                    self.userHapticFeedback.hapticFeedbackPlay()
+                                    
+                                    /// @Cancel T!mer feedback
+                                    let gen = UIImpactFeedbackGenerator(style: .soft)
+                                    gen.prepare()
+                                    gen.impactOccurred()
+                                    /// @END
                                     
                                     self.userSettings.isTimerStarted = false
                                     self.circleColor = Color.red.opacity(0.5)
@@ -162,7 +175,13 @@ struct ContentView: View {
                                     /// @END
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
-                                    self.userHapticFeedback.hapticFeedbackPlay()
+//                                    self.userHapticFeedback.hapticFeedbackPlay()
+                                    
+                                    /// @Generate hapticfeedback
+                                    let gen = UIImpactFeedbackGenerator(style: .heavy)
+                                    gen.prepare()
+                                    gen.impactOccurred(intensity: 30)
+                                    /// @END
                                     
                                     self.userSettings.notificationTime = Date().addingTimeInterval(3600)
                                     
@@ -192,6 +211,10 @@ struct ContentView: View {
                                         self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
                                         
                                         self.userSettings.timeInputBeforeConvert = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
+                                        
+                                        /// @Selection Feedback
+                                        self.selGen.selectionChanged()
+                                        /// @END
                                     }
                                 }
                             }
@@ -221,7 +244,23 @@ struct ContentView: View {
                                     
                                     self.userSettings.initialNotificationTime = degreeForConvert * 10 // 각도에 10을 곱해 초(second)로 전환.
                                     
-                                    self.userHapticFeedback.hapticFeedbackPlay()
+//                                    self.userHapticFeedback.hapticFeedbackPlay()
+                                    
+                                    if self.userSettings.initialNotificationTime > 60 {
+                                        
+                                        /// @Generate hapticfeedback
+                                        let gen = UIImpactFeedbackGenerator(style: .heavy)
+                                        gen.prepare()
+                                        gen.impactOccurred(intensity: 30)
+                                        /// @END
+                                    } else {
+                                        
+                                        /// @Input HapticTouch Feedback
+                                        let notiGen = UINotificationFeedbackGenerator()
+                                        notiGen.prepare()
+                                        notiGen.notificationOccurred(.error)
+                                        /// @END
+                                    }
                                     
                                     self.showingAlert = true
                                     
@@ -231,6 +270,7 @@ struct ContentView: View {
                             .alert(isPresented: self.$showingAlert, content: {
                                 
                                 if self.userSettings.initialNotificationTime > 0 { // which is MINUTE
+                                    
                                     return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { //MARK: OK Button!
                                         
                                         //MARK: T!mer Setting
@@ -247,6 +287,7 @@ struct ContentView: View {
                                         self.interstitial.settingTimer()
                                         })
                                 } else { // when userset timer 0 minute.
+                                    
                                     return Alert(title: Text("Nah!"), message: Text("T!mer can't be started in 0 minutes."))
                                 }
                             })

@@ -11,7 +11,7 @@
 		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
-		513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -34,6 +34,8 @@
 		51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
+		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
+		51F13BB02459F1290021622C /* HapticTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* HapticTouchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */,
+				513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +97,8 @@
 		51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		51F13BAF2459F1290021622C /* HapticTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTouchView.swift; sourceTree = "<group>"; };
 		9B8C1307DCF3CC10755B93FB /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 		F014365142BA4DD8D8A7F585 /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +215,7 @@
 		5188B05423701C9700A2258F /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
+				51F13BAE2459F1150021622C /* DEBUG */,
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
 				51113A5D237939BE005309D7 /* SoundPickerView.swift */,
 				51D6A185242A261B002AD0DB /* ColorPickerView.swift */,
@@ -224,9 +229,18 @@
 			isa = PBXGroup;
 			children = (
 				519D626D243E2D0D00E6C77F /* T_merUITests.swift */,
+				51F13BAC2459EFA50021622C /* SnapshotHelper.swift */,
 				519D626F243E2D0D00E6C77F /* Info.plist */,
 			);
 			path = "T!merUITests";
+			sourceTree = "<group>";
+		};
+		51F13BAE2459F1150021622C /* DEBUG */ = {
+			isa = PBXGroup;
+			children = (
+				51F13BAF2459F1290021622C /* HapticTouchView.swift */,
+			);
+			path = DEBUG;
 			sourceTree = "<group>";
 		};
 		8B639722B9B9195751ED024E /* Frameworks */ = {
@@ -407,6 +421,7 @@
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
+				51F13BB02459F1290021622C /* HapticTouchView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
@@ -423,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				519D626E243E2D0D00E6C77F /* T_merUITests.swift in Sources */,
+				51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

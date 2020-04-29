@@ -2,7 +2,7 @@ import UIKit
 import StoreKit
 
 import GoogleMobileAds
-import SwiftyStoreKit
+//import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -23,24 +23,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ///FastLane!
         
         
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
-            for purchase in purchases {
-                switch purchase.transaction.transactionState {
-                case .purchased, .restored:
-                    if purchase.needsFinishTransaction {
-                        /// Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                    /// Unlock content
-                    
-                case .failed, .purchasing, .deferred:
-                    break /// Do nothing
-                @unknown default:
-                    fatalError("Error to App Delegate")
-                }
-            }
-        }
+//        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+//            /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
+//            for purchase in purchases {
+//                switch purchase.transaction.transactionState {
+//                case .purchased, .restored:
+//                    if purchase.needsFinishTransaction {
+//                        /// Deliver content from server, then:
+//                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+//                    }
+//                    /// Unlock content
+//                    
+//                case .failed, .purchasing, .deferred:
+//                    break /// Do nothing
+//                @unknown default:
+//                    fatalError("Error to App Delegate")
+//                }
+//            }
+//        }
         
         return true
     }
