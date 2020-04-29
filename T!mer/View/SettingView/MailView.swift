@@ -9,8 +9,11 @@ struct MailView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?
 
-    @String var mainFormat = """
-
+    @State var mainFormat = """
+<h3>I'm really happy to get feedback!</h3>
+<div>
+What's your point?:
+</div>
 """
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
@@ -47,9 +50,9 @@ struct MailView: UIViewControllerRepresentable {
         let vc = MFMailComposeViewController()
         
         /// @Set email format
-        vc.setToRecipients("aksidion@kreimben.com")
+        vc.setToRecipients(["aksidion@kreimben.com"])
         vc.setSubject("T!mer - Feedback from \"your name\"")
-        vc.setMessageBody(<#T##body: String##String#>, isHTML: true)
+        vc.setMessageBody(mainFormat, isHTML: true)
         /// @END
         
         vc.mailComposeDelegate = context.coordinator
