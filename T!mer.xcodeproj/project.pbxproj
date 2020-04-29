@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32E8B5B250B7D3A2F3D257D1 /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18900BD3603B588434355C84 /* Pods_T_mer.framework */; };
 		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
+		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		18900BD3603B588434355C84 /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* SoundPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
+		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				51D6A185242A261B002AD0DB /* ColorPickerView.swift */,
 				517917EB237936700074E5D9 /* SafariView.swift */,
 				51B221F323F2618600F924C1 /* IAPView.swift */,
+				511FD513245A05880012DCD9 /* MailView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
+				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* HapticTouchView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,

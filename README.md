@@ -3,6 +3,9 @@
 ## To-do list
 
 ### Whenever
+- [ ] Fix bug about circle color......
+
+### 1.4(?) (later)
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
 ### 1.1

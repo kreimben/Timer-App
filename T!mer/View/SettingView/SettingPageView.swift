@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import MessageUI
 
 //import SwiftyStoreKit
 
@@ -24,6 +25,11 @@ struct SettingPageView: View {
     
     /// @Marketin_Version
     @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    /// @END
+    
+    /// @MailView-related
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
     /// @END
     
     @ObservedObject var userSettings = UserSettings()
@@ -65,12 +71,19 @@ struct SettingPageView: View {
                 }
             }
                 
-                Section(header: Text("Please give me feedback")) {
+            Section(header: Text("Special")) {
                 
                 Button(action: {
                     
+                    self.isShowingMailView.toggle()
                 }) {
-                    Text("Hey, I want to say you something...")
+                    
+                    Text("Please give me feedback...")
+                }
+                .disabled(!MFMailComposeViewController.canSendMail())
+                .sheet(isPresented: self.$isShowingMailView) {
+                    
+                    MailView(result: self.$result)
                 }
             }
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
