@@ -32,7 +32,6 @@
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
 		51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A189242A2942002AD0DB /* ColorScheme.swift */; };
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
-		51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
 		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
@@ -96,7 +95,6 @@
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		51D6A189242A2942002AD0DB /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHapticFeedback.swift; sourceTree = "<group>"; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				51E829B1237ABF89002EDEE1 /* MainController.swift */,
-				51E829AF237ABF89002EDEE1 /* UserHapticFeedback.swift */,
 				51214AC123E9143300FB3332 /* Interstitial.swift */,
 				51D6A189242A2942002AD0DB /* ColorScheme.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
@@ -420,7 +417,6 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
-				51E829B2237ABF89002EDEE1 /* UserHapticFeedback.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,

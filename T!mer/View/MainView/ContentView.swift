@@ -40,8 +40,6 @@ struct ContentView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-//    @State var userHapticFeedback = UserHapticFeedback()
-    
     /// @For Interstitial Ads
     @State var interstitial: Interstitial!
     /// @END
@@ -90,8 +88,6 @@ struct ContentView: View {
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .onReceive(timer) { input in
-                                
-//                                self.userHapticFeedback = UserHapticFeedback() // 매초 반복
                                 
                                 DispatchQueue.main.async {
                                     
@@ -146,8 +142,6 @@ struct ContentView: View {
                                 
                                 if self.userSettings.isTimerStarted { // Cancle it while timer is working
                                     
-//                                    self.userHapticFeedback.hapticFeedbackPlay()
-                                    
                                     /// @Cancel T!mer feedback
                                     let gen = UIImpactFeedbackGenerator(style: .soft)
                                     gen.prepare()
@@ -174,8 +168,6 @@ struct ContentView: View {
                                     self.interstitial.showAd()
                                     /// @END
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
-                                    
-//                                    self.userHapticFeedback.hapticFeedbackPlay()
                                     
                                     /// @Generate hapticfeedback
                                     let gen = UIImpactFeedbackGenerator(style: .heavy)
@@ -243,8 +235,6 @@ struct ContentView: View {
                                     self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
                                     
                                     self.userSettings.initialNotificationTime = degreeForConvert * 10 // 각도에 10을 곱해 초(second)로 전환.
-                                    
-//                                    self.userHapticFeedback.hapticFeedbackPlay()
                                     
                                     if self.userSettings.initialNotificationTime > 60 {
                                         
