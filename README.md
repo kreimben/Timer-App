@@ -39,14 +39,3 @@
 
 - [x] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
 ~~ - [ ] Implement In-app Purchases ~~
-
-## google admob Apple ID
-Unique ID : ca-app-pub-4942689053880729~6950693605
-    
-## google admob Apple **Test** ID
-banner ads : ca-app-pub-3940256099942544/2934735716
-interstial ads : ca-app-pub-3940256099942544/4411468910
-
-## REAL ID
-banner: ca-app-pub-4942689053880729/1552889082
-interstitial: ca-app-pub-4942689053880729/9986747026
