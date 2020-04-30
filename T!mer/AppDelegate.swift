@@ -1,5 +1,7 @@
 import UIKit
 import StoreKit
+import Combine
+import SwiftUI
 
 import GoogleMobileAds
 //import SwiftyStoreKit
@@ -8,7 +10,6 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var mainController: MainController!
-    var userSettings: UserSettings!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -68,10 +69,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
     }
     
-    //MARK: UserNotificationCenter Background Setting Function
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    // MARK: - UserNotificationCenter Foreground Setting Function
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
         
         completionHandler([.alert, .sound])
+    }
+    
+    // MARK: - UserNotificationCenter Background Setting Function
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        switch(response.actionIdentifier) {
+            
+        case "DISMISS_ACTION":
+            print("Select Dismiss")
+            
+        default:
+            print("Default Dismiss")
+            
+        }
+        
+        completionHandler()
     }
 }
 

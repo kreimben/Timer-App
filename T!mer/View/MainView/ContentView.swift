@@ -264,15 +264,14 @@ struct ContentView: View {
                                     
                                     return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { //MARK: OK Button!
                                         
-                                        //MARK: T!mer Setting
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
                                         
                                         self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
                                         self.userSettings.isTimerStarted = true
-                                        
+
                                         self.gestureAllowed = false
                                         self.circleColor = Color.red.opacity(1.0)
-                                        
+
                                         //MARK: Interstitial
                                         self.interstitial = Interstitial()
                                         self.interstitial.settingTimer()

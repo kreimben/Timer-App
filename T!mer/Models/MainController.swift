@@ -14,17 +14,49 @@ class MainController: ObservableObject {
 
     let center = UNUserNotificationCenter.current()
     
+    /// @Notification Sounds
     let bicycleNotificationSound = UNNotificationSoundName("Default Bell")
     let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door")
     let cookooNotificationSound = UNNotificationSoundName("Cookoo")
     let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
+    /// @END
+    
+    /// @For custom action in UserNotification
+//    var rerunAction: UNNotificationAction
+    var dismissAction: UNNotificationAction
+    /// @END
+    
+    init() {
+        
+//        rerunAction = UNNotificationAction(
+//            identifier: "RERUN_ACTION",
+//            title: "Re-run",
+//            options: UNNotificationActionOptions(rawValue: 0)
+//        )
+        
+        dismissAction = UNNotificationAction(
+            identifier: "DISMISS_ACTION",
+            title: "Dismiss",
+            options: UNNotificationActionOptions(rawValue: 0)
+        )
+        
+        let afterTimerEndCat = UNNotificationCategory(
+            identifier: "AFTER_TIMER_END",
+            actions: [/*self.rerunAction, */self.dismissAction],
+            intentIdentifiers: [],
+            hiddenPreviewsBodyPlaceholder: "",
+            options: .allowAnnouncement)
+        
+        self.center.setNotificationCategories([afterTimerEndCat])
+    }
+    
     
     func setNotificationWhenTimerStart(timeInterval: Double) {
         
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
         content.body = "Your T!mer is done!"
-        content.categoryIdentifier = "finishNotificationCategory"
+        content.categoryIdentifier = "AFTER_TIMER_END"
         
         switch self.userSettings.soundIndex {
         case 0:
