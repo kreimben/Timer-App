@@ -5,6 +5,7 @@
 ### Whenever
 - [ ] Fix bug about circle color......
 - [ ] Add to-do feature
+- [ ] Reverse timer (using tabbar maybe...)
 
 ### 1.4(?) (later)
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
