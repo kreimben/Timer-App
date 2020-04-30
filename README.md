@@ -4,13 +4,21 @@
 
 ### Whenever
 - [ ] Fix bug about circle color......
+- [ ] Add to-do feature
 
 ### 1.4(?) (later)
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
+### 1.3
+- [ ]
+
+### 1.2
+- [ ] Add more notification sound
+- [ ] Fix notification behaviour after timer ended
+
 ### 1.1
 - [x] Fix haptiptouch framework related code and read documents about CoreHaptics
-- [ ] Add more notification sound
+- [x] Add "Feedback" Button
 
 ### 1.0
 - [x] 설정페이지 세팅하기 

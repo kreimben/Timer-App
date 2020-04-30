@@ -140,13 +140,9 @@ fileprivate struct PurchaseButton: View {
     
     @ObservedObject var userSettings = UserSettings()
     
-    let userHaptics = UserHapticFeedback()
-    
     var body: some View {
         
         Button(action: {
-            
-            self.userHaptics.hapticFeedbackPlay()
             
             /// Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
             

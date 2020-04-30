@@ -7,6 +7,7 @@ import Dispatch
 
 import GoogleMobileAds
 
+#if os(iOS)
 struct ContentView: View {
     
     // MARK: - Init()
@@ -366,4 +367,4 @@ final private class BannerVC: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
-
+#endif
