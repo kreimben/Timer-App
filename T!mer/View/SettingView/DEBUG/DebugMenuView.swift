@@ -21,6 +21,7 @@ struct DebugMenuView: View {
                 Button(action: {
                     
                     self.userSettings.latestBuildVersion = 1
+                    self.userSettings.updateLogBlurValue = 5
                 }) {
                     
                     Text("Reset")

@@ -66,28 +66,28 @@ struct IAPView: View {
                             .foregroundColor(.white)
                             .padding()
                         
-                        if self.userSettings.isUserPurchased {
-                            VStack {
-                                HStack {
-                                    Circle()
-                                        .frame(width: 12, height: 12)
-                                    
-                                    Text("🎉You're already Pro User🎊")
-                                }
-                                Text("🥳").font(.largeTitle)
-                            }
-                            .padding()
-                            .foregroundColor(.green)
-                        } else {
-                            HStack {
-                                Circle()
-                                    .frame(width: 12, height: 12)
-                                
-                                Text("You're not Pro user YET🙀")
-                            }
-                            .padding()
-                            .foregroundColor(.red)
-                        }
+//                        if self.userSettings.isUserPurchased {
+//                            VStack {
+//                                HStack {
+//                                    Circle()
+//                                        .frame(width: 12, height: 12)
+//                                    
+//                                    Text("🎉You're already Pro User🎊")
+//                                }
+//                                Text("🥳").font(.largeTitle)
+//                            }
+//                            .padding()
+//                            .foregroundColor(.green)
+//                        } else {
+//                            HStack {
+//                                Circle()
+//                                    .frame(width: 12, height: 12)
+//
+//                                Text("You're not Pro user YET🙀")
+//                            }
+//                            .padding()
+//                            .foregroundColor(.red)
+//                        }
                         
                         Spacer()
                         

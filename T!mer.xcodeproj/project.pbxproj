@@ -13,6 +13,7 @@
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -35,7 +36,7 @@
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
 		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
-		51F13BB02459F1290021622C /* HapticTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* HapticTouchView.swift */; };
+		51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* DebugMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		51F13BAF2459F1290021622C /* HapticTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTouchView.swift; sourceTree = "<group>"; };
+		51F13BAF2459F1290021622C /* DebugMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuView.swift; sourceTree = "<group>"; };
 		9B8C1307DCF3CC10755B93FB /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 		F014365142BA4DD8D8A7F585 /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		515DACC3245C434C00A495BA /* Update Log */ = {
+			isa = PBXGroup;
+			children = (
+				515DACC4245C435B00A495BA /* UpdateLogView.swift */,
+			);
+			path = "Update Log";
+			sourceTree = "<group>";
+		};
 		51611C6623658FD800441AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		5180DD99234E41A20074AECC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				515DACC3245C434C00A495BA /* Update Log */,
 				5188B05323701C8100A2258F /* MainView */,
 				5188B05423701C9700A2258F /* SettingView */,
 			);
@@ -238,7 +249,7 @@
 		51F13BAE2459F1150021622C /* DEBUG */ = {
 			isa = PBXGroup;
 			children = (
-				51F13BAF2459F1290021622C /* HapticTouchView.swift */,
+				51F13BAF2459F1290021622C /* DebugMenuView.swift */,
 			);
 			path = DEBUG;
 			sourceTree = "<group>";
@@ -415,13 +426,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
+				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
 				51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
-				51F13BB02459F1290021622C /* HapticTouchView.swift in Sources */,
+				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,

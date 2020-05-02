@@ -90,8 +90,8 @@ struct SettingPageView: View {
             
             #if DEBUG
             Section(header: Text("For Debug")) {
-                NavigationLink(destination: HapticTouchView()) {
-                    Text("Haptic Touch Test")
+                NavigationLink(destination: DebugMenuView()) {
+                    Text("Debug Menu")
                 }
             }
             #endif

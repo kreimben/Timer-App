@@ -52,16 +52,34 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "isUserPurchased", value: false)
-    var isUserPurchased: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+//    @UserDefault(key: "isUserPurchased", value: false)
+//    var isUserPurchased: Bool {
+//        willSet {
+//            objectWillChange.send()
+//        }
+//    }
     
     /// @Write Review
     @UserDefault(key: "howManyOpenThisApp", value: 1)
     var howManyOpenThisApp: Int {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    /// @END
+    
+    /// @For Check Update
+    @UserDefault(key: "latestBuildVersion", value: 1)
+    var latestBuildVersion: Int {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    /// @END
+    
+    /// @Update Log Blur Value
+    @UserDefault(key: "updateLogBlurValue", value: 5)
+    var updateLogBlurValue: CGFloat {
         willSet {
             objectWillChange.send()
         }

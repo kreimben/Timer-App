@@ -65,6 +65,10 @@ struct ContentView: View {
     @State var selGen = UISelectionFeedbackGenerator()
     /// @END
     
+    /// @Current Build Version
+    @State var currentBuildVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)!
+    /// @END
+    
     //MARK:- var body: some View
     var body: some View {
         
@@ -286,11 +290,24 @@ struct ContentView: View {
                     
                     Spacer()
                     //MARK:- Banner ad
-                    BannerVC(purchased: self.userSettings.isUserPurchased)
+                    BannerVC(purchased: false)// self.userSettings.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
-                .navigationBarTitle(self.userSettings.isUserPurchased ? Text("T!mer PRO") : Text("T!mer"), displayMode: .inline)
+                .blur(radius: self.userSettings.updateLogBlurValue)
+                
+                VStack {
+                    if (self.userSettings.latestBuildVersion < currentBuildVersion) {
+                        UpdateLogView()
+                    }
+                }
+                .cornerRadius(20)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.85,
+                    height: UIScreen.main.bounds.height * 0.6
+                )
+                
+                .navigationBarTitle(/*self.userSettings.isUserPurchased ? Text("T!mer PRO") : */Text("T!mer"), displayMode: .inline)
                     
                 .navigationBarItems(trailing:
                     NavigationLink(destination: SettingPageView()) {
@@ -301,6 +318,8 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                 )
+                
+                
             }
             .onAppear {
                 
