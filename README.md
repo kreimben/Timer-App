@@ -16,8 +16,7 @@
 
 ### 1.2
 - [ ] Add more notification sound
-- [ ] Fix notification behaviour after timer ended
-- [ ] Add "What's new" mini view
+- [x] Add "What's new" mini view
 
 ### 1.1
 - [x] Fix haptiptouch framework related code and read documents about CoreHaptics

@@ -304,7 +304,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .frame(
                     width: UIScreen.main.bounds.width * 0.85,
-                    height: UIScreen.main.bounds.height * 0.6
+                    height: UIScreen.main.bounds.height * 0.38
                 )
                 
                 .navigationBarTitle(/*self.userSettings.isUserPurchased ? Text("T!mer PRO") : */Text("T!mer"), displayMode: .inline)

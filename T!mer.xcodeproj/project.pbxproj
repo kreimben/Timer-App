@@ -14,6 +14,7 @@
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
+		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -73,6 +74,7 @@
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
+		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				515DACC4245C435B00A495BA /* UpdateLogView.swift */,
+				515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */,
 			);
 			path = "Update Log";
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
+				515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */,
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
