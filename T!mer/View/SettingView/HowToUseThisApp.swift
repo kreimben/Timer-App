@@ -34,7 +34,41 @@ struct HowToUseThisApp: View {
                 }
                 .frame(height: 200)
                 
+                ZStack { // Tips
+                    
+                    Color.yellow.opacity(backgroundColorOpacity)
+                    
+                    VStack {
+                        
+                        Text("Tips")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .bold()
+                            .padding([.top, .bottom])
+                        
+                        VStack(alignment: .leading) {
+                            VStack(alignment: .leading) {
+                                Text("⚬ How to Stop T!mer?")
+                                    .font(.system(.headline, design: .rounded))
+                                    .padding([.top, .bottom])
+                                
+                                Text("- Click and hold inner circle until timer is cancled.")
+                                    .padding(.bottom)
+                            }
+                            
+                            VStack(alignment: .leading) {
+                                Text("⚬ How to set T!mer 60 minutes?")
+                                    .font(.system(.headline, design: .rounded))
+                                    .padding([.top, .bottom])
+                                
+                                Text("- Click and hold circle.")
+                                    .padding(.bottom)
+                            }
+                        }
+                    }
+                } // Tips
+                
                 ZStack { // Shortcuts
+                    
                     Color.green.opacity(backgroundColorOpacity)
                     
                     VStack {
@@ -62,36 +96,17 @@ struct HowToUseThisApp: View {
                         
                     }
                 } // Shortcuts
+                    .padding(.bottom, 66)
                 
-                ZStack { // Tips
-                    Color.yellow.opacity(backgroundColorOpacity)
-                    VStack {
-                        
-                        Text("Tips")
-                            .font(.system(size: 32, design: .rounded))
-                            .padding([.top, .bottom])
-                        
-                        VStack(alignment: .leading) {
-                            VStack(alignment: .leading) {
-                                Text("⚬ How to Stop T!mer?")
-                                    .font(.system(.headline, design: .rounded))
-                                    .padding([.top, .bottom])
-                                
-                                Text("- Click and hold inner circle until timer is cancled.")
-                                    .padding(.bottom)
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                Text("⚬ How to set T!mer 60 minutes?")
-                                    .font(.system(.headline, design: .rounded))
-                                    .padding([.top, .bottom])
-                                
-                                Text("- Click and hold circle.")
-                                    .padding(.bottom)
-                            }
-                        }
-                    }
-                } // Tips
+                ZStack {
+                    
+                    Color.red.opacity(self.backgroundColorOpacity)
+                    
+                    Text("Free to use! Enjoy!")
+                        .bold()
+                        .font(.system(.largeTitle, design: .rounded))
+                        .padding()
+                }
             }
         } // ScrollView
     } // var body

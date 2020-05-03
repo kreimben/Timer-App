@@ -36,10 +36,9 @@ struct UpdateLogView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .frame(height: geoReader.size.height * 0.15)
+                    .frame(height: geoReader.size.height * 0.16)
                 }
             }
-//            .frame(height: geoReader.size.height * 0.7)
         }
     }
 }
