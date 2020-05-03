@@ -282,7 +282,14 @@ struct ContentView: View {
                                         })
                                 } else { // when userset timer 0 minute.
                                     
+                                    #if DEBUG
+                                    
+                                    self.mainController.setNotificationWhenTimerStart(timeInterval: 1)
+                                    return Alert(title: Text("DEBUG"), message: Text("For test notification sound"))
+                                    
+                                    #else
                                     return Alert(title: Text("Nah!"), message: Text("T!mer can't be started in 0 minutes."))
+                                    #endif
                                 }
                             })
                     } // Circle Timer Elements

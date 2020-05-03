@@ -20,7 +20,7 @@
 		515DACE5245E876100A495BA /* single.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDF245E876100A495BA /* single.wav */; };
 		515DACE6245E876100A495BA /* ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE0245E876100A495BA /* ghost.wav */; };
 		515DACE7245E876100A495BA /* zen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen.wav */; };
-		515DACE8245E876100A495BA /* reception-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* reception-bell.wav */; };
+		515DACE8245E876100A495BA /* elevator.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator.wav */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -86,7 +86,7 @@
 		515DACDF245E876100A495BA /* single.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = single.wav; sourceTree = "<group>"; };
 		515DACE0245E876100A495BA /* ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ghost.wav; sourceTree = "<group>"; };
 		515DACE1245E876100A495BA /* zen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zen.wav; sourceTree = "<group>"; };
-		515DACE2245E876100A495BA /* reception-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "reception-bell.wav"; sourceTree = "<group>"; };
+		515DACE2245E876100A495BA /* elevator.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = elevator.wav; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				515DACDD245E876100A495BA /* bicycle.wav */,
 				515DACE0245E876100A495BA /* ghost.wav */,
 				515DACDE245E876100A495BA /* home-bell.wav */,
-				515DACE2245E876100A495BA /* reception-bell.wav */,
+				515DACE2245E876100A495BA /* elevator.wav */,
 				515DACDF245E876100A495BA /* single.wav */,
 				515DACE1245E876100A495BA /* zen.wav */,
 				516B71F42393A9A800EAAC0E /* Default Bell */,
@@ -390,7 +390,7 @@
 				515DACE4245E876100A495BA /* home-bell.wav in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				516B71F92393A9A800EAAC0E /* Tower bell in Resources */,
-				515DACE8245E876100A495BA /* reception-bell.wav in Resources */,
+				515DACE8245E876100A495BA /* elevator.wav in Resources */,
 				515DACE6245E876100A495BA /* ghost.wav in Resources */,
 				517F6227234E32A100A05205 /* Assets.xcassets in Resources */,
 			);

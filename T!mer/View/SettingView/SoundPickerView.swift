@@ -10,7 +10,14 @@ struct SoundPickerView: View {
         SoundsArray(soundName: "Bicycle Bell"),
         SoundsArray(soundName: "Bell - Store door"),
         SoundsArray(soundName: "Cookoo"),
-        SoundsArray(soundName: "Tower bell")
+        SoundsArray(soundName: "Tower bell"),
+        
+        SoundsArray(soundName: "Bicycle Bell 2"),
+        SoundsArray(soundName: "Ghost"),
+        SoundsArray(soundName: "House Bell"),
+        SoundsArray(soundName: "Elevator"),
+        SoundsArray(soundName: "Single"),
+        SoundsArray(soundName: "Zen")
     ]
     
     var body: some View {

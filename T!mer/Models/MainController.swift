@@ -19,20 +19,20 @@ class MainController: ObservableObject {
     let bellStoreDoorNotificationSound = UNNotificationSoundName("Bell store door")
     let cookooNotificationSound = UNNotificationSoundName("Cookoo")
     let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
+    
+    let bicycle2NotificationSound = UNNotificationSoundName("bicycle.wav")
+    let ghostNofiticationSound = UNNotificationSoundName("ghost.wav")
+    let homeBellNotificationSound = UNNotificationSoundName("home-bell.wav")
+    let elevatorNotificationSound = UNNotificationSoundName("elevator.wav")
+    let singleNotificationSound = UNNotificationSoundName("single.wav")
+    let zenNotificationSound = UNNotificationSoundName("zen.wav")
     /// @END
     
     /// @For custom action in UserNotification
-//    var rerunAction: UNNotificationAction
     var dismissAction: UNNotificationAction
     /// @END
     
     init() {
-        
-//        rerunAction = UNNotificationAction(
-//            identifier: "RERUN_ACTION",
-//            title: "Re-run",
-//            options: UNNotificationActionOptions(rawValue: 0)
-//        )
         
         dismissAction = UNNotificationAction(
             identifier: "DISMISS_ACTION",
@@ -69,6 +69,18 @@ class MainController: ObservableObject {
             content.sound = UNNotificationSound(named: self.cookooNotificationSound)
         case 4:
             content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
+        case 5:
+            content.sound = UNNotificationSound(named: self.bicycle2NotificationSound)
+        case 6:
+            content.sound = UNNotificationSound(named: self.ghostNofiticationSound)
+        case 7:
+            content.sound = UNNotificationSound(named: self.homeBellNotificationSound)
+        case 8:
+            content.sound = UNNotificationSound(named: self.elevatorNotificationSound)
+        case 9:
+            content.sound = UNNotificationSound(named: self.singleNotificationSound)
+        case 10:
+            content.sound = UNNotificationSound(named: self.zenNotificationSound)
         default:
             print("------------Error occured in fixing UNNotificationSound.")
         }
