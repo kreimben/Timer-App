@@ -12,7 +12,8 @@
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
 ### 1.3
-- [ ]
+- [x] Add welcome message to newbies
+
 
 ### 1.2
 - [x] Add more notification sound

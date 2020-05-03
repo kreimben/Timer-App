@@ -24,7 +24,17 @@ struct DebugMenuView: View {
                     self.userSettings.updateLogBlurValue = 5
                 }) {
                     
-                    Text("Reset")
+                    Text("Reset as new")
+                        .foregroundColor(.red)
+                }
+                
+                Button(action: {
+                    
+                    self.userSettings.latestBuildVersion = 2
+                    self.userSettings.updateLogBlurValue = 5
+                }) {
+                    
+                    Text("Reset as last build")
                         .foregroundColor(.red)
                 }
             }

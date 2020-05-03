@@ -28,15 +28,15 @@ struct UpdateLogDetailView: View {
             }
             
             VStack(alignment: .leading) {
-                Text("⚬ Add more notification sounds")
-                Text("⚬ Add \"What's new\" mini view")
-                Text("⚬ Add \"Some tips\" menu which")
-                Text("  informs you that you might not know")
-                    .padding(.bottom, 35)
+//                Text("⚬ Add more notification sounds")
+//                Text("⚬ Add \"What's new\" mini view")
+//                Text("⚬ Add \"Some tips\" menu which")
+//                Text("  informs you that you might not know")
+//                    .padding(.bottom, 35)
                 
                 Text("Next update schedule is...").bold()
                 Text("(This may not accurate)")
-                Text("3rd week of May").bold().foregroundColor(.red)
+                Text("2nd week of June").bold().foregroundColor(.red)
             }
             
 //            Add more notification sound

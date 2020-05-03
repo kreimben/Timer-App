@@ -22,6 +22,7 @@
 		515DACE7245E876100A495BA /* zen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen.wav */; };
 		515DACE8245E876100A495BA /* elevator.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator.wav */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
+		515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACEC245EA57500A495BA /* WelcomeTo.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -89,6 +90,7 @@
 		515DACE1245E876100A495BA /* zen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zen.wav; sourceTree = "<group>"; };
 		515DACE2245E876100A495BA /* elevator.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = elevator.wav; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
+		515DACEC245EA57500A495BA /* WelcomeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTo.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 				515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */,
 			);
 			path = "Update Log";
+			sourceTree = "<group>";
+		};
+		515DACEB245EA55F00A495BA /* Welcome To T!mer */ = {
+			isa = PBXGroup;
+			children = (
+				515DACEC245EA57500A495BA /* WelcomeTo.swift */,
+			);
+			path = "Welcome To T!mer";
 			sourceTree = "<group>";
 		};
 		51611C6623658FD800441AD3 /* Models */ = {
@@ -230,6 +240,7 @@
 			children = (
 				5188B05323701C8100A2258F /* MainView */,
 				515DACC3245C434C00A495BA /* Update Log */,
+				515DACEB245EA55F00A495BA /* Welcome To T!mer */,
 				5188B05423701C9700A2258F /* SettingView */,
 			);
 			path = View;
@@ -456,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
+				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
 				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
 				51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
@@ -630,7 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200505;
+				CURRENT_PROJECT_VERSION = 200515;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -640,7 +652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -657,7 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200505;
+				CURRENT_PROJECT_VERSION = 200515;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -667,7 +679,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

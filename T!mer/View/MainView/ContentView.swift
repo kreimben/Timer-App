@@ -304,7 +304,12 @@ struct ContentView: View {
                 .blur(radius: self.userSettings.updateLogBlurValue)
                 
                 VStack {
-                    if (self.userSettings.latestBuildVersion < currentBuildVersion) {
+                    
+                    if (self.userSettings.latestBuildVersion == 1) {
+                        
+                        WelcomeTo()
+                    } else if (self.userSettings.latestBuildVersion < currentBuildVersion) {
+                        
                         UpdateLogView()
                     }
                 }
