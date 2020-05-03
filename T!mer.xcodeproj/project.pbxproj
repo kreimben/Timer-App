@@ -15,6 +15,12 @@
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
+		515DACE3245E876100A495BA /* bicycle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle.wav */; };
+		515DACE4245E876100A495BA /* home-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDE245E876100A495BA /* home-bell.wav */; };
+		515DACE5245E876100A495BA /* single.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDF245E876100A495BA /* single.wav */; };
+		515DACE6245E876100A495BA /* ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE0245E876100A495BA /* ghost.wav */; };
+		515DACE7245E876100A495BA /* zen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen.wav */; };
+		515DACE8245E876100A495BA /* reception-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* reception-bell.wav */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -75,6 +81,12 @@
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
 		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
+		515DACDD245E876100A495BA /* bicycle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bicycle.wav; sourceTree = "<group>"; };
+		515DACDE245E876100A495BA /* home-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "home-bell.wav"; sourceTree = "<group>"; };
+		515DACDF245E876100A495BA /* single.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = single.wav; sourceTree = "<group>"; };
+		515DACE0245E876100A495BA /* ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ghost.wav; sourceTree = "<group>"; };
+		515DACE1245E876100A495BA /* zen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zen.wav; sourceTree = "<group>"; };
+		515DACE2245E876100A495BA /* reception-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "reception-bell.wav"; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -150,6 +162,12 @@
 		516B71F32393A9A800EAAC0E /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				515DACDD245E876100A495BA /* bicycle.wav */,
+				515DACE0245E876100A495BA /* ghost.wav */,
+				515DACDE245E876100A495BA /* home-bell.wav */,
+				515DACE2245E876100A495BA /* reception-bell.wav */,
+				515DACDF245E876100A495BA /* single.wav */,
+				515DACE1245E876100A495BA /* zen.wav */,
 				516B71F42393A9A800EAAC0E /* Default Bell */,
 				516B71F52393A9A800EAAC0E /* Tower bell */,
 				516B71F62393A9A800EAAC0E /* Bell store door */,
@@ -208,8 +226,8 @@
 		5180DD99234E41A20074AECC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				515DACC3245C434C00A495BA /* Update Log */,
 				5188B05323701C8100A2258F /* MainView */,
+				515DACC3245C434C00A495BA /* Update Log */,
 				5188B05423701C9700A2258F /* SettingView */,
 			);
 			path = View;
@@ -363,11 +381,17 @@
 			files = (
 				516B71FB2393A9A800EAAC0E /* Cookoo in Resources */,
 				516B71F82393A9A800EAAC0E /* Default Bell in Resources */,
+				515DACE3245E876100A495BA /* bicycle.wav in Resources */,
 				516B71FA2393A9A800EAAC0E /* Bell store door in Resources */,
+				515DACE5245E876100A495BA /* single.wav in Resources */,
+				515DACE7245E876100A495BA /* zen.wav in Resources */,
 				51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */,
 				517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */,
+				515DACE4245E876100A495BA /* home-bell.wav in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				516B71F92393A9A800EAAC0E /* Tower bell in Resources */,
+				515DACE8245E876100A495BA /* reception-bell.wav in Resources */,
+				515DACE6245E876100A495BA /* ghost.wav in Resources */,
 				517F6227234E32A100A05205 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
