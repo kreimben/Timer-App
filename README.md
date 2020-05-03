@@ -17,7 +17,7 @@
 ### 1.2
 - [x] Add more notification sound
 - [x] Add "What's new" mini view
-- [ ] Add "How to use" View in SettingView
+- [x] Add "How to use" View in SettingView
 
 ### 1.1
 - [x] Fix haptiptouch framework related code and read documents about CoreHaptics

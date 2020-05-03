@@ -62,6 +62,12 @@ struct SettingPageView: View {
                     Text(self.appVersion)
                 }
                 
+                NavigationLink(destination: HowToUseThisApp()) {
+                    
+                    Text("Some tips")
+                        .foregroundColor(.orange)
+                }
+                
                 Button(action: {
                     self.showingModal = true
                 }) {
