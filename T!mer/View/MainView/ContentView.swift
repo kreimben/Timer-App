@@ -318,8 +318,8 @@ struct ContentView: View {
                     width: UIScreen.main.bounds.width * 0.85,
                     height: 450
                 )
-                
-                .navigationBarTitle(/*self.userSettings.isUserPurchased ? Text("T!mer PRO") : */Text("T!mer"), displayMode: .inline)
+                    
+                .navigationBarTitle(Text("T!mer"), displayMode: .inline)
                     
                 .navigationBarItems(trailing:
                     NavigationLink(destination: SettingPageView()) {
@@ -339,7 +339,7 @@ struct ContentView: View {
                 
                 print("UserSettings howManyOpenThisApp: \(self.userSettings.howManyOpenThisApp)")
                 
-                if ((self.userSettings.howManyOpenThisApp % 100) == 0) && self.userSettings.howManyOpenThisApp > 0 {
+                if ((self.userSettings.howManyOpenThisApp % 50) == 0) && self.userSettings.howManyOpenThisApp > 0 {
                     
                     SKStoreReviewController.requestReview()
                 }
