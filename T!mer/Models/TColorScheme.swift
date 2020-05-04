@@ -5,7 +5,7 @@ enum Colors: CaseIterable {
     case Blue, Red, Yellow, Green, Orange, Purple, Black//, White
 }
 
-class ColorScheme {
+class TColorScheme {
     
     let scheme = [
         "\(Colors.Blue)",

@@ -22,6 +22,7 @@
 		515DACE8245E876100A495BA /* elevator.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator.wav */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
 		515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACEC245EA57500A495BA /* WelcomeTo.swift */; };
+		515DACF124601B3B00A495BA /* SoundPlayer+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -39,7 +40,7 @@
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51B221F423F2618600F924C1 /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B221F323F2618600F924C1 /* IAPView.swift */; };
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
-		51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A189242A2942002AD0DB /* ColorScheme.swift */; };
+		51D6A18A242A2942002AD0DB /* TColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A189242A2942002AD0DB /* TColorScheme.swift */; };
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
 		51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
 		51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
@@ -91,6 +92,7 @@
 		515DACE2245E876100A495BA /* elevator.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = elevator.wav; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
 		515DACEC245EA57500A495BA /* WelcomeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTo.swift; sourceTree = "<group>"; };
+		515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+PickerView.swift"; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -113,7 +115,7 @@
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51B221F323F2618600F924C1 /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
-		51D6A189242A2942002AD0DB /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		51D6A189242A2942002AD0DB /* TColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TColorScheme.swift; sourceTree = "<group>"; };
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		51E829B0237ABF89002EDEE1 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		51E829B1237ABF89002EDEE1 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 			children = (
 				51E829B1237ABF89002EDEE1 /* MainController.swift */,
 				51214AC123E9143300FB3332 /* Interstitial.swift */,
-				51D6A189242A2942002AD0DB /* ColorScheme.swift */,
+				51D6A189242A2942002AD0DB /* TColorScheme.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
 			);
 			path = Models;
@@ -267,6 +269,7 @@
 				517917EB237936700074E5D9 /* SafariView.swift */,
 				51B221F323F2618600F924C1 /* IAPView.swift */,
 				511FD513245A05880012DCD9 /* MailView.swift */,
+				515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -469,13 +472,14 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
 				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
-				51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */,
+				51D6A18A242A2942002AD0DB /* TColorScheme.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
+				515DACF124601B3B00A495BA /* SoundPlayer+PickerView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
