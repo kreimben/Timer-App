@@ -20,7 +20,7 @@ struct UpdateLogView: View {
                         
                         Button(action: {
                             
-                            let buildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+                            let buildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? ""
                             
                             print("UserSettings' latestBuildVersion is \(self.userSettings.latestBuildVersion)")
                             print("Current Build Version is \(buildVersion)")

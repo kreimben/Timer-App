@@ -66,7 +66,7 @@ struct ContentView: View {
     /// @END
     
     /// @Current Build Version
-    @State var currentBuildVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)!
+    @State var currentBuildVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0")!
     /// @END
     
     //MARK:- var body: some View
@@ -111,7 +111,7 @@ struct ContentView: View {
                                     }
                                 
                                     ///For color setting
-                                    self.VisualSettingsWhileTimerIsWorking()
+                                    self.visualSettingsWhileTimerIsWorking()
                                 }
                         }
                     } // TextBox Elements
@@ -348,7 +348,7 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    func VisualSettingsWhileTimerIsWorking() {
+    func visualSettingsWhileTimerIsWorking() {
         
         self.gestureAllowed = false
         self.circleColor = Color.red.opacity(1.0)

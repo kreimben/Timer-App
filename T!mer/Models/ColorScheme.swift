@@ -2,19 +2,19 @@ import Foundation
 import SwiftUI
 
 enum Colors: CaseIterable {
-    case Blue, Red, Yellow, Green, Orange, Purple, Black//, White
+    case blue, red, yellow, green, orange, purple, black//, White
 }
 
 class ColorScheme {
     
     let scheme = [
-        "\(Colors.Blue)",
-        "\(Colors.Red)",
-        "\(Colors.Yellow)",
-        "\(Colors.Green)",
-        "\(Colors.Orange)",
-        "\(Colors.Purple)",
-        "\(Colors.Black)"
+        "\(Colors.blue)",
+        "\(Colors.red)",
+        "\(Colors.yellow)",
+        "\(Colors.green)",
+        "\(Colors.orange)",
+        "\(Colors.purple)",
+        "\(Colors.black)"
     ]
     
     static func getColor(_ color: Int) -> Color {

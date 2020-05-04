@@ -7,7 +7,7 @@ struct UpdateLogDetailView: View {
     /// @END
     
     /// @App Version
-    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"]! as! String
+    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"]! as? String ?? ""
     /// @END
     
     var body: some View {

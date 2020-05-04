@@ -1,6 +1,6 @@
 import XCTest
 
-class T_merUITests: XCTestCase {
+class TmerUITests: XCTestCase {
 
     func testExample() throws {
 

@@ -24,7 +24,7 @@ struct SettingPageView: View {
     /// @END
     
     /// @Marketin_Version
-    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    @State var appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? ""
     /// @END
     
     /// @MailView-related

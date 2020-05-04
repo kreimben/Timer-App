@@ -59,8 +59,6 @@ struct SoundPlayerView: View {
                             break
                         } // Set sound's path using index.
                         
-//                        let url = URL(fileURLWithPath: path!)
-                        
                         let pathURL = Bundle.main.url(forResource: name, withExtension: nil)
                         
                         if let url = pathURL {
