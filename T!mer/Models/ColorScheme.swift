@@ -1,20 +1,20 @@
 import Foundation
 import SwiftUI
 
-enum TColors: CaseIterable {
+enum Colors: CaseIterable {
     case Blue, Red, Yellow, Green, Orange, Purple, Black//, White
 }
 
-class TColorScheme {
+class ColorScheme {
     
     let scheme = [
-        "\(TColors.Blue)",
-        "\(TColors.Red)",
-        "\(TColors.Yellow)",
-        "\(TColors.Green)",
-        "\(TColors.Orange)",
-        "\(TColors.Purple)",
-        "\(TColors.Black)"
+        "\(Colors.Blue)",
+        "\(Colors.Red)",
+        "\(Colors.Yellow)",
+        "\(Colors.Green)",
+        "\(Colors.Orange)",
+        "\(Colors.Purple)",
+        "\(Colors.Black)"
     ]
     
     static func getColor(_ color: Int) -> Color {
