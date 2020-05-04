@@ -7,14 +7,14 @@ struct SoundPickerView: View {
     
     var soundsArray: [SoundsArray] = [
         SoundsArray(soundName: "Default Sound"),
-        SoundsArray(soundName: "Bicycle Bell"),
-        SoundsArray(soundName: "Bell - Store door"),
+        SoundsArray(soundName: "Bicycle"),
+        SoundsArray(soundName: "Store"),
         SoundsArray(soundName: "Cookoo"),
-        SoundsArray(soundName: "Tower bell"),
+        SoundsArray(soundName: "Tower"),
         
-        SoundsArray(soundName: "Bicycle Bell 2"),
+        SoundsArray(soundName: "Bicycle 2"),
         SoundsArray(soundName: "Ghost"),
-        SoundsArray(soundName: "House Bell"),
+        SoundsArray(soundName: "House"),
         SoundsArray(soundName: "Elevator"),
         SoundsArray(soundName: "Single"),
         SoundsArray(soundName: "Zen")
@@ -22,29 +22,16 @@ struct SoundPickerView: View {
     
     var body: some View {
         Section {
-            Picker("Notification sound", selection: $userSettings.soundIndex) {
+            Picker("Sound", selection: $userSettings.soundIndex) {
                 ForEach(0 ..< self.soundsArray.count, id: \.self) { index in
-                    selectSoundView(array: self.soundsArray, index: index)
+                    SelectSoundView(array: self.soundsArray, index: index)
                 }
             }
         }
     }
 }
 
-struct selectSoundView: View {
-    
-    var array: [SoundsArray]
-    var index: Int
-    
-    init(array: [SoundsArray], index: Int) {
-        self.array = array
-        self.index = index
-    }
-    
-    var body: some View {
-        Text(self.array[index].soundName).tag(index)
-    }
-}
+
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {

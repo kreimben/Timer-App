@@ -20,12 +20,12 @@ class MainController: ObservableObject {
     let cookooNotificationSound = UNNotificationSoundName("Cookoo")
     let towerBellNotificationSound = UNNotificationSoundName("Tower bell")
     
-    let bicycle2NotificationSound = UNNotificationSoundName("bicycle.wav")
-    let ghostNofiticationSound = UNNotificationSoundName("ghost.wav")
-    let homeBellNotificationSound = UNNotificationSoundName("home-bell.wav")
-    let elevatorNotificationSound = UNNotificationSoundName("elevator.wav")
-    let singleNotificationSound = UNNotificationSoundName("single.wav")
-    let zenNotificationSound = UNNotificationSoundName("zen.wav")
+    let bicycle2NotificationSound = UNNotificationSoundName("bicycle")
+    let ghostNofiticationSound = UNNotificationSoundName("ghost")
+    let homeBellNotificationSound = UNNotificationSoundName("home-bell")
+    let elevatorNotificationSound = UNNotificationSoundName("elevator")
+    let singleNotificationSound = UNNotificationSoundName("single")
+    let zenNotificationSound = UNNotificationSoundName("zen")
     /// @END
     
     /// @For custom action in UserNotification

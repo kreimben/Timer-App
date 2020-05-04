@@ -14,15 +14,17 @@
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
-		515DACE3245E876100A495BA /* bicycle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle.wav */; };
-		515DACE4245E876100A495BA /* home-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDE245E876100A495BA /* home-bell.wav */; };
-		515DACE5245E876100A495BA /* single.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDF245E876100A495BA /* single.wav */; };
-		515DACE6245E876100A495BA /* ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE0245E876100A495BA /* ghost.wav */; };
-		515DACE7245E876100A495BA /* zen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen.wav */; };
-		515DACE8245E876100A495BA /* elevator.wav in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator.wav */; };
+		515DACE3245E876100A495BA /* bicycle in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle */; };
+		515DACE4245E876100A495BA /* home-bell in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDE245E876100A495BA /* home-bell */; };
+		515DACE5245E876100A495BA /* single in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDF245E876100A495BA /* single */; };
+		515DACE6245E876100A495BA /* ghost in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE0245E876100A495BA /* ghost */; };
+		515DACE7245E876100A495BA /* zen in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen */; };
+		515DACE8245E876100A495BA /* elevator in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
 		515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACEC245EA57500A495BA /* WelcomeTo.swift */; };
-		515DACF124601B3B00A495BA /* SoundPlayer+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */; };
+		515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF4246025A500A495BA /* SelectSoundView.swift */; };
+		515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF92460271600A495BA /* SelectCircleView.swift */; };
+		515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACFB246040BF00A495BA /* SoundPlayerView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -84,15 +86,17 @@
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
 		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
-		515DACDD245E876100A495BA /* bicycle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bicycle.wav; sourceTree = "<group>"; };
-		515DACDE245E876100A495BA /* home-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "home-bell.wav"; sourceTree = "<group>"; };
-		515DACDF245E876100A495BA /* single.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = single.wav; sourceTree = "<group>"; };
-		515DACE0245E876100A495BA /* ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ghost.wav; sourceTree = "<group>"; };
-		515DACE1245E876100A495BA /* zen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zen.wav; sourceTree = "<group>"; };
-		515DACE2245E876100A495BA /* elevator.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = elevator.wav; sourceTree = "<group>"; };
+		515DACDD245E876100A495BA /* bicycle */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicycle; sourceTree = "<group>"; };
+		515DACDE245E876100A495BA /* home-bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-bell"; sourceTree = "<group>"; };
+		515DACDF245E876100A495BA /* single */ = {isa = PBXFileReference; lastKnownFileType = file; path = single; sourceTree = "<group>"; };
+		515DACE0245E876100A495BA /* ghost */ = {isa = PBXFileReference; lastKnownFileType = file; path = ghost; sourceTree = "<group>"; };
+		515DACE1245E876100A495BA /* zen */ = {isa = PBXFileReference; lastKnownFileType = file; path = zen; sourceTree = "<group>"; };
+		515DACE2245E876100A495BA /* elevator */ = {isa = PBXFileReference; lastKnownFileType = file; path = elevator; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
 		515DACEC245EA57500A495BA /* WelcomeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTo.swift; sourceTree = "<group>"; };
-		515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+PickerView.swift"; sourceTree = "<group>"; };
+		515DACF4246025A500A495BA /* SelectSoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSoundView.swift; sourceTree = "<group>"; };
+		515DACF92460271600A495BA /* SelectCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCircleView.swift; sourceTree = "<group>"; };
+		515DACFB246040BF00A495BA /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -162,6 +166,33 @@
 			path = "Welcome To T!mer";
 			sourceTree = "<group>";
 		};
+		515DACF62460267D00A495BA /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				515DACF7246026A200A495BA /* Frame */,
+				515DACF8246026B000A495BA /* Decoration */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		515DACF7246026A200A495BA /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				51113A5D237939BE005309D7 /* SoundPickerView.swift */,
+				515DACF4246025A500A495BA /* SelectSoundView.swift */,
+				515DACFB246040BF00A495BA /* SoundPlayerView.swift */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		515DACF8246026B000A495BA /* Decoration */ = {
+			isa = PBXGroup;
+			children = (
+				515DACF92460271600A495BA /* SelectCircleView.swift */,
+			);
+			path = Decoration;
+			sourceTree = "<group>";
+		};
 		51611C6623658FD800441AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,12 +207,12 @@
 		516B71F32393A9A800EAAC0E /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				515DACDD245E876100A495BA /* bicycle.wav */,
-				515DACE0245E876100A495BA /* ghost.wav */,
-				515DACDE245E876100A495BA /* home-bell.wav */,
-				515DACE2245E876100A495BA /* elevator.wav */,
-				515DACDF245E876100A495BA /* single.wav */,
-				515DACE1245E876100A495BA /* zen.wav */,
+				515DACDD245E876100A495BA /* bicycle */,
+				515DACE0245E876100A495BA /* ghost */,
+				515DACDE245E876100A495BA /* home-bell */,
+				515DACE2245E876100A495BA /* elevator */,
+				515DACDF245E876100A495BA /* single */,
+				515DACE1245E876100A495BA /* zen */,
 				516B71F42393A9A800EAAC0E /* Default Bell */,
 				516B71F52393A9A800EAAC0E /* Tower bell */,
 				516B71F62393A9A800EAAC0E /* Bell store door */,
@@ -263,13 +294,12 @@
 			children = (
 				51F13BAE2459F1150021622C /* DEBUG */,
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
+				515DACF62460267D00A495BA /* Sound */,
 				515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */,
-				51113A5D237939BE005309D7 /* SoundPickerView.swift */,
 				51D6A185242A261B002AD0DB /* ColorPickerView.swift */,
 				517917EB237936700074E5D9 /* SafariView.swift */,
 				51B221F323F2618600F924C1 /* IAPView.swift */,
 				511FD513245A05880012DCD9 /* MailView.swift */,
-				515DACF024601B3B00A495BA /* SoundPlayer+PickerView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -398,17 +428,17 @@
 			files = (
 				516B71FB2393A9A800EAAC0E /* Cookoo in Resources */,
 				516B71F82393A9A800EAAC0E /* Default Bell in Resources */,
-				515DACE3245E876100A495BA /* bicycle.wav in Resources */,
+				515DACE3245E876100A495BA /* bicycle in Resources */,
 				516B71FA2393A9A800EAAC0E /* Bell store door in Resources */,
-				515DACE5245E876100A495BA /* single.wav in Resources */,
-				515DACE7245E876100A495BA /* zen.wav in Resources */,
+				515DACE5245E876100A495BA /* single in Resources */,
+				515DACE7245E876100A495BA /* zen in Resources */,
 				51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */,
 				517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */,
-				515DACE4245E876100A495BA /* home-bell.wav in Resources */,
+				515DACE4245E876100A495BA /* home-bell in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				516B71F92393A9A800EAAC0E /* Tower bell in Resources */,
-				515DACE8245E876100A495BA /* elevator.wav in Resources */,
-				515DACE6245E876100A495BA /* ghost.wav in Resources */,
+				515DACE8245E876100A495BA /* elevator in Resources */,
+				515DACE6245E876100A495BA /* ghost in Resources */,
 				517F6227234E32A100A05205 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,9 +507,9 @@
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				51E829B4237ABF89002EDEE1 /* MainController.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
+				515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
-				515DACF124601B3B00A495BA /* SoundPlayer+PickerView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
@@ -489,6 +519,8 @@
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
+				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
+				515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -45,6 +45,11 @@ struct SettingPageView: View {
                 
                 SoundPickerView()
                 ColorPickerView()
+                
+                NavigationLink(destination: SoundPlayerView()) {
+                    
+                    Text("Sound Pre-listen")
+                }
             }
             
 //            Section(header: Text("In-app purchase")) {
