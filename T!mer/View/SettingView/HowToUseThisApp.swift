@@ -16,8 +16,8 @@ struct HowToUseThisApp: View {
             VStack {
                 
                 ZStack {
-                    Color.blue.opacity(backgroundColorOpacity)
                     
+                    Color.blue.opacity(backgroundColorOpacity)
                     
                     VStack(alignment: .leading) {
                         

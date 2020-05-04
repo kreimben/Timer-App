@@ -29,7 +29,7 @@ struct ContentView: View {
         self.selGen.prepare()
     }
     
-    //MARK: For Timer
+    // MARK: For Timer
     
     @State var timeDisplay: TimeInterval = 0
     
@@ -69,7 +69,7 @@ struct ContentView: View {
     @State var currentBuildVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0")!
     /// @END
     
-    //MARK:- var body: some View
+    // MARK: - var body: some View
     var body: some View {
         
         NavigationView {
@@ -81,18 +81,17 @@ struct ContentView: View {
                 
                 VStack {
                     
-                    ZStack { //MARK:- Textbox
+                    ZStack { // MARK: - Textbox
                         Rectangle()
                             .frame(width: 340, height: 140)
                             .foregroundColor(ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
                         
-                        
                         Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
                             .font(.system(size: 110))
                             .font(.headline)
                             .foregroundColor(Color.white)
-                            .onReceive(timer) { input in
+                            .onReceive(timer) { _ in
                                 
                                 DispatchQueue.main.async {
                                     
@@ -117,7 +116,7 @@ struct ContentView: View {
                     } // TextBox Elements
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                     
-                    ZStack(alignment: .center) { //MARK:- Circle Timer
+                    ZStack(alignment: .center) { // MARK: - Circle Timer
                         
                         Circle()
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
@@ -188,13 +187,13 @@ struct ContentView: View {
                                     self.gestureAllowed = false
                                     self.circleColor = Color.red.opacity(1.0)
                                     
-                                    //MARK: Interstitial
+                                    // MARK: Interstitial
                                     self.interstitial = Interstitial()
                                     self.interstitial.settingTimer()
                                 }
                         }
                         .gesture(
-                            DragGesture().updating($dragAmount) { value, state, transaction in
+                            DragGesture().updating($dragAmount) { value, state, _ in
                                 
                                 if !self.userSettings.isTimerStarted {
                                     
@@ -266,7 +265,7 @@ struct ContentView: View {
                                 
                                 if self.userSettings.initialNotificationTime > 0 { // which is MINUTE
                                     
-                                    return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { //MARK: OK Button!
+                                    return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { // MARK: OK Button!
                                         
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
                                         
@@ -276,7 +275,7 @@ struct ContentView: View {
                                         self.gestureAllowed = false
                                         self.circleColor = Color.red.opacity(1.0)
 
-                                        //MARK: Interstitial
+                                        // MARK: Interstitial
                                         self.interstitial = Interstitial()
                                         self.interstitial.settingTimer()
                                         })
@@ -294,9 +293,8 @@ struct ContentView: View {
                             })
                     } // Circle Timer Elements
                     
-                    
                     Spacer()
-                    //MARK:- Banner ad
+                    // MARK: - Banner ad
                     BannerVC(purchased: false)// self.userSettings.isUserPurchased)
                         .frame(width: 320, height: 50, alignment: .center)
                     
@@ -305,10 +303,10 @@ struct ContentView: View {
                 
                 VStack {
                     
-                    if (self.userSettings.latestBuildVersion == 1) {
+                    if self.userSettings.latestBuildVersion == 1 {
                         
                         WelcomeTo()
-                    } else if (self.userSettings.latestBuildVersion < currentBuildVersion) {
+                    } else if self.userSettings.latestBuildVersion < currentBuildVersion {
                         
                         UpdateLogView()
                     }
@@ -330,7 +328,6 @@ struct ContentView: View {
                             .clipShape(Circle())
                     }
                 )
-                
                 
             }
             .onAppear {
@@ -355,14 +352,14 @@ struct ContentView: View {
     }
 }
 
-//MARK:- Previews
+// MARK: - Previews
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
-//MARK:- BannerVC
+// MARK: - BannerVC
 final private class BannerVC: UIViewControllerRepresentable {
     
     var isUserPurchased: Bool // getting the UserDefaults value from MainController()

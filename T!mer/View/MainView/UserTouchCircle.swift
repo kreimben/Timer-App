@@ -2,7 +2,6 @@ import SwiftUI
 import Combine
 import Dispatch
 
-
 struct UserTouchCircle: View {
     
     @Binding var center: CGPoint

@@ -31,8 +31,6 @@ struct SoundPickerView: View {
     }
 }
 
-
-
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
         SoundPickerView()

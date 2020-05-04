@@ -47,16 +47,16 @@ What's your point?:
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
-        let vc = MFMailComposeViewController()
+        let viewContoller = MFMailComposeViewController()
         
         /// @Set email format
-        vc.setToRecipients(["aksidion@kreimben.com"])
-        vc.setSubject("T!mer - Feedback from \"your name\"")
-        vc.setMessageBody(mainFormat, isHTML: true)
+        viewContoller.setToRecipients(["aksidion@kreimben.com"])
+        viewContoller.setSubject("T!mer - Feedback from \"your name\"")
+        viewContoller.setMessageBody(mainFormat, isHTML: true)
         /// @END
         
-        vc.mailComposeDelegate = context.coordinator
-        return vc
+        viewContoller.mailComposeDelegate = context.coordinator
+        return viewContoller
     }
 
     func updateUIViewController(_ uiViewController: MFMailComposeViewController,

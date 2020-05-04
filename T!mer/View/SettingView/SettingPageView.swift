@@ -15,7 +15,7 @@ struct SoundsArray: Identifiable, Hashable {
     }
 }
 
-//MARK:- SettingPageView
+// MARK: - SettingPageView
 
 struct SettingPageView: View {
     
@@ -111,7 +111,7 @@ struct SettingPageView: View {
     }
 }
 
-//MARK:- SettingPageView_Previews
+// MARK: - SettingPageView_Previews
 
 struct SettingPageView_Previews: PreviewProvider {
     static var previews: some View {

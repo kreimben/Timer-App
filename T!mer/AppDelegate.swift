@@ -16,13 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         mainController = MainController()
         
-        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         UNUserNotificationCenter.current().delegate = self
-        
-        ///FastLane!
-        
         
 //        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
 //            /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
@@ -82,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - UserNotificationCenter Background Setting Function
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        switch(response.actionIdentifier) {
+        switch response.actionIdentifier {
             
         case "DISMISS_ACTION":
             print("Select Dismiss")

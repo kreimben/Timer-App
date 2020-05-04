@@ -8,7 +8,7 @@ class MainController: ObservableObject {
     
     @ObservedObject var userSettings = UserSettings()
     
-    //MARK:- AboutTimer
+    // MARK: - AboutTimer
     
     @ObservedObject var userTouchController = UserTouchController()
 
@@ -50,7 +50,6 @@ class MainController: ObservableObject {
         self.center.setNotificationCategories([afterTimerEndCat])
     }
     
-    
     func setNotificationWhenTimerStart(timeInterval: Double) {
         
         let content = UNMutableNotificationContent()
@@ -87,8 +86,6 @@ class MainController: ObservableObject {
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        
         
         center.add(request) { (error) in
             if let err = error {

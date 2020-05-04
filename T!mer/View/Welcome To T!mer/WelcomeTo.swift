@@ -13,7 +13,7 @@ struct WelcomeTo: View {
     
     var body: some View {
         
-        GeometryReader { geoReader in
+        GeometryReader { _ in
             
             ZStack {
                 
@@ -72,7 +72,7 @@ struct WelcomeTo: View {
                             self.animationBool += 1
                             print("Button tapped!\tanimationBool: \(self.animationBool)")
                             
-                            if (self.animationBool == 2) {
+                            if self.animationBool == 2 {
                                 
                                 self.userSettings.latestBuildVersion = 2
                             }

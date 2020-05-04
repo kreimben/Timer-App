@@ -36,9 +36,7 @@ class Interstitial: NSObject, GADInterstitialDelegate {
             
             let root = UIApplication.shared.windows.first?.rootViewController
             self.interstitial.present(fromRootViewController: root!)
-        }
-            
-        else{
+        } else {
             
             print("Interstitial Ad Is Not Ready")
         }

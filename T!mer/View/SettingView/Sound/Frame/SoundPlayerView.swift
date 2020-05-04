@@ -32,7 +32,7 @@ struct SoundPlayerView: View {
                         
                         var name = ""
                         
-                        switch (index) {
+                        switch index {
                             
                         case 0:
                             name = "Default Bell"

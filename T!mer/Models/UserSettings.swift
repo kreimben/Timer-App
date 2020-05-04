@@ -88,7 +88,7 @@ final class UserSettings: ObservableObject {
     
 }
 
-//MARK:- @propertyWrapper "UserDefault<T>
+// MARK: - @propertyWrapper "UserDefault<T>
 
 @propertyWrapper
 struct UserDefault<T> {

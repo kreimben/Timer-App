@@ -59,4 +59,3 @@ struct UpdateLogDetailView_Previews: PreviewProvider {
 //  Created by Aksidion Kreimben on 5/2/20.
 //  Copyright © 2020 Aksidion Kreimben. All rights reserved.
 //
-

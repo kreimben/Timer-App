@@ -16,7 +16,6 @@ struct TrailingButtonView: View {
     }
 }
 
-
 struct TraillingButtonView_Previews: PreviewProvider {
     static var previews: some View {
         TrailingButtonView()

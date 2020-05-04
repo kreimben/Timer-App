@@ -15,7 +15,7 @@ struct IAPView: View {
         
 //        if !(UserSettings().isUserPurchased) {
             
-            /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit#retrieve-products-info]
+            // Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit#retrieve-products-info]
 //            SwiftyStoreKit.retrieveProductsInfo([self.productID/*"com.KreimbenPro.nonConsumable.removeads"*/]) { result in
 //                if let product = result.retrievedProducts.first {
 //                    let priceString = product.localizedPrice!
@@ -111,7 +111,7 @@ struct IAPView: View {
                     
                     print("Restore In-app Purchase")
                     
-                    /// Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
+                    // Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
 //                    SwiftyStoreKit.restorePurchases(atomically: true) { results in
 //
 //                        if results.restoreFailedPurchases.count > 0 {
@@ -134,7 +134,7 @@ struct IAPView: View {
     }
 }
 
-fileprivate struct PurchaseButton: View {
+private struct PurchaseButton: View {
     
     @Binding var productID: String
     
@@ -144,7 +144,7 @@ fileprivate struct PurchaseButton: View {
         
         Button(action: {
             
-            /// Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
+            // Code's from official documentaion at [https://github.com/bizz84/SwiftyStoreKit#purchases]
             
             //                        self.userSettings.isUserPurchased.toggle()
             

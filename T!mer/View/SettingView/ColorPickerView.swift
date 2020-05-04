@@ -13,7 +13,7 @@ struct ColorPickerView: View {
     }
 }
 
-fileprivate struct ColorPickerCellView: View {
+private struct ColorPickerCellView: View {
     
     @State var index: Int
     
