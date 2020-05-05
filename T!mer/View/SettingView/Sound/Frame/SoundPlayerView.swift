@@ -4,20 +4,18 @@ import AVFoundation
 struct SoundPlayerView: View {
     
     @State var soundsArray: [SoundsArray] = [
-        SoundsArray(soundName: "Bicycle Bell"),
-        SoundsArray(soundName: "Bell - Store door"),
+        SoundsArray(soundName: "Bicycle"),
+        SoundsArray(soundName: "Store"),
         SoundsArray(soundName: "Cookoo"),
-        SoundsArray(soundName: "Tower bell"),
+        SoundsArray(soundName: "Tower"),
         
-        SoundsArray(soundName: "Bicycle Bell 2"),
+        SoundsArray(soundName: "Bicycle 2"),
         SoundsArray(soundName: "Ghost"),
-        SoundsArray(soundName: "House Bell"),
+        SoundsArray(soundName: "House"),
         SoundsArray(soundName: "Elevator"),
         SoundsArray(soundName: "Single"),
         SoundsArray(soundName: "Zen")
     ]
-    
-    @State var player = AVAudioPlayer()
     
     var body: some View {
         
@@ -28,9 +26,11 @@ struct SoundPlayerView: View {
                 SelectSoundView(array: self.soundsArray, index: index)
                     .onTapGesture {
                         
+                        print("+=========================+")
                         print("Play sound at: \(index)")
                         
                         var name = ""
+                        var player = AVAudioPlayer()
                         
                         switch index {
                             
@@ -63,14 +63,16 @@ struct SoundPlayerView: View {
                         
                         if let url = pathURL {
                             
+                            print("Sound Name: \(name)")
+                            print("Sound URL: \(url)")
+
                             do {
-                                
-                                self.player = try AVAudioPlayer(contentsOf: url)
-                                self.player.prepareToPlay()
-                                self.player.play()
-                                
+
+                                player = try AVAudioPlayer(contentsOf: url)
+                                player.play()
+
                             } catch let error {
-                                
+
                                 print("Can't load sound file: \(error.localizedDescription)")
                             }
                         }
