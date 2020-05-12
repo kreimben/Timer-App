@@ -6,7 +6,6 @@
 - [ ] Fix bug about circle color......
 - [ ] Add to-do feature
 - [ ] Reverse timer (using tabbar maybe...)
-- [ ] Add widget
 
 ### 1.4(?) (later)
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
@@ -14,6 +13,7 @@
 ### 1.3
 - [x] Add welcome message to newbies
 - [ ] Add notification sound player
+- [ ] Add widget
 
 ### 1.2
 - [x] Add more notification sound
