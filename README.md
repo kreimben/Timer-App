@@ -12,7 +12,7 @@
 
 ### 1.3
 - [x] Add welcome message to newbies
-- [ ] Add notification sound player
+- [ ] Add notification sound player (by using UIKit)
 - [ ] Add widget
 
 ### 1.2
