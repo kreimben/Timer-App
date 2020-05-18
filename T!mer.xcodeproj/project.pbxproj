@@ -12,6 +12,10 @@
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
+		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
+		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
+		51500AEE2473355600AAE960 /* T!mer Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51500AE22473355600AAE960 /* T!mer Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
 		515DACE3245E876100A495BA /* bicycle in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle */; };
@@ -52,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		51500AEC2473355600AAE960 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51500AE12473355600AAE960;
+			remoteInfo = "T!mer Widget";
+		};
 		519D6270243E2D0D00E6C77F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 517F6215234E329F00A05205 /* Project object */;
@@ -62,6 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		51500AEF2473355600AAE960 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				51500AEE2473355600AAE960 /* T!mer Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5183F13E23E16CF0003C2095 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +106,11 @@
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51500AE22473355600AAE960 /* T!mer Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T!mer Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51500AE32473355600AAE960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		51500AE92473355600AAE960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		51500AEB2473355600AAE960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
 		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
 		515DACDD245E876100A495BA /* bicycle */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicycle; sourceTree = "<group>"; };
@@ -130,6 +157,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		51500ADF2473355600AAE960 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F621A234E329F00A05205 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +184,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51500AE52473355600AAE960 /* T!mer Widget */ = {
+			isa = PBXGroup;
+			children = (
+				51500AE62473355600AAE960 /* TodayViewController.swift */,
+				51500AE82473355600AAE960 /* MainInterface.storyboard */,
+				51500AEB2473355600AAE960 /* Info.plist */,
+			);
+			path = "T!mer Widget";
+			sourceTree = "<group>";
+		};
 		515DACC3245C434C00A495BA /* Update Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +272,7 @@
 				51A6F42C235DC72800571F20 /* README.md */,
 				517F621F234E329F00A05205 /* T!mer */,
 				519D626C243E2D0D00E6C77F /* T!merUITests */,
+				51500AE52473355600AAE960 /* T!mer Widget */,
 				517F621E234E329F00A05205 /* Products */,
 				9703E6DB9B95217C7A8B3E7F /* Pods */,
 				8B639722B9B9195751ED024E /* Frameworks */,
@@ -238,6 +284,7 @@
 			children = (
 				517F621D234E329F00A05205 /* T!mer.app */,
 				519D626B243E2D0D00E6C77F /* T!merUITests.xctest */,
+				51500AE22473355600AAE960 /* T!mer Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,6 +376,7 @@
 				513EF2FD23E16E1C0013BC9F /* nanopb.framework */,
 				513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */,
 				3BC6213A47F3D94FECE75795 /* Pods_T_mer.framework */,
+				51500AE32473355600AAE960 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -345,6 +393,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		51500AE12473355600AAE960 /* T!mer Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51500AF22473355600AAE960 /* Build configuration list for PBXNativeTarget "T!mer Widget" */;
+			buildPhases = (
+				51500ADE2473355600AAE960 /* Sources */,
+				51500ADF2473355600AAE960 /* Frameworks */,
+				51500AE02473355600AAE960 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "T!mer Widget";
+			productName = "T!mer Widget";
+			productReference = 51500AE22473355600AAE960 /* T!mer Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		517F621C234E329F00A05205 /* T!mer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517F6231234E32A100A05205 /* Build configuration list for PBXNativeTarget "T!mer" */;
@@ -356,10 +421,12 @@
 				5183F13E23E16CF0003C2095 /* Embed Frameworks */,
 				BECFEDE7C62C99BBF2069627 /* [CP] Embed Pods Frameworks */,
 				51C395C62460D1BC001C16E5 /* ShellScript */,
+				51500AEF2473355600AAE960 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				51500AED2473355600AAE960 /* PBXTargetDependency */,
 			);
 			name = "T!mer";
 			productName = "T!mer";
@@ -394,6 +461,9 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Aksidion Kreimben";
 				TargetAttributes = {
+					51500AE12473355600AAE960 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					517F621C234E329F00A05205 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -418,11 +488,20 @@
 			targets = (
 				517F621C234E329F00A05205 /* T!mer */,
 				519D626A243E2D0D00E6C77F /* T!merUITests */,
+				51500AE12473355600AAE960 /* T!mer Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		51500AE02473355600AAE960 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F621B234E329F00A05205 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,6 +592,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		51500ADE2473355600AAE960 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500AE72473355600AAE960 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		517F6219234E329F00A05205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -555,6 +642,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		51500AED2473355600AAE960 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51500AE12473355600AAE960 /* T!mer Widget */;
+			targetProxy = 51500AEC2473355600AAE960 /* PBXContainerItemProxy */;
+		};
 		519D6271243E2D0D00E6C77F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 517F621C234E329F00A05205 /* T!mer */;
@@ -563,6 +655,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		51500AE82473355600AAE960 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51500AE92473355600AAE960 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		517F622B234E32A100A05205 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -574,6 +674,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		51500AF02473355600AAE960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!mer Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer.T-mer-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51500AF12473355600AAE960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!mer Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer.T-mer-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		517F622F234E32A100A05205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -785,6 +925,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		51500AF22473355600AAE960 /* Build configuration list for PBXNativeTarget "T!mer Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51500AF02473355600AAE960 /* Debug */,
+				51500AF12473355600AAE960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		517F6218234E329F00A05205 /* Build configuration list for PBXProject "T!mer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
