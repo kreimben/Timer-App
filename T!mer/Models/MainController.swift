@@ -2,15 +2,13 @@ import SwiftUI
 import Combine
 import UserNotifications
 
-import GoogleMobileAds
+//import GoogleMobileAds
 
 class MainController: ObservableObject {
     
     @ObservedObject var userSettings = UserSettings()
     
-    // MARK: - AboutTimer
-    
-    @ObservedObject var userTouchController = UserTouchController()
+//    @ObservedObject var userTouchController = UserTouchController()
 
     let center = UNUserNotificationCenter.current()
     

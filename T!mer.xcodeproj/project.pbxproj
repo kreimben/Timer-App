@@ -16,6 +16,11 @@
 		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
 		51500AEE2473355600AAE960 /* T!mer Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51500AE22473355600AAE960 /* T!mer Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		51500AF52473396700AAE960 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B1237ABF89002EDEE1 /* MainController.swift */; };
+		51500AF62473396E00AAE960 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E829B0237ABF89002EDEE1 /* UserSettings.swift */; };
+		51500AF72473399700AAE960 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A189242A2942002AD0DB /* ColorScheme.swift */; };
+		51500AFA24733EC300AAE960 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
+		51500AFB24733FF900AAE960 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 517F6226234E32A100A05205 /* Assets.xcassets */; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
 		515DACE3245E876100A495BA /* bicycle in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle */; };
@@ -111,6 +116,7 @@
 		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		51500AE92473355600AAE960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		51500AEB2473355600AAE960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51500AFC24734D2600AAE960 /* T!mer Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer Widget.entitlements"; sourceTree = "<group>"; };
 		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
 		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
 		515DACDD245E876100A495BA /* bicycle */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicycle; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 		51500AE52473355600AAE960 /* T!mer Widget */ = {
 			isa = PBXGroup;
 			children = (
+				51500AFC24734D2600AAE960 /* T!mer Widget.entitlements */,
 				51500AE62473355600AAE960 /* TodayViewController.swift */,
 				51500AE82473355600AAE960 /* MainInterface.storyboard */,
 				51500AEB2473355600AAE960 /* Info.plist */,
@@ -596,6 +603,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51500AFB24733FF900AAE960 /* Assets.xcassets in Sources */,
+				51500AFA24733EC300AAE960 /* UserTouchCircle.swift in Sources */,
+				51500AF72473399700AAE960 /* ColorScheme.swift in Sources */,
+				51500AF62473396E00AAE960 /* UserSettings.swift in Sources */,
+				51500AF52473396700AAE960 /* MainController.swift in Sources */,
 				51500AE72473355600AAE960 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,10 +689,11 @@
 		51500AF02473355600AAE960 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "T!mer Widget/T!mer Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				INFOPLIST_FILE = "T!mer Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,10 +710,11 @@
 		51500AF12473355600AAE960 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "T!mer Widget/T!mer Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				INFOPLIST_FILE = "T!mer Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

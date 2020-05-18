@@ -17,8 +17,6 @@ struct ContentView: View {
 
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-//        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-//        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
 
         appearance.shadowColor = nil
         UINavigationBar.appearance().standardAppearance = appearance
@@ -101,6 +99,11 @@ struct ContentView: View {
                                             
                                             self.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
                                             self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
+                                            
+                                            /// @Save to UserDefaults
+                                            UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.set(self.timeDisplay, forKey: "timeDisplay")
+                                            UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
+                                            /// @END
                                         }
                                         
                                     } else {
