@@ -16,8 +16,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        let index: Int = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "colorIndex") as? Int ?? 0
 
         view.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.6)
         
