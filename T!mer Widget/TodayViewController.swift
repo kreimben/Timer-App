@@ -32,7 +32,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             let button = UIButton(type: .roundedRect)
             button.setTitle("Start T!mer", for: .normal)
             button.titleLabel?.font = UIFont(name: "Helvetica", size: 30)!
-            button.titleLabel?.tintColor = .white
+            
+            if traitCollection.userInterfaceStyle == .light {
+                button.tintColor = .white
+            } else {
+                button.tintColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)
+            }
             
             let roundedRectangle = RoundedRectangleView(frame: CGRect(
                 x: 190,
@@ -93,7 +98,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             self.timeDisplay.translatesAutoresizingMaskIntoConstraints = false
             
-            self.timeDisplay.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100).isActive = true
+            self.timeDisplay.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 96).isActive = true
             self.timeDisplay.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
