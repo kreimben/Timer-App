@@ -12,6 +12,7 @@
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
 		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
 		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
@@ -111,6 +112,7 @@
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51415D252473DE7600A98E3B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		51500AE22473355600AAE960 /* T!mer Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T!mer Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51500AE32473355600AAE960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				51500AFC24734D2600AAE960 /* T!mer Widget.entitlements */,
 				51500AE62473355600AAE960 /* TodayViewController.swift */,
+				51415D252473DE7600A98E3B /* CircleView.swift */,
 				51500AE82473355600AAE960 /* MainInterface.storyboard */,
 				51500AEB2473355600AAE960 /* Info.plist */,
 			);
@@ -608,6 +611,7 @@
 				51500AF72473399700AAE960 /* ColorScheme.swift in Sources */,
 				51500AF62473396E00AAE960 /* UserSettings.swift in Sources */,
 				51500AF52473396700AAE960 /* MainController.swift in Sources */,
+				51415D262473DE7600A98E3B /* CircleView.swift in Sources */,
 				51500AE72473355600AAE960 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

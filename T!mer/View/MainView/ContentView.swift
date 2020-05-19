@@ -139,6 +139,7 @@ struct ContentView: View {
                             .shadow(radius: 10)
                             .onLongPressGesture(minimumDuration: 0.6, maximumDistance: 5) {
                                 
+                                // MARK: - Long Press Gesture
                                 print("onLongPressGesture is excuted.")
                                 print("gesture allowed status: \(self.gestureAllowed)")
                                 

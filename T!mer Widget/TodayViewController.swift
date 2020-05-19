@@ -4,6 +4,8 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
+    @IBOutlet var baseView: UIView!
+    
     var timer: Timer?
     
     var timeDisplay = UILabel()
@@ -16,10 +18,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
-        view.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.6)
+        
+        view.backgroundColor = UIColor.clear//UIColor(red: 0, green: 1, blue: 0, alpha: 0.6)
         
         let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? nil
+        
+        print("isTimerStarted: \(String(describing: boolean))")
+        
+        self.baseView.backgroundColor = .clear
         
         if (boolean) == false {
             
@@ -36,17 +42,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             button.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchDown)
         } else {
             
-            self.timeDisplay.text = ""
             self.timeDisplay.font = UIFont(name: "Helvetica", size: 45)
             self.timeDisplay.textColor = .white
             
-            if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), checkNil != nil {
+            if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") {
                 
                 let time = Date().distance(to: checkNil as! Date)
+                
+                print("time: \(time)")
                 
                 self.timeDisplay.text = String(format: "%02d:%02d", Int(time / 60), Int(time) % 60)
             }
             
+            let circleView = CircleView(frame: CGRect(
+                x: self.baseView.bounds.minX,
+                y: self.baseView.bounds.minY,
+                width: self.baseView.frame.width,
+                height: self.baseView.frame.height
+            ))
+            
+            circleView.backgroundColor = .clear
+            
+            self.baseView.addSubview(circleView)
             view.addSubview(self.timeDisplay)
             
             self.timeDisplay.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +75,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
+    // MARK: - viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         
         self.timer?.invalidate()
@@ -81,15 +99,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @objc func fireTimer() {
         
-        print("Fire Timer!!!")
-        
-        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), checkNil != nil {
+        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") { //, checkNil != nil {
             
             let time = Date().distance(to: checkNil as! Date)
+            print("checkNil: \((checkNil as! Date).addingTimeInterval(3600*9))")
             
             if time > 0 { // When timer is running
                 
                 self.timeDisplay.text = String(format: "%02d:%02d", Int(time / 60), Int(time) % 60)
+            } else {
+                
+                self.timer?.invalidate()
             }
         }
     }
