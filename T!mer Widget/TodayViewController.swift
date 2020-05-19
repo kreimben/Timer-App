@@ -19,12 +19,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        view.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.55)
+        view.backgroundColor = .clear//UIColor(red: 0, green: 1, blue: 0, alpha: 0.55)
         
-        let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? nil
+        let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? false
         
         print("isTimerStarted: \(String(describing: boolean))")
-        print("boolean: \(String(describing: boolean))")
         
         self.baseView.backgroundColor = .clear
         
@@ -32,16 +31,41 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             let button = UIButton(type: .roundedRect)
             button.setTitle("Start T!mer", for: .normal)
+            button.titleLabel?.font = UIFont(name: "Helvetica", size: 30)!
+            button.titleLabel?.tintColor = .white
             
+            let roundedRectangle = RoundedRectangleView(frame: CGRect(
+                x: 190,
+                y: 26,
+                width: 180,
+                height: 60
+            ))
+            
+            roundedRectangle.backgroundColor = .clear
+            
+            view.addSubview(roundedRectangle)
             view.addSubview(button)
             
             button.translatesAutoresizingMaskIntoConstraints = false
             
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 80).isActive = true
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             
             button.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchDown)
+            
+            let circleView = CircleView(frame: CGRect(
+                x: self.baseView.bounds.minX,
+                y: self.baseView.bounds.minY,
+                width: self.baseView.frame.width,
+                height: self.baseView.frame.height
+            ))
+            
+            circleView.backgroundColor = .clear
+            
+            self.baseView.addSubview(circleView)
         } else {
+            
+            print("boolean: \(String(describing: boolean))")
             
             self.timeDisplay.font = UIFont(name: "Helvetica", size: 45)
             self.timeDisplay.textColor = .white
@@ -71,9 +95,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             self.timeDisplay.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100).isActive = true
             self.timeDisplay.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         }
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
     // MARK: - viewDidDisappear

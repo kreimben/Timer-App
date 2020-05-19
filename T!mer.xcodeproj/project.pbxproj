@@ -11,6 +11,7 @@
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
+		512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512558C0247412A800020AE2 /* RoundedRectangleView.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
 		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
@@ -109,6 +110,7 @@
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
+		512558C0247412A800020AE2 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,12 +194,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		512558C2247412B300020AE2 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				51415D252473DE7600A98E3B /* CircleView.swift */,
+				512558C0247412A800020AE2 /* RoundedRectangleView.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
 		51500AE52473355600AAE960 /* T!mer Widget */ = {
 			isa = PBXGroup;
 			children = (
 				51500AFC24734D2600AAE960 /* T!mer Widget.entitlements */,
 				51500AE62473355600AAE960 /* TodayViewController.swift */,
-				51415D252473DE7600A98E3B /* CircleView.swift */,
+				512558C2247412B300020AE2 /* Shape */,
 				51500AE82473355600AAE960 /* MainInterface.storyboard */,
 				51500AEB2473355600AAE960 /* Info.plist */,
 			);
@@ -612,6 +623,7 @@
 				51500AF62473396E00AAE960 /* UserSettings.swift in Sources */,
 				51500AF52473396700AAE960 /* MainController.swift in Sources */,
 				51415D262473DE7600A98E3B /* CircleView.swift in Sources */,
+				512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */,
 				51500AE72473355600AAE960 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
