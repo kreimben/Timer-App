@@ -26,20 +26,31 @@ class CircleView: UIView {
             endAngle: CGFloat.pi * 2,
             clockwise: true
         )
-        UIColor(red: 0.8, green: 0, blue: 0, alpha: 1).set()
+        UIColor(red: 0.7, green: 0, blue: 0, alpha: 1).set()
         baseCircle.fill()
+        
+        // MARK: - Inner Circle
+        let innerCircle = UIBezierPath(
+            arcCenter: centerPoint,
+            radius: self.radius * 0.85,
+            startAngle: 0,
+            endAngle: CGFloat.pi * 2,
+            clockwise: true
+        )
+        UIColor(red: 0.95, green: 0, blue: 0, alpha: 1).set()
+        innerCircle.fill()
         
         // MARK: - Visualized Timer
         let visual = UIBezierPath()
         visual.move(to: centerPoint)
         visual.addArc(
             withCenter: centerPoint,
-            radius: self.radius * 0.8,
+            radius: self.radius * 0.7,
             startAngle: 0 + adjustDegree,
             endAngle: (CGFloat(time) * 0.1) * CGFloat.pi / 180 + adjustDegree,
             clockwise: false
         )
-        UIColor.white.set()
+        UIColor(red: 0.7, green: 0, blue: 0, alpha: 1).set()
         visual.fill()
     }
 }

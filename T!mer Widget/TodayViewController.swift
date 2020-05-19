@@ -103,7 +103,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as! Bool == true { //, checkNil != nil {
             
             let time = Date().distance(to: checkNil as! Date)
-            print("checkNil: \((checkNil as! Date).addingTimeInterval(3600*9))")
+//            print("checkNil: \((checkNil as! Date).addingTimeInterval(3600*9))")
             
             if time > 0 { // When timer is running
                 
