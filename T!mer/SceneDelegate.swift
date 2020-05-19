@@ -125,5 +125,6 @@ extension SceneDelegate {
         interstitial.settingTimer()
 
         self.userSettings.isTimerStarted = true
+        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted") // For "Today Extension"
     }
 }

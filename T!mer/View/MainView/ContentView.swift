@@ -99,11 +99,6 @@ struct ContentView: View {
                                             
                                             self.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
                                             self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
-                                            
-                                            /// @Save to UserDefaults
-                                            UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.set(self.timeDisplay, forKey: "timeDisplay")
-                                            UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
-                                            /// @END
                                         }
                                         
                                     } else {
@@ -155,11 +150,18 @@ struct ContentView: View {
                                     gen.impactOccurred()
                                     /// @END
                                     
+                                    /// @Set T!mer settings
                                     self.userSettings.isTimerStarted = false
                                     self.circleColor = Color.red.opacity(0.5)
+                                    /// @For "Today Extension"
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
+                                    /// @END
+                                    /// @END
                                     
                                     /// @Adjust after timer is stopped
                                     self.userSettings.notificationTime = Date()
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
                                     self.atan2Var = CGFloat(0)
                                     self.userSettings.timeInputBeforeConvert = -90
                                     self.userSettings.initialNotificationTime = 0
@@ -183,9 +185,14 @@ struct ContentView: View {
                                     /// @END
                                     
                                     self.userSettings.notificationTime = Date().addingTimeInterval(3600)
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
                                     
                                     self.mainController.setNotificationWhenTimerStart(timeInterval: 3600)
                                     self.userSettings.isTimerStarted = true
+                                    /// @For "Today Extension"
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
+                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
+                                    /// @END
                                     
                                     self.gestureAllowed = false
                                     self.circleColor = Color.red.opacity(1.0)
@@ -271,9 +278,14 @@ struct ContentView: View {
                                     return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { // MARK: OK Button!
                                         
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
                                         
                                         self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
                                         self.userSettings.isTimerStarted = true
+                                        /// @For "Today Extension"
+                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
+                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
+                                        /// @END
 
                                         self.gestureAllowed = false
                                         self.circleColor = Color.red.opacity(1.0)
@@ -334,6 +346,8 @@ struct ContentView: View {
                 
             }
             .onAppear {
+                
+                print("UserDefaults initWithSuiteName: \(UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted"))")
                 
                 self.userSettings.howManyOpenThisApp += 1
                 

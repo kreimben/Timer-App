@@ -17,6 +17,9 @@ final class UserSettings: ObservableObject {
     var colorIndex: Int {
         willSet {
             objectWillChange.send()
+            UserDefaults(suiteName: "group.com.KriembenPro.Timer")?.setValue(newValue, forKey: "colorIndex")
+            
+            print("Color Index at UserDefaults suite: \(UserDefaults(suiteName: "group.com.KriembenPro.Timer")?.value(forKey: "colorIndex"))")
         }
     }
     /// @END

@@ -4,20 +4,66 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
+    var timer: Timer?
+    
+    var timeDisplay = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Allow the today widget to be expanded or contracted.
-        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        
     }
+    
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let vc = UIHostingController(rootView: MainWidgetView())
+        let index: Int = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "colorIndex") as? Int ?? 0
+
+        view.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.6)
         
-        present(vc, animated: true)
+        let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? nil
+        
+        if (boolean) == false {
+            
+            let button = UIButton(type: .roundedRect)
+            button.setTitle("Start T!mer", for: .normal)
+            
+            view.addSubview(button)
+            
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            
+            button.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchDown)
+        } else {
+            
+            self.timeDisplay.text = ""
+            self.timeDisplay.font = UIFont(name: "Helvetica", size: 45)
+            self.timeDisplay.textColor = .white
+            
+            if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), checkNil != nil {
+                
+                let time = Date().distance(to: checkNil as! Date)
+                
+                self.timeDisplay.text = String(format: "%02d:%02d", Int(time / 60), Int(time) % 60)
+            }
+            
+            view.addSubview(self.timeDisplay)
+            
+            self.timeDisplay.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.timeDisplay.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100).isActive = true
+            self.timeDisplay.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        self.timer?.invalidate()
+        print("Timer invalidate!")
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -30,111 +76,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
-}
-
-struct MainWidgetView: View {
-    
-    /// @ObservedObject
-    @ObservedObject var userSettings = UserSettings()
-    @ObservedObject var mainController = MainController()
-    /// @END
-    
-    /// @Timer
-    var timer = Timer.publish(every: 1, on: .current, in: .default).autoconnect()
-    /// @END
-    
-    /// @For DragGesture
-    @GestureState var dragAmount = CGPoint.zero
-    @State var currentPoint = CGPoint.zero
-    @State var center = CGPoint.zero
-    @State var atan2Var: CGFloat = 0.0
-    /// @END
-    
-    /// @For Circle
-    @State var circleColor = Color.red.opacity(0.5)
-    @State var circleRadius = CGFloat(70)
-    /// @END
-    
-    @State var timeDisplay: TimeInterval = 0
-    
-    func visualSettingsWhileTimerIsWorking() {
+    @objc func didTappedButton(_ sender: UIButton) {
         
-        self.circleColor = Color.red.opacity(1.0)
+        print("Button Tapped!")
     }
     
-    var body: some View {
+    @objc func fireTimer() {
         
-        ZStack {
+        print("Fire Timer!!!")
+        
+        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), checkNil != nil {
             
-            Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
-            ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
-                .edgesIgnoringSafeArea(.all)
+            let time = Date().distance(to: checkNil as! Date)
             
-            HStack {
+            if time > 0 { // When timer is running
                 
-                ZStack {
-                    Circle()
-                        .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
-                        .frame(width: 90)
-                        .shadow(radius: 10)
-                    
-                    Circle()
-                        .fill(Color.red.opacity(0.5))
-                        .frame(width: 80)
-                        .shadow(radius: 10)
-                    
-                    Image("시계 바늘")
-                        .resizable()
-                        .frame(width: 90, height: 90)
-                    
-                    UserTouchCircle(
-                        center: self.$center,
-                        atan2: self.$atan2Var,
-                        circleColor: self.$circleColor,
-                        circleRadius: self.$circleRadius
-                    )
-                        .frame(width: 85, height: 85)
-                } // Circle View
-                    .padding(.trailing, 70)
-                
-                ZStack {
-                    
-                    Rectangle()
-                        .frame(width: 120, height: 60)
-                        .foregroundColor(ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
-                        .cornerRadius(15)
-                    
-                    Text("\(self.userSettings.isTimerStarted ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
-                        .font(.system(size: 40))
-                        .font(.headline)
-                        .foregroundColor(Color.white)
-                        .onReceive(timer) { _ in
-                            
-                            DispatchQueue.main.async {
-                                
-                                if Date().distance(to: self.userSettings.notificationTime) > 0 && self.userSettings.isTimerStarted { // 시간이 0보다 작으면 타이머 종료
-                                    
-                                    self.timeDisplay = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "timeDisplay") as? TimeInterval ?? 1111
-                                    
-                                    print("timeDisplay fetch from UserDefaults(suiteName:) \(self.timeDisplay)")
-                                    
-                                    if Date().distance(to: self.userSettings.notificationTime) > 0 {
-                                        
-                                        self.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
-                                        self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
-                                    }
-                                    
-                                } else {
-                                    
-                                    self.userSettings.isTimerStarted = false
-                                    self.circleColor = Color.red.opacity(0.5)
-                                }
-                                
-                                ///For color setting
-                                self.visualSettingsWhileTimerIsWorking()
-                            }
-                    }
-                } // Text Box View
+                self.timeDisplay.text = String(format: "%02d:%02d", Int(time / 60), Int(time) % 60)
             }
         }
     }
