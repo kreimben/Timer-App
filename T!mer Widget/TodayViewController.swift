@@ -19,11 +19,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        view.backgroundColor = UIColor.clear//UIColor(red: 0, green: 1, blue: 0, alpha: 0.6)
+        view.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.55)
         
         let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? nil
         
         print("isTimerStarted: \(String(describing: boolean))")
+        print("boolean: \(String(describing: boolean))")
         
         self.baseView.backgroundColor = .clear
         
@@ -99,7 +100,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @objc func fireTimer() {
         
-        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") { //, checkNil != nil {
+        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as! Bool == true { //, checkNil != nil {
             
             let time = Date().distance(to: checkNil as! Date)
             print("checkNil: \((checkNil as! Date).addingTimeInterval(3600*9))")
@@ -107,6 +108,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if time > 0 { // When timer is running
                 
                 self.timeDisplay.text = String(format: "%02d:%02d", Int(time / 60), Int(time) % 60)
+                
+                let circleView = CircleView(frame: CGRect(
+                    x: self.baseView.bounds.minX,
+                    y: self.baseView.bounds.minY,
+                    width: self.baseView.frame.width,
+                    height: self.baseView.frame.height
+                ))
+                
+                circleView.backgroundColor = .clear
+                
+                self.baseView.addSubview(circleView)
             } else {
                 
                 self.timer?.invalidate()

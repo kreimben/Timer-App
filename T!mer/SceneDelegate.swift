@@ -126,5 +126,7 @@ extension SceneDelegate {
 
         self.userSettings.isTimerStarted = true
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted") // For "Today Extension"
+        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
+        
     }
 }
