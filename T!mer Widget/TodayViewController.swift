@@ -124,7 +124,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @objc func didTappedButton(_ sender: UIButton) {
         
-        print("Button Tapped!")
+        if let url = NSURL(string: "Timer_openApp://") {
+            print("URL set OK")
+            extensionContext?.open(url as URL) { message in
+                
+                print("Open App Completion Result: \(message.description)")
+            }
+        }
     }
     
     @objc func fireTimer() {

@@ -90,6 +90,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         completionHandler()
     }
+    
+    // MARK: - Open App from "Today Extension"
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let code = "Timer_openApp://"
+        if url.absoluteString == code {
+            
+            return true
+        }
+        
+        return false
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        let code = "Timer_openApp://"
+        if url.absoluteString == code {
+            
+            return true
+        }
+        
+        return false
+    }
 }
 
 //
