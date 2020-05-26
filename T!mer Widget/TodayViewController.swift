@@ -22,12 +22,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         view.backgroundColor = .clear//UIColor(red: 0, green: 1, blue: 0, alpha: 0.55)
         
         let boolean = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as? Bool ?? false
+        let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime")
+        
+        let time = Date().distance(to: checkNil as? Date ?? Date())
         
         print("isTimerStarted: \(String(describing: boolean))")
         
         self.baseView.backgroundColor = .clear
         
-        if (boolean) == false {
+        if (boolean && time > 0) == false {
             
             let button = UIButton(type: .roundedRect)
             button.setTitle("Start T!mer", for: .normal)
@@ -40,8 +43,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
             
             let roundedRectangle = RoundedRectangleView(frame: CGRect(
-                x: 190,
-                y: 26,
+                x: view.bounds.midX - 10,
+                y: button.bounds.minY + 24,
                 width: 180,
                 height: 60
             ))
@@ -133,12 +136,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
+    // MARK: - Timer
     @objc func fireTimer() {
         
-        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as! Bool == true { //, checkNil != nil {
+        if let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime"), UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted") as! Bool == true {
             
             let time = Date().distance(to: checkNil as! Date)
-//            print("checkNil: \((checkNil as! Date).addingTimeInterval(3600*9))")
+            
+            print(time)
             
             if time > 0 { // When timer is running
                 
@@ -157,6 +162,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             } else {
                 
                 self.timer?.invalidate()
+                UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(false, forKey: "isTimerStarted")
+                UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
             }
         }
     }

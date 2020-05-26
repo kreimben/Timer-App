@@ -707,7 +707,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "T!mer Widget/T!mer Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200520;
+				CURRENT_PROJECT_VERSION = 200522;
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				INFOPLIST_FILE = "T!mer Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -716,7 +716,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer.T-mer-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -730,7 +730,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "T!mer Widget/T!mer Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200520;
+				CURRENT_PROJECT_VERSION = 200522;
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				INFOPLIST_FILE = "T!mer Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -739,7 +739,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer.T-mer-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -870,7 +870,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200520;
+				CURRENT_PROJECT_VERSION = 200522;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -880,7 +880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -897,7 +897,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200520;
+				CURRENT_PROJECT_VERSION = 200522;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -907,7 +907,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
