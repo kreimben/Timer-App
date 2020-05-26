@@ -334,6 +334,10 @@ struct ContentView: View {
                                     .resizable()
                                     .frame(width: 30, height: 30)
                                     .foregroundColor(Color.orange.opacity(1))
+//                                    .onTapGesture {
+//
+//                                        print("TodoView() NavigationLink button tapped!")
+//                                }
                             }
                         }
                         .padding(EdgeInsets(
