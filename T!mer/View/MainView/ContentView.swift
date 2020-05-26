@@ -138,19 +138,6 @@ struct ContentView: View {
                                     trailing: 10
                                 ))
                             
-                            NavigationLink(destination: TodoView()) {
-                                
-                                Image(systemName: "plus.circle.fill")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.orange.opacity(1))
-                                    .padding(EdgeInsets(
-                                        top: 10,
-                                        leading: UIScreen.main.bounds.width * 0.72,
-                                        bottom: UIScreen.main.bounds.width * 0.72,
-                                        trailing: 10
-                                    ))
-                            }
                         }
                         
                         Circle()
@@ -339,6 +326,24 @@ struct ContentView: View {
                                     #endif
                                 }
                             })
+                        
+                        ZStack {
+                            NavigationLink(destination: TodoView()) {
+                                
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.orange.opacity(1))
+                            }
+                        }
+                        .padding(EdgeInsets(
+                            top: 10,
+                            leading: UIScreen.main.bounds.width * 0.72,
+                            bottom: UIScreen.main.bounds.width * 0.72,
+                            trailing: 10
+                        ))
+                        .padding()
+                        
                     } // Circle Timer Elements
                     
                     
@@ -365,7 +370,6 @@ struct ContentView: View {
                     width: UIScreen.main.bounds.width * 0.85,
                     height: 450
                 )
-                    
                     .navigationBarTitle(Text("T!mer"), displayMode: .inline)
                     
                     .navigationBarItems(trailing:
@@ -380,8 +384,6 @@ struct ContentView: View {
                 
             }
             .onAppear {
-                
-                print("UserDefaults initWithSuiteName: \(UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "isTimerStarted"))")
                 
                 self.userSettings.howManyOpenThisApp += 1
                 
