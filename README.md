@@ -13,7 +13,7 @@
 
 ### 1.3
 - [x] Add welcome message to newbies
-- [ ] Add widget
+- [x] Add widget
 
 ### 1.2
 - [x] Add more notification sound
