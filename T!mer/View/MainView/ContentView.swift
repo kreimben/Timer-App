@@ -14,10 +14,10 @@ struct ContentView: View {
     init() {
         
         let appearance = UINavigationBarAppearance()
-
+        
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-
+        
         appearance.shadowColor = nil
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
@@ -106,13 +106,13 @@ struct ContentView: View {
                                         self.userSettings.isTimerStarted = false
                                         self.circleColor = Color.red.opacity(0.5)
                                     }
-                                
+                                    
                                     ///For color setting
                                     self.visualSettingsWhileTimerIsWorking()
                                 }
                         }
                     } // TextBox Elements
-                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                     
                     ZStack(alignment: .center) { // MARK: - Circle Timer
                         
@@ -120,6 +120,38 @@ struct ContentView: View {
                             .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
                             .frame(width: UIScreen.main.bounds.width * 0.85)
                             .shadow(radius: 10)
+                        
+                        ZStack(alignment: .center) {
+                            
+                            Image("T!mer base after 1.4.0")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: UIScreen.main.bounds.width * 0.85)
+                            
+                            Circle()
+                                .fill(Color.red)
+                                .frame(width: 40)
+                                .padding(EdgeInsets(
+                                    top: 10,
+                                    leading: UIScreen.main.bounds.width * 0.72,
+                                    bottom: UIScreen.main.bounds.width * 0.72,
+                                    trailing: 10
+                                ))
+                            
+                            NavigationLink(destination: TodoView()) {
+                                
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.orange.opacity(1))
+                                    .padding(EdgeInsets(
+                                        top: 10,
+                                        leading: UIScreen.main.bounds.width * 0.72,
+                                        bottom: UIScreen.main.bounds.width * 0.72,
+                                        trailing: 10
+                                    ))
+                            }
+                        }
                         
                         Circle()
                             .fill(Color.red.opacity(0.5))
@@ -287,10 +319,10 @@ struct ContentView: View {
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
                                         /// @END
-
+                                        
                                         self.gestureAllowed = false
                                         self.circleColor = Color.red.opacity(1.0)
-
+                                        
                                         // MARK: Interstitial
                                         self.interstitial = Interstitial()
                                         self.interstitial.settingTimer()
@@ -308,6 +340,7 @@ struct ContentView: View {
                                 }
                             })
                     } // Circle Timer Elements
+                    
                     
                     Spacer()
                     // MARK: - Banner ad
@@ -333,16 +366,16 @@ struct ContentView: View {
                     height: 450
                 )
                     
-                .navigationBarTitle(Text("T!mer"), displayMode: .inline)
+                    .navigationBarTitle(Text("T!mer"), displayMode: .inline)
                     
-                .navigationBarItems(trailing:
-                    NavigationLink(destination: SettingPageView()) {
-                        Image(systemName: "bell.fill")
-                            .foregroundColor(Color.red.opacity(1.0))
-                            .padding(8)
-                            .background(Color.white.opacity(0.5))
-                            .clipShape(Circle())
-                    }
+                    .navigationBarItems(trailing:
+                        NavigationLink(destination: SettingPageView()) {
+                            Image(systemName: "bell.fill")
+                                .foregroundColor(Color.red.opacity(1.0))
+                                .padding(8)
+                                .background(Color.white.opacity(0.5))
+                                .clipShape(Circle())
+                        }
                 )
                 
             }

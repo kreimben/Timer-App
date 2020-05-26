@@ -4,12 +4,12 @@
 
 ### Whenever
 - [ ] Fix bug about circle color......
-- [ ] Add to-do feature
 - [ ] Reverse timer (using tabbar maybe...)
 - [ ] Add notification sound player (by using UIKit)
-
-### 1.4(?) (later)
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
+
+### 1.4
+- [ ] Add to-do feature
 
 ### 1.3
 - [x] Add welcome message to newbies
