@@ -12,6 +12,7 @@
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
+		5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFBE247FB90200A8EAA4 /* TodoView.swift */; };
 		512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512558C0247412A800020AE2 /* RoundedRectangleView.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
@@ -110,6 +111,7 @@
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
+		5121EFBE247FB90200A8EAA4 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		512558C0247412A800020AE2 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */,
+				5121EFBE247FB90200A8EAA4 /* TodoView.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
+				5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
