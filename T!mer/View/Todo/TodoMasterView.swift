@@ -1,6 +1,7 @@
 import SwiftUI
+import DZNEmptyDataSet
 
-struct TodoView: View {
+struct TodoMasterView: View {
     
     @ObservedObject var userSettings = UserSettings()
     
@@ -17,27 +18,19 @@ struct TodoView: View {
                     Text("There is no T!mer")
                 }
             }
-            .onAppear {
-                
-                print("notificationTime is grater than now: \(Date().distance(to: UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date ?? Date()))")
-            }
-            
-            Text("\(Date().distance(to: UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date ?? Date()))")
         } // VStack
         .navigationBarTitle(Text("To-do list"))
     }
 }
 
-// let checkNil = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime")
-
-struct TodoView_Previews: PreviewProvider {
+struct TodoMasterView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoView()
+        TodoMasterView()
     }
 }
 
 //
-//  TodoView.swift
+//  TodoMasterView.swift
 //  T!mer
 //
 //  Created by Aksidion Kreimben on 5/26/20.

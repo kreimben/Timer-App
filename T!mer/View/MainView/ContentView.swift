@@ -31,11 +31,19 @@ struct ContentView: View {
     
     @State var timeDisplay: TimeInterval = 0
     
+    /// @ObservedObject
     @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userTouchController = UserTouchController()
+    /// @END
     
+    /// @EndvironmentObject
     @EnvironmentObject var mainController: MainController
+    /// @END
     
+    /// @Bool-related
     @State var showingAlert = false
+    @State var todoViewBool = false
+    /// @END
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
@@ -55,9 +63,9 @@ struct ContentView: View {
     @State var circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
     /// @END
     
+    /// @Drag related
     @State var gestureAllowed = false
-    
-    @ObservedObject var userTouchController = UserTouchController()
+    /// @END
     
     /// @For selection feedback
     @State var selGen = UISelectionFeedbackGenerator()
@@ -328,25 +336,27 @@ struct ContentView: View {
                             })
                         
                         ZStack {
-                            NavigationLink(destination: TodoView()) {
-                                
-                                Image(systemName: "plus.circle.fill")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.orange.opacity(1))
-//                                    .onTapGesture {
-//
-//                                        print("TodoView() NavigationLink button tapped!")
-//                                }
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.orange.opacity(1))
+                                .onTapGesture {
+                                    
+                                    print("TodoView() NavigationLink button tapped!")
+                                    self.todoViewBool.toggle()
+                            }
+                            .sheet(isPresented: self.$todoViewBool) {
+
+                                TodoMasterView()
                             }
                         }
-                        .padding(EdgeInsets(
+                        .padding(EdgeInsets( 
                             top: 10,
                             leading: UIScreen.main.bounds.width * 0.72,
                             bottom: UIScreen.main.bounds.width * 0.72,
                             trailing: 10
                         ))
-                        .padding()
+                            .padding()
                         
                     } // Circle Timer Elements
                     
