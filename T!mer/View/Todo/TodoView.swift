@@ -2,7 +2,11 @@ import SwiftUI
 
 struct TodoView: View {
     var body: some View {
-        Text("Todo View Test")
+        
+        List {
+            
+            Text("Todo View Test")
+        }
     }
 }
 

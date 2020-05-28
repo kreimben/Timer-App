@@ -1,8 +1,44 @@
 import SwiftUI
+import UIKit
 
 struct TodoEmptyView: View {
     var body: some View {
-        Text("There is no T!mer")
+        
+        ZStack {
+            
+            Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                
+                Image("empty_box_image")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 104)
+                    .padding()
+                
+                Text("Nothing yet :(")
+                    .foregroundColor(Color.gray.opacity(0.7))
+                    .font(.system(size: 32, design: .rounded))
+                    .padding()
+                
+                Button(action: {
+                    
+                    /// @When T!mer is added successfully
+                    let gen = UINotificationFeedbackGenerator()
+                    gen.prepare()
+                    gen.notificationOccurred(.success)
+                    /// @END
+                }) {
+                    
+                    Text("Add current T!mer")
+                        .font(.system(size: 20, design: .rounded))
+                }
+                .padding()
+                
+            }
+            
+        }
+        .navigationBarTitle(Text("To-do list"))
     }
 }
 

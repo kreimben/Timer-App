@@ -1,5 +1,4 @@
 import SwiftUI
-import DZNEmptyDataSet
 
 struct TodoMasterView: View {
     
@@ -15,7 +14,7 @@ struct TodoMasterView: View {
                     TodoView()
                 } else {
                     
-                    Text("There is no T!mer")
+                    TodoEmptyView()
                 }
             }
         } // VStack
