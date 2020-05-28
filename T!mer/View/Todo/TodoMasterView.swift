@@ -12,7 +12,7 @@ struct TodoMasterView: View {
                 
                 if Date().distance(to: UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date ?? Date()) > 0.1 {
                     
-                    Text("You are running T!mer")
+                    TodoView()
                 } else {
                     
                     Text("There is no T!mer")

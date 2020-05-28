@@ -13,6 +13,7 @@
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFBE247FB90200A8EAA4 /* TodoView.swift */; };
+		5121EFC1247FB93E00A8EAA4 /* TodoEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */; };
 		512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512558C0247412A800020AE2 /* RoundedRectangleView.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
@@ -112,6 +113,7 @@
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		5121EFBE247FB90200A8EAA4 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEmptyView.swift; sourceTree = "<group>"; };
 		512558C0247412A800020AE2 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,7 @@
 			children = (
 				51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */,
 				5121EFBE247FB90200A8EAA4 /* TodoView.swift */,
+				5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5121EFC1247FB93E00A8EAA4 /* TodoEmptyView.swift in Sources */,
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
 				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
