@@ -19,7 +19,6 @@
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
 		5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */; };
-		5147AB2E2481103F00C5B571 /* Timer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */; };
 		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
 		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
@@ -127,7 +126,6 @@
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51415D252473DE7600A98E3B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerCoreData.xcdatamodel; sourceTree = "<group>"; };
-		5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		51500AE22473355600AAE960 /* T!mer Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T!mer Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51500AE32473355600AAE960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		5147AB2A24810B3B00C5B571 /* CoreData related */ = {
 			isa = PBXGroup;
 			children = (
-				5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */,
 				5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */,
 			);
 			path = "CoreData related";
@@ -682,7 +679,6 @@
 				515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
-				5147AB2E2481103F00C5B571 /* Timer+CoreDataClass.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,

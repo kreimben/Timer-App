@@ -9,6 +9,7 @@ struct TodoMasterView: View {
         VStack {
             Group {
                 
+                // TODO: Fix this to CoreData related
                 if TimerSession.shared.timers.count > 0 {
                     
                     TodoView()
