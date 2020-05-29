@@ -7,6 +7,7 @@ struct TodoView: View {
             
             Text("To-do list")
                 .font(.system(size: 32, design: .rounded))
+                .padding()
             
             List {
                 

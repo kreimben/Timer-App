@@ -247,6 +247,7 @@
 				51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */,
 				5121EFBE247FB90200A8EAA4 /* TodoView.swift */,
 				5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */,
+				5121EFC4247FBE9000A8EAA4 /* TimerElement.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -303,7 +304,6 @@
 				51D6A189242A2942002AD0DB /* ColorScheme.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
 				5121EFC2247FBD9B00A8EAA4 /* TimerSession.swift */,
-				5121EFC4247FBE9000A8EAA4 /* TimerElement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
