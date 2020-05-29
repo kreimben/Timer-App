@@ -2,42 +2,59 @@ import UIKit
 import StoreKit
 import Combine
 import SwiftUI
+import CoreData
 
 import GoogleMobileAds
-//import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
+    // MARK: CoreData Stack
+    lazy var persistentContainer: NSPersistentContainer = {
+
+        let container = NSPersistentContainer(name: "TimerCoreData")
+        container.loadPersistentStores { (storeDescription, error) in
+            
+            if let error = error as NSError? {
+                
+                fatalError("Error while load persistent container at AppDelegate: \(error), \(error.userInfo)")
+            }
+            
+            print("storeDescripsion: \(storeDescription)")
+        }
+
+
+        return container
+    }()
+    
+    // MARK: - Core Data Saving support
+    func saveContext() {
+        
+        let context = persistentContainer.viewContext
+        
+        if context.hasChanges {
+            do {
+                
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                
+            }
+        }
+    }
+    
     var mainController: MainController!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         mainController = MainController()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         UNUserNotificationCenter.current().delegate = self
-        
-//        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-//            /// Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit]
-//            for purchase in purchases {
-//                switch purchase.transaction.transactionState {
-//                case .purchased, .restored:
-//                    if purchase.needsFinishTransaction {
-//                        /// Deliver content from server, then:
-//                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-//                    }
-//                    /// Unlock content
-//                    
-//                case .failed, .purchasing, .deferred:
-//                    break /// Do nothing
-//                @unknown default:
-//                    fatalError("Error to App Delegate")
-//                }
-//            }
-//        }
         
         return true
     }
@@ -58,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
         
-        print("did discard scene sessions at AppDelegate")
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -92,27 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     // MARK: - Open App from "Today Extension"
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        let code = "Timer_openApp://"
-        if url.absoluteString == code {
-            
-            return true
-        }
-        
-        return false
-    }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
-        let code = "Timer_openApp://"
-        if url.absoluteString == code {
-            
-            return true
-        }
-        
-        return false
-    }
 }
 
 //

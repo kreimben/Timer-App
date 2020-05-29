@@ -13,9 +13,13 @@
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
 		5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFBE247FB90200A8EAA4 /* TodoView.swift */; };
 		5121EFC1247FB93E00A8EAA4 /* TodoEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */; };
+		5121EFC3247FBD9B00A8EAA4 /* TimerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFC2247FBD9B00A8EAA4 /* TimerSession.swift */; };
+		5121EFC5247FBE9000A8EAA4 /* TimerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121EFC4247FBE9000A8EAA4 /* TimerElement.swift */; };
 		512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512558C0247412A800020AE2 /* RoundedRectangleView.swift */; };
-		513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
+		5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */; };
+		5147AB2E2481103F00C5B571 /* Timer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */; };
 		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
 		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
@@ -100,7 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				513EF2F923E16E0C0013BC9F /* BuildFile in Embed Frameworks */,
+				513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,11 +119,15 @@
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		5121EFBE247FB90200A8EAA4 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEmptyView.swift; sourceTree = "<group>"; };
+		5121EFC2247FBD9B00A8EAA4 /* TimerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSession.swift; sourceTree = "<group>"; };
+		5121EFC4247FBE9000A8EAA4 /* TimerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerElement.swift; sourceTree = "<group>"; };
 		512558C0247412A800020AE2 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		5136238A237AA1D300744BDD /* T!mer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer.entitlements"; sourceTree = "<group>"; };
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51415D252473DE7600A98E3B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerCoreData.xcdatamodel; sourceTree = "<group>"; };
+		5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		51500AE22473355600AAE960 /* T!mer Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T!mer Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51500AE32473355600AAE960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +217,15 @@
 			path = Shape;
 			sourceTree = "<group>";
 		};
+		5147AB2A24810B3B00C5B571 /* CoreData related */ = {
+			isa = PBXGroup;
+			children = (
+				5147AB2C2481103F00C5B571 /* Timer+CoreDataClass.swift */,
+				5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */,
+			);
+			path = "CoreData related";
+			sourceTree = "<group>";
+		};
 		51500AE52473355600AAE960 /* T!mer Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +299,8 @@
 				51214AC123E9143300FB3332 /* Interstitial.swift */,
 				51D6A189242A2942002AD0DB /* ColorScheme.swift */,
 				51E829B0237ABF89002EDEE1 /* UserSettings.swift */,
+				5121EFC2247FBD9B00A8EAA4 /* TimerSession.swift */,
+				5121EFC4247FBE9000A8EAA4 /* TimerElement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				5136238A237AA1D300744BDD /* T!mer.entitlements */,
+				5147AB2A24810B3B00C5B571 /* CoreData related */,
 				517F6220234E329F00A05205 /* AppDelegate.swift */,
 				517F6222234E329F00A05205 /* SceneDelegate.swift */,
 				51611C6623658FD800441AD3 /* Models */,
@@ -653,6 +673,7 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
 				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
+				5121EFC5247FBE9000A8EAA4 /* TimerElement.swift in Sources */,
 				51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
@@ -661,18 +682,21 @@
 				515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
+				5147AB2E2481103F00C5B571 /* Timer+CoreDataClass.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
+				5121EFC3247FBD9B00A8EAA4 /* TimerSession.swift in Sources */,
 				515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */,
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
+				5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */,
 				515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
@@ -890,7 +914,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200522;
+				CURRENT_PROJECT_VERSION = 200601;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -900,7 +924,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -917,7 +941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "T!mer/T!mer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200522;
+				CURRENT_PROJECT_VERSION = 200601;
 				DEVELOPMENT_ASSET_PATHS = "\"T!mer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
 				ENABLE_PREVIEWS = YES;
@@ -927,7 +951,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1016,6 +1040,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */,
+			);
+			currentVersion = 5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */;
+			path = TimerCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 517F6215234E329F00A05205 /* Project object */;
 }

@@ -3,9 +3,15 @@ import SwiftUI
 struct TodoView: View {
     var body: some View {
         
-        List {
+        VStack {
             
-            Text("Todo View Test")
+            Text("To-do list")
+                .font(.system(size: 32, design: .rounded))
+            
+            List {
+                
+                Text("Todo View Test")
+            }
         }
     }
 }

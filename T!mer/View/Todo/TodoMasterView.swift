@@ -9,13 +9,16 @@ struct TodoMasterView: View {
         VStack {
             Group {
                 
-                if Date().distance(to: UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date ?? Date()) > 0.1 {
+                if TimerSession.shared.timers.count > 0 {
                     
                     TodoView()
                 } else {
                     
                     TodoEmptyView()
                 }
+            }.onAppear {
+                
+                print("timer session count: \(TimerSession.shared.timers.count)")
             }
         } // VStack
         .navigationBarTitle(Text("To-do list"))

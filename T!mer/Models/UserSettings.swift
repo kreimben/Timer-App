@@ -88,7 +88,6 @@ final class UserSettings: ObservableObject {
         }
     }
     /// @END
-    
 }
 
 // MARK: - @propertyWrapper "UserDefault<T>

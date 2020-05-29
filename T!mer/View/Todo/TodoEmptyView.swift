@@ -2,6 +2,15 @@ import SwiftUI
 import UIKit
 
 struct TodoEmptyView: View {
+    
+    /// @ObservedObject
+    @ObservedObject var userSettings = UserSettings()
+    /// @END
+    
+    /// @Environment
+    @Environment(\.presentationMode) var presentationMode
+    /// @END
+    
     var body: some View {
         
         ZStack {
@@ -21,20 +30,39 @@ struct TodoEmptyView: View {
                     .font(.system(size: 32, design: .rounded))
                     .padding()
                 
-                Button(action: {
-                    
-                    /// @When T!mer is added successfully
-                    let gen = UINotificationFeedbackGenerator()
-                    gen.prepare()
-                    gen.notificationOccurred(.success)
-                    /// @END
-                }) {
-                    
-                    Text("Add current T!mer")
-                        .font(.system(size: 20, design: .rounded))
+                Group {
+                    if self.userSettings.isTimerStarted {
+                        
+                        Button(action: {
+                            
+                            let newTimer = TimerElement(with: self.userSettings.notificationTime)
+                            
+                            TimerSession.shared.timers.append(newTimer)
+                            
+                            /// @When T!mer is added successfully
+                            let gen = UINotificationFeedbackGenerator()
+                            gen.prepare()
+                            gen.notificationOccurred(.success)
+                            /// @END
+                        }) {
+                            
+                            Text("Add current T!mer")
+                                .font(.system(size: 20, design: .rounded))
+                            
+                        }
+                        .padding()
+                    } else {
+                        
+                        Button(action: {
+                            
+                            self.presentationMode.wrappedValue.dismiss()
+                        }) {
+                            
+                            Text("Start T!mer first :)")
+                                .font(.system(size: 20, design: .rounded))
+                        }
+                    }
                 }
-                .padding()
-                
             }
             
         }
