@@ -1,6 +1,15 @@
 import SwiftUI
+import CoreData
 
 struct TodoView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+        entity: TimerEntities.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \TimerEntities.notificationTime, ascending: true)]
+    )
+    var results: FetchedResults<TimerEntities>
+    
     var body: some View {
         
         VStack {
@@ -11,7 +20,10 @@ struct TodoView: View {
             
             List {
                 
-                Text("Todo View Test")
+                ForEach(results, id: \.self) { data in
+                    
+                    Text("\(data.text!): \(data.memo ?? ""), date: \(data.notificationTime!)")
+                }
             }
         }
     }

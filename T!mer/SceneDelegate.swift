@@ -20,11 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let mainController = MainController()
         
+        // MARK: CoreData Context
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            fatalError("Failed to load Persistent Container")
+        }
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView
-                .environmentObject(mainController)
+                .environmentObject(mainController).environment(\.managedObjectContext, context)
             )
             self.window = window
             window.makeKeyAndVisible()
@@ -78,6 +83,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            fatalError("Failed to load Persistent Container")
+        }
+        
+        do {
+            
+            try context.save()
+        } catch let error {
+            
+            fatalError("Error to save value (CoreData): \(error.localizedDescription)")
+        }
     }
 }
 

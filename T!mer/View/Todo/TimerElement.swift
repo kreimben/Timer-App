@@ -1,14 +1,35 @@
 import Foundation
+import CoreData
 
 class TimerElement {
     
     /// @Variables
+    var title:String
+    var memo: String?
     var notificationTime: Date
+    var context: NSManagedObjectContext
     /// @END
     
-    init(with notificationTime: Date) {
+    init(title:String, memo: String? = nil, with notificationTime: Date, context: NSManagedObjectContext) {
         
+        self.title = title
+        self.memo = memo
         self.notificationTime = notificationTime
+        self.context = context
+    }
+    
+    func save() {
+        
+        if self.context.hasChanged {
+            
+            do {
+                
+                try self.context.save()
+            } catch let error {
+                
+                fatalError("Error while save CoreData Object: \(error)")
+            }
+        }
     }
 }
 

@@ -9,6 +9,7 @@ struct TodoEmptyView: View {
     
     /// @Environment
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var managedObjectContext
     /// @END
     
     var body: some View {
@@ -35,9 +36,14 @@ struct TodoEmptyView: View {
                         
                         Button(action: {
                             
-                            let newTimer = TimerElement(with: self.userSettings.notificationTime)
+                            let newTimer = TimerElement(
+                                title: "Untitled",
+                                with: self.userSettings.notificationTime,
+                                context: self.managedObjectContext
+                            )
                             
-                            TimerSession.shared.timers.append(newTimer)
+                            newTimer.save()
+//                            TimerSession.shared.timers.append(newTimer)
                             
                             /// @When T!mer is added successfully
                             let gen = UINotificationFeedbackGenerator()
