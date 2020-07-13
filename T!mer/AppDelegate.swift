@@ -77,10 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
     }
     
-    func applicationWillTerminate(_ application: UIApplication) {
-        
-    }
-    
     // MARK: - UserNotificationCenter Foreground Setting Function
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,

@@ -9,7 +9,7 @@ extension TimerEntities {
     }
 
     @NSManaged public var memo: String?
-    @NSManaged public var notificationTime: Date?
+    @NSManaged public var notificationTime: Date
     @NSManaged public var text: String?
 
 }

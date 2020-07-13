@@ -20,16 +20,16 @@ class TimerElement {
     
     func save() {
         
-        if self.context.hasChanged {
-            
-            do {
-                
-                try self.context.save()
-            } catch let error {
-                
-                fatalError("Error while save CoreData Object: \(error)")
-            }
-        }
+//        if self.context.hasChanged {
+//
+//            do {
+//                
+//                try self.context.save()
+//            } catch let error {
+//
+//                fatalError("Error while save CoreData Object: \(error)")
+//            }
+//        }
     }
 }
 
