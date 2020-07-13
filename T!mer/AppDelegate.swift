@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 fatalError("Error while load persistent container at AppDelegate: \(error), \(error.userInfo)")
             }
             
-            print("storeDescripsion: \(storeDescription)")
+            print("Store Descripsion at AppDelegate: \(storeDescription)")
         }
-
 
         return container
     }()
