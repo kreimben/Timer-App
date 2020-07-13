@@ -1,16 +1,23 @@
 import SwiftUI
+import CoreData
 
 struct TodoMasterView: View {
     
     @ObservedObject var userSettings = UserSettings()
+    
+    /// @CoreData related
+    @FetchRequest(
+        entity: TimerEntities.entity(),
+        sortDescriptors: [NSSortDescriptor(key: "notificationTime", ascending: true)]
+    ) var timerEntities: FetchedResults<TimerEntities>
+    /// @END
     
     var body: some View {
         
         VStack {
             Group {
                 
-                // TODO: Fix this to CoreData related
-                if TimerSession.shared.timers.count > 0 {
+                if true { //TimerSession.shared.timers.count > 0 {
                     
                     TodoView()
                 } else {
@@ -19,7 +26,7 @@ struct TodoMasterView: View {
                 }
             }.onAppear {
                 
-                print("timer session count: \(TimerSession.shared.timers.count)")
+//                NSLog("FetchedResults count: \(self.timerEntities.count)")
             }
         } // VStack
         .navigationBarTitle(Text("To-do list"))

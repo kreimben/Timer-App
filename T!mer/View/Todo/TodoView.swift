@@ -3,12 +3,11 @@ import CoreData
 
 struct TodoView: View {
     
+    /// @CoreData related
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(
-        entity: TimerEntities.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \TimerEntities.notificationTime, ascending: true)]
-    )
-    var results: FetchedResults<TimerEntities>
+    @FetchRequest(fetchRequest: TimerEntities.getFetchRequest())
+    var timerEntities: FetchedResults<TimerEntities>
+    /// @END
     
     var body: some View {
         
@@ -18,11 +17,40 @@ struct TodoView: View {
                 .font(.system(size: 32, design: .rounded))
                 .padding()
             
+            HStack {
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                    let newItem = TimerEntities(context: self.managedObjectContext)
+                    let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime")
+                    
+                    NSLog(date as! String)
+                    
+                    newItem.notificationTime = date as! Date
+                    newItem.title = "New Todo"
+                    
+                    do {
+                    
+                        try self.managedObjectContext.save()
+                        
+                    } catch let error {
+                        
+                        NSLog(error.localizedDescription)
+                    }
+                    
+                }) {
+                    
+                    Text("Add todo")
+                }
+            }
+            
             List {
                 
-                ForEach(results, id: \.self) { data in
+                ForEach(timerEntities, id: \.self) { data in
                     
-                    Text("\(data.text!): \(data.memo ?? ""), date: \(data.notificationTime!)")
+                    Text("\(data.title): \(data.memo ?? ""), date: \(data.notificationTime)")
                 }
             }
         }

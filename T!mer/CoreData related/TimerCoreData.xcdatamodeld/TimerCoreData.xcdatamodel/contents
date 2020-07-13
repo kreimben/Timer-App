@@ -3,7 +3,7 @@
     <entity name="TimerEntities" representedClassName=".TimerEntities" syncable="YES">
         <attribute name="memo" optional="YES" attributeType="String"/>
         <attribute name="notificationTime" attributeType="Date" defaultDateTimeInterval="-56347440" usesScalarValueType="NO"/>
-        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
     </entity>
     <elements>
         <element name="TimerEntities" positionX="-63" positionY="-18" width="128" height="88"/>

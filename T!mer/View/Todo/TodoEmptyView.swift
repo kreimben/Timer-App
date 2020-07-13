@@ -9,6 +9,15 @@ struct TodoEmptyView: View {
     
     /// @Environment
     @Environment(\.presentationMode) var presentationMode
+    /// @END
+    
+    /// @CoreData related
+    @FetchRequest(
+        entity: TimerEntities.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(key: "notificationTime", ascending: true)
+        ]
+    ) var timerEntities: FetchedResults<TimerEntities>
     @Environment(\.managedObjectContext) var managedObjectContext
     /// @END
     
@@ -36,14 +45,22 @@ struct TodoEmptyView: View {
                         
                         Button(action: {
                             
-                            let newTimer = TimerElement(
-                                title: "Untitled",
-                                with: self.userSettings.notificationTime,
-                                context: self.managedObjectContext
-                            )
+                            let newItem = TimerEntities(context: self.managedObjectContext)
+                            let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime")
                             
-                            newTimer.save()
-//                            TimerSession.shared.timers.append(newTimer)
+                            NSLog(date as! String)
+                            
+                            newItem.notificationTime = date as! Date
+                            newItem.title = "New Todo"
+                            
+                            do {
+                            
+                                try self.managedObjectContext.save()
+                                
+                            } catch let error {
+                                
+                                NSLog(error.localizedDescription)
+                            }
                             
                             /// @When T!mer is added successfully
                             let gen = UINotificationFeedbackGenerator()
