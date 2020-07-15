@@ -93,7 +93,7 @@ class MainController: ObservableObject {
         
         let notificationTime = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
         
-        let result = notificationTime.distance(to: Date())
+        let result = Date().distance(to: notificationTime)
         
         NSLog("\(result)")
         
