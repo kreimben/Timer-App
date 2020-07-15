@@ -11,10 +11,8 @@ struct TodoMasterView: View {
             Group {
                 
                 TodoView()
-            }.onAppear {
-                
             }
-        } // VStack
+        }
     }
 }
 
