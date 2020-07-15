@@ -6,7 +6,7 @@
 - [ ] Fix bug about circle color......
 - [ ] Add notification sound player (by using UIKit)
 
-### 1.4
+### 2.0.0
 - [x] Add to-do feature
 - [ ] Reverse timer (using tabbar maybe...)
 - [ ] Refactoring ALL CODES
