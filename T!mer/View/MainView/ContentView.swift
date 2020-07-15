@@ -87,7 +87,7 @@ struct ContentView: View {
 
             ZStack {
                 Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
-                ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
+                CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
@@ -95,7 +95,7 @@ struct ContentView: View {
                     ZStack { // MARK: - Textbox
                         Rectangle()
                             .frame(width: 340, height: 140)
-                            .foregroundColor(ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
+                            .foregroundColor(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
 
                         Text("\(self.mainController.isTimerRunning() ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")

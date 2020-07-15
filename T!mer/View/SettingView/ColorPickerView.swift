@@ -8,7 +8,7 @@ struct ColorPickerView: View {
     
     var body: some View {
         Picker(selection: self.$userSettings.colorIndex, label: Text("Color")) {
-            ForEach(0 ..< Colors.allCases.count, id: \.self) { index in
+            ForEach(0 ..< CTColors.allCases.count, id: \.self) { index in
                 ColorPickerCellView(index: index)
             }
         }
@@ -21,12 +21,12 @@ private struct ColorPickerCellView: View {
     
     var body: some View {
         HStack {
-            Text(String(ColorScheme().scheme[index]))
-            ColorScheme.getColor(index).opacity(0.8)
+            Text(String(CTColorScheme().scheme[index]))
+            CTColorScheme.getColor(index).opacity(0.8)
                 .frame(width: 17, height: 17)
                 .cornerRadius(4)
                 .shadow(radius: 10)
-                .border(ColorScheme.getColor(index).opacity(0.55), width: 5)
+                .border(CTColorScheme.getColor(index).opacity(0.55), width: 5)
                 .cornerRadius(4)
         }
     }
