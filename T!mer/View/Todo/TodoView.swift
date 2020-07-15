@@ -39,27 +39,41 @@ struct TodoView: View {
                     
                     TimerEntities.saveContext()
                     
+                    /// @Reset textfield's string value
                     self.title = ""
+                    /// @END
+                    
+                    /// @When T!mer is added successfully
+                    let gen = UINotificationFeedbackGenerator()
+                    gen.prepare()
+                    gen.notificationOccurred(.success)
+                    /// @END
                 }) {
                     
                     Text("Add todo")
                 }.padding()
             }
             
-            List {
+            if timerEntities.count > 0 {
                 
-                ForEach(timerEntities, id: \.self) { data in
+                List {
                     
-                    Text("\(data.title!) \(data.memo ?? ""), date: \(data.notificationTime!)")
-                }
-                .onDelete { indexSet in
-                    
-                    for index in indexSet {
+                    ForEach(timerEntities, id: \.self) { data in
                         
-                        self.managedObjectContext.delete(self.timerEntities[index])
-                        TimerEntities.saveContext()
+                        Text("\(data.title!) \(data.memo ?? ""), date: \(data.notificationTime!)")
+                    }
+                    .onDelete { indexSet in
+                        
+                        for index in indexSet {
+                            
+                            self.managedObjectContext.delete(self.timerEntities[index])
+                            TimerEntities.saveContext()
+                        }
                     }
                 }
+            } else {
+                
+                TodoEmptyView()
             }
         }
     }
