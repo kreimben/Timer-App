@@ -3,10 +3,14 @@ import CoreData
 
 struct TodoView: View {
     
-    /// @CoreData related
+    /// @CoreData related variables
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: TimerEntities.getAllTimerEntities())
     var timerEntities: FetchedResults<TimerEntities>
+    /// @END
+    
+    /// @TextField related variables
+    @State var title: String = ""
     /// @END
     
     var body: some View {
@@ -17,6 +21,10 @@ struct TodoView: View {
                 .font(.system(size: 32, design: .rounded))
                 .padding()
             
+            TextField("Set your todo's title!", text: self.$title)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
             HStack {
                 
                 Spacer()
@@ -24,33 +32,33 @@ struct TodoView: View {
                 Button(action: {
                     
                     let newItem = TimerEntities(context: self.managedObjectContext)
-                    let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime")
+                    let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
                     
-                    NSLog(date as! String)
+                    newItem.notificationTime = date
+                    newItem.title = self.title
                     
-                    newItem.notificationTime = date as! Date
-                    newItem.title = "New Todo"
+                    TimerEntities.saveContext()
                     
-                    do {
-                    
-                        try self.managedObjectContext.save()
-                        
-                    } catch let error {
-                        
-                        NSLog(error.localizedDescription)
-                    }
-                    
+                    self.title = ""
                 }) {
                     
                     Text("Add todo")
-                }
+                }.padding()
             }
             
             List {
                 
                 ForEach(timerEntities, id: \.self) { data in
                     
-                    Text("\(data.title!): \(data.memo ?? ""), date: \(data.notificationTime!)")
+                    Text("\(data.title!) \(data.memo ?? ""), date: \(data.notificationTime!)")
+                }
+                .onDelete { indexSet in
+                    
+                    for index in indexSet {
+                        
+                        self.managedObjectContext.delete(self.timerEntities[index])
+                        TimerEntities.saveContext()
+                    }
                 }
             }
         }

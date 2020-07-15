@@ -26,6 +26,9 @@ struct ContentView: View {
         self.selGen.prepare()
     }
     
+    // MARK: - CoreData related variables
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     // MARK: - Timer related variables
     
     @State var timeDisplay: TimeInterval = 0
@@ -346,7 +349,7 @@ struct ContentView: View {
                             }
                             .sheet(isPresented: self.$todoViewBool) {
 
-                                TodoMasterView()
+                                TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)
                             }
                         }
                         .padding(EdgeInsets( 

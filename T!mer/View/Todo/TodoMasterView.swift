@@ -10,19 +10,11 @@ struct TodoMasterView: View {
         VStack {
             Group {
                 
-//                if true { 
-                    
                 TodoView()
-//                } else {
-//
-//                    TodoEmptyView()
-//                }
             }.onAppear {
                 
-//                NSLog("FetchedResults count: \(self.timerEntities.count)")
             }
         } // VStack
-        .navigationBarTitle(Text("To-do list"))
     }
 }
 

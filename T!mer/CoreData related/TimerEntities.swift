@@ -3,7 +3,9 @@ import CoreData
 
 @objc(TimerEntities)
 class TimerEntities: NSManagedObject {
-
+    
+    private static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     /// Functions which returns fetch request.
     /// - Returns: NSFetchRequest<TimerEntities>
     static func getAllTimerEntities() -> NSFetchRequest<TimerEntities> {
@@ -21,15 +23,16 @@ class TimerEntities: NSManagedObject {
     /// Save CoreData datas through AppDelegate's viewContext
     static func saveContext() {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        do {
+        if self.context.hasChanges {
             
-            try context.save()
-            
-        } catch let error {
-            
-            print(error)
+            do {
+                
+                try self.context.save()
+                
+            } catch let error {
+                
+                print(error)
+            }
         }
     }
 }
