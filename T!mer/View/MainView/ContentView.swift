@@ -360,23 +360,6 @@ struct ContentView: View {
                         .frame(width: 320, height: 50, alignment: .center)
 
                 }
-                .blur(radius: self.userSettings.updateLogBlurValue)
-
-                VStack {
-
-                    if self.userSettings.latestBuildVersion == 1 {
-
-                        WelcomeTo()
-                    } else if self.userSettings.latestBuildVersion < currentBuildVersion {
-
-                        UpdateLogView()
-                    }
-                }
-                .cornerRadius(20)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.85,
-                    height: 450
-                )
                     .navigationBarTitle(Text("T!mer"), displayMode: .inline)
 
                     .navigationBarItems(trailing:

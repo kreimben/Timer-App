@@ -18,28 +18,28 @@ struct DebugMenuView: View {
         
         List {
             
-            Section(header: Text("Reset Stored Build Version")) {
-                
-                Button(action: {
-                    
-                    self.userSettings.latestBuildVersion = 1
-                    self.userSettings.updateLogBlurValue = 5
-                }) {
-                    
-                    Text("Reset as new")
-                        .foregroundColor(.red)
-                }
-                
-                Button(action: {
-                    
-                    self.userSettings.latestBuildVersion = 2
-                    self.userSettings.updateLogBlurValue = 5
-                }) {
-                    
-                    Text("Reset as last build")
-                        .foregroundColor(.red)
-                }
-            }
+//            Section(header: Text("Reset Stored Build Version")) {
+//
+//                Button(action: {
+//
+//                    self.userSettings.latestBuildVersion = 1
+//                    self.userSettings.updateLogBlurValue = 5
+//                }) {
+//
+//                    Text("Reset as new")
+//                        .foregroundColor(.red)
+//                }
+//
+//                Button(action: {
+//
+//                    self.userSettings.latestBuildVersion = 2
+//                    self.userSettings.updateLogBlurValue = 5
+//                }) {
+//
+//                    Text("Reset as last build")
+//                        .foregroundColor(.red)
+//                }
+//            }
             
             Section(header: Text("UINotificationFeedbackGenerator")) {
                 

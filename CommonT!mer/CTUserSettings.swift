@@ -59,24 +59,6 @@ public final class CTUserSettings: ObservableObject {
         }
     }
     /// @END
-    
-    /// @For Check Update
-    @UserDefault(key: "latestBuildVersion", value: 1)
-    public var latestBuildVersion: Int {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    /// @END
-    
-    /// @Update Log Blur Value
-    @UserDefault(key: "updateLogBlurValue", value: 5)
-    public var updateLogBlurValue: CGFloat {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    /// @END
 }
 
 // MARK: - @propertyWrapper "UserDefault<T>

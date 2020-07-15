@@ -34,8 +34,6 @@
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
 		51500AEE2473355600AAE960 /* T!mer Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51500AE22473355600AAE960 /* T!mer Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51500AFB24733FF900AAE960 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 517F6226234E32A100A05205 /* Assets.xcassets */; };
-		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
-		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
 		515DACE3245E876100A495BA /* bicycle in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDD245E876100A495BA /* bicycle */; };
 		515DACE4245E876100A495BA /* home-bell in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDE245E876100A495BA /* home-bell */; };
 		515DACE5245E876100A495BA /* single in Resources */ = {isa = PBXBuildFile; fileRef = 515DACDF245E876100A495BA /* single */; };
@@ -43,7 +41,6 @@
 		515DACE7245E876100A495BA /* zen in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen */; };
 		515DACE8245E876100A495BA /* elevator in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
-		515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACEC245EA57500A495BA /* WelcomeTo.swift */; };
 		515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF4246025A500A495BA /* SelectSoundView.swift */; };
 		515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF92460271600A495BA /* SelectCircleView.swift */; };
 		515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACFB246040BF00A495BA /* SoundPlayerView.swift */; };
@@ -177,8 +174,6 @@
 		51500AE92473355600AAE960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		51500AEB2473355600AAE960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51500AFC24734D2600AAE960 /* T!mer Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "T!mer Widget.entitlements"; sourceTree = "<group>"; };
-		515DACC4245C435B00A495BA /* UpdateLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogView.swift; sourceTree = "<group>"; };
-		515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogDetailView.swift; sourceTree = "<group>"; };
 		515DACDD245E876100A495BA /* bicycle */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicycle; sourceTree = "<group>"; };
 		515DACDE245E876100A495BA /* home-bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-bell"; sourceTree = "<group>"; };
 		515DACDF245E876100A495BA /* single */ = {isa = PBXFileReference; lastKnownFileType = file; path = single; sourceTree = "<group>"; };
@@ -186,7 +181,6 @@
 		515DACE1245E876100A495BA /* zen */ = {isa = PBXFileReference; lastKnownFileType = file; path = zen; sourceTree = "<group>"; };
 		515DACE2245E876100A495BA /* elevator */ = {isa = PBXFileReference; lastKnownFileType = file; path = elevator; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
-		515DACEC245EA57500A495BA /* WelcomeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTo.swift; sourceTree = "<group>"; };
 		515DACF4246025A500A495BA /* SelectSoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSoundView.swift; sourceTree = "<group>"; };
 		515DACF92460271600A495BA /* SelectCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCircleView.swift; sourceTree = "<group>"; };
 		515DACFB246040BF00A495BA /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
@@ -342,23 +336,6 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
-		515DACC3245C434C00A495BA /* Update Log */ = {
-			isa = PBXGroup;
-			children = (
-				515DACC4245C435B00A495BA /* UpdateLogView.swift */,
-				515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */,
-			);
-			path = "Update Log";
-			sourceTree = "<group>";
-		};
-		515DACEB245EA55F00A495BA /* Welcome To T!mer */ = {
-			isa = PBXGroup;
-			children = (
-				515DACEC245EA57500A495BA /* WelcomeTo.swift */,
-			);
-			path = "Welcome To T!mer";
-			sourceTree = "<group>";
-		};
 		515DACF62460267D00A495BA /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,8 +449,6 @@
 			children = (
 				5188B05323701C8100A2258F /* MainView */,
 				5155C221247FB75D00C30A08 /* Todo */,
-				515DACC3245C434C00A495BA /* Update Log */,
-				515DACEB245EA55F00A495BA /* Welcome To T!mer */,
 				5188B05423701C9700A2258F /* SettingView */,
 			);
 			path = View;
@@ -892,8 +867,6 @@
 				510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */,
 				5121EFC1247FB93E00A8EAA4 /* TodoEmptyView.swift in Sources */,
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
-				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
-				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */,
@@ -906,7 +879,6 @@
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
-				515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */,
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
