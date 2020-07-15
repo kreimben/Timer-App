@@ -79,20 +79,20 @@ struct TodoView: View {
                         }
                     }
                     
-                    Button(action: {
-                        
-                        let length: Int = self.timerEntities.count
-                        
-                        for index in 0 ..< length {
-                            
-                            self.managedObjectContext.delete(self.timerEntities[index])
-                        }
-                        
-                        TimerEntities.saveContext()
-                    }) {
-                        
-                        Text("Delete Everythings").foregroundColor(.blue)
-                    }
+//                    Button(action: {
+//
+//                        let length: Int = self.timerEntities.count
+//                        
+//                        for index in 0 ..< length {
+//
+//                            self.managedObjectContext.delete(self.timerEntities[index])
+//                        }
+//
+//                        TimerEntities.saveContext()
+//                    }) {
+//
+//                        Text("Delete Everythings").foregroundColor(.blue)
+//                    }
                 }
             } else {
                 
