@@ -2,8 +2,6 @@ import SwiftUI
 import Combine
 import UserNotifications
 
-//import GoogleMobileAds
-
 class MainController: ObservableObject {
     
     @ObservedObject var userSettings = UserSettings()
