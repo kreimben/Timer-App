@@ -5,25 +5,18 @@ struct TodoMasterView: View {
     
     @ObservedObject var userSettings = UserSettings()
     
-    /// @CoreData related
-    @FetchRequest(
-        entity: TimerEntities.entity(),
-        sortDescriptors: [NSSortDescriptor(key: "notificationTime", ascending: true)]
-    ) var timerEntities: FetchedResults<TimerEntities>
-    /// @END
-    
     var body: some View {
         
         VStack {
             Group {
                 
-                if true { //TimerSession.shared.timers.count > 0 {
+//                if true { 
                     
-                    TodoView()
-                } else {
-                    
-                    TodoEmptyView()
-                }
+                TodoView()
+//                } else {
+//
+//                    TodoEmptyView()
+//                }
             }.onAppear {
                 
 //                NSLog("FetchedResults count: \(self.timerEntities.count)")

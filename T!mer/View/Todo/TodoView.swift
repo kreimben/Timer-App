@@ -5,7 +5,7 @@ struct TodoView: View {
     
     /// @CoreData related
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(fetchRequest: TimerEntities.getFetchRequest())
+    @FetchRequest(fetchRequest: TimerEntities.getAllTimerEntities())
     var timerEntities: FetchedResults<TimerEntities>
     /// @END
     
@@ -50,7 +50,7 @@ struct TodoView: View {
                 
                 ForEach(timerEntities, id: \.self) { data in
                     
-                    Text("\(data.title): \(data.memo ?? ""), date: \(data.notificationTime)")
+                    Text("\(data.title!): \(data.memo ?? ""), date: \(data.notificationTime!)")
                 }
             }
         }

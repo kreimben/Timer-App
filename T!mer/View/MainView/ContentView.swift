@@ -3,7 +3,6 @@ import Combine
 import UIKit
 import CoreHaptics
 import Dispatch
-//import StoreKit
 
 import GoogleMobileAds
 
@@ -27,7 +26,7 @@ struct ContentView: View {
         self.selGen.prepare()
     }
     
-    // MARK: For Timer
+    // MARK: - Timer related variables
     
     @State var timeDisplay: TimeInterval = 0
     
@@ -342,7 +341,7 @@ struct ContentView: View {
                                 .foregroundColor(Color.orange.opacity(1))
                                 .onTapGesture {
                                     
-                                    print("TodoView() NavigationLink button tapped!")
+                                    NSLog("TodoView() NavigationLink button tapped!")
                                     self.todoViewBool.toggle()
                             }
                             .sheet(isPresented: self.$todoViewBool) {
