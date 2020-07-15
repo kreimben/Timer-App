@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="TimerEntities" representedClassName=".TimerEntities" syncable="YES" codeGenerationType="category">
+    <entity name="CTTimerEntities" representedClassName=".CTTimerEntities" syncable="YES">
         <attribute name="memo" optional="YES" attributeType="String"/>
-        <attribute name="notificationTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notificationTime" attributeType="Date" defaultDateTimeInterval="-56347440" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TimerEntities" positionX="-45" positionY="0" width="128" height="88"/>
+        <element name="CTTimerEntities" positionX="-54" positionY="-9" width="128" height="88"/>
     </elements>
 </model>

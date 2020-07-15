@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5108ADF424BF8A0F001E2294 /* CommonT_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */; };
+		5108ADFB24BF8A0F001E2294 /* CommonT_merTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108ADFA24BF8A0F001E2294 /* CommonT_merTests.swift */; };
+		5108ADFD24BF8A0F001E2294 /* CommonT_mer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5108ADED24BF8A0F001E2294 /* CommonT_mer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5108AE0024BF8A0F001E2294 /* CommonT_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */; };
+		5108AE0124BF8A0F001E2294 /* CommonT_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5108AE1424BF8A4C001E2294 /* CTMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1024BF8A4C001E2294 /* CTMainController.swift */; };
+		5108AE1524BF8A4C001E2294 /* CTUserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1124BF8A4C001E2294 /* CTUserTouchCircle.swift */; };
+		5108AE1624BF8A4C001E2294 /* CTUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1224BF8A4C001E2294 /* CTUserSettings.swift */; };
+		5108AE1724BF8A4C001E2294 /* CTColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1324BF8A4C001E2294 /* CTColorScheme.swift */; };
+		5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */; };
 		510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96824BF4B9B00AD5888 /* TimerEntities.swift */; };
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
 		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
-		510BB9B524BF759600AD5888 /* CommonT_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510BB9B424BF759600AD5888 /* CommonT_mer.framework */; };
-		510BB9B624BF759600AD5888 /* CommonT_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 510BB9B424BF759600AD5888 /* CommonT_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
@@ -21,12 +29,10 @@
 		512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512558C0247412A800020AE2 /* RoundedRectangleView.swift */; };
 		513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51415D262473DE7600A98E3B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415D252473DE7600A98E3B /* CircleView.swift */; };
-		5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */; };
 		51500AE42473355600AAE960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500AE32473355600AAE960 /* NotificationCenter.framework */; };
 		51500AE72473355600AAE960 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500AE62473355600AAE960 /* TodayViewController.swift */; };
 		51500AEA2473355600AAE960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500AE82473355600AAE960 /* MainInterface.storyboard */; };
 		51500AEE2473355600AAE960 /* T!mer Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51500AE22473355600AAE960 /* T!mer Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		51500AFA24733EC300AAE960 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51500AFB24733FF900AAE960 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 517F6226234E32A100A05205 /* Assets.xcassets */; };
 		515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC4245C435B00A495BA /* UpdateLogView.swift */; };
 		515DACC9245D1F9000A495BA /* UpdateLogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACC8245D1F9000A495BA /* UpdateLogDetailView.swift */; };
@@ -55,7 +61,6 @@
 		517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F622B234E32A100A05205 /* LaunchScreen.storyboard */; };
 		5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180DD97234E419D0074AECC /* SettingPageView.swift */; };
 		519D626E243E2D0D00E6C77F /* T_merUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519D626D243E2D0D00E6C77F /* T_merUITests.swift */; };
-		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51B221F423F2618600F924C1 /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B221F323F2618600F924C1 /* IAPView.swift */; };
 		51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */; };
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
@@ -66,6 +71,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5108ADF524BF8A0F001E2294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5108ADEA24BF8A0F001E2294;
+			remoteInfo = "CommonT!mer";
+		};
+		5108ADF724BF8A0F001E2294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 517F621C234E329F00A05205;
+			remoteInfo = "T!mer";
+		};
+		5108ADFE24BF8A0F001E2294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5108ADEA24BF8A0F001E2294;
+			remoteInfo = "CommonT!mer";
+		};
 		510BB97524BF68C100AD5888 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 517F6215234E329F00A05205 /* Project object */;
@@ -108,7 +134,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */,
-				510BB9B624BF759600AD5888 /* CommonT_mer.framework in Embed Frameworks */,
+				5108AE0124BF8A0F001E2294 /* CommonT_mer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +143,17 @@
 
 /* Begin PBXFileReference section */
 		4D77C5FC36F25A860B381D00 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonT_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5108ADED24BF8A0F001E2294 /* CommonT_mer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonT_mer.h; sourceTree = "<group>"; };
+		5108ADEE24BF8A0F001E2294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5108ADF324BF8A0F001E2294 /* CommonT!merTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CommonT!merTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5108ADFA24BF8A0F001E2294 /* CommonT_merTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonT_merTests.swift; sourceTree = "<group>"; };
+		5108ADFC24BF8A0F001E2294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5108AE1024BF8A4C001E2294 /* CTMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTMainController.swift; sourceTree = "<group>"; };
+		5108AE1124BF8A4C001E2294 /* CTUserTouchCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTUserTouchCircle.swift; sourceTree = "<group>"; };
+		5108AE1224BF8A4C001E2294 /* CTUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTUserSettings.swift; sourceTree = "<group>"; };
+		5108AE1324BF8A4C001E2294 /* CTColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTColorScheme.swift; sourceTree = "<group>"; };
+		5108AE1924BF8AAB001E2294 /* TimerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerCoreData.xcdatamodel; sourceTree = "<group>"; };
 		510BB96824BF4B9B00AD5888 /* TimerEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEntities.swift; sourceTree = "<group>"; };
 		510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoContentView.swift; sourceTree = "<group>"; };
 		510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merTests(iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +171,6 @@
 		513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513EF2FD23E16E1C0013BC9F /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51415D252473DE7600A98E3B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerCoreData.xcdatamodel; sourceTree = "<group>"; };
 		51500AE22473355600AAE960 /* T!mer Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "T!mer Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51500AE32473355600AAE960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		51500AE62473355600AAE960 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +208,6 @@
 		519D626B243E2D0D00E6C77F /* T!merUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		519D626D243E2D0D00E6C77F /* T_merUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merUITests.swift; sourceTree = "<group>"; };
 		519D626F243E2D0D00E6C77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51B221F323F2618600F924C1 /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
 		51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMasterView.swift; sourceTree = "<group>"; };
@@ -185,6 +220,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5108ADE824BF8A0F001E2294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5108ADF024BF8A0F001E2294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5108ADF424BF8A0F001E2294 /* CommonT_mer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		510BB96D24BF68C100AD5888 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */,
-				510BB9B524BF759600AD5888 /* CommonT_mer.framework in Frameworks */,
+				5108AE0024BF8A0F001E2294 /* CommonT_mer.framework in Frameworks */,
 				F8BE231D7FDF7322424B4D7B /* Pods_T_mer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +270,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5108ADEC24BF8A0F001E2294 /* CommonT!mer */ = {
+			isa = PBXGroup;
+			children = (
+				5108AE1324BF8A4C001E2294 /* CTColorScheme.swift */,
+				5108AE1024BF8A4C001E2294 /* CTMainController.swift */,
+				5108AE1224BF8A4C001E2294 /* CTUserSettings.swift */,
+				5108AE1124BF8A4C001E2294 /* CTUserTouchCircle.swift */,
+				5108ADED24BF8A0F001E2294 /* CommonT_mer.h */,
+				5108ADEE24BF8A0F001E2294 /* Info.plist */,
+			);
+			path = "CommonT!mer";
+			sourceTree = "<group>";
+		};
+		5108ADF924BF8A0F001E2294 /* CommonT!merTests */ = {
+			isa = PBXGroup;
+			children = (
+				5108ADFA24BF8A0F001E2294 /* CommonT_merTests.swift */,
+				5108ADFC24BF8A0F001E2294 /* Info.plist */,
+			);
+			path = "CommonT!merTests";
+			sourceTree = "<group>";
+		};
 		510BB97124BF68C100AD5888 /* T!merTests(iOS) */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,8 +313,8 @@
 		5147AB2A24810B3B00C5B571 /* CoreData related */ = {
 			isa = PBXGroup;
 			children = (
-				5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */,
 				510BB96824BF4B9B00AD5888 /* TimerEntities.swift */,
+				5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */,
 			);
 			path = "CoreData related";
 			sourceTree = "<group>";
@@ -347,6 +419,8 @@
 				519D626C243E2D0D00E6C77F /* T!merUITests */,
 				51500AE52473355600AAE960 /* T!mer Widget */,
 				510BB97124BF68C100AD5888 /* T!merTests(iOS) */,
+				5108ADEC24BF8A0F001E2294 /* CommonT!mer */,
+				5108ADF924BF8A0F001E2294 /* CommonT!merTests */,
 				517F621E234E329F00A05205 /* Products */,
 				9703E6DB9B95217C7A8B3E7F /* Pods */,
 				8B639722B9B9195751ED024E /* Frameworks */,
@@ -360,6 +434,8 @@
 				519D626B243E2D0D00E6C77F /* T!merUITests.xctest */,
 				51500AE22473355600AAE960 /* T!mer Widget.appex */,
 				510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */,
+				5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */,
+				5108ADF324BF8A0F001E2294 /* CommonT!merTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,7 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				517F6224234E329F00A05205 /* ContentView.swift */,
-				51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */,
 				5167E4532368CD88003005AB /* TrailingButtonView.swift */,
 			);
 			path = MainView;
@@ -470,7 +545,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5108ADE624BF8A0F001E2294 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5108ADFD24BF8A0F001E2294 /* CommonT_mer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		5108ADEA24BF8A0F001E2294 /* CommonT!mer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5108AE0224BF8A10001E2294 /* Build configuration list for PBXNativeTarget "CommonT!mer" */;
+			buildPhases = (
+				5108ADE624BF8A0F001E2294 /* Headers */,
+				5108ADE724BF8A0F001E2294 /* Sources */,
+				5108ADE824BF8A0F001E2294 /* Frameworks */,
+				5108ADE924BF8A0F001E2294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CommonT!mer";
+			productName = "CommonT!mer";
+			productReference = 5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5108ADF224BF8A0F001E2294 /* CommonT!merTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5108AE0524BF8A10001E2294 /* Build configuration list for PBXNativeTarget "CommonT!merTests" */;
+			buildPhases = (
+				5108ADEF24BF8A0F001E2294 /* Sources */,
+				5108ADF024BF8A0F001E2294 /* Frameworks */,
+				5108ADF124BF8A0F001E2294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5108ADF624BF8A0F001E2294 /* PBXTargetDependency */,
+				5108ADF824BF8A0F001E2294 /* PBXTargetDependency */,
+			);
+			name = "CommonT!merTests";
+			productName = "CommonT!merTests";
+			productReference = 5108ADF324BF8A0F001E2294 /* CommonT!merTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		510BB96F24BF68C100AD5888 /* T!merTests(iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 510BB97724BF68C100AD5888 /* Build configuration list for PBXNativeTarget "T!merTests(iOS)" */;
@@ -523,6 +646,7 @@
 			);
 			dependencies = (
 				51500AED2473355600AAE960 /* PBXTargetDependency */,
+				5108ADFF24BF8A0F001E2294 /* PBXTargetDependency */,
 			);
 			name = "T!mer";
 			productName = "T!mer";
@@ -557,6 +681,13 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Aksidion Kreimben";
 				TargetAttributes = {
+					5108ADEA24BF8A0F001E2294 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					5108ADF224BF8A0F001E2294 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 517F621C234E329F00A05205;
+					};
 					510BB96F24BF68C100AD5888 = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = 517F621C234E329F00A05205;
@@ -590,11 +721,27 @@
 				519D626A243E2D0D00E6C77F /* T!merUITests */,
 				51500AE12473355600AAE960 /* T!mer Widget */,
 				510BB96F24BF68C100AD5888 /* T!merTests(iOS) */,
+				5108ADEA24BF8A0F001E2294 /* CommonT!mer */,
+				5108ADF224BF8A0F001E2294 /* CommonT!merTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5108ADE924BF8A0F001E2294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5108ADF124BF8A0F001E2294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		510BB96E24BF68C100AD5888 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +847,25 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5108ADE724BF8A0F001E2294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5108AE1724BF8A4C001E2294 /* CTColorScheme.swift in Sources */,
+				5108AE1524BF8A4C001E2294 /* CTUserTouchCircle.swift in Sources */,
+				5108AE1424BF8A4C001E2294 /* CTMainController.swift in Sources */,
+				5108AE1624BF8A4C001E2294 /* CTUserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5108ADEF24BF8A0F001E2294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5108ADFB24BF8A0F001E2294 /* CommonT_merTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		510BB96C24BF68C100AD5888 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,7 +879,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51500AFB24733FF900AAE960 /* Assets.xcassets in Sources */,
-				51500AFA24733EC300AAE960 /* UserTouchCircle.swift in Sources */,
 				51415D262473DE7600A98E3B /* CircleView.swift in Sources */,
 				512558C1247412A800020AE2 /* RoundedRectangleView.swift in Sources */,
 				51500AE72473355600AAE960 /* TodayViewController.swift in Sources */,
@@ -730,7 +895,6 @@
 				515DACED245EA57500A495BA /* WelcomeTo.swift in Sources */,
 				515DACC5245C435B00A495BA /* UpdateLogView.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
-				51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				515DACF5246025A500A495BA /* SelectSoundView.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
@@ -747,8 +911,8 @@
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
-				5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */,
 				515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */,
+				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +929,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5108ADF624BF8A0F001E2294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5108ADEA24BF8A0F001E2294 /* CommonT!mer */;
+			targetProxy = 5108ADF524BF8A0F001E2294 /* PBXContainerItemProxy */;
+		};
+		5108ADF824BF8A0F001E2294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 517F621C234E329F00A05205 /* T!mer */;
+			targetProxy = 5108ADF724BF8A0F001E2294 /* PBXContainerItemProxy */;
+		};
+		5108ADFF24BF8A0F001E2294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5108ADEA24BF8A0F001E2294 /* CommonT!mer */;
+			targetProxy = 5108ADFE24BF8A0F001E2294 /* PBXContainerItemProxy */;
+		};
 		510BB97624BF68C100AD5888 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 517F621C234E329F00A05205 /* T!mer */;
@@ -802,6 +981,104 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5108AE0324BF8A10001E2294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CommonT!mer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.CommonT-mer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5108AE0424BF8A10001E2294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CommonT!mer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.CommonT-mer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5108AE0624BF8A10001E2294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "CommonT!merTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.CommonT-merTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T!mer.app/T!mer";
+			};
+			name = Debug;
+		};
+		5108AE0724BF8A10001E2294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "CommonT!merTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.CommonT-merTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T!mer.app/T!mer";
+			};
+			name = Release;
+		};
 		510BB97824BF68C100AD5888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1101,6 +1378,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5108AE0224BF8A10001E2294 /* Build configuration list for PBXNativeTarget "CommonT!mer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5108AE0324BF8A10001E2294 /* Debug */,
+				5108AE0424BF8A10001E2294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5108AE0524BF8A10001E2294 /* Build configuration list for PBXNativeTarget "CommonT!merTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5108AE0624BF8A10001E2294 /* Debug */,
+				5108AE0724BF8A10001E2294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		510BB97724BF68C100AD5888 /* Build configuration list for PBXNativeTarget "T!merTests(iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1149,12 +1444,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */ = {
+		5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */,
+				5108AE1924BF8AAB001E2294 /* TimerCoreData.xcdatamodel */,
 			);
-			currentVersion = 5147AB282481057100C5B571 /* TimerCoreData.xcdatamodel */;
+			currentVersion = 5108AE1924BF8AAB001E2294 /* TimerCoreData.xcdatamodel */;
 			path = TimerCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

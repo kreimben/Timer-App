@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../CommonT!mer/CommonT!mer.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:T!mer.xcodeproj">
    </FileRef>
    <FileRef
