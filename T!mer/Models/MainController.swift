@@ -7,8 +7,6 @@ import UserNotifications
 class MainController: ObservableObject {
     
     @ObservedObject var userSettings = UserSettings()
-    
-//    @ObservedObject var userTouchController = UserTouchController()
 
     let center = UNUserNotificationCenter.current()
     
