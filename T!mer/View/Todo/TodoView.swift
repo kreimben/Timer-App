@@ -3,7 +3,9 @@ import CoreData
 
 struct TodoView: View {
     
+    /// @ObservedObject variables
     @ObservedObject var mainController = MainController()
+    /// @END
     
     /// @CoreData related variables
     @Environment(\.managedObjectContext) var managedObjectContext
