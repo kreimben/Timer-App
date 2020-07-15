@@ -81,10 +81,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
-            fatalError("Failed to load Persistent Container")
-        }
-        
         TimerEntities.saveContext()
     }
 }

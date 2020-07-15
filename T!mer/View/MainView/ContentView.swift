@@ -335,8 +335,7 @@ struct ContentView: View {
                                 .frame(width: 30, height: 30)
                                 .foregroundColor(Color.orange.opacity(1))
                                 .onTapGesture {
-
-                                    NSLog("TodoView() NavigationLink button tapped!")
+                                    
                                     self.todoViewBool.toggle()
                             }
                             .sheet(isPresented: self.$todoViewBool) {

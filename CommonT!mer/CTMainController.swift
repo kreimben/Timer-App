@@ -91,7 +91,7 @@ public class CTMainController: ObservableObject {
     
     public func isTimerRunning() -> Bool {
         
-        let notificationTime = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
+        let notificationTime = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date ?? Date()
         
         let result = Date().distance(to: notificationTime)
         
