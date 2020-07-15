@@ -27,33 +27,36 @@ struct TodoView: View {
             
             HStack {
                 
-                TextField("Set your todo's title!", text: self.$title)
+                TextField(self.mainController.isTimerRunning() ? "Set your todo's title!" : "Start T!mer first!", text: self.$title)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.leading)
                 
                 Button(action: {
                     
-                    let newItem = TimerEntities(context: self.managedObjectContext)
-                    let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
-                    
-                    newItem.notificationTime = date
-                    newItem.title = self.title
-                    
-                    TimerEntities.saveContext()
-                    
-                    /// @Reset textfield's string value
-                    self.title = ""
-                    /// @END
-                    
-                    /// @When T!mer is added successfully
-                    let gen = UINotificationFeedbackGenerator()
-                    gen.prepare()
-                    gen.notificationOccurred(.success)
-                    /// @END
+                    if self.mainController.isTimerRunning() {
+                        
+                        let newItem = TimerEntities(context: self.managedObjectContext)
+                        let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
+                        
+                        newItem.notificationTime = date
+                        newItem.title = self.title
+                        
+                        TimerEntities.saveContext()
+                        
+                        /// @Reset textfield's string value
+                        self.title = ""
+                        /// @END
+                        
+                        /// @When T!mer is added successfully
+                        let gen = UINotificationFeedbackGenerator()
+                        gen.prepare()
+                        gen.notificationOccurred(.success)
+                        /// @END
+                    }
                 }) {
                     
                     /// @Add button image
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: self.mainController.isTimerRunning() ? "plus.circle.fill" : "xmark.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
                         .foregroundColor(self.mainController.isTimerRunning() ? Color.green : Color.red)
@@ -83,20 +86,26 @@ struct TodoView: View {
                         }
                     }
                     
-//                    Button(action: {
-//
-//                        let length: Int = self.timerEntities.count
-//                        
-//                        for index in 0 ..< length {
-//
-//                            self.managedObjectContext.delete(self.timerEntities[index])
-//                        }
-//
-//                        TimerEntities.saveContext()
-//                    }) {
-//
-//                        Text("Delete Everythings").foregroundColor(.blue)
-//                    }
+                    Button(action: {
+                        
+                        let length: Int = self.timerEntities.count
+                        
+                        for index in 0 ..< length {
+                            
+                            self.managedObjectContext.delete(self.timerEntities[index])
+                        }
+                        
+                        TimerEntities.saveContext()
+                        
+                        /// @When T!mer is added successfully
+                        let gen = UINotificationFeedbackGenerator()
+                        gen.prepare()
+                        gen.notificationOccurred(.success)
+                        /// @END
+                    }) {
+                        
+                        Text("Delete Everythings").foregroundColor(.blue)
+                    }
                 }
             } else {
                 
