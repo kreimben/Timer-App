@@ -304,13 +304,13 @@
 			path = Shape;
 			sourceTree = "<group>";
 		};
-		5147AB2A24810B3B00C5B571 /* CoreData related */ = {
+		5147AB2A24810B3B00C5B571 /* CoreData  */ = {
 			isa = PBXGroup;
 			children = (
 				510BB96824BF4B9B00AD5888 /* TimerEntities.swift */,
 				5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */,
 			);
-			path = "CoreData related";
+			path = "CoreData ";
 			sourceTree = "<group>";
 		};
 		51500AE52473355600AAE960 /* T!mer Widget */ = {
@@ -421,7 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				5136238A237AA1D300744BDD /* T!mer.entitlements */,
-				5147AB2A24810B3B00C5B571 /* CoreData related */,
+				5147AB2A24810B3B00C5B571 /* CoreData  */,
 				517F6220234E329F00A05205 /* AppDelegate.swift */,
 				517F6222234E329F00A05205 /* SceneDelegate.swift */,
 				51611C6623658FD800441AD3 /* Models */,
