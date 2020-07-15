@@ -9,7 +9,8 @@
 - [ ] Add more language (English, German, French, Spanish, Italian, Russian, Korean, Chinese, Japanese, Vietnamese, Thai, Malay, Arabic, Indonesian)
 
 ### 1.4
-- [ ] Add to-do feature
+- [x] Add to-do feature
+- [ ] Refactoring ALL CODES
 
 ### 1.3
 - [x] Add welcome message to newbies
