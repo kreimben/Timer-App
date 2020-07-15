@@ -97,7 +97,7 @@ struct ContentView: View {
                             .foregroundColor(ColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
                         
-                        Text("\(self.mainController.isTimerRunning()/*self.userSettings.isTimerStarted*/ ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
+                        Text("\(self.mainController.isTimerRunning() ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
                             .font(.system(size: 110))
                             .font(.headline)
                             .foregroundColor(Color.white)
@@ -105,7 +105,7 @@ struct ContentView: View {
                                 
                                 DispatchQueue.main.async {
                                     
-                                    if /*Date().distance(to: self.userSettings.notificationTime) > 0 &&*/ self.mainController.isTimerRunning()/*self.userSettings.isTimerStarted*/ { // 시간이 0보다 작으면 타이머 종료
+                                    if self.mainController.isTimerRunning() { // 시간이 0보다 작으면 타이머 종료
                                         
                                         if Date().distance(to: self.userSettings.notificationTime) > 0 {
                                             
@@ -115,7 +115,6 @@ struct ContentView: View {
                                         
                                     } else {
                                         
-//                                        self.userSettings.isTimerStarted = false
                                         self.circleColor = Color.red.opacity(0.5)
                                     }
                                     
@@ -174,7 +173,7 @@ struct ContentView: View {
                                 print("onLongPressGesture is excuted.")
                                 print("gesture allowed status: \(self.gestureAllowed)")
                                 
-                                if self.mainController.isTimerRunning()/*self.userSettings.isTimerStarted*/ { // Cancle it while timer is working
+                                if self.mainController.isTimerRunning() { // Cancle it while timer is working
                                     
                                     /// @Cancel T!mer feedback
                                     let gen = UIImpactFeedbackGenerator(style: .soft)
@@ -183,11 +182,7 @@ struct ContentView: View {
                                     /// @END
                                     
                                     /// @Set T!mer settings
-//                                    self.userSettings.isTimerStarted = false
                                     self.circleColor = Color.red.opacity(0.5)
-                                    /// @For "Today Extension"
-//                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
-                                    /// @END
                                     /// @END
                                     
                                     /// @Adjust after timer is stopped
@@ -199,8 +194,6 @@ struct ContentView: View {
                                     self.userSettings.initialNotificationTime = 0
                                     self.timeDisplay = 0
                                     /// @END
-                                    
-//                                    print("isTimerStarted gonna FALSE")
                                     
                                     UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                                     
@@ -220,9 +213,7 @@ struct ContentView: View {
                                     UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
                                     
                                     self.mainController.setNotificationWhenTimerStart(timeInterval: 3600)
-//                                    self.userSettings.isTimerStarted = true
                                     /// @For "Today Extension"
-//                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
                                     UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
                                     /// @END
                                     
@@ -237,7 +228,7 @@ struct ContentView: View {
                         .gesture(
                             DragGesture().updating($dragAmount) { value, state, _ in
                                 
-                                if !(self.mainController.isTimerRunning())/*!(self.userSettings.isTimerStarted)*/ {
+                                if !(self.mainController.isTimerRunning()) {
                                     
                                     self.gestureAllowed = true
                                     
@@ -313,9 +304,7 @@ struct ContentView: View {
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
                                         
                                         self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
-//                                        self.userSettings.isTimerStarted = true
                                         /// @For "Today Extension"
-//                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted")
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
                                         /// @END
                                         
