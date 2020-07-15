@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96824BF4B9B00AD5888 /* TimerEntities.swift */; };
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
+		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
 		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
@@ -69,6 +70,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		510BB97524BF68C100AD5888 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517F6215234E329F00A05205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 517F621C234E329F00A05205;
+			remoteInfo = "T!mer";
+		};
 		51500AEC2473355600AAE960 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 517F6215234E329F00A05205 /* Project object */;
@@ -114,6 +122,9 @@
 		4D77C5FC36F25A860B381D00 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
 		510BB96824BF4B9B00AD5888 /* TimerEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEntities.swift; sourceTree = "<group>"; };
 		510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoContentView.swift; sourceTree = "<group>"; };
+		510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merTests(iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merTests_iOS_.swift; sourceTree = "<group>"; };
+		510BB97424BF68C100AD5888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51113A5D237939BE005309D7 /* SoundPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
@@ -179,6 +190,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		510BB96D24BF68C100AD5888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51500ADF2473355600AAE960 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +224,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510BB97124BF68C100AD5888 /* T!merTests(iOS) */ = {
+			isa = PBXGroup;
+			children = (
+				510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */,
+				510BB97424BF68C100AD5888 /* Info.plist */,
+			);
+			path = "T!merTests(iOS)";
+			sourceTree = "<group>";
+		};
 		512558C2247412B300020AE2 /* Shape */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +353,7 @@
 				517F621F234E329F00A05205 /* T!mer */,
 				519D626C243E2D0D00E6C77F /* T!merUITests */,
 				51500AE52473355600AAE960 /* T!mer Widget */,
+				510BB97124BF68C100AD5888 /* T!merTests(iOS) */,
 				517F621E234E329F00A05205 /* Products */,
 				9703E6DB9B95217C7A8B3E7F /* Pods */,
 				8B639722B9B9195751ED024E /* Frameworks */,
@@ -338,6 +366,7 @@
 				517F621D234E329F00A05205 /* T!mer.app */,
 				519D626B243E2D0D00E6C77F /* T!merUITests.xctest */,
 				51500AE22473355600AAE960 /* T!mer Widget.appex */,
+				510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -448,6 +477,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		510BB96F24BF68C100AD5888 /* T!merTests(iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 510BB97724BF68C100AD5888 /* Build configuration list for PBXNativeTarget "T!merTests(iOS)" */;
+			buildPhases = (
+				510BB96C24BF68C100AD5888 /* Sources */,
+				510BB96D24BF68C100AD5888 /* Frameworks */,
+				510BB96E24BF68C100AD5888 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				510BB97624BF68C100AD5888 /* PBXTargetDependency */,
+			);
+			name = "T!merTests(iOS)";
+			productName = "T!merTests(iOS)";
+			productReference = 510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		51500AE12473355600AAE960 /* T!mer Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51500AF22473355600AAE960 /* Build configuration list for PBXNativeTarget "T!mer Widget" */;
@@ -512,10 +559,14 @@
 		517F6215234E329F00A05205 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Aksidion Kreimben";
 				TargetAttributes = {
+					510BB96F24BF68C100AD5888 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 517F621C234E329F00A05205;
+					};
 					51500AE12473355600AAE960 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -544,11 +595,19 @@
 				517F621C234E329F00A05205 /* T!mer */,
 				519D626A243E2D0D00E6C77F /* T!merUITests */,
 				51500AE12473355600AAE960 /* T!mer Widget */,
+				510BB96F24BF68C100AD5888 /* T!merTests(iOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		510BB96E24BF68C100AD5888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51500AE02473355600AAE960 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,6 +706,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		510BB96C24BF68C100AD5888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51500ADE2473355600AAE960 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +777,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		510BB97624BF68C100AD5888 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 517F621C234E329F00A05205 /* T!mer */;
+			targetProxy = 510BB97524BF68C100AD5888 /* PBXContainerItemProxy */;
+		};
 		51500AED2473355600AAE960 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51500AE12473355600AAE960 /* T!mer Widget */;
@@ -742,6 +814,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		510BB97824BF68C100AD5888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!merTests(iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merTests-iOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T!mer.app/T!mer";
+			};
+			name = Debug;
+		};
+		510BB97924BF68C100AD5888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KX7M3M3Y5;
+				INFOPLIST_FILE = "T!merTests(iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KreimbenPro.T-merTests-iOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T!mer.app/T!mer";
+			};
+			name = Release;
+		};
 		51500AF02473355600AAE960 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -999,6 +1113,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		510BB97724BF68C100AD5888 /* Build configuration list for PBXNativeTarget "T!merTests(iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				510BB97824BF68C100AD5888 /* Debug */,
+				510BB97924BF68C100AD5888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51500AF22473355600AAE960 /* Build configuration list for PBXNativeTarget "T!mer Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
