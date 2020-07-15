@@ -55,8 +55,6 @@
 		519D626E243E2D0D00E6C77F /* T_merUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519D626D243E2D0D00E6C77F /* T_merUITests.swift */; };
 		51A2389C235C2B0C00BF5C42 /* UserTouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */; };
 		51B221F423F2618600F924C1 /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B221F323F2618600F924C1 /* IAPView.swift */; };
-		51CB7D1924BC547200DCCFCE /* TimerEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB7D1724BC547100DCCFCE /* TimerEntities+CoreDataClass.swift */; };
-		51CB7D1A24BC547200DCCFCE /* TimerEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB7D1824BC547200DCCFCE /* TimerEntities+CoreDataProperties.swift */; };
 		51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */; };
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
 		51D6A18A242A2942002AD0DB /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A189242A2942002AD0DB /* ColorScheme.swift */; };
@@ -164,8 +162,6 @@
 		51A2389B235C2B0C00BF5C42 /* UserTouchCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTouchCircle.swift; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51B221F323F2618600F924C1 /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
-		51CB7D1724BC547100DCCFCE /* TimerEntities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimerEntities+CoreDataClass.swift"; sourceTree = "<group>"; };
-		51CB7D1824BC547200DCCFCE /* TimerEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimerEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMasterView.swift; sourceTree = "<group>"; };
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		51D6A189242A2942002AD0DB /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
@@ -219,8 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				5147AB272481057100C5B571 /* TimerCoreData.xcdatamodeld */,
-				51CB7D1724BC547100DCCFCE /* TimerEntities+CoreDataClass.swift */,
-				51CB7D1824BC547200DCCFCE /* TimerEntities+CoreDataProperties.swift */,
 			);
 			path = "CoreData related";
 			sourceTree = "<group>";
@@ -688,13 +682,11 @@
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51E829B3237ABF89002EDEE1 /* UserSettings.swift in Sources */,
-				51CB7D1924BC547200DCCFCE /* TimerEntities+CoreDataClass.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
 				5147AB292481057100C5B571 /* TimerCoreData.xcdatamodeld in Sources */,
 				515DACFC246040BF00A495BA /* SoundPlayerView.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
-				51CB7D1A24BC547200DCCFCE /* TimerEntities+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
