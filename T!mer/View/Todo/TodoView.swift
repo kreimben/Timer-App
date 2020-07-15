@@ -52,6 +52,13 @@ struct TodoView: View {
                         gen.prepare()
                         gen.notificationOccurred(.success)
                         /// @END
+                    } else {
+                        
+                        /// @When T!mer is not running
+                        let gen = UINotificationFeedbackGenerator()
+                        gen.prepare()
+                        gen.notificationOccurred(.error)
+                        /// @END
                     }
                 }) {
                     
