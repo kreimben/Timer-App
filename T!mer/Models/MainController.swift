@@ -88,4 +88,15 @@ class MainController: ObservableObject {
         }
         print("UserNotifications is setting done!")
     }
+    
+    func isTimerRunning() -> Bool {
+        
+        let notificationTime = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
+        
+        let result = notificationTime.distance(to: Date())
+        
+        NSLog("\(result)")
+        
+        return result > 0
+    }
 }
