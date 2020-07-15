@@ -1,10 +1,12 @@
 import SwiftUI
 import CoreData
 
+import CommonT_mer
+
 struct TodoView: View {
     
     /// @ObservedObject variables
-    @ObservedObject var mainController = MainController()
+    @ObservedObject var mainController = CTMainController()
     /// @END
     
     /// @CoreData related variables

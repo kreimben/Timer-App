@@ -10,6 +10,8 @@
 		510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96824BF4B9B00AD5888 /* TimerEntities.swift */; };
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
 		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
+		510BB9B524BF759600AD5888 /* CommonT_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510BB9B424BF759600AD5888 /* CommonT_mer.framework */; };
+		510BB9B624BF759600AD5888 /* CommonT_mer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 510BB9B424BF759600AD5888 /* CommonT_mer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
@@ -112,6 +114,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				513EF2F923E16E0C0013BC9F /* (null) in Embed Frameworks */,
+				510BB9B624BF759600AD5888 /* CommonT_mer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +128,7 @@
 		510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merTests(iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merTests_iOS_.swift; sourceTree = "<group>"; };
 		510BB97424BF68C100AD5888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		510BB9B424BF759600AD5888 /* CommonT_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonT_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51113A5D237939BE005309D7 /* SoundPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */,
+				510BB9B524BF759600AD5888 /* CommonT_mer.framework in Frameworks */,
 				F8BE231D7FDF7322424B4D7B /* Pods_T_mer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +461,7 @@
 		8B639722B9B9195751ED024E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				510BB9B424BF759600AD5888 /* CommonT_mer.framework */,
 				51DF313523E59A6F008D20D6 /* StoreKit.framework */,
 				513EF2FD23E16E1C0013BC9F /* nanopb.framework */,
 				513EF2FA23E16E100013BC9F /* GoogleUtilities.framework */,

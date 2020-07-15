@@ -1,9 +1,11 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct UpdateLogDetailView: View {
     
     /// @ObservedObject
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     /// @END
     
     /// @App Version

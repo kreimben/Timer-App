@@ -1,8 +1,10 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct UpdateLogView: View {
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var body: some View {
         

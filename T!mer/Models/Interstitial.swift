@@ -3,11 +3,12 @@ import SwiftUI
 import Combine
 
 import GoogleMobileAds
+import CommonT_mer
 
 class Interstitial: NSObject, GADInterstitialDelegate {
     
-    @ObservedObject var userSettings = UserSettings()
-    @ObservedObject var mainController = MainController()
+    @ObservedObject var userSettings = CTUserSettings()
+    @ObservedObject var mainController = CTMainController()
     
     #if DEBUG
     private var interstitialID = "ca-app-pub-3940256099942544/4411468910"

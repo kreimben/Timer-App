@@ -1,34 +1,17 @@
 import SwiftUI
 import UIKit
 
-//import SwiftyStoreKit
+import CommonT_mer
 
 struct IAPView: View {
     
     @Binding var productID: String
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     init(productID: Binding<String>) {
         
         self._productID = productID
-        
-//        if !(UserSettings().isUserPurchased) {
-            
-            // Code's from official documentation at [https://github.com/bizz84/SwiftyStoreKit#retrieve-products-info]
-//            SwiftyStoreKit.retrieveProductsInfo([self.productID/*"com.KreimbenPro.nonConsumable.removeads"*/]) { result in
-//                if let product = result.retrievedProducts.first {
-//                    let priceString = product.localizedPrice!
-//                    print("Product: \(product.localizedDescription), price: \(priceString)")
-//                }
-//                else if let invalidProductId = result.invalidProductIDs.first {
-//                    print("Invalid product identifier: \(invalidProductId)")
-//                }
-//                else {
-//                    print("Error: \(String(describing: result.error))")
-//                }
-//            }
-//        }
     }
     
     var body: some View {
@@ -138,7 +121,7 @@ private struct PurchaseButton: View {
     
     @Binding var productID: String
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var body: some View {
         

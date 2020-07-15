@@ -2,6 +2,8 @@ import SwiftUI
 import Combine
 import Dispatch
 
+import CommonT_mer
+
 struct UserTouchCircle: View {
     
     @Binding var center: CGPoint
@@ -9,10 +11,10 @@ struct UserTouchCircle: View {
     @Binding var circleColor: Color
     @Binding var circleRadius: CGFloat
     
-    @EnvironmentObject var mainController: MainController
+    @EnvironmentObject var mainController: CTMainController
     
     @ObservedObject var userTouchController = UserTouchController()
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var body: some View {
         

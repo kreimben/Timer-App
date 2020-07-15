@@ -1,9 +1,11 @@
 import SwiftUI
 import UIKit
 
+import CommonT_mer
+
 struct DebugMenuView: View {
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     let notiGenerator = UINotificationFeedbackGenerator()
     

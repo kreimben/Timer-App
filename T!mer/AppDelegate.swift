@@ -5,6 +5,7 @@ import SwiftUI
 import CoreData
 
 import GoogleMobileAds
+import CommonT_mer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -45,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    var mainController: MainController!
+    var mainController: CTMainController!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        mainController = MainController()
+        mainController = CTMainController()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         

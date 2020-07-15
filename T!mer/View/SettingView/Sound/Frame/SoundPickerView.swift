@@ -1,9 +1,11 @@
 import SwiftUI
 import Combine
 
+import CommonT_mer
+
 struct SoundPickerView: View {
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var soundsArray: [SoundsArray] = [
         SoundsArray(soundName: "Default Sound"),

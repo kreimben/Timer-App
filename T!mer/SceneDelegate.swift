@@ -3,10 +3,12 @@ import SwiftUI
 import Foundation
 import UserNotifications
 
+import CommonT_mer
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    @ObservedObject var mainController = MainController()
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var mainController = CTMainController()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var window: UIWindow?
     
@@ -18,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         
-        let mainController = MainController()
+        let mainController = CTMainController()
         
         // MARK: CoreData Context
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {

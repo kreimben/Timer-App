@@ -1,10 +1,12 @@
 import SwiftUI
 import Dispatch
 
+import CommonT_mer
+
 struct WelcomeTo: View {
     
     /// @ObservedObject
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     /// @END
     
     /// @AnimationBool

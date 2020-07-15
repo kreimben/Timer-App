@@ -1,7 +1,8 @@
 import UIKit
 import SwiftUI
 import NotificationCenter
-import T_mer
+//import T_mer
+import CommonT_mer
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
@@ -11,7 +12,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     var timeDisplay = UILabel()
     
-    var mainController = MainController()
+    var mainController = CTMainController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import MessageUI
 
-//import SwiftyStoreKit
+import CommonT_mer
 
 struct SoundsArray: Identifiable, Hashable {
     
@@ -32,11 +32,9 @@ struct SettingPageView: View {
     @State var isShowingMailView = false
     /// @END
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     @Environment(\.presentationMode) var presentation
-    
-//    @State var productID = "nonConsumable.removeads"  //"com.KreimbenPro.nonConsumable.removeads"
     
     var body: some View {
         List {
@@ -53,14 +51,6 @@ struct SettingPageView: View {
                 }
                 #endif
             }
-            
-//            Section(header: Text("In-app purchase")) {
-//
-//                NavigationLink(destination: IAPView(productID: self.$productID)) {
-//                    
-//                    Text("Get T!mer Pro").foregroundColor(.blue)
-//                }
-//            }
             
             Section(header: Text("General")) {
                 HStack {

@@ -1,9 +1,11 @@
 import SwiftUI
 import CoreData
 
+import CommonT_mer
+
 struct TodoMasterView: View {
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var body: some View {
         

@@ -1,8 +1,10 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct ColorPickerView: View {
     
-    @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = CTUserSettings()
     
     var body: some View {
         Picker(selection: self.$userSettings.colorIndex, label: Text("Color")) {
