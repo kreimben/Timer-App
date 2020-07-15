@@ -3,6 +3,8 @@ import CoreData
 
 struct TodoView: View {
     
+    @ObservedObject var mainController = MainController()
+    
     /// @CoreData related variables
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: TimerEntities.getAllTimerEntities())
@@ -52,7 +54,7 @@ struct TodoView: View {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(Color.green.opacity(1))
+                        .foregroundColor(self.mainController.isTimerRunning() ? Color.green : Color.red)
                     /// @END
                     
                 }.padding(.trailing)
