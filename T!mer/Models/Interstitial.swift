@@ -7,6 +7,7 @@ import GoogleMobileAds
 class Interstitial: NSObject, GADInterstitialDelegate {
     
     @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var mainController = MainController()
     
     #if DEBUG
     private var interstitialID = "ca-app-pub-3940256099942544/4411468910"
@@ -55,7 +56,7 @@ class Interstitial: NSObject, GADInterstitialDelegate {
         print("Random Range is: \(limit)")
         let time: DispatchTime = DispatchTime.now() + limit
         
-        if self.userSettings.isTimerStarted {
+        if self.mainController.isTimerRunning() {
             
             DispatchQueue.main.asyncAfter(deadline: time) {
                 

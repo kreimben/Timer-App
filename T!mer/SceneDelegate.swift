@@ -108,13 +108,13 @@ extension SceneDelegate {
         
         print("Shortcut Action: \(type)")
         
-        if self.userSettings.isTimerStarted {
+        if self.mainController.isTimerRunning() {
             
-            self.userSettings.isTimerStarted = false
+//            self.userSettings.isTimerStarted = false
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
         
-        self.userSettings.isTimerStarted = true
+//        self.userSettings.isTimerStarted = true
         
         switch type {
             
@@ -140,8 +140,8 @@ extension SceneDelegate {
         let interstitial = Interstitial()
         interstitial.settingTimer()
 
-        self.userSettings.isTimerStarted = true
-        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted") // For "Today Extension"
+//        self.userSettings.isTimerStarted = true
+//        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted") // For "Today Extension"
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
         
     }

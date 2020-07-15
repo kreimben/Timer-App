@@ -49,12 +49,12 @@ final class UserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "isTimerStarted", value: false)
-    var isTimerStarted: Bool {
-        willSet {
-            self.objectWillChange.send()
-        }
-    }
+//    @UserDefault(key: "isTimerStarted", value: false)
+//    var isTimerStarted: Bool {
+//        willSet {
+//            self.objectWillChange.send()
+//        }
+//    }
     
     /// @Write Review
     @UserDefault(key: "howManyOpenThisApp", value: 1)
