@@ -19,7 +19,7 @@ final class UserSettings: ObservableObject {
             objectWillChange.send()
             UserDefaults(suiteName: "group.com.KriembenPro.Timer")?.setValue(newValue, forKey: "colorIndex")
             
-            print("Color Index at UserDefaults suite: \(UserDefaults(suiteName: "group.com.KriembenPro.Timer")?.value(forKey: "colorIndex"))")
+            print("Color Index at UserDefaults suite: \(String(describing: UserDefaults(suiteName: "group.com.KriembenPro.Timer")?.value(forKey: "colorIndex")))")
         }
     }
     /// @END
@@ -41,6 +41,7 @@ final class UserSettings: ObservableObject {
             }
         }
     }
+    
     @UserDefault(key: "initialNotificationTime", value: 0.0)
     var initialNotificationTime: Double {
         willSet {
@@ -54,13 +55,6 @@ final class UserSettings: ObservableObject {
             self.objectWillChange.send()
         }
     }
-    
-//    @UserDefault(key: "isUserPurchased", value: false)
-//    var isUserPurchased: Bool {
-//        willSet {
-//            objectWillChange.send()
-//        }
-//    }
     
     /// @Write Review
     @UserDefault(key: "howManyOpenThisApp", value: 1)
