@@ -52,8 +52,7 @@ class Interstitial: NSObject, GADInterstitialDelegate {
     
     func settingTimer() {
         
-        //let rangeLimit = self.userSettings.initialNotificationTime
-        let limit: Double = 1.5 // Double.random(in: 0 ... rangeLimit)
+        let limit: Double = 1.5
         print("Random Range is: \(limit)")
         let time: DispatchTime = DispatchTime.now() + limit
         

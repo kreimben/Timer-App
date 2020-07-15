@@ -36,7 +36,7 @@ struct ContentView: View {
 
     /// @ObservedObject
     @ObservedObject var userSettings = CTUserSettings()
-    @ObservedObject var userTouchController = UserTouchController()
+    @ObservedObject var userTouchController = CTUserTouchController()
     /// @END
 
     /// @EndvironmentObject
@@ -157,7 +157,7 @@ struct ContentView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.77)
                             .shadow(radius: 10)
 
-                        UserTouchCircle(center: self.$center, atan2: self.$atan2Var, circleColor: self.$circleColor, circleRadius: self.$circleRadius)
+                        CTUserTouchCircle(center: self.$center, atan2: self.$atan2Var, circleColor: self.$circleColor, circleRadius: self.$circleRadius)
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
 
                         Image("시계 바늘")

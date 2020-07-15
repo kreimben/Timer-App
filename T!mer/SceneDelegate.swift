@@ -13,11 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         
         let mainController = CTMainController()
@@ -89,13 +85,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             fatalError("Failed to load Persistent Container")
         }
         
-        do {
-            
-            try context.save()
-        } catch let error {
-            
-            fatalError("Error to save value (CoreData): \(error.localizedDescription)")
-        }
+        TimerEntities.saveContext()
     }
 }
 
@@ -112,11 +102,8 @@ extension SceneDelegate {
         
         if self.mainController.isTimerRunning() {
             
-//            self.userSettings.isTimerStarted = false
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
-        
-//        self.userSettings.isTimerStarted = true
         
         switch type {
             
@@ -142,9 +129,6 @@ extension SceneDelegate {
         let interstitial = Interstitial()
         interstitial.settingTimer()
 
-//        self.userSettings.isTimerStarted = true
-//        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.isTimerStarted, forKey: "isTimerStarted") // For "Today Extension"
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
-        
     }
 }

@@ -46,11 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    var mainController: CTMainController!
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        mainController = CTMainController()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
