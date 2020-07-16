@@ -1,10 +1,11 @@
 import XCTest
 
 @testable import T_mer
+import CommonT_mer
 
 class T_merTests_iOS_: XCTestCase {
     
-    let mainController = MainController()
+    let mainController = CTMainController()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

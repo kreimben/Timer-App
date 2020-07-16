@@ -6,8 +6,5 @@ target 'T!mer' do
   use_frameworks!
 
   pod 'Google-Mobile-Ads-SDK'
-  pod 'CoreStore', '~> 7.0'  
-
-  #pod 'SwiftyStoreKit'
 
 end
