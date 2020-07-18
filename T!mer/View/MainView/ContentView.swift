@@ -94,34 +94,26 @@ struct ContentView: View {
                             .foregroundColor(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
 
-                        Text("\(self.mainController.isTimerRunning() ? String(format: "%02d:%02d", Int(timeDisplay / 60), Int(  timeDisplay  ) % 60) : String(format: "%02d:00", Int(  (  (self.userSettings.timeInputBeforeConvert + 90) * 10  ) / 60)  )/*앞에 String*/    )")
+                        Text("\(self.mainController.isTimerRunning() ? String(format: "%02d:%02d", Int(  timeDisplay / 60  ), Int(  timeDisplay  ) % 60) : "00:00")")
                             .font(.system(size: 110))
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .onReceive(timer) { _ in
 
                                 DispatchQueue.main.async {
-
-                                    if self.mainController.isTimerRunning() { // 시간이 0보다 작으면 타이머 종료
-
-                                        if Date().distance(to: self.userSettings.notificationTime) > 0 {
-
-                                            self.timeDisplay = Date().distance(to: self.userSettings.notificationTime)
-                                            self.atan2Var = CGFloat((self.timeDisplay / 10) * (Double.pi / 180))
-                                        }
-
-                                    } else {
-
-                                        self.circleColor = Color.red.opacity(0.5)
-                                    }
-
-                                    ///For color setting
-                                    self.visualSettingsWhileTimerIsWorking()
+                                    
+                                    var time: Double = 0
+                                    var atan2: CGFloat = 0.0
+                                    
+                                    (time, atan2) = self.mainController.setDisplay()
+                                    
+                                    self.timeDisplay = time
+                                    self.atan2Var = atan2
                                 }
                         }
                     } // TextBox Elements
                         .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
-
+                    
                     ZStack(alignment: .center) { // MARK: - Circle Timer
 
                         Circle()

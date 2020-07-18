@@ -97,6 +97,26 @@ public class CTMainController: ObservableObject {
         
         return result > 0
     }
+    
+    public func setDisplay() -> (Double, CGFloat) {
+        
+        var time: Double = 0
+        var atan2:CGFloat = 0
+        
+        if self.isTimerRunning() {
+            
+            guard let notiTime: Date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as? Date else { return (0, 0.0) }
+            
+            time = Date().distance(to: notiTime)
+            atan2 = ((CGFloat(time) / 10) * (CGFloat.pi / 180))
+        } else {
+            
+            time = 0
+            atan2 = 0
+        }
+        
+        return (time, atan2)
+    }
 }
 
 //
