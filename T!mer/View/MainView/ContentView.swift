@@ -76,10 +76,6 @@ struct ContentView: View {
     @State var selGen = UISelectionFeedbackGenerator()
     /// @END
 
-    /// @Current Build Version
-    @State var currentBuildVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0")!
-    /// @END
-
     // MARK: - var body: some View
     var body: some View {
 
