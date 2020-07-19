@@ -129,12 +129,12 @@ public class CTMainController: ObservableObject {
         /// @END
     }
     
-    public func generateNotificationFeedback() {
+    public func generateNotificationFeedback(as style: UINotificationFeedbackGenerator.FeedbackType) {
 
         /// @Input HapticTouch Feedback
         let notiGen = UINotificationFeedbackGenerator()
         notiGen.prepare()
-        notiGen.notificationOccurred(.error)
+        notiGen.notificationOccurred(style)
         /// @END
     }
     

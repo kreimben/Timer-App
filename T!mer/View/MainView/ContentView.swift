@@ -213,26 +213,27 @@ struct ContentView: View {
                             .onEnded { (_) in
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
-                                
-                                    self.userSettings.timeInputBeforeConvert = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
                                     
-                                    if self.userSettings.timeInputBeforeConvert >= 0 { // 순수 restOfTime이 양수 일 때
+                                    // TODO: Make this variable global variable as @State
+                                    var degree = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
+                                    
+                                    if degree >= 0 { // 순수 restOfTime이 양수 일 때
                                         
-                                        self.userSettings.timeInputBeforeConvert = Double(Int(self.userSettings.timeInputBeforeConvert) - (Int(self.userSettings.timeInputBeforeConvert) % 6))
+                                        degree = Double(Int(degree) - (Int(degree) % 6))
                                     } else { // 순수 restOfTime이 음수 일때
                                         
-                                        self.userSettings.timeInputBeforeConvert = Double(Int(self.userSettings.timeInputBeforeConvert) + (Int(self.userSettings.timeInputBeforeConvert) % 6))
+                                        degree = Double(Int(degree) + (Int(degree) % 6))
                                         
-                                        if ((( Int(self.userSettings.timeInputBeforeConvert) + 90) * 10) % 60) == 20 {
+                                        if ((( Int(degree) + 90) * 10) % 60) == 20 {
                                             
-                                            self.userSettings.timeInputBeforeConvert -= 2
-                                        } else if ((( Int(self.userSettings.timeInputBeforeConvert) + 90) * 10) % 60) == 40 {
+                                            degree -= 2
+                                        } else if ((( Int(degree) + 90) * 10) % 60) == 40 {
                                             
-                                            self.userSettings.timeInputBeforeConvert -= 4
+                                            degree -= 4
                                         }
                                     }
                                     
-                                    let degreeForConvert = (self.userSettings.timeInputBeforeConvert + 90)
+                                    let degreeForConvert = (degree + 90)
                                     
                                     self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
                                     
@@ -246,7 +247,7 @@ struct ContentView: View {
                                     } else {
 
                                         /// @Input HapticTouch Feedback
-                                        self.mainController.generateNotificationFeedback()
+                                        self.mainController.generateNotificationFeedback(as: .error)
                                         /// @END
                                     }
                                     
