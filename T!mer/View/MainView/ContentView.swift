@@ -178,7 +178,7 @@ struct ContentView: View {
                                         
                                         self.timeDisplay = timeDisplay
                                         self.atan2Var = atan2
-                                        self.gestureAllowed = gesture
+                                        self.changeGestureValue(as: gesture)
                                     }
                                     
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
@@ -189,7 +189,7 @@ struct ContentView: View {
                                     
                                     self.mainController.startTimer(with: 3600) { (gesture) in
                                         
-                                        self.gestureAllowed = false
+                                        self.changeGestureValue(as: gesture)
                                     }
                                     
                                     if !self.userSettings.turnOffAds {
@@ -204,7 +204,6 @@ struct ContentView: View {
                                 
                                 if !(self.mainController.isTimerRunning()) {
                                     
-//                                    self.gestureAllowed = true
                                     self.changeGestureValue(as: true)
                                     
                                     state = value.location
