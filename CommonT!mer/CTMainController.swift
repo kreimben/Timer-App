@@ -7,6 +7,7 @@ import UserNotifications
 public class CTMainController: ObservableObject {
     
     @ObservedObject var userSettings = CTUserSettings()
+    @ObservedObject var userTouchController = CTUserTouchController()
 
     let center = UNUserNotificationCenter.current()
     
@@ -183,38 +184,20 @@ public class CTMainController: ObservableObject {
         return amount
     }
     
-    public func shortcutSettingTimer(shortcutItemType type: String) {
+    public func arrangeAtanValue(atan2: CGFloat, completion: @escaping ((Double) -> Void)) -> CGFloat {
         
-        print("Shortcut Action: \(type)")
+        var atan2 = atan2
+        var amount = self.userTouchController.atan2ToDegrees(tan: atan2)
         
-        if self.isTimerRunning() {
-            
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        }
+        amount = self.adjustTimerValue(with: amount)
         
-        switch type {
-            
-        case "Set 3 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 3
-        case "Set 15 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 15
-        case "Set 30 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 30
-        case "Set 60 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 60
-        default:
-            print("Error: shortcut settings")
-        }
+        let degreeForConvert = (amount + 90)
         
-        self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+        atan2 = CGFloat(degreeForConvert * (Double.pi / 180))
         
-        self.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
+        completion(degreeForConvert * 10)
         
-        // MARK: Interstitial
-//        let interstitial = Interstitial()
-//        interstitial.settingTimer()
-
-        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
+        return atan2
     }
 }
 

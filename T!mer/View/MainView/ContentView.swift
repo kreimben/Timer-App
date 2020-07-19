@@ -94,8 +94,16 @@ struct ContentView: View {
                             .frame(width: 340, height: 140)
                             .foregroundColor(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
-                        
-                        Text("\(self.mainController.isTimerRunning() ? String(format: "%02d:%02d", Int(  timeDisplay / 60  ), Int(  timeDisplay  ) % 60) : "00:00")")
+                            
+                        Group {
+                            if self.mainController.isTimerRunning() {
+                                
+                                Text(String(format: "%02d:%02d", Int(  timeDisplay / 60  ), Int(  timeDisplay  ) % 60 ))
+                            } else {
+                                
+                                Text(String(format: "%02d:00", Int( timeDisplay / 60 ) ))
+                            }
+                        }
                             .font(.system(size: 110))
                             .font(.headline)
                             .foregroundColor(Color.white)
@@ -108,8 +116,6 @@ struct ContentView: View {
                                         self.timeDisplay = time
                                         self.atan2Var = atan2
                                     })
-                                    
-                                    NSLog("Gesture Allow: \(self.gestureAllowed)")
                                 }
                         }
                     } // TextBox Elements
@@ -207,26 +213,24 @@ struct ContentView: View {
                                         self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
                                         
                                         self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
+                                        
+                                        _ = self.mainController.arrangeAtanValue(atan2: self.atan2Var) { (convertedTime) in
+                                            
+                                            self.timeDisplay = convertedTime
+                                        }
                                     }
                                     
-                                    /// @Selection Feedback
                                     self.selGen.selectionChanged()
-                                    /// @END
                                 }
                             }
-                            .onEnded { (_) in
+                            .onEnded { (_) in // MARK: After gesture ended
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
                                     
-                                    self.amount = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
-                                    
-                                    self.amount = self.mainController.adjustTimerValue(with: self.amount)
-                                    
-                                    let degreeForConvert = (self.amount + 90)
-                                    
-                                    self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
-                                    
-                                    self.userSettings.initialNotificationTime = degreeForConvert * 10 // 각도에 10을 곱해 초(second)로 전환.
+                                    self.atan2Var = self.mainController.arrangeAtanValue(atan2: self.atan2Var) { (convertedTime) in
+                                        
+                                        self.userSettings.initialNotificationTime = convertedTime
+                                    }
                                     
                                     if self.userSettings.initialNotificationTime > 60 {
 
@@ -244,7 +248,7 @@ struct ContentView: View {
                                 }
                             }
                         ) // .gesture
-                            .alert(isPresented: self.$showingAlert, content: {
+                            .alert(isPresented: self.$showingAlert, content: { // MARK: Alert
                                 
                                 if self.userSettings.initialNotificationTime > 0 { // which is SECOND
                                     
@@ -263,7 +267,7 @@ struct ContentView: View {
                                         }
                                         }
                                     )
-                                } else { // when userset timer 0 minute.
+                                } else { // when user set timer 0 minute.
                                     
                                     #if DEBUG
                                     
@@ -297,7 +301,6 @@ struct ContentView: View {
                             trailing: 10
                         ))
                             .padding()
-                        
                     } // Circle Timer Elements
                     
                     

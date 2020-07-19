@@ -78,45 +78,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         TimerEntities.saveContext()
     }
-    
-    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) { // When The App Has Been Loaded.
-        
-//        self.shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
-    }
-
-    func shortcutSettingTimer(shortcutItemType type: String) {
-
-        print("Shortcut Action: \(type)")
-
-        if self.mainController.isTimerRunning() {
-
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        }
-
-        switch type {
-
-        case "Set 3 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 3
-        case "Set 15 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 15
-        case "Set 30 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 30
-        case "Set 60 Minutes":
-            self.userSettings.initialNotificationTime = 60 * 60
-        default:
-            print("Error: shortcut settings")
-        }
-
-        self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
-
-        self.mainController.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
-
-        ContentView().changeGestureValue(as: false)
-
-        // MARK: Interstitial
-        let interstitial = Interstitial()
-        interstitial.settingTimer()
-
-        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
-    }
 }
