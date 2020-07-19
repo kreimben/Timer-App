@@ -43,11 +43,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             print("\(granted)")
         }
-        
-        if let shortcutItem = connectionOptions.shortcutItem { // When The App Hasn’t Been Loaded.
-            
-            shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
-        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -83,26 +78,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         TimerEntities.saveContext()
     }
-}
-
-extension SceneDelegate {
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) { // When The App Has Been Loaded.
         
-        shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
+//        self.shortcutSettingTimer(shortcutItemType: shortcutItem.type.description)
     }
-    
+
     func shortcutSettingTimer(shortcutItemType type: String) {
-        
+
         print("Shortcut Action: \(type)")
-        
+
         if self.mainController.isTimerRunning() {
-            
+
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
-        
+
         switch type {
-            
+
         case "Set 3 Minutes":
             self.userSettings.initialNotificationTime = 60 * 3
         case "Set 15 Minutes":
@@ -114,13 +106,13 @@ extension SceneDelegate {
         default:
             print("Error: shortcut settings")
         }
-        
+
         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
-        
+
         self.mainController.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
-        
-        ContentView().visualSettingsWhileTimerIsWorking()
-        
+
+        ContentView().changeGestureValue(as: false)
+
         // MARK: Interstitial
         let interstitial = Interstitial()
         interstitial.settingTimer()

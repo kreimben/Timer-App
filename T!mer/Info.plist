@@ -54,41 +54,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAlarm</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Set 60 Minutes</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Set 60 Minutes</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAlarm</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Set 30 Minutes</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Set 30 Minutes</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAlarm</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Set 15 Minutes</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Set 15 Minutes</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAlarm</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Set 3 Minutes</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Set 3 Minutes</string>
-		</dict>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

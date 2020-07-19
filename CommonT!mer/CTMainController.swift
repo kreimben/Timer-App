@@ -111,10 +111,6 @@ public class CTMainController: ObservableObject {
             
             time = Date().distance(to: notiTime)
             atan2 = ((CGFloat(time) / 10) * (CGFloat.pi / 180))
-        } else {
-            
-            time = 0
-            atan2 = 0
         }
         
         completion(time, atan2)
@@ -162,6 +158,63 @@ public class CTMainController: ObservableObject {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         completion(0, 0, true)
+    }
+    
+    public func adjustTimerValue(with amount: Double) -> Double {
+        
+        var amount = amount
+        
+        if amount >= 0 { // 순수 restOfTime이 양수 일 때
+            
+            amount = Double(Int(amount) - (Int(amount) % 6))
+        } else { // 순수 restOfTime이 음수 일때
+            
+            amount = Double(Int(amount) + (Int(amount) % 6))
+            
+            if ((( Int(amount) + 90) * 10) % 60) == 20 {
+                
+                amount -= 2
+            } else if ((( Int(amount) + 90) * 10) % 60) == 40 {
+                
+                amount -= 4
+            }
+        }
+        
+        return amount
+    }
+    
+    public func shortcutSettingTimer(shortcutItemType type: String) {
+        
+        print("Shortcut Action: \(type)")
+        
+        if self.isTimerRunning() {
+            
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        }
+        
+        switch type {
+            
+        case "Set 3 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 3
+        case "Set 15 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 15
+        case "Set 30 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 30
+        case "Set 60 Minutes":
+            self.userSettings.initialNotificationTime = 60 * 60
+        default:
+            print("Error: shortcut settings")
+        }
+        
+        self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
+        
+        self.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
+        
+        // MARK: Interstitial
+//        let interstitial = Interstitial()
+//        interstitial.settingTimer()
+
+        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(self.userSettings.notificationTime, forKey: "notificationTime")
     }
 }
 

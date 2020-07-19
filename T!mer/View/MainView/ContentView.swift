@@ -33,6 +33,7 @@ struct ContentView: View {
     // MARK: - Timer related variables
     
     @State var timeDisplay: TimeInterval = 0
+    @State var amount: Double = 0
     
     /// @ObservedObject
     @ObservedObject var userSettings = CTUserSettings()
@@ -101,12 +102,14 @@ struct ContentView: View {
                             .onReceive(timer) { _ in
                                 
                                 DispatchQueue.main.async {
-                                    
+                                    // MARK: Reflect other things EVERY SECONDS
                                     self.mainController.setDisplay(completion: { (time, atan2) in
                                         
                                         self.timeDisplay = time
                                         self.atan2Var = atan2
                                     })
+                                    
+                                    NSLog("Gesture Allow: \(self.gestureAllowed)")
                                 }
                         }
                     } // TextBox Elements
@@ -190,12 +193,13 @@ struct ContentView: View {
                                     }
                                 }
                         }
-                        .gesture(
+                        .gesture( // MARK: Gesture
                             DragGesture().updating($dragAmount) { value, state, _ in
                                 
                                 if !(self.mainController.isTimerRunning()) {
                                     
-                                    self.gestureAllowed = true
+//                                    self.gestureAllowed = true
+                                    self.changeGestureValue(as: true)
                                     
                                     state = value.location
                                     
@@ -214,26 +218,11 @@ struct ContentView: View {
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
                                     
-                                    // TODO: Make this variable global variable as @State
-                                    var degree = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
+                                    self.amount = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
                                     
-                                    if degree >= 0 { // 순수 restOfTime이 양수 일 때
-                                        
-                                        degree = Double(Int(degree) - (Int(degree) % 6))
-                                    } else { // 순수 restOfTime이 음수 일때
-                                        
-                                        degree = Double(Int(degree) + (Int(degree) % 6))
-                                        
-                                        if ((( Int(degree) + 90) * 10) % 60) == 20 {
-                                            
-                                            degree -= 2
-                                        } else if ((( Int(degree) + 90) * 10) % 60) == 40 {
-                                            
-                                            degree -= 4
-                                        }
-                                    }
+                                    self.amount = self.mainController.adjustTimerValue(with: self.amount)
                                     
-                                    let degreeForConvert = (degree + 90)
+                                    let degreeForConvert = (self.amount + 90)
                                     
                                     self.atan2Var = CGFloat(degreeForConvert * (Double.pi / 180))
                                     
@@ -252,7 +241,6 @@ struct ContentView: View {
                                     }
                                     
                                     self.showingAlert = true
-                                    
                                 }
                             }
                         ) // .gesture
@@ -264,7 +252,8 @@ struct ContentView: View {
                                         
                                         self.mainController.startTimer(with: self.userSettings.initialNotificationTime) { (gesture) in
                                             
-                                            self.gestureAllowed = false
+//                                            self.gestureAllowed = false
+                                            self.changeGestureValue(as: false)
                                         }
                                         
                                         if !self.userSettings.turnOffAds {
@@ -346,10 +335,9 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    func visualSettingsWhileTimerIsWorking() {
-        
-        self.gestureAllowed = false
-        self.circleColor = Color.red.opacity(1.0)
+    func changeGestureValue(as value: Bool) {
+
+        self.gestureAllowed = value
     }
 }
 
