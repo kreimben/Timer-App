@@ -160,32 +160,19 @@ struct ContentView: View {
                                 print("onLongPressGesture is excuted.")
                                 print("gesture allowed status: \(self.gestureAllowed)")
                                 
-                                if self.mainController.isTimerRunning() { // Cancle it while timer is working
+                                if self.mainController.isTimerRunning() { // Cancle it while timer is running
                                     
                                     /// @Cancel T!mer feedback
                                     self.mainController.generateHapticFeedbackAs(.soft)
                                     /// @END
                                     
-                                    /// @Set T!mer settings
-                                    self.circleColor = Color.red.opacity(0.5)
-                                    /// @END
+                                    self.mainController.stopTimer { (timeDisplay, atan2, gesture) in
+                                        
+                                        self.timeDisplay = timeDisplay
+                                        self.atan2Var = atan2
+                                        self.gestureAllowed = gesture
+                                    }
                                     
-                                    /// @Adjust after timer is stopped
-                                    self.userSettings.notificationTime = Date()
-                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
-                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
-                                    self.atan2Var = CGFloat(0)
-                                    self.userSettings.timeInputBeforeConvert = -90
-                                    self.userSettings.initialNotificationTime = 0
-                                    self.timeDisplay = 0
-                                    /// @END
-                                    
-                                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                                    
-                                    /// @Interstitial
-                                    self.interstitial = Interstitial()
-                                    self.interstitial.showAd()
-                                    /// @END
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
                                     /// @Generate hapticfeedback
@@ -197,7 +184,7 @@ struct ContentView: View {
                                         self.gestureAllowed = false
                                     }
                                     
-                                    // MARK: initializing interstitial ad
+                                    // initializing interstitial ad
                                     self.interstitial = Interstitial()
                                     self.interstitial.settingTimer()
                                 }
