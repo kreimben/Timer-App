@@ -46,7 +46,6 @@ struct ContentView: View {
     /// @Bool-related
     @State var showingAlert = false
     @State var todoViewBool = false
-    @State var fixValue = false
     /// @END
     
     /// @Timer
@@ -205,7 +204,7 @@ struct ContentView: View {
                         .gesture( // MARK: Gesture
                             DragGesture().updating($dragAmount) { value, state, _ in
                                 
-                                if !(self.mainController.isTimerRunning() && !self.fixValue) {
+                                if !(self.mainController.isTimerRunning()) {
                                     
                                     self.changeGestureValue(as: true)
                                     
@@ -226,8 +225,6 @@ struct ContentView: View {
                                 }
                             }
                             .onEnded { (_) in // MARK: After gesture ended
-                                
-                                self.fixValue = true
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
                                     
@@ -268,8 +265,6 @@ struct ContentView: View {
                                             self.interstitial = Interstitial()
                                             self.interstitial.settingTimer()
                                         }
-                                        
-                                        self.fixValue = false
                                         
                                         } // OK Button
                                     )

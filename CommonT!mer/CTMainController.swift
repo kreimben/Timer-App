@@ -195,7 +195,9 @@ public class CTMainController: ObservableObject {
         
         atan2 = CGFloat(degreeForConvert * (Double.pi / 180))
         
-        completion(degreeForConvert * 10)
+        let convertedTime = degreeForConvert * 10
+        
+        completion(convertedTime)
         
         return atan2
     }
