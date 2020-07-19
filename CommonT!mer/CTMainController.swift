@@ -89,7 +89,7 @@ public class CTMainController: ObservableObject {
                 print("UNNotificationCenter add error: \(String(describing: err.localizedDescription))")
             }
         }
-        print("UserNotifications is setting done!")
+        print("Notification is setted!")
     }
     
     public func isTimerRunning() -> Bool {

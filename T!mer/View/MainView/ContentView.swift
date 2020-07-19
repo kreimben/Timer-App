@@ -33,7 +33,6 @@ struct ContentView: View {
     // MARK: - Timer related variables
     
     @State var timeDisplay: TimeInterval = 0
-    @State var amount: Double = 0
     
     /// @ObservedObject
     @ObservedObject var userSettings = CTUserSettings()
@@ -47,6 +46,7 @@ struct ContentView: View {
     /// @Bool-related
     @State var showingAlert = false
     @State var todoViewBool = false
+    @State var fixValue = false
     /// @END
     
     /// @Timer
@@ -113,8 +113,11 @@ struct ContentView: View {
                                     // MARK: Reflect other things EVERY SECONDS
                                     self.mainController.setDisplay(completion: { (time, atan2) in
                                         
-                                        self.timeDisplay = time
-                                        self.atan2Var = atan2
+                                        if time != 0 && atan2 != 0 {
+
+                                            self.timeDisplay = time
+                                            self.atan2Var = atan2
+                                        }
                                     })
                                 }
                         }
@@ -202,7 +205,7 @@ struct ContentView: View {
                         .gesture( // MARK: Gesture
                             DragGesture().updating($dragAmount) { value, state, _ in
                                 
-                                if !(self.mainController.isTimerRunning()) {
+                                if !(self.mainController.isTimerRunning() && !self.fixValue) {
                                     
                                     self.changeGestureValue(as: true)
                                     
@@ -223,6 +226,8 @@ struct ContentView: View {
                                 }
                             }
                             .onEnded { (_) in // MARK: After gesture ended
+                                
+                                self.fixValue = true
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
                                     
@@ -255,7 +260,6 @@ struct ContentView: View {
                                         
                                         self.mainController.startTimer(with: self.userSettings.initialNotificationTime) { (gesture) in
                                             
-//                                            self.gestureAllowed = false
                                             self.changeGestureValue(as: false)
                                         }
                                         
@@ -264,7 +268,10 @@ struct ContentView: View {
                                             self.interstitial = Interstitial()
                                             self.interstitial.settingTimer()
                                         }
-                                        }
+                                        
+                                        self.fixValue = false
+                                        
+                                        } // OK Button
                                     )
                                 } else { // when user set timer 0 minute.
                                     
