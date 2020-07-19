@@ -117,7 +117,7 @@ extension SceneDelegate {
         
         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
         
-        self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
+        self.mainController.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
         
         ContentView().visualSettingsWhileTimerIsWorking()
         

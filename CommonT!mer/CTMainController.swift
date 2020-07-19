@@ -1,7 +1,9 @@
 import SwiftUI
+import UIKit
 import Combine
 import UserNotifications
 
+/// This class takes all of operations about timer
 public class CTMainController: ObservableObject {
     
     @ObservedObject var userSettings = CTUserSettings()
@@ -44,7 +46,7 @@ public class CTMainController: ObservableObject {
         self.center.setNotificationCategories([afterTimerEndCat])
     }
     
-    public func setNotificationWhenTimerStart(timeInterval: Double) {
+    public func setNotificationTime(timeInterval: Double) {
         
         let content = UNMutableNotificationContent()
         content.title = "T!mer done"
@@ -98,7 +100,7 @@ public class CTMainController: ObservableObject {
         return result > 0
     }
     
-    public func setDisplay(completion: @escaping ((Double, CGFloat) -> Void)  ) {//-> (Double, CGFloat) {
+    public func setDisplay(completion: @escaping ((Double, CGFloat) -> Void)  ) {
         
         var time: Double = 0
         var atan2:CGFloat = 0
@@ -116,6 +118,32 @@ public class CTMainController: ObservableObject {
         }
         
         completion(time, atan2)
+    }
+    
+    public func generateHapticFeedbackAs(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        
+        /// @Generate hapticfeedback
+        let gen = UIImpactFeedbackGenerator(style: style)
+        gen.prepare()
+        gen.impactOccurred(intensity: 30)
+        /// @END
+    }
+    
+    public func startTimer(with minute: TimeInterval, completion: @escaping ((Bool) -> Void)) {
+        
+        var gestureAllowed: Bool = false
+        
+        // I can't figure out WHY THIS IS NEEDED.
+//        self.userSettings.notificationTime = Date().addingTimeInterval(3600)
+        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( Date().addingTimeInterval(minute), forKey: "notificationTime")
+        
+        self.setNotificationTime(timeInterval: minute)
+        
+        /// @For "Today Extension"
+        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
+        /// @END
+        
+        completion(gestureAllowed)
     }
 }
 

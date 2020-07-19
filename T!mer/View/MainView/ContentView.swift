@@ -163,9 +163,7 @@ struct ContentView: View {
                                 if self.mainController.isTimerRunning() { // Cancle it while timer is working
                                     
                                     /// @Cancel T!mer feedback
-                                    let gen = UIImpactFeedbackGenerator(style: .soft)
-                                    gen.prepare()
-                                    gen.impactOccurred()
+                                    self.mainController.generateHapticFeedbackAs(.soft)
                                     /// @END
                                     
                                     /// @Set T!mer settings
@@ -191,23 +189,15 @@ struct ContentView: View {
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
                                     /// @Generate hapticfeedback
-                                    let gen = UIImpactFeedbackGenerator(style: .heavy)
-                                    gen.prepare()
-                                    gen.impactOccurred(intensity: 30)
+                                    self.mainController.generateHapticFeedbackAs(.heavy)
                                     /// @END
                                     
-                                    self.userSettings.notificationTime = Date().addingTimeInterval(3600)
-                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
+                                    self.mainController.startTimer(with: 3600) { (gesture) in
                                     
-                                    self.mainController.setNotificationWhenTimerStart(timeInterval: 3600)
-                                    /// @For "Today Extension"
-                                    UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
-                                    /// @END
+                                        self.gestureAllowed = false
+                                    }
                                     
-                                    self.gestureAllowed = false
-                                    self.circleColor = Color.red.opacity(1.0)
-                                    
-                                    // MARK: Interstitial
+                                    // MARK: initializing interstitial ad
                                     self.interstitial = Interstitial()
                                     self.interstitial.settingTimer()
                                 }
@@ -290,7 +280,7 @@ struct ContentView: View {
                                         self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
                                         
-                                        self.mainController.setNotificationWhenTimerStart(timeInterval: self.userSettings.initialNotificationTime)
+                                        self.mainController.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
                                         /// @For "Today Extension"
                                         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
                                         /// @END
@@ -306,7 +296,7 @@ struct ContentView: View {
                                     
                                     #if DEBUG
                                     
-                                    self.mainController.setNotificationWhenTimerStart(timeInterval: 1)
+                                    self.mainController.setNotificationTime(timeInterval: 1)
                                     return Alert(title: Text("DEBUG"), message: Text("For test notification sound"))
                                     
                                     #else
