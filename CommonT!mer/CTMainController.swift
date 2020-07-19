@@ -131,9 +131,6 @@ public class CTMainController: ObservableObject {
     
     public func startTimer(with minute: TimeInterval, completion: @escaping ((Bool) -> Void)) {
         
-        let gestureAllowed: Bool = false
-        
-        // I can't figure out WHY THIS IS NEEDED.
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( Date().addingTimeInterval(minute), forKey: "notificationTime")
         
         self.setNotificationTime(timeInterval: minute)
@@ -142,20 +139,16 @@ public class CTMainController: ObservableObject {
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
         /// @END
         
-        completion(gestureAllowed)
+        completion(false)
     }
     
     public func stopTimer(completion: @escaping ((TimeInterval, CGFloat, Bool) -> Void)) {
         
-        /// @Adjust after timer is stopped
-//        self.userSettings.notificationTime = Date()
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue(Date(), forKey: "notificationTime")
         UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
-//        self.atan2Var = CGFloat(0)
+
         self.userSettings.timeInputBeforeConvert = -90
         self.userSettings.initialNotificationTime = 0
-//        self.timeDisplay = 0
-        /// @END
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         

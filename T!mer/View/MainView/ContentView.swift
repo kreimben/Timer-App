@@ -260,20 +260,14 @@ struct ContentView: View {
                         ) // .gesture
                             .alert(isPresented: self.$showingAlert, content: {
                                 
-                                if self.userSettings.initialNotificationTime > 0 { // which is MINUTE
+                                if self.userSettings.initialNotificationTime > 0 { // which is SECOND
                                     
                                     return Alert(title: Text("Start T!mer"), message: Text("Do you want to start T!mer\nfor \(Int(self.userSettings.initialNotificationTime / 60) ) minutes?"), primaryButton: .cancel(Text("Cancel")), secondaryButton: .default(Text("OK")) { // MARK: OK Button!
                                         
-                                        self.userSettings.notificationTime = Date().addingTimeInterval(self.userSettings.initialNotificationTime)
-                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.setValue( self.userSettings.notificationTime, forKey: "notificationTime")
-                                        
-                                        self.mainController.setNotificationTime(timeInterval: self.userSettings.initialNotificationTime)
-                                        /// @For "Today Extension"
-                                        UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.synchronize()
-                                        /// @END
-                                        
-                                        self.gestureAllowed = false
-                                        self.circleColor = Color.red.opacity(1.0)
+                                        self.mainController.startTimer(with: self.userSettings.initialNotificationTime) { (gesture) in
+                                            
+                                            self.gestureAllowed = false
+                                        }
                                         
                                         // MARK: Interstitial
                                         self.interstitial = Interstitial()
@@ -319,7 +313,7 @@ struct ContentView: View {
                     
                     Spacer()
                     // MARK: - Banner ad
-                    BannerVC(purchased: false)// self.userSettings.isUserPurchased)
+                    BannerVC()
                         .frame(width: 320, height: 50, alignment: .center)
                     
                 }
@@ -366,13 +360,9 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 // MARK: - BannerVC
-final private class BannerVC: UIViewControllerRepresentable {
+struct BannerVC: UIViewControllerRepresentable {
     
-    var isUserPurchased: Bool // getting the UserDefaults value from MainController()
-    
-    init(purchased isUserPurchased: Bool) {
-        self.isUserPurchased = isUserPurchased
-    }
+    init() { }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<BannerVC>) -> BannerVC.UIViewControllerType {
         
@@ -380,21 +370,17 @@ final private class BannerVC: UIViewControllerRepresentable {
         
         let viewController = UIViewController()
         
-        if self.isUserPurchased {
-            
-        } else {
-            
-            #if DEBUG
-            view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID (for Test)
-            #else
-            view.adUnitID = "ca-app-pub-4942689053880729/1552889082" // 진짜 배너광고 ID
-            #endif
-            
-            view.rootViewController = viewController
-            viewController.view.addSubview(view)
-            viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
-            view.load(GADRequest())
-        }
+        #if DEBUG
+        view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID (for Test)
+        #else
+        view.adUnitID = "ca-app-pub-4942689053880729/1552889082" // 진짜 배너광고 ID
+        #endif
+        
+        view.rootViewController = viewController
+        viewController.view.addSubview(view)
+        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+        view.load(GADRequest())
+        
         return viewController
     }
     
