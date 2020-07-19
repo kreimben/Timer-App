@@ -7,8 +7,6 @@ struct DebugMenuView: View {
     
     @ObservedObject var userSettings = CTUserSettings()
     
-    @State var turnOffAds: Bool = false
-    
     let notiGenerator = UINotificationFeedbackGenerator()
     
     init() {
@@ -22,11 +20,11 @@ struct DebugMenuView: View {
             
             Section(header: Text("Advertisment")) {
                 
-                Toggle(isOn: self.$turnOffAds) {
+                Toggle(isOn: self.$userSettings.turnOffAds) {
                     
                     Text("Turn off ads AT DEBUG")
                         .foregroundColor(.red)
-                }.padding()
+                }
             }
             
             Section(header: Text("UINotificationFeedbackGenerator")) {

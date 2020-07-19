@@ -120,12 +120,21 @@ public class CTMainController: ObservableObject {
         completion(time, atan2)
     }
     
-    public func generateHapticFeedbackAs(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+    public func generateHapticFeedback(as style: UIImpactFeedbackGenerator.FeedbackStyle) {
         
         /// @Generate hapticfeedback
         let gen = UIImpactFeedbackGenerator(style: style)
         gen.prepare()
         gen.impactOccurred(intensity: 30)
+        /// @END
+    }
+    
+    public func generateNotificationFeedback() {
+
+        /// @Input HapticTouch Feedback
+        let notiGen = UINotificationFeedbackGenerator()
+        notiGen.prepare()
+        notiGen.notificationOccurred(.error)
         /// @END
     }
     

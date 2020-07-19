@@ -135,7 +135,6 @@ struct ContentView: View {
                                     bottom: UIScreen.main.bounds.width * 0.72,
                                     trailing: 10
                                 ))
-                            
                         }
                         
                         Circle()
@@ -163,7 +162,7 @@ struct ContentView: View {
                                 if self.mainController.isTimerRunning() { // Cancle it while timer is running
                                     
                                     /// @Cancel T!mer feedback
-                                    self.mainController.generateHapticFeedbackAs(.soft)
+                                    self.mainController.generateHapticFeedback(as: .soft)
                                     /// @END
                                     
                                     self.mainController.stopTimer { (timeDisplay, atan2, gesture) in
@@ -176,17 +175,19 @@ struct ContentView: View {
                                 } else { // 멈춰 있는 상태에서 꾹 누르면 바로 60분 맞춰주기 shortcut!
                                     
                                     /// @Generate hapticfeedback
-                                    self.mainController.generateHapticFeedbackAs(.heavy)
+                                    self.mainController.generateHapticFeedback(as: .heavy)
                                     /// @END
                                     
                                     self.mainController.startTimer(with: 3600) { (gesture) in
-                                    
+                                        
                                         self.gestureAllowed = false
                                     }
                                     
-                                    // initializing interstitial ad
-                                    self.interstitial = Interstitial()
-                                    self.interstitial.settingTimer()
+                                    if !self.userSettings.turnOffAds {
+                                        // initializing interstitial ad
+                                        self.interstitial = Interstitial()
+                                        self.interstitial.settingTimer()
+                                    }
                                 }
                         }
                         .gesture(
@@ -202,18 +203,18 @@ struct ContentView: View {
                                         self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
                                         
                                         self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
-                                        
-                                        self.userSettings.timeInputBeforeConvert = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
-                                        
-                                        /// @Selection Feedback
-                                        self.selGen.selectionChanged()
-                                        /// @END
                                     }
+                                    
+                                    /// @Selection Feedback
+                                    self.selGen.selectionChanged()
+                                    /// @END
                                 }
                             }
                             .onEnded { (_) in
                                 
                                 if self.gestureAllowed { // 타이머가 멈췄을 때 = 제스쳐가 허용될 때
+                                
+                                    self.userSettings.timeInputBeforeConvert = self.userTouchController.atan2ToDegrees(tan: self.atan2Var)
                                     
                                     if self.userSettings.timeInputBeforeConvert >= 0 { // 순수 restOfTime이 양수 일 때
                                         
@@ -238,18 +239,14 @@ struct ContentView: View {
                                     self.userSettings.initialNotificationTime = degreeForConvert * 10 // 각도에 10을 곱해 초(second)로 전환.
                                     
                                     if self.userSettings.initialNotificationTime > 60 {
-                                        
+
                                         /// @Generate hapticfeedback
-                                        let gen = UIImpactFeedbackGenerator(style: .heavy)
-                                        gen.prepare()
-                                        gen.impactOccurred(intensity: 30)
+                                        self.mainController.generateHapticFeedback(as: .heavy)
                                         /// @END
                                     } else {
-                                        
+
                                         /// @Input HapticTouch Feedback
-                                        let notiGen = UINotificationFeedbackGenerator()
-                                        notiGen.prepare()
-                                        notiGen.notificationOccurred(.error)
+                                        self.mainController.generateNotificationFeedback()
                                         /// @END
                                     }
                                     
@@ -269,10 +266,13 @@ struct ContentView: View {
                                             self.gestureAllowed = false
                                         }
                                         
-                                        // MARK: Interstitial
-                                        self.interstitial = Interstitial()
-                                        self.interstitial.settingTimer()
-                                        })
+                                        if !self.userSettings.turnOffAds {
+                                            // initializing interstitial ad
+                                            self.interstitial = Interstitial()
+                                            self.interstitial.settingTimer()
+                                        }
+                                        }
+                                    )
                                 } else { // when userset timer 0 minute.
                                     
                                     #if DEBUG

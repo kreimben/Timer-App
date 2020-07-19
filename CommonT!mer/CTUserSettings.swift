@@ -59,6 +59,13 @@ public final class CTUserSettings: ObservableObject {
         }
     }
     /// @END
+    
+    @UserDefault(key: "turnOffAds", value: false)
+    public var turnOffAds: Bool {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
 }
 
 // MARK: - @propertyWrapper "UserDefault<T>

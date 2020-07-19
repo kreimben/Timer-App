@@ -94,7 +94,7 @@ struct SettingPageView: View {
             #if DEBUG
             Section(header: Text("For Debug")) {
                 NavigationLink(destination: DebugMenuView()) {
-                    Text("Debug Menu")
+                    Text("Debug Menu").foregroundColor(.red)
                 }
             }
             #endif
