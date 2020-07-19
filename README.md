@@ -9,7 +9,9 @@
 ### 2.0.0
 - [x] Add to-do feature
 - [ ] Reverse timer (using tabbar maybe...)
-- [ ] Refactoring ALL CODES
+- [x] Refactoring ALL CODES
+- [ ] Able to search CoreData model and 
+- [ ] Implement feature if deplicated time is existed
 
 ### 1.3
 - [x] Add welcome message to newbies
