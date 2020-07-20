@@ -22,16 +22,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-uu-UMj">
-                        <rect key="frame" x="348" y="7" width="46" height="30"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k63-un-ozM">
+                        <rect key="frame" x="256" y="-42" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52S-Cn-P1L">
+                        <rect key="frame" x="374" y="12" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="a1Y-uu-UMj" id="KHq-g6-Xmf"/>
                 <outlet property="nameOfCell" destination="aHt-Lq-7rX" id="bky-B9-UEy"/>
+                <outlet property="selectImage" destination="52S-Cn-P1L" id="9Re-xn-JWE"/>
             </connections>
             <point key="canvasLocation" x="85" y="-147"/>
         </tableViewCell>

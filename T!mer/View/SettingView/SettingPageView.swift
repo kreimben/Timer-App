@@ -76,7 +76,13 @@ struct SettingPageView: View {
             #if DEBUG
             Section(header: Text("For Debug")) {
                 
-                NavigationLink(destination: DebugMenuView()) {
+                Toggle(isOn: self.$userSettings.turnOffAds) {
+                    
+                    Text("Turn off ads AT DEBUG")
+                        .foregroundColor(.red)
+                }
+                
+                NavigationLink(destination: HapticFeedbackDebugMenuView()) {
                     Text("Haptic Feedback").foregroundColor(.red)
                 }
                 

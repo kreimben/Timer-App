@@ -1,9 +1,11 @@
 import UIKit
+import AVFoundation
+import Dispatch
 
 class SoundTableViewCell: UITableViewCell {
     
     @IBOutlet var nameOfCell: UILabel!
-    @IBOutlet var button: UIButton!
+    @IBOutlet var selectImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,8 +18,74 @@ class SoundTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
     
+    func makeSound(_ number: Int) {
+        
+        print("Selected: \(number)")
+        
+        var path: String?
+        
+        switch number {
+            
+        case 1:
+            path = Bundle.main.path(forResource: "Default Bell", ofType: nil)
+            
+        case 2:
+            path = Bundle.main.path(forResource: "Bell store door", ofType: nil)
+            
+        case 3:
+            path = Bundle.main.path(forResource: "Cookoo", ofType: nil)
+            
+        case 4:
+            path = Bundle.main.path(forResource: "Tower bell", ofType: nil)
+            
+        case 5:
+            path = Bundle.main.path(forResource: "bicycle", ofType: nil)
+            
+        case 6:
+            path = Bundle.main.path(forResource: "ghost", ofType: nil)
+            
+        case 7:
+            path = Bundle.main.path(forResource: "home-bell", ofType: nil)
+            
+        case 8:
+            path = Bundle.main.path(forResource: "elevator", ofType: nil)
+            
+        case 9:
+            path = Bundle.main.path(forResource: "single", ofType: nil)
+            
+        case 10:
+            path = Bundle.main.path(forResource: "zen", ofType: nil)
+            
+        default:
+            NSLog("Error occured in fixing UNNotificationSound.")
+            
+        }
+        
+        guard let comfirmedPath = path else { return }
+        
+        let url = URL(fileURLWithPath: comfirmedPath)
+        
+        DispatchQueue.main.async {
+            
+            do {
+                
+                let player = try AVAudioPlayer(contentsOf: url)
+                
+                if player.prepareToPlay() {
+                    
+                    print("Prepared to play!")
+                    
+                    player.play()
+                    print("Played!")
+                }
+                
+            } catch let error {
+                
+                NSLog("Error while playing notification sound: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 //
