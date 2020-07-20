@@ -61,13 +61,13 @@
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
 		51DACDD624C5B9F9006C3ED7 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */; };
 		51DACDD924C5BB2A006C3ED7 /* SoundPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDD824C5BB2A006C3ED7 /* SoundPicker.swift */; };
-		51DACDDC24C5BF0B006C3ED7 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDDA24C5BF0B006C3ED7 /* SoundTableViewCell.swift */; };
-		51DACDE024C5CB09006C3ED7 /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDDE24C5CB09006C3ED7 /* SoundTableViewController.swift */; };
-		51DACDE324C5D005006C3ED7 /* SoundTableview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DACDE224C5D005006C3ED7 /* SoundTableview.storyboard */; };
 		51DACDE524C5D3C6006C3ED7 /* SelectSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */; };
+		51DACDE724C5D5D2006C3ED7 /* SoundTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DACDE624C5D5D2006C3ED7 /* SoundTableView.storyboard */; };
+		51DACDE924C5D600006C3ED7 /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDE824C5D600006C3ED7 /* SoundTableViewController.swift */; };
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
 		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
 		51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* DebugMenuView.swift */; };
+		51F1644624C5D6A60002B4A5 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F1644524C5D6A60002B4A5 /* SoundTableViewCell.swift */; };
 		C5DCAA6D9CA0413E25AEE89D /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE2C808766EA044DDD12C5A /* Pods_T_mer.framework */; };
 /* End PBXBuildFile section */
 
@@ -210,13 +210,13 @@
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSound.swift; sourceTree = "<group>"; };
 		51DACDD824C5BB2A006C3ED7 /* SoundPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPicker.swift; sourceTree = "<group>"; };
-		51DACDDA24C5BF0B006C3ED7 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
-		51DACDDE24C5CB09006C3ED7 /* SoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
-		51DACDE224C5D005006C3ED7 /* SoundTableview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundTableview.storyboard; sourceTree = "<group>"; };
 		51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSoundView.swift; sourceTree = "<group>"; };
+		51DACDE624C5D5D2006C3ED7 /* SoundTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundTableView.storyboard; sourceTree = "<group>"; };
+		51DACDE824C5D600006C3ED7 /* SoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		51F13BAF2459F1290021622C /* DebugMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuView.swift; sourceTree = "<group>"; };
+		51F1644524C5D6A60002B4A5 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
 		9964E574C398E9A9A6E7DC8C /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
 		9CE2C808766EA044DDD12C5A /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -501,9 +501,9 @@
 			isa = PBXGroup;
 			children = (
 				51DACDD824C5BB2A006C3ED7 /* SoundPicker.swift */,
-				51DACDDE24C5CB09006C3ED7 /* SoundTableViewController.swift */,
-				51DACDE224C5D005006C3ED7 /* SoundTableview.storyboard */,
-				51DACDDA24C5BF0B006C3ED7 /* SoundTableViewCell.swift */,
+				51DACDE624C5D5D2006C3ED7 /* SoundTableView.storyboard */,
+				51DACDE824C5D600006C3ED7 /* SoundTableViewController.swift */,
+				51F1644524C5D6A60002B4A5 /* SoundTableViewCell.swift */,
 			);
 			path = UIPickerView;
 			sourceTree = "<group>";
@@ -763,11 +763,11 @@
 				515DACE5245E876100A495BA /* single in Resources */,
 				515DACE7245E876100A495BA /* zen in Resources */,
 				51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */,
+				51DACDE724C5D5D2006C3ED7 /* SoundTableView.storyboard in Resources */,
 				517F622D234E32A100A05205 /* LaunchScreen.storyboard in Resources */,
 				515DACE4245E876100A495BA /* home-bell in Resources */,
 				517F622A234E32A100A05205 /* Preview Assets.xcassets in Resources */,
 				516B71F92393A9A800EAAC0E /* Tower bell in Resources */,
-				51DACDE324C5D005006C3ED7 /* SoundTableview.storyboard in Resources */,
 				515DACE8245E876100A495BA /* elevator in Resources */,
 				515DACE6245E876100A495BA /* ghost in Resources */,
 				517F6227234E32A100A05205 /* Assets.xcassets in Resources */,
@@ -890,7 +890,7 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
-				51DACDDC24C5BF0B006C3ED7 /* SoundTableViewCell.swift in Sources */,
+				51F1644624C5D6A60002B4A5 /* SoundTableViewCell.swift in Sources */,
 				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* DebugMenuView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
@@ -901,9 +901,9 @@
 				510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */,
 				515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */,
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
-				51DACDE024C5CB09006C3ED7 /* SoundTableViewController.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
 				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
+				51DACDE924C5D600006C3ED7 /* SoundTableViewController.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,

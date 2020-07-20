@@ -5,16 +5,29 @@ final class SoundPicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UITableViewController {
         
-        let tableViewController = SoundTableViewController()
+        let vc = SoundTableViewController()
         
-        return tableViewController
+        return vc
     }
     
     func updateUIViewController(_ tableView: UITableViewController, context: Context) { }
     
     class Coordinator: NSObject {
         
-        
+        private var soundsArray: [NotificationSound] = [
+            NotificationSound(soundName: "Default Sound"),
+            NotificationSound(soundName: "Bicycle"),
+            NotificationSound(soundName: "Store"),
+            NotificationSound(soundName: "Cookoo"),
+            NotificationSound(soundName: "Tower"),
+            
+            NotificationSound(soundName: "Bicycle 2"),
+            NotificationSound(soundName: "Ghost"),
+            NotificationSound(soundName: "House"),
+            NotificationSound(soundName: "Elevator"),
+            NotificationSound(soundName: "Single"),
+            NotificationSound(soundName: "Zen")
+        ]
     }
     
     func makeCoordinator() -> Coordinator {

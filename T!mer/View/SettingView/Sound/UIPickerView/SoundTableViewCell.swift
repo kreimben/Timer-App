@@ -2,16 +2,24 @@ import UIKit
 
 class SoundTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var title: UILabel!
-    
-}
+    @IBOutlet var title: UILabel!
 
-extension SoundTableViewCell {
-    
-    @IBAction func playNotificationSound(_ sender: UIButton) {
-        
-        print("Button tapped!")
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBAction func playButton(_ sender: UIButton) {
+        
+        print("Button Tapped!")
+    }
+
 }
 
 //
