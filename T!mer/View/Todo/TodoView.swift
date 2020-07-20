@@ -7,6 +7,7 @@ struct TodoView: View {
     
     /// @ObservedObject variables
     @ObservedObject var mainController = CTMainController()
+    @ObservedObject var userSettings = CTUserSettings()
     /// @END
     
     /// @CoreData related variables
@@ -20,105 +21,114 @@ struct TodoView: View {
     /// @END
     
     var body: some View {
-        
-        VStack {
+        ZStack {
             
-            Text("To-do list")
-                .font(.system(size: 32, design: .rounded))
-                .padding()
+//            Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
+//            CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.44)
+//                .edgesIgnoringSafeArea(.all)
             
-            HStack {
+            VStack {
                 
-                TextField(self.mainController.isTimerRunning() ? "Set your todo's title!" : "Start T!mer first!", text: self.$title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.leading)
+                Text("To-do list")
+                    .font(.system(size: 32, design: .rounded))
+                    .padding()
                 
-                Button(action: {
+                HStack {
                     
-                    if self.mainController.isTimerRunning() {
-                        
-                        let newItem = TimerEntities(context: self.managedObjectContext)
-                        let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
-                        
-                        newItem.notificationTime = date
-                        newItem.title = self.title
-                        
-                        TimerEntities.saveContext()
-                        
-                        /// @Reset textfield's string value
-                        self.title = ""
-                        /// @END
-                        
-                        /// @When T!mer is added successfully
-                        let gen = UINotificationFeedbackGenerator()
-                        gen.prepare()
-                        gen.notificationOccurred(.success)
-                        /// @END
-                    } else {
-                        
-                        /// @When T!mer is not running
-                        let gen = UINotificationFeedbackGenerator()
-                        gen.prepare()
-                        gen.notificationOccurred(.error)
-                        /// @END
-                    }
-                }) {
-                    
-                    /// @Add button image
-                    Image(systemName: self.mainController.isTimerRunning() ? "plus.circle.fill" : "xmark.circle.fill")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(self.mainController.isTimerRunning() ? Color.green : Color.red)
-                    /// @END
-                    
-                }.padding(.trailing)
-            }
-            
-            if timerEntities.count > 0 {
-                
-                List {
-                    
-                    ForEach(timerEntities, id: \.self) { data in
-                        
-                        TodoContentView(
-                            title: data.title!,
-                            date: data.notificationTime!,
-                            memo: data.memo
-                        )
-                    }
-                    .onDelete { indexSet in
-                        
-                        for index in indexSet {
-                            
-                            self.managedObjectContext.delete(self.timerEntities[index])
-                            TimerEntities.saveContext()
-                        }
-                    }
+                    TextField(self.mainController.isTimerRunning() ? "Set your todo's title!" : "Start T!mer first!", text: self.$title)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.leading)
                     
                     Button(action: {
                         
-                        let length: Int = self.timerEntities.count
+                        let date = self.userSettings.notificationTime
                         
-                        for index in 0 ..< length {
+                        if self.mainController.isTimerRunning() {
                             
-                            self.managedObjectContext.delete(self.timerEntities[index])
+                            let newItem = TimerEntities(context: self.managedObjectContext)
+                            let date = UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date
+                            
+                            newItem.notificationTime = date
+                            newItem.title = self.title
+                            
+                            TimerEntities.saveContext()
+                            
+                            /// @Reset textfield's string value
+                            self.title = ""
+                            /// @END
+                            
+                            /// @When T!mer is added successfully
+                            let gen = UINotificationFeedbackGenerator()
+                            gen.prepare()
+                            gen.notificationOccurred(.success)
+                            /// @END
+                        } else {
+                            
+                            /// @When T!mer is not running
+                            let gen = UINotificationFeedbackGenerator()
+                            gen.prepare()
+                            gen.notificationOccurred(.error)
+                            /// @END
                         }
-                        
-                        TimerEntities.saveContext()
-                        
-                        /// @When T!mer is added successfully
-                        let gen = UINotificationFeedbackGenerator()
-                        gen.prepare()
-                        gen.notificationOccurred(.success)
-                        /// @END
                     }) {
                         
-                        Text("Delete Everythings").foregroundColor(.blue)
-                    }
+                        /// @Add button image
+                        Image(systemName: self.mainController.isTimerRunning() ? "plus.circle.fill" : "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(self.mainController.isTimerRunning() ? Color.green : Color.red)
+                        /// @END
+                        
+                    }.padding(.trailing)
                 }
-            } else {
                 
-                TodoEmptyView()
+                if timerEntities.count > 0 {
+                    
+                    List {
+                        
+                        ForEach(timerEntities, id: \.self) { data in
+                            
+                            TodoContentView(
+                                title: data.title!,
+                                date: data.notificationTime!,
+                                memo: data.memo
+                            )
+                        }
+                        .onDelete { indexSet in
+                            
+                            for index in indexSet {
+                                
+                                self.managedObjectContext.delete(self.timerEntities[index])
+                                TimerEntities.saveContext()
+                            }
+                        }
+//                        .listRowBackground(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.44))
+                        
+                        Button(action: {
+                            
+                            let length: Int = self.timerEntities.count
+                            
+                            for index in 0 ..< length {
+                                
+                                self.managedObjectContext.delete(self.timerEntities[index])
+                            }
+                            
+                            TimerEntities.saveContext()
+                            
+                            /// @When T!mer is added successfully
+                            let gen = UINotificationFeedbackGenerator()
+                            gen.prepare()
+                            gen.notificationOccurred(.success)
+                            /// @END
+                        }) {
+                            
+                            Text("Delete Everythings").foregroundColor(.blue)
+                        }
+                    }
+                } else {
+                    
+                    TodoEmptyView()
+                }
             }
         }
     }

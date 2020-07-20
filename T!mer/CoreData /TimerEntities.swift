@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-@objc(TimerEntities)
+@objcMembers
 class TimerEntities: NSManagedObject {
 
     private static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -12,7 +12,7 @@ class TimerEntities: NSManagedObject {
 
         let request: NSFetchRequest<TimerEntities> = TimerEntities.fetchRequest()
         let sorts = [
-            NSSortDescriptor(key: "notificationTime", ascending: true)
+            NSSortDescriptor(key: "notificationTime", ascending: false)
         ]
 
         request.sortDescriptors = sorts
