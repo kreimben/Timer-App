@@ -34,16 +34,6 @@ struct SettingPageView: View {
                 ColorPickerView()
             }
             
-            #if DEBUG
-            Section(header: Text("DEBUG")) {
-                
-                NavigationLink(destination: SoundPicker()) {
-                    
-                    Text("SoundPicker for DEBUG").foregroundColor(.red)
-                }
-            }
-            #endif
-            
             Section(header: Text("General")) {
                 HStack {
                     Text("Version")
@@ -85,8 +75,14 @@ struct SettingPageView: View {
             
             #if DEBUG
             Section(header: Text("For Debug")) {
+                
                 NavigationLink(destination: DebugMenuView()) {
                     Text("Debug Menu").foregroundColor(.red)
+                }
+                
+                NavigationLink(destination: SoundPicker()) {
+                    
+                    Text("SoundPicker for DEBUG").foregroundColor(.red)
                 }
             }
             #endif
