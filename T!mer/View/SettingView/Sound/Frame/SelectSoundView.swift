@@ -2,8 +2,6 @@ import SwiftUI
 
 struct SelectSoundView: View {
     
-//    @Binding var selectedBool: Bool
-    
     var array: [NotificationSound]
     var index: Int
     
@@ -17,42 +15,9 @@ struct SelectSoundView: View {
             
             Text(self.array[index].soundName).tag(index)
             
-//            Spacer()
-            
-//            EditButton()
-            
-//            SelectCircleView(selected: self.$selectedBool)
-//                .onTapGesture(count: 1) {
-//
-//                    self.selectedBool.toggle()
-//
-//                    print("Button tapped in SelectSoundView.swift: \(self.selectedBool)")
-//                    print("Index: \(self.index)")
-//            }
-//                .frame(width: 32)
-            
         }
     }
 }
-
-//struct SelectSoundView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SelectSoundView(array: [
-//            SoundsArray(soundName: "Default Sound"),
-//            SoundsArray(soundName: "Bicycle Bell"),
-//            SoundsArray(soundName: "Bell - Store door"),
-//            SoundsArray(soundName: "Cookoo"),
-//            SoundsArray(soundName: "Tower bell"),
-//
-//            SoundsArray(soundName: "Bicycle Bell 2"),
-//            SoundsArray(soundName: "Ghost"),
-//            SoundsArray(soundName: "House Bell"),
-//            SoundsArray(soundName: "Elevator"),
-//            SoundsArray(soundName: "Single"),
-//            SoundsArray(soundName: "Zen")
-//        ], index: 0, selectedBool: .constant(true))
-//    }
-//}
 
 //
 //  SelectSoundView.swift

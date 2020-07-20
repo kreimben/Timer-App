@@ -28,6 +28,11 @@ struct SoundPickerView: View {
                 ForEach(0 ..< self.soundsArray.count, id: \.self) { index in
                     SelectSoundView(array: self.soundsArray, index: index)
                 }
+                .onReceive([self.userSettings.soundIndex].publisher.first()) { (value) in
+                    
+                    print("\n\nvalue in picker view: \(value)")
+                    print("type of: \(type(of: value))\n\n")
+                }
             }
         }
     }

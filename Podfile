@@ -7,4 +7,6 @@ target 'T!mer' do
 
   pod 'Google-Mobile-Ads-SDK'
 
+  pod 'EasyTipView'
+
 end

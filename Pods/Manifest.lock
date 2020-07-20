@@ -1,4 +1,5 @@
 PODS:
+  - EasyTipView (2.0.4)
   - Google-Mobile-Ads-SDK (7.62.0):
     - GoogleAppMeasurement (~> 6.0)
   - GoogleAppMeasurement (6.6.2):
@@ -32,10 +33,12 @@ PODS:
   - PromisesObjC (1.2.9)
 
 DEPENDENCIES:
+  - EasyTipView
   - Google-Mobile-Ads-SDK
 
 SPEC REPOS:
   trunk:
+    - EasyTipView
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
@@ -43,12 +46,13 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  EasyTipView: 4f8beae0a82db2ca4a9b5fd658785fc5f61d296b
   Google-Mobile-Ads-SDK: c92c27666fbf684c964259785a6b3cdd3068e06f
   GoogleAppMeasurement: 8cd1f289d60e629cf16ab03363b9e89c776b9651
   GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 7a1f720f9669c3c7896290f6a3476fadfe733f09
+PODFILE CHECKSUM: dfe05a48b03dcb30a24748effca87b491e4f265e
 
-COCOAPODS: 1.9.2
+COCOAPODS: 1.9.3
