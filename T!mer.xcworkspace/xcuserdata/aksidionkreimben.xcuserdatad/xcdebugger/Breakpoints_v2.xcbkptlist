@@ -292,5 +292,173 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "makeSound(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "792">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1584">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1980">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "2376">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "2772">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "3168">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "3564">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "3960">
+               </Location>
+               <Location
+                  uuid = "A1690E90-5292-4328-8A32-5FAE1EBD3D48 - 6cb576029f11793d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T_mer.SoundPickerView.makeSound(Swift.Int) -&gt; ()"
+                  moduleName = "T!mer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aksidionkreimben/Documents/Repository/SwiftUI%20Repository/T!mer/T!mer/View/SettingView/Sound/Frame/SoundPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "4356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
