@@ -7,19 +7,19 @@ struct SoundPickerView: View {
     
     @ObservedObject var userSettings = CTUserSettings()
     
-    var soundsArray: [SoundsArray] = [
-        SoundsArray(soundName: "Default Sound"),
-        SoundsArray(soundName: "Bicycle"),
-        SoundsArray(soundName: "Store"),
-        SoundsArray(soundName: "Cookoo"),
-        SoundsArray(soundName: "Tower"),
+    var soundsArray: [NotificationSound] = [
+        NotificationSound(soundName: "Default Sound"),
+        NotificationSound(soundName: "Bicycle"),
+        NotificationSound(soundName: "Store"),
+        NotificationSound(soundName: "Cookoo"),
+        NotificationSound(soundName: "Tower"),
         
-        SoundsArray(soundName: "Bicycle 2"),
-        SoundsArray(soundName: "Ghost"),
-        SoundsArray(soundName: "House"),
-        SoundsArray(soundName: "Elevator"),
-        SoundsArray(soundName: "Single"),
-        SoundsArray(soundName: "Zen")
+        NotificationSound(soundName: "Bicycle 2"),
+        NotificationSound(soundName: "Ghost"),
+        NotificationSound(soundName: "House"),
+        NotificationSound(soundName: "Elevator"),
+        NotificationSound(soundName: "Single"),
+        NotificationSound(soundName: "Zen")
     ]
     
     var body: some View {

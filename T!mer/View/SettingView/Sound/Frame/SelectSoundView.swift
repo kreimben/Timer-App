@@ -4,10 +4,10 @@ struct SelectSoundView: View {
     
 //    @Binding var selectedBool: Bool
     
-    var array: [SoundsArray]
+    var array: [NotificationSound]
     var index: Int
     
-    init(array: [SoundsArray], index: Int) {
+    init(array: [NotificationSound], index: Int) {
         self.array = array
         self.index = index
     }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sound Table View Controller-->
+        <scene sceneID="74y-GF-UWm">
+            <objects>
+                <tableViewController storyboardIdentifier="SoundTableview" id="ZbD-pL-Leh" customClass="SoundTableViewController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzS-RV-w6k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="v0z-fj-BmY">
+                            <rect key="frame" x="0.0" y="100.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SoundTableViewCell" id="Zbh-D7-APR" customClass="SoundTableViewCell" customModule="T_mer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zbh-D7-APR" id="PKi-jH-H58">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notification Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWq-w6-UBm">
+                                            <rect key="frame" x="20" y="11" width="142" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-bp-ja7">
+                                            <rect key="frame" x="374" y="12" width="20" height="20"/>
+                                            <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" image="play.circle.fill" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BWq-w6-UBm" firstAttribute="centerY" secondItem="2hB-bp-ja7" secondAttribute="centerY" id="Azu-Ne-eHK"/>
+                                        <constraint firstItem="BWq-w6-UBm" firstAttribute="bottom" secondItem="2hB-bp-ja7" secondAttribute="bottom" id="Hwl-47-rzl"/>
+                                        <constraint firstItem="BWq-w6-UBm" firstAttribute="centerY" secondItem="PKi-jH-H58" secondAttribute="centerY" id="Kr5-pG-h8b"/>
+                                        <constraint firstItem="2hB-bp-ja7" firstAttribute="trailing" secondItem="PKi-jH-H58" secondAttribute="trailingMargin" id="NUX-Fx-waX"/>
+                                        <constraint firstItem="BWq-w6-UBm" firstAttribute="leading" secondItem="PKi-jH-H58" secondAttribute="leadingMargin" id="ifC-5P-UmN"/>
+                                        <constraint firstItem="BWq-w6-UBm" firstAttribute="top" secondItem="PKi-jH-H58" secondAttribute="topMargin" id="nTA-Mh-ytx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="ZbD-pL-Leh" id="9K1-9X-V8K"/>
+                            <outlet property="delegate" destination="ZbD-pL-Leh" id="Bbi-lt-1yv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvT-pW-CGi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="-16"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

@@ -4,17 +4,6 @@ import MessageUI
 
 import CommonT_mer
 
-struct SoundsArray: Identifiable, Hashable {
-    
-    let id = UUID()
-    let soundName: String
-    
-    init(soundName: String) {
-        
-        self.soundName = soundName
-    }
-}
-
 // MARK: - SettingPageView
 
 struct SettingPageView: View {
@@ -43,14 +32,17 @@ struct SettingPageView: View {
                 
                 SoundPickerView()
                 ColorPickerView()
-                
-                #if DEBUG
-                NavigationLink(destination: SoundPlayerView()) {
-                    
-                    Text("Sound Pre-listen")
-                }
-                #endif
             }
+            
+            #if DEBUG
+            Section(header: Text("DEBUG")) {
+                
+                NavigationLink(destination: SoundPicker()) {
+                    
+                    Text("SoundPicker for DEBUG").foregroundColor(.red)
+                }
+            }
+            #endif
             
             Section(header: Text("General")) {
                 HStack {
