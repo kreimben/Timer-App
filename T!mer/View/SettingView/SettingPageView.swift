@@ -78,17 +78,16 @@ struct SettingPageView: View {
                 
                 Toggle(isOn: self.$userSettings.turnOffAds) {
                     
-                    Text("Turn off ads AT DEBUG")
-                        .foregroundColor(.red)
+                    Text("Turn off ads")
                 }
                 
                 NavigationLink(destination: HapticFeedbackDebugMenuView()) {
-                    Text("Haptic Feedback").foregroundColor(.red)
+                    Text("Haptic Feedback")
                 }
                 
                 NavigationLink(destination: SoundPicker()) {
                     
-                    Text("SoundPicker").foregroundColor(.red)
+                    Text("SoundPicker")
                 }
             }
             #endif
