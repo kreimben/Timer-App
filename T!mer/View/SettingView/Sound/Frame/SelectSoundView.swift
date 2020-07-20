@@ -18,11 +18,6 @@ struct SelectSoundView: View {
         HStack {
             
             Text(self.sounds[index].soundName).tag(index)
-//            .onReceive([self.userSettings.soundIndex].publisher.first()) { (value) in
-//                
-//                print("\n\nvalue in picker view: \(value)")
-//                print("type of: \(type(of: value))\n\n")
-//            }
         }
     }
 }
