@@ -77,7 +77,7 @@ struct SettingPageView: View {
             Section(header: Text("For Debug")) {
                 
                 NavigationLink(destination: DebugMenuView()) {
-                    Text("Debug Menu").foregroundColor(.red)
+                    Text("Haptic Feedback").foregroundColor(.red)
                 }
                 
                 NavigationLink(destination: SoundPicker()) {
