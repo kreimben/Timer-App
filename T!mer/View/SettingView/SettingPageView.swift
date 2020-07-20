@@ -82,7 +82,7 @@ struct SettingPageView: View {
                 
                 NavigationLink(destination: SoundPicker()) {
                     
-                    Text("SoundPicker for DEBUG").foregroundColor(.red)
+                    Text("SoundPicker").foregroundColor(.red)
                 }
             }
             #endif
