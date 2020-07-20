@@ -1,20 +1,28 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct SelectSoundView: View {
     
-    var array: [NotificationSound]
+    @ObservedObject var userSettings = CTUserSettings()
+    
+    var sounds: [NotificationSound]
     var index: Int
     
     init(array: [NotificationSound], index: Int) {
-        self.array = array
+        self.sounds = array
         self.index = index
     }
     
     var body: some View {
         HStack {
             
-            Text(self.array[index].soundName).tag(index)
-            
+            Text(self.sounds[index].soundName).tag(index)
+//            .onReceive([self.userSettings.soundIndex].publisher.first()) { (value) in
+//                
+//                print("\n\nvalue in picker view: \(value)")
+//                print("type of: \(type(of: value))\n\n")
+//            }
         }
     }
 }

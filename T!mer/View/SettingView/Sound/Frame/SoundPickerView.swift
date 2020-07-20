@@ -29,7 +29,7 @@ struct SoundPickerView: View {
                     SelectSoundView(array: self.soundsArray, index: index)
                 }
                 .onReceive([self.userSettings.soundIndex].publisher.first()) { (value) in
-                    
+
                     print("\n\nvalue in picker view: \(value)")
                     print("type of: \(type(of: value))\n\n")
                 }
