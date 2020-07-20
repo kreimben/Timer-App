@@ -16,10 +16,7 @@ final class SoundPicker: UIViewControllerRepresentable {
         return Coordinator()
     }
     
-    class Coordinator {
-        
-        
-    }
+    class Coordinator { }
 }
 
 //
