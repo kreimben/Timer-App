@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 import Dispatch
+import AudioToolbox
 
 class SoundTableViewCell: UITableViewCell {
     
@@ -26,6 +27,9 @@ class SoundTableViewCell: UITableViewCell {
         var path: String?
         
         switch number {
+        case 0:
+            AudioServicesPlaySystemSound(1050)
+            return
             
         case 1:
             path = Bundle.main.path(forResource: "Default Bell", ofType: nil)
@@ -71,6 +75,15 @@ class SoundTableViewCell: UITableViewCell {
             do {
                 
                 let player = try AVAudioPlayer(contentsOf: url)
+                
+//                try AVAudioSession.sharedInstance().setCategory(
+//                    .playback,
+//                    mode: .default,
+//                    options: [.duckOthers]
+//                )
+//                try AVAudioSession.sharedInstance().setActive(true)
+                
+//                player.numberOfLoops = -1
                 
                 if player.prepareToPlay() {
                     

@@ -486,8 +486,8 @@
             filePath = "T!mer/View/SettingView/Sound/UIKit/SoundTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "makeSound(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -502,8 +502,8 @@
             filePath = "T!mer/View/SettingView/Sound/UIKit/SoundTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "makeSound(_:)"
             landmarkType = "7">
          </BreakpointContent>
