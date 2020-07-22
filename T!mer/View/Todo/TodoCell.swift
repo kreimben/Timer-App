@@ -28,17 +28,12 @@ struct TodoCell: View {
             
             VStack(alignment: .leading) {
                 
-                if self.entity.notificationTime! == UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") {
+                if self.entity.notificationTime! == UserDefaults(suiteName: "group.com.KreimbenPro.Timer")?.value(forKey: "notificationTime") as! Date {
                 
-                    Text(self.entity.title!).font(.system(size: 24)).foregroundColor(.black)
+                    Text(self.entity.title!).font(.system(size: 24)).bold()
                 } else {
                     
-                    Text(self.entity.title!).font(.system(size: 24)).foregroundColor(.red)
-                        .onAppear {
-                            
-                            print("Entity time: \(self.entity.notificationTime!)")
-                            print("UserDefaults time: \(self.userSettings.notificationTime)")
-                    }
+                    Text(self.entity.title!).font(.system(size: 24)).fontWeight(.light)
                 }
                 
                 if self.entity.notificationTime!.distance(to: Date()) > 0 { // When date is over now.
