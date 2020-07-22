@@ -289,18 +289,6 @@ struct ContentView: View {
                                     .frame(width: 30, height: 30)
                                     .foregroundColor(Color.orange.opacity(1))
                             }
-//                            Image(systemName: "plus.circle.fill")
-//                                .resizable()
-//                                .frame(width: 30, height: 30)
-//                                .foregroundColor(Color.orange.opacity(1))
-//                                .onTapGesture {
-//
-//                                    self.todoViewBool.toggle()
-//                            }
-//                            .sheet(isPresented: self.$todoViewBool) {
-//
-//                                TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)
-//                            }
                         }
                         .padding(EdgeInsets(
                             top: 10,
