@@ -54,32 +54,34 @@ public class CTMainController: ObservableObject {
         content.body = "Your T!mer is done!"
         content.categoryIdentifier = "AFTER_TIMER_END"
         
-        switch self.userSettings.soundIndex {
-        case 0:
-            content.sound = UNNotificationSound.default
-        case 1:
-            content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
-        case 2:
-            content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
-        case 3:
-            content.sound = UNNotificationSound(named: self.cookooNotificationSound)
-        case 4:
-            content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
-        case 5:
-            content.sound = UNNotificationSound(named: self.bicycle2NotificationSound)
-        case 6:
-            content.sound = UNNotificationSound(named: self.ghostNofiticationSound)
-        case 7:
-            content.sound = UNNotificationSound(named: self.homeBellNotificationSound)
-        case 8:
-            content.sound = UNNotificationSound(named: self.elevatorNotificationSound)
-        case 9:
-            content.sound = UNNotificationSound(named: self.singleNotificationSound)
-        case 10:
-            content.sound = UNNotificationSound(named: self.zenNotificationSound)
-        default:
-            NSLog("Error occured in fixing UNNotificationSound.")
-        }
+//        switch self.userSettings.soundIndex {
+//        case 0:
+//            content.sound = UNNotificationSound.default
+//        case 1:
+//            content.sound = UNNotificationSound(named: self.bicycleNotificationSound)
+//        case 2:
+//            content.sound = UNNotificationSound(named: self.bellStoreDoorNotificationSound)
+//        case 3:
+//            content.sound = UNNotificationSound(named: self.cookooNotificationSound)
+//        case 4:
+//            content.sound = UNNotificationSound(named: self.towerBellNotificationSound)
+//        case 5:
+//            content.sound = UNNotificationSound(named: self.bicycle2NotificationSound)
+//        case 6:
+//            content.sound = UNNotificationSound(named: self.ghostNofiticationSound)
+//        case 7:
+//            content.sound = UNNotificationSound(named: self.homeBellNotificationSound)
+//        case 8:
+//            content.sound = UNNotificationSound(named: self.elevatorNotificationSound)
+//        case 9:
+//            content.sound = UNNotificationSound(named: self.singleNotificationSound)
+//        case 10:
+//            content.sound = UNNotificationSound(named: self.zenNotificationSound)
+//        default:
+//            NSLog("Error occured in fixing UNNotificationSound.")
+//        }
+        
+        content.sound = selectSound(self.userSettings.soundIndex)
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -90,6 +92,37 @@ public class CTMainController: ObservableObject {
             }
         }
         print("Notification is setted!")
+    }
+    
+    public func selectSound(_ number: Int) -> UNNotificationSound {
+        
+        switch number {
+        case 0:
+            return UNNotificationSound.default
+        case 1:
+            return UNNotificationSound(named: self.bicycleNotificationSound)
+        case 2:
+            return UNNotificationSound(named: self.bellStoreDoorNotificationSound)
+        case 3:
+            return UNNotificationSound(named: self.cookooNotificationSound)
+        case 4:
+            return UNNotificationSound(named: self.towerBellNotificationSound)
+        case 5:
+            return UNNotificationSound(named: self.bicycle2NotificationSound)
+        case 6:
+            return UNNotificationSound(named: self.ghostNofiticationSound)
+        case 7:
+            return UNNotificationSound(named: self.homeBellNotificationSound)
+        case 8:
+            return UNNotificationSound(named: self.elevatorNotificationSound)
+        case 9:
+            return UNNotificationSound(named: self.singleNotificationSound)
+        case 10:
+            return UNNotificationSound(named: self.zenNotificationSound)
+        default:
+            NSLog("Error occured in fixing UNNotificationSound.")
+            return UNNotificationSound.default
+        }
     }
     
     public func isTimerRunning() -> Bool {
