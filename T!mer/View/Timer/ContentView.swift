@@ -7,7 +7,6 @@ import StoreKit
 
 import CommonT_mer
 
-#if os(iOS)
 struct ContentView: View {
     
     // MARK: - Init()
@@ -344,4 +343,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-#endif

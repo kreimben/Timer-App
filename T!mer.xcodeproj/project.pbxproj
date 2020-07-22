@@ -45,6 +45,7 @@
 		51628A8824C87CFE009B083A /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8724C87CFE009B083A /* BannerVC.swift */; };
 		51628A8C24C88148009B083A /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8B24C88148009B083A /* TodoCell.swift */; };
 		51628A8E24C89E21009B083A /* MainMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8D24C89E21009B083A /* MainMasterView.swift */; };
+		51628A9124C89FBA009B083A /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A9024C89FBA009B083A /* StopwatchView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -191,6 +192,7 @@
 		51628A8724C87CFE009B083A /* BannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
 		51628A8B24C88148009B083A /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		51628A8D24C89E21009B083A /* MainMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMasterView.swift; sourceTree = "<group>"; };
+		51628A9024C89FBA009B083A /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -379,6 +381,14 @@
 			path = Advertisment;
 			sourceTree = "<group>";
 		};
+		51628A8F24C89FA8009B083A /* Stopwaatch */ = {
+			isa = PBXGroup;
+			children = (
+				51628A9024C89FBA009B083A /* StopwatchView.swift */,
+			);
+			path = Stopwaatch;
+			sourceTree = "<group>";
+		};
 		516B71F32393A9A800EAAC0E /* Sound resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +468,7 @@
 			children = (
 				51628A8D24C89E21009B083A /* MainMasterView.swift */,
 				5188B05323701C8100A2258F /* Timer */,
+				51628A8F24C89FA8009B083A /* Stopwaatch */,
 				5188B05423701C9700A2258F /* SettingView */,
 				51628A8624C87CE2009B083A /* Advertisment */,
 			);
@@ -901,6 +912,7 @@
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
 				518A4B0224C6400E00DF509D /* Binding+Extension.swift in Sources */,
+				51628A9124C89FBA009B083A /* StopwatchView.swift in Sources */,
 				51628A8824C87CFE009B083A /* BannerVC.swift in Sources */,
 				518A4B0524C64AD900DF509D /* SoundTableViewController.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
