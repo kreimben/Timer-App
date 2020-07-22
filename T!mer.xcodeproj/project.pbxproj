@@ -457,21 +457,21 @@
 			isa = PBXGroup;
 			children = (
 				51628A8D24C89E21009B083A /* MainMasterView.swift */,
-				5188B05323701C8100A2258F /* MainView */,
-				5155C221247FB75D00C30A08 /* Todo */,
+				5188B05323701C8100A2258F /* Timer */,
 				5188B05423701C9700A2258F /* SettingView */,
 				51628A8624C87CE2009B083A /* Advertisment */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		5188B05323701C8100A2258F /* MainView */ = {
+		5188B05323701C8100A2258F /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				517F6224234E329F00A05205 /* ContentView.swift */,
 				5167E4532368CD88003005AB /* TrailingButtonView.swift */,
+				5155C221247FB75D00C30A08 /* Todo */,
 			);
-			path = MainView;
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		5188B05423701C9700A2258F /* SettingView */ = {
