@@ -3,8 +3,8 @@ import Combine
 import UIKit
 import CoreHaptics
 import Dispatch
+import StoreKit
 
-import GoogleMobileAds
 import CommonT_mer
 
 #if os(iOS)
@@ -350,33 +350,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-// MARK: - BannerVC
-struct BannerVC: UIViewControllerRepresentable {
-    
-    init() { }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<BannerVC>) -> BannerVC.UIViewControllerType {
-        
-        let view = GADBannerView(adSize: kGADAdSizeBanner)
-        
-        let viewController = UIViewController()
-        
-        #if DEBUG
-        view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 배너광고 ID (for Test)
-        #else
-        view.adUnitID = "ca-app-pub-4942689053880729/1552889082" // 진짜 배너광고 ID
-        #endif
-        
-        view.rootViewController = viewController
-        viewController.view.addSubview(view)
-        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
-        view.load(GADRequest())
-        
-        return viewController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
 #endif
