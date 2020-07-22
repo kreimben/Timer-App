@@ -76,15 +76,6 @@ class SoundTableViewCell: UITableViewCell {
                 
                 let player = try AVAudioPlayer(contentsOf: url)
                 
-//                try AVAudioSession.sharedInstance().setCategory(
-//                    .playback,
-//                    mode: .default,
-//                    options: [.duckOthers]
-//                )
-//                try AVAudioSession.sharedInstance().setActive(true)
-                
-//                player.numberOfLoops = -1
-                
                 if player.prepareToPlay() {
                     
                     print("Prepared to play!")

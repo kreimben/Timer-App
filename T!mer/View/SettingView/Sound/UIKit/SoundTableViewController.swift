@@ -1,6 +1,11 @@
 import UIKit
+import SwiftUI
+
+import CommonT_mer
 
 class SoundTableViewController: UITableViewController {
+    
+    @ObservedObject var userSettings = CTUserSettings()
     
     private var sounds: [NotificationSound] = [
         NotificationSound(soundName: "Default Sound"),
@@ -35,7 +40,14 @@ class SoundTableViewController: UITableViewController {
         cell.selectionStyle = .blue
         
         cell.nameOfCell?.text = self.sounds[indexPath.row].soundName
-        cell.selectImage.image = UIImage(systemName: "play.circle")
+        
+        if self.userSettings.soundIndex == indexPath.row {
+
+            cell.selectImage.image = UIImage(systemName: "checkmark")
+        } else {
+            
+            cell.selectImage.image = nil
+        }
 
         return cell
     }
@@ -45,6 +57,9 @@ class SoundTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SoundCell", for: indexPath) as! SoundTableViewCell
         
         cell.makeSound(indexPath.row)
+        
+        self.userSettings.soundIndex = indexPath.row
+        tableView.reloadData()
     }
 }
 
