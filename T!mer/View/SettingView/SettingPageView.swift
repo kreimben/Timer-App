@@ -30,7 +30,7 @@ struct SettingPageView: View {
             
             Section(header: Text("Preferences..."), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
                 
-                NavigationLink(destination: SoundPicker()) {
+                NavigationLink(destination: SoundPickerWrapper()) {
                     
                     Text("Notification Sound")
                 }

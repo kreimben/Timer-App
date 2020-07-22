@@ -43,6 +43,7 @@
 		515DACE8245E876100A495BA /* elevator in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
 		515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF92460271600A495BA /* SelectCircleView.swift */; };
+		51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8424C8787D009B083A /* SoundPickerWrapper.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -189,6 +190,7 @@
 		515DACE2245E876100A495BA /* elevator */ = {isa = PBXFileReference; lastKnownFileType = file; path = elevator; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
 		515DACF92460271600A495BA /* SelectCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCircleView.swift; sourceTree = "<group>"; };
+		51628A8424C8787D009B083A /* SoundPickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerWrapper.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				51113A5D237939BE005309D7 /* SoundPickerView.swift */,
 				51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */,
+				51628A8424C8787D009B083A /* SoundPickerWrapper.swift */,
 			);
 			path = Frame;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
 				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */,
+				51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */,
 				51DACDE524C5D3C6006C3ED7 /* SelectSoundView.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
