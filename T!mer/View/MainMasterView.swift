@@ -7,7 +7,12 @@ struct MainMasterView: View {
         
             ContentView()
                 .tabItem {
-                    TabLabel(imageName: "house.fill", label: "Home")
+                    TabLabel(imageName: "timer", label: "Timer")
+            }
+            
+            StopwatchView()
+                .tabItem {
+                    TabLabel(imageName: "stopwatch", label: "Stopwatch")
             }
         }
     }

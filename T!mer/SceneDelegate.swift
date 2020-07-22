@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let mainView = MainMasterView() // ContentView()
+        let mainView = MainMasterView()
         
         let mainController = CTMainController()
         
