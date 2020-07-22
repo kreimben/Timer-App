@@ -67,36 +67,36 @@ struct HowToUseThisApp: View {
                     }
                 } // Tips
                 
-                ZStack { // Shortcuts
-                    
-                    Color.green.opacity(backgroundColorOpacity)
-                    
-                    VStack {
-                        Text("Shortcuts")
-                            .font(.system(.largeTitle, design: .rounded))
-                            .bold()
-                            .padding()
-                        
-                        Text("You can start T!mer drawing circle using your finger directly though, T!mer have some of shortcuts for convinience.")
-                            .padding()
-                        
-                        Text("Let's look around!")
-                            .font(.headline)
-                            .bold()
-                            .padding()
-                        
-                        Image("howToUse-1")
-                            .resizable()
-                            .aspectRatio(1.0, contentMode: .fill)
-                            .imageScale(.large)
-                            .padding()
-                        
-                        Text("As you can see, You can use T!mer directly using shortcuts.")
-                            .padding()
-                        
-                    }
-                } // Shortcuts
-                    .padding(.bottom, 66)
+//                ZStack { // Shortcuts
+//
+//                    Color.green.opacity(backgroundColorOpacity)
+//
+//                    VStack {
+//                        Text("Shortcuts")
+//                            .font(.system(.largeTitle, design: .rounded))
+//                            .bold()
+//                            .padding()
+//
+//                        Text("You can start T!mer drawing circle using your finger directly though, T!mer have some of shortcuts for convinience.")
+//                            .padding()
+//
+//                        Text("Let's look around!")
+//                            .font(.headline)
+//                            .bold()
+//                            .padding()
+//
+//                        Image("howToUse-1")
+//                            .resizable()
+//                            .aspectRatio(1.0, contentMode: .fill)
+//                            .imageScale(.large)
+//                            .padding()
+//
+//                        Text("As you can see, You can use T!mer directly using shortcuts.")
+//                            .padding()
+//
+//                    }
+//                } // Shortcuts
+//                    .padding(.bottom, 66)
                 
                 ZStack {
                     
