@@ -20,7 +20,6 @@
 		510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96824BF4B9B00AD5888 /* TimerEntities.swift */; };
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
 		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
-		51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51113A5D237939BE005309D7 /* SoundPickerView.swift */; };
 		51179FC924C66517007A568A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51179FC824C66517007A568A /* AudioToolbox.framework */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
@@ -42,7 +41,6 @@
 		515DACE7245E876100A495BA /* zen in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE1245E876100A495BA /* zen */; };
 		515DACE8245E876100A495BA /* elevator in Resources */ = {isa = PBXBuildFile; fileRef = 515DACE2245E876100A495BA /* elevator */; };
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
-		515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACF92460271600A495BA /* SelectCircleView.swift */; };
 		51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8424C8787D009B083A /* SoundPickerWrapper.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
@@ -63,11 +61,9 @@
 		518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518A4B0824C64E9D00DF509D /* SoundPicker.swift */; };
 		518A4B0B24C6546E00DF509D /* SoundTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518A4B0A24C6546E00DF509D /* SoundTable.xib */; };
 		519D626E243E2D0D00E6C77F /* T_merUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519D626D243E2D0D00E6C77F /* T_merUITests.swift */; };
-		51B221F423F2618600F924C1 /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B221F323F2618600F924C1 /* IAPView.swift */; };
 		51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */; };
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
 		51DACDD624C5B9F9006C3ED7 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */; };
-		51DACDE524C5D3C6006C3ED7 /* SelectSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */; };
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
 		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
 		51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* HapticFeedbackDebugMenuView.swift */; };
@@ -164,7 +160,6 @@
 		510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merTests_iOS_.swift; sourceTree = "<group>"; };
 		510BB97424BF68C100AD5888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		510BB9B424BF759600AD5888 /* CommonT_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonT_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51113A5D237939BE005309D7 /* SoundPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
 		51179FC824C66517007A568A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
@@ -189,7 +184,6 @@
 		515DACE1245E876100A495BA /* zen */ = {isa = PBXFileReference; lastKnownFileType = file; path = zen; sourceTree = "<group>"; };
 		515DACE2245E876100A495BA /* elevator */ = {isa = PBXFileReference; lastKnownFileType = file; path = elevator; sourceTree = "<group>"; };
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
-		515DACF92460271600A495BA /* SelectCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCircleView.swift; sourceTree = "<group>"; };
 		51628A8424C8787D009B083A /* SoundPickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerWrapper.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
@@ -215,11 +209,9 @@
 		519D626D243E2D0D00E6C77F /* T_merUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merUITests.swift; sourceTree = "<group>"; };
 		519D626F243E2D0D00E6C77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		51B221F323F2618600F924C1 /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
 		51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMasterView.swift; sourceTree = "<group>"; };
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSound.swift; sourceTree = "<group>"; };
-		51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSoundView.swift; sourceTree = "<group>"; };
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		51F13BAF2459F1290021622C /* HapticFeedbackDebugMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackDebugMenuView.swift; sourceTree = "<group>"; };
@@ -351,33 +343,17 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
-		515DACF62460267D00A495BA /* Sound */ = {
+		515DACF62460267D00A495BA /* Notificatioin Sound */ = {
 			isa = PBXGroup;
 			children = (
-				51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */,
-				518A4B0324C64A1400DF509D /* UIKit */,
-				515DACF7246026A200A495BA /* Frame */,
-				515DACF8246026B000A495BA /* Decoration */,
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		515DACF7246026A200A495BA /* Frame */ = {
-			isa = PBXGroup;
-			children = (
-				51113A5D237939BE005309D7 /* SoundPickerView.swift */,
-				51DACDE424C5D3C5006C3ED7 /* SelectSoundView.swift */,
+				518A4B0424C64AD900DF509D /* SoundTableViewController.swift */,
+				518A4B0824C64E9D00DF509D /* SoundPicker.swift */,
+				518A4B0624C64B0A00DF509D /* SoundTableViewCell.swift */,
+				518A4B0A24C6546E00DF509D /* SoundTable.xib */,
 				51628A8424C8787D009B083A /* SoundPickerWrapper.swift */,
+				51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */,
 			);
-			path = Frame;
-			sourceTree = "<group>";
-		};
-		515DACF8246026B000A495BA /* Decoration */ = {
-			isa = PBXGroup;
-			children = (
-				515DACF92460271600A495BA /* SelectCircleView.swift */,
-			);
-			path = Decoration;
+			path = "Notificatioin Sound";
 			sourceTree = "<group>";
 		};
 		51611C6623658FD800441AD3 /* Models */ = {
@@ -388,7 +364,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		516B71F32393A9A800EAAC0E /* Sound */ = {
+		516B71F32393A9A800EAAC0E /* Sound resources */ = {
 			isa = PBXGroup;
 			children = (
 				515DACDD245E876100A495BA /* bicycle */,
@@ -402,7 +378,7 @@
 				516B71F62393A9A800EAAC0E /* Bell store door */,
 				516B71F72393A9A800EAAC0E /* Cookoo */,
 			);
-			path = Sound;
+			path = "Sound resources";
 			sourceTree = "<group>";
 		};
 		517F6214234E329F00A05205 = {
@@ -444,7 +420,7 @@
 				517F6222234E329F00A05205 /* SceneDelegate.swift */,
 				51611C6623658FD800441AD3 /* Models */,
 				5180DD99234E41A20074AECC /* View */,
-				516B71F32393A9A800EAAC0E /* Sound */,
+				516B71F32393A9A800EAAC0E /* Sound resources */,
 				517F6226234E32A100A05205 /* Assets.xcassets */,
 				517F622B234E32A100A05205 /* LaunchScreen.storyboard */,
 				517F622E234E32A100A05205 /* Info.plist */,
@@ -486,11 +462,10 @@
 			children = (
 				51F13BAE2459F1150021622C /* DEBUG */,
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
-				515DACF62460267D00A495BA /* Sound */,
+				515DACF62460267D00A495BA /* Notificatioin Sound */,
 				515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */,
 				51D6A185242A261B002AD0DB /* ColorPickerView.swift */,
 				517917EB237936700074E5D9 /* SafariView.swift */,
-				51B221F323F2618600F924C1 /* IAPView.swift */,
 				511FD513245A05880012DCD9 /* MailView.swift */,
 			);
 			path = SettingView;
@@ -502,17 +477,6 @@
 				518A4B0124C6400E00DF509D /* Binding+Extension.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		518A4B0324C64A1400DF509D /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				518A4B0424C64AD900DF509D /* SoundTableViewController.swift */,
-				518A4B0624C64B0A00DF509D /* SoundTableViewCell.swift */,
-				518A4B0A24C6546E00DF509D /* SoundTable.xib */,
-				518A4B0824C64E9D00DF509D /* SoundPicker.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		519D626C243E2D0D00E6C77F /* T!merUITests */ = {
@@ -909,7 +873,6 @@
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
 				518A4B0724C64B0A00DF509D /* SoundTableViewCell.swift in Sources */,
-				51B221F423F2618600F924C1 /* IAPView.swift in Sources */,
 				51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				51DACDD624C5B9F9006C3ED7 /* NotificationSound.swift in Sources */,
@@ -920,15 +883,12 @@
 				5180DD98234E419D0074AECC /* SettingPageView.swift in Sources */,
 				517F6225234E329F00A05205 /* ContentView.swift in Sources */,
 				518A4B0224C6400E00DF509D /* Binding+Extension.swift in Sources */,
-				51113A5E237939BF005309D7 /* SoundPickerView.swift in Sources */,
 				518A4B0524C64AD900DF509D /* SoundTableViewController.swift in Sources */,
 				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
-				515DACFA2460271600A495BA /* SelectCircleView.swift in Sources */,
 				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */,
 				51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */,
-				51DACDE524C5D3C6006C3ED7 /* SelectSoundView.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

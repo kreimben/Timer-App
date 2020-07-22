@@ -34,7 +34,6 @@ struct SettingPageView: View {
                     
                     Text("Notification Sound")
                 }
-//                SoundPickerView()
                 ColorPickerView()
             }
             
@@ -47,7 +46,7 @@ struct SettingPageView: View {
                 
                 NavigationLink(destination: HowToUseThisApp()) {
                     
-                    Text("Some tips")
+                    Text("How to use this app?")
                         .foregroundColor(.orange)
                 }
                 
