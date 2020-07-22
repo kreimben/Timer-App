@@ -43,6 +43,7 @@
 		515DACEA245E8B4200A495BA /* HowToUseThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */; };
 		51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8424C8787D009B083A /* SoundPickerWrapper.swift */; };
 		51628A8824C87CFE009B083A /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8724C87CFE009B083A /* BannerVC.swift */; };
+		51628A8C24C88148009B083A /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8B24C88148009B083A /* TodoCell.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
@@ -187,6 +188,7 @@
 		515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseThisApp.swift; sourceTree = "<group>"; };
 		51628A8424C8787D009B083A /* SoundPickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerWrapper.swift; sourceTree = "<group>"; };
 		51628A8724C87CFE009B083A /* BannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
+		51628A8B24C88148009B083A /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			children = (
 				51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */,
 				5121EFBE247FB90200A8EAA4 /* TodoView.swift */,
+				51628A8B24C88148009B083A /* TodoCell.swift */,
 				5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */,
 				510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */,
 			);
@@ -901,6 +904,7 @@
 				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */,
 				51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */,
+				51628A8C24C88148009B083A /* TodoCell.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

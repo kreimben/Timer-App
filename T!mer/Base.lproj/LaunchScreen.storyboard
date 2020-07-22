@@ -35,53 +35,6 @@
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="DQC-uz-rgY">
-            <objects>
-                <tableViewController id="KC7-Kt-XDX" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sef-NR-Rds">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ken-gf-MLl">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ken-gf-MLl" id="GLI-kN-toY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="KC7-Kt-XDX" id="6rg-7B-b9w"/>
-                            <outlet property="delegate" destination="KC7-Kt-XDX" id="MtA-Xz-nEG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Yjb-Rm-vQo"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aG8-ia-jJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2276.8115942028985" y="393.75"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rfM-19-jsn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxF-hF-f0v" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ygu-gQ-Axm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KC7-Kt-XDX" kind="relationship" relationship="rootViewController" id="8mM-5v-G91"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EoE-8k-uRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1366.6666666666667" y="393.75"/>
-        </scene>
     </scenes>
     <resources>
         <image name="App Icon-1024 without background color" width="1024" height="1024"/>

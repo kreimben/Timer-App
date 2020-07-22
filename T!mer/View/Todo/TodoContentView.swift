@@ -1,62 +1,90 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct TodoContentView: View {
     
-    @State var title: String
-    @State var date: Date
-    @State var memo: String?
+    @ObservedObject var userSettings = CTUserSettings()
+    
+    @State var entity: FetchedResults<TimerEntities>.Element
+    
+    @State private var isEditing: Bool = false
+    @State private var tfValue: String = ""
     
     var convertedDate: String {
         
         let format = DateFormatter()
-        format.timeStyle = .medium
-        format.dateStyle = .long
+        format.timeStyle = .short
+        format.dateStyle = .medium
         
-        return format.string(from: self.date)
+        return format.string(from: self.entity.notificationTime!)
     }
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack {
             
-            Text(self.title).font(.system(size: 24))
-            Text(convertedDate).foregroundColor(.gray)
-            Text(self.memo ?? "").foregroundColor(.gray)
+            HStack {
+                
+                Text("It ends:")
+                
+                Spacer()
+                
+                if self.entity.notificationTime!.distance(to: Date()) > 0 {
+                    
+                    Text(String(describing: self.convertedDate))
+                        .foregroundColor(.red)
+                } else {
+                    
+                    Text(String(describing: self.convertedDate))
+                }
+            }.padding([.leading, .trailing])
+            
+            Toggle("Done:", isOn: self.$entity.isChecked).padding([.leading, .trailing])
+            
+            HStack {
+                
+                Text("Memo:")
+                
+                Spacer()
+                
+                if self.isEditing {
+                    
+                    TextField("memo", text: self.$tfValue, onCommit: {
+                        
+                        self.entity.memo = self.tfValue
+                        
+                        TimerEntities.saveContext()
+                        
+                        self.isEditing.toggle()
+                    })
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                } else {
+                    
+                    Button(action: {
+                        
+                        self.isEditing.toggle()
+                        
+                        guard let memo = self.entity.memo else { return }
+                        
+                        self.tfValue = memo
+                    }) {
+                        
+                        if !(self.entity.memo?.isEmpty ?? true) {
+                            
+                            Text(self.entity.memo!).foregroundColor(.black)
+                        } else {
+                            
+                            Text("There is no memo.\nYou can set memo to this task :)")
+                        }
+                    }
+                }
+            } // HStack
+                .padding([.leading, .trailing])
         }
+        .navigationBarTitle(Text(String(describing: self.entity.title!)), displayMode: .large)
     }
 }
-
-//class DisplayDate {
-//
-//    var year: String
-//    var month: String
-//    var day: String
-//    var hour: String
-//    var minute: String
-//    var second: String
-//
-//    init(
-//        year: String,
-//        month: String,
-//        day: String,
-//        hour: String,
-//        minute: String,
-//        second: String
-//    ) {
-//
-//        self.year = year
-//        self.month = month
-//        self.day = day
-//        self.hour = hour
-//        self.minute = minute
-//        self.second = second
-//    }
-//
-//    func print() -> String {
-//
-//        return "\(year)-\(month)-\(day) \(hour):\(minute):\(second)"
-//    }
-//}
 
 //struct TodoContentView_Previews: PreviewProvider {
 //    static var previews: some View {

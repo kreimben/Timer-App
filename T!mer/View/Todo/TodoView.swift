@@ -23,15 +23,7 @@ struct TodoView: View {
     var body: some View {
         ZStack {
             
-//            Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
-//            CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.44)
-//                .edgesIgnoringSafeArea(.all)
-            
             VStack {
-                
-                Text("To-do list")
-                    .font(.system(size: 32, design: .rounded))
-                    .padding()
                 
                 HStack {
                     
@@ -40,8 +32,6 @@ struct TodoView: View {
                         .padding(.leading)
                     
                     Button(action: {
-                        
-                        let date = self.userSettings.notificationTime
                         
                         if self.mainController.isTimerRunning() {
                             
@@ -80,19 +70,18 @@ struct TodoView: View {
                         /// @END
                         
                     }.padding(.trailing)
-                }
+                } // TextField and Button
                 
                 if timerEntities.count > 0 {
                     
                     List {
                         
-                        ForEach(timerEntities, id: \.self) { data in
+                        ForEach(timerEntities, id: \.self) { entity in
                             
-                            TodoContentView(
-                                title: data.title!,
-                                date: data.notificationTime!,
-                                memo: data.memo
-                            )
+                            NavigationLink(destination: TodoContentView(entity: entity)) {
+                                
+                                TodoCell(entity: entity)
+                            }
                         }
                         .onDelete { indexSet in
                             
@@ -102,7 +91,6 @@ struct TodoView: View {
                                 TimerEntities.saveContext()
                             }
                         }
-//                        .listRowBackground(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.44))
                         
                         Button(action: {
                             
@@ -122,7 +110,7 @@ struct TodoView: View {
                             /// @END
                         }) {
                             
-                            Text("Delete Everythings").foregroundColor(.blue)
+                            Text("Delete Everything").foregroundColor(.blue)
                         }
                     }
                 } else {
@@ -131,6 +119,7 @@ struct TodoView: View {
                 }
             }
         }
+        .navigationBarTitle(Text("To-do"), displayMode: .large)
     }
 }
 

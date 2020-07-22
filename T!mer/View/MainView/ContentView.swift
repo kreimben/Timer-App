@@ -282,18 +282,25 @@ struct ContentView: View {
                             })
                         
                         ZStack {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Color.orange.opacity(1))
-                                .onTapGesture {
-                                    
-                                    self.todoViewBool.toggle()
-                            }
-                            .sheet(isPresented: self.$todoViewBool) {
+                            
+                            NavigationLink(destination: TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)) {
                                 
-                                TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)
+                                Image(systemName: "plus.circle.fill")                               .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.orange.opacity(1))
                             }
+//                            Image(systemName: "plus.circle.fill")
+//                                .resizable()
+//                                .frame(width: 30, height: 30)
+//                                .foregroundColor(Color.orange.opacity(1))
+//                                .onTapGesture {
+//
+//                                    self.todoViewBool.toggle()
+//                            }
+//                            .sheet(isPresented: self.$todoViewBool) {
+//
+//                                TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)
+//                            }
                         }
                         .padding(EdgeInsets(
                             top: 10,
@@ -304,9 +311,7 @@ struct ContentView: View {
                             .padding()
                     } // Circle Timer Elements
                     
-                    
                     Spacer()
-                    // MARK: - Banner ad
                     BannerVC()
                         .frame(width: 320, height: 50, alignment: .center)
                     
