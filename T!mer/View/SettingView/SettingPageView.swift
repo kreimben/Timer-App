@@ -34,9 +34,7 @@ struct SettingPageView: View {
                     
                     Text("Sound")
                 }
-                #if DEBUG
-                SoundPickerView()
-                #endif
+//                SoundPickerView()
                 ColorPickerView()
             }
             
