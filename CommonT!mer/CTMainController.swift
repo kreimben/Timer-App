@@ -78,7 +78,7 @@ public class CTMainController: ObservableObject {
         case 10:
             content.sound = UNNotificationSound(named: self.zenNotificationSound)
         default:
-            print("------------Error occured in fixing UNNotificationSound.")
+            NSLog("Error occured in fixing UNNotificationSound.")
         }
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
