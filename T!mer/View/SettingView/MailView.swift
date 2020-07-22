@@ -10,9 +10,9 @@ struct MailView: UIViewControllerRepresentable {
     @Binding var result: Result<MFMailComposeResult, Error>?
 
     @State var mainFormat = """
-<h3>I'm really happy to get feedback!</h3>
+<h3>I'm really happy to get your feedback!</h3>
 <div>
-What's your point?:
+What would you like to say?:
 </div>
 """
 
