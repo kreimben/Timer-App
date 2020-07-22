@@ -26,6 +26,9 @@ class SoundTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "SoundTable", bundle: nil), forCellReuseIdentifier: "SoundCell")
+        
+        /// Code's from [https://stackoverflow.com/questions/38973010/add-empty-blank-space-under-in-the-end-of-uitableview]
+        self.tableView.tableFooterView = UIView()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
