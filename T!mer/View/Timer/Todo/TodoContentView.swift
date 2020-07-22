@@ -75,7 +75,7 @@ struct TodoContentView: View {
                             Text(self.entity.memo!).foregroundColor(.black)
                         } else {
                             
-                            Text("There is no memo.\nYou can set memo to this task :)")
+                            Text("There is no memo.\nYou can write memo to this task :)")
                         }
                     }
                 }
