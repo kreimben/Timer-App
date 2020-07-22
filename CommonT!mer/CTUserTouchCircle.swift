@@ -31,7 +31,9 @@ public struct CTUserTouchCircle: View {
         GeometryReader { geometry -> Path in
             Path { path in
                 
-                DispatchQueue.main.async {
+                let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
+                
+                dispatch.async { // DispatchQueue.main.async {
                     self.center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
                 }
                     

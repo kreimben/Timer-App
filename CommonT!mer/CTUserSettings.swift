@@ -7,6 +7,8 @@ public final class CTUserSettings: ObservableObject {
     
     public let objectWillChange = PassthroughSubject<Void, Never>()
     
+    private let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
+    
     @UserDefault(key: "soundIndex", value: 0) // Defining firstly
     public var soundIndex: Int {
         willSet {
@@ -29,7 +31,7 @@ public final class CTUserSettings: ObservableObject {
     @UserDefault(key: "timeInputBeforeConvert", value: 0.0)
     public var timeInputBeforeConvert: Double {
         willSet {
-            DispatchQueue.main.async {
+            dispatch.async { // DispatchQueue.main.async {
                 self.objectWillChange.send()
             }
         }

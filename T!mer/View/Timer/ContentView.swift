@@ -46,8 +46,9 @@ struct ContentView: View {
     @State var todoViewBool = false
     /// @END
     
-    /// @Timer
-    let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    /// @Timer-related
+    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
     /// @END
     
     /// @For Interstitial Ads
@@ -83,6 +84,10 @@ struct ContentView: View {
                 Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
                 CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
                     .edgesIgnoringSafeArea(.all)
+                    .onAppear {
+                        
+                        self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                }
                 
                 VStack {
                     
@@ -106,7 +111,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .onReceive(timer) { _ in
                                 
-                                DispatchQueue.main.async {
+                                self.dispatch.async { // DispatchQueue.main.async {
                                     // MARK: Reflect other things EVERY SECONDS
                                     self.mainController.setDisplay(completion: { (time, atan2) in
                                         
@@ -208,7 +213,7 @@ struct ContentView: View {
                                     
                                     state = value.location
                                     
-                                    DispatchQueue.main.async {
+                                    self.dispatch.async { // DispatchQueue.main.async {
                                         self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
                                         
                                         self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)
