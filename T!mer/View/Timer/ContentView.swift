@@ -1,6 +1,5 @@
 import SwiftUI
 import Combine
-import UIKit
 import CoreHaptics
 import Dispatch
 import StoreKit
@@ -305,15 +304,15 @@ struct ContentView: View {
                 }
                 .navigationBarTitle(Text("T!mer"), displayMode: .inline)
                     
-                .navigationBarItems(trailing:
-                    NavigationLink(destination: SettingPageView()) {
-                        Image(systemName: "bell.fill")
-                            .foregroundColor(Color.red.opacity(1.0))
-                            .padding(8)
-                            .background(Color.white.opacity(0.5))
-                            .clipShape(Circle())
-                    }
-                )
+//                .navigationBarItems(trailing:
+//                    NavigationLink(destination: SettingPageView()) {
+//                        Image(systemName: "bell.fill")
+//                            .foregroundColor(Color.red.opacity(1.0))
+//                            .padding(8)
+//                            .background(Color.white.opacity(0.5))
+//                            .clipShape(Circle())
+//                    }
+//                )
                 
             }
             .onAppear {
@@ -322,7 +321,7 @@ struct ContentView: View {
                 
                 print("UserSettings howManyOpenThisApp: \(self.userSettings.howManyOpenThisApp)")
                 
-                if ((self.userSettings.howManyOpenThisApp % 50) == 0) && self.userSettings.howManyOpenThisApp > 0 {
+                if ((self.userSettings.howManyOpenThisApp % 100) == 0) && self.userSettings.howManyOpenThisApp > 0 {
                     
                     SKStoreReviewController.requestReview()
                 }

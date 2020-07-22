@@ -14,6 +14,11 @@ struct MainMasterView: View {
                 .tabItem {
                     TabLabel(imageName: "stopwatch", label: "Stopwatch")
             }
+            
+            SettingPageView()
+                .tabItem {
+                    TabLabel(imageName: "slider.horizontal.3", label: "Settings")
+            }
         }
     }
 }
@@ -24,7 +29,7 @@ fileprivate struct TabLabel: View {
     let label: String
     
     var body: some View {
-        HStack {
+        VStack {
             Image(systemName: imageName)
             Text(label)
         }

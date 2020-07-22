@@ -1,8 +1,48 @@
 import SwiftUI
 
+import CommonT_mer
+
 struct StopwatchView: View {
+    
+    /// @ObservedObejects
+    @ObservedObject var userSettings = CTUserSettings()
+    /// @END
+    
+    // MARK: - Init()
+    init() {
+        
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        
+        appearance.shadowColor = nil
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        UINavigationController().hidesBarsOnSwipe = true
+    }
+    
     var body: some View {
-        Text("Stopwatch View")
+        
+        NavigationView {
+            
+            ZStack {
+                Color.white.opacity(0.3).edgesIgnoringSafeArea(.all)
+                CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.55)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    
+                    Text("Stopwatch test view")
+                    
+                    Spacer()
+                    BannerVC()
+                        .frame(width: 320, height: 50, alignment: .center)
+                }
+            }
+        }
+        .navigationBarTitle("Stopwatch", displayMode: .inline)
     }
 }
 
