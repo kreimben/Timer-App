@@ -352,8 +352,8 @@
 		515DACF62460267D00A495BA /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				518A4B0324C64A1400DF509D /* UIKit */,
 				51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */,
+				518A4B0324C64A1400DF509D /* UIKit */,
 				515DACF7246026A200A495BA /* Frame */,
 				515DACF8246026B000A495BA /* Decoration */,
 			);
