@@ -32,7 +32,7 @@ struct SettingPageView: View {
                 
                 NavigationLink(destination: SoundPicker()) {
                     
-                    Text("Sound")
+                    Text("Notification Sound")
                 }
 //                SoundPickerView()
                 ColorPickerView()
