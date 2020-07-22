@@ -35,15 +35,6 @@ public final class CTUserSettings: ObservableObject {
         }
     }
     
-    @UserDefault(key: "notificationTime", value: Date())
-    public var notificationTime: Date {
-        willSet {
-            DispatchQueue.main.async {
-                self.objectWillChange.send()
-            }
-        }
-    }
-    
     @UserDefault(key: "initialNotificationTime", value: 0.0)
     public var initialNotificationTime: Double {
         willSet {
