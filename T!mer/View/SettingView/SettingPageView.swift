@@ -30,7 +30,13 @@ struct SettingPageView: View {
             
             Section(header: Text("Preferences..."), footer: Text("If you want to change notification sound, please set the sound before starting timer.")) {
                 
+                NavigationLink(destination: SoundPicker()) {
+                    
+                    Text("Sound")
+                }
+                #if DEBUG
                 SoundPickerView()
+                #endif
                 ColorPickerView()
             }
             
@@ -83,11 +89,6 @@ struct SettingPageView: View {
                 
                 NavigationLink(destination: HapticFeedbackDebugMenuView()) {
                     Text("Haptic Feedback")
-                }
-                
-                NavigationLink(destination: SoundPicker()) {
-                    
-                    Text("SoundPicker")
                 }
             }
             #endif

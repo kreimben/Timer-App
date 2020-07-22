@@ -1,5 +1,4 @@
 import Foundation
-import Foundation
 import SwiftUI
 
 public enum CTColors: CaseIterable {
@@ -34,6 +33,23 @@ public class CTColorScheme {
             
         default:
             return Color.blue
+        }
+    }
+    
+    public static func getUIColor(_ color: Int) -> UIColor {
+        
+        switch color {
+            
+        case 0: return UIColor.systemBlue
+        case 1: return UIColor.systemRed
+        case 2: return UIColor.systemYellow
+        case 3: return UIColor.systemGreen
+        case 4: return UIColor.systemOrange
+        case 5: return UIColor.systemPurple
+        case 6: return UIColor.black
+            
+        default:
+            return UIColor(named: "systemBlue")!
         }
     }
 }

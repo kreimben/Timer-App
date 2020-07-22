@@ -39,14 +39,16 @@ class SoundTableViewController: UITableViewController {
         
         cell.selectionStyle = .blue
         
+        cell.tintColor = CTColorScheme.getUIColor(self.userSettings.colorIndex)
+        
         cell.nameOfCell?.text = self.sounds[indexPath.row].soundName
         
-        if self.userSettings.soundIndex == indexPath.row {
+        if self.userSettings.soundIndex == indexPath.row { // Selected
 
-            cell.selectImage.image = UIImage(systemName: "checkmark")
-        } else {
+            cell.selectImage.image = UIImage(systemName: "largecircle.fill.circle")
+        } else { // Not selected
             
-            cell.selectImage.image = nil
+            cell.selectImage.image = UIImage(systemName: "circle")
         }
 
         return cell
