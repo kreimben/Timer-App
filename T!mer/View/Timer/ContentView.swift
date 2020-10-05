@@ -35,10 +35,7 @@ struct ContentView: View {
     /// @ObservedObject
     @ObservedObject var userSettings = CTUserSettings()
     @ObservedObject var userTouchController = CTUserTouchController()
-    /// @END
-    
-    /// @EndvironmentObject
-    @EnvironmentObject var mainController: CTMainController
+    @ObservedObject var mainController = CTMainController()
     /// @END
     
     /// @Bool-related
@@ -286,7 +283,8 @@ struct ContentView: View {
                         
                         ZStack {
                             
-                            NavigationLink(destination: TodoMasterView().environment(\.managedObjectContext, self.managedObjectContext)) {
+                            // MARK: TodoMasterView link here
+                            NavigationLink(destination: TodoView().environment(\.managedObjectContext, self.managedObjectContext)) {
                                 
                                 Image(systemName: "plus.circle.fill")                               .resizable()
                                     .frame(width: 30, height: 30)

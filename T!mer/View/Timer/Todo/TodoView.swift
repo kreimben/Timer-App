@@ -31,6 +31,12 @@ struct TodoView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.leading)
                     
+                        .onAppear {
+                            
+                            print("managedObjectContext: \(self.managedObjectContext)")
+                            print("fetchRequest: \(self.timerEntities)")
+                        }
+                    
                     Button(action: {
                         
                         if self.mainController.isTimerRunning() {

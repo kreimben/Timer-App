@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51012BA924C8AE210075ABF0 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51012BA824C8AE210075ABF0 /* Tabbar.storyboard */; };
+		51012BAB24C8AF330075ABF0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51012BAA24C8AF330075ABF0 /* MainTabBarViewController.swift */; };
 		5108ADF424BF8A0F001E2294 /* CommonT_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */; };
 		5108ADFB24BF8A0F001E2294 /* CommonT_merTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108ADFA24BF8A0F001E2294 /* CommonT_merTests.swift */; };
 		5108ADFD24BF8A0F001E2294 /* CommonT_mer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5108ADED24BF8A0F001E2294 /* CommonT_mer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,6 +23,7 @@
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
 		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
 		51179FC924C66517007A568A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51179FC824C66517007A568A /* AudioToolbox.framework */; };
+		51187FBC252AD0F300D33E57 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51187FBB252AD0F300D33E57 /* TimerViewController.swift */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
@@ -44,7 +47,6 @@
 		51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8424C8787D009B083A /* SoundPickerWrapper.swift */; };
 		51628A8824C87CFE009B083A /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8724C87CFE009B083A /* BannerVC.swift */; };
 		51628A8C24C88148009B083A /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8B24C88148009B083A /* TodoCell.swift */; };
-		51628A8E24C89E21009B083A /* MainMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A8D24C89E21009B083A /* MainMasterView.swift */; };
 		51628A9124C89FBA009B083A /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51628A9024C89FBA009B083A /* StopwatchView.swift */; };
 		5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167E4532368CD88003005AB /* TrailingButtonView.swift */; };
 		516B71F82393A9A800EAAC0E /* Default Bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F42393A9A800EAAC0E /* Default Bell */; };
@@ -65,7 +67,6 @@
 		518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518A4B0824C64E9D00DF509D /* SoundPicker.swift */; };
 		518A4B0B24C6546E00DF509D /* SoundTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518A4B0A24C6546E00DF509D /* SoundTable.xib */; };
 		519D626E243E2D0D00E6C77F /* T_merUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519D626D243E2D0D00E6C77F /* T_merUITests.swift */; };
-		51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */; };
 		51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6A185242A261B002AD0DB /* ColorPickerView.swift */; };
 		51DACDD624C5B9F9006C3ED7 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */; };
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
@@ -147,6 +148,8 @@
 
 /* Begin PBXFileReference section */
 		01CE1A36AA705A2A614DE3F5 /* Pods-T!mer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.debug.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.debug.xcconfig"; sourceTree = "<group>"; };
+		51012BA824C8AE210075ABF0 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		51012BAA24C8AF330075ABF0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		5108ADEB24BF8A0F001E2294 /* CommonT_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonT_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5108ADED24BF8A0F001E2294 /* CommonT_mer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonT_mer.h; sourceTree = "<group>"; };
 		5108ADEE24BF8A0F001E2294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 		510BB97424BF68C100AD5888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		510BB9B424BF759600AD5888 /* CommonT_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonT_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51179FC824C66517007A568A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		51187FBB252AD0F300D33E57 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
@@ -191,7 +195,6 @@
 		51628A8424C8787D009B083A /* SoundPickerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerWrapper.swift; sourceTree = "<group>"; };
 		51628A8724C87CFE009B083A /* BannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
 		51628A8B24C88148009B083A /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
-		51628A8D24C89E21009B083A /* MainMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMasterView.swift; sourceTree = "<group>"; };
 		51628A9024C89FBA009B083A /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		5167E4532368CD88003005AB /* TrailingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingButtonView.swift; sourceTree = "<group>"; };
 		516B71F42393A9A800EAAC0E /* Default Bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default Bell"; sourceTree = "<group>"; };
@@ -217,7 +220,6 @@
 		519D626D243E2D0D00E6C77F /* T_merUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_merUITests.swift; sourceTree = "<group>"; };
 		519D626F243E2D0D00E6C77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A6F42C235DC72800571F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMasterView.swift; sourceTree = "<group>"; };
 		51D6A185242A261B002AD0DB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		51DACDD524C5B9F9006C3ED7 /* NotificationSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSound.swift; sourceTree = "<group>"; };
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -343,7 +345,6 @@
 		5155C221247FB75D00C30A08 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				51CDE472247CEDB60089B6E0 /* TodoMasterView.swift */,
 				5121EFBE247FB90200A8EAA4 /* TodoView.swift */,
 				51628A8B24C88148009B083A /* TodoCell.swift */,
 				5121EFC0247FB93E00A8EAA4 /* TodoEmptyView.swift */,
@@ -466,7 +467,8 @@
 		5180DD99234E41A20074AECC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				51628A8D24C89E21009B083A /* MainMasterView.swift */,
+				51012BA824C8AE210075ABF0 /* Tabbar.storyboard */,
+				51012BAA24C8AF330075ABF0 /* MainTabBarViewController.swift */,
 				5188B05323701C8100A2258F /* Timer */,
 				51628A8F24C89FA8009B083A /* Stopwaatch */,
 				5188B05423701C9700A2258F /* SettingView */,
@@ -478,6 +480,7 @@
 		5188B05323701C8100A2258F /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				51187FBB252AD0F300D33E57 /* TimerViewController.swift */,
 				517F6224234E329F00A05205 /* ContentView.swift */,
 				5167E4532368CD88003005AB /* TrailingButtonView.swift */,
 				5155C221247FB75D00C30A08 /* Todo */,
@@ -770,6 +773,7 @@
 				516B71FB2393A9A800EAAC0E /* Cookoo in Resources */,
 				516B71F82393A9A800EAAC0E /* Default Bell in Resources */,
 				515DACE3245E876100A495BA /* bicycle in Resources */,
+				51012BA924C8AE210075ABF0 /* Tabbar.storyboard in Resources */,
 				516B71FA2393A9A800EAAC0E /* Bell store door in Resources */,
 				515DACE5245E876100A495BA /* single in Resources */,
 				515DACE7245E876100A495BA /* zen in Resources */,
@@ -900,7 +904,7 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
-				51628A8E24C89E21009B083A /* MainMasterView.swift in Sources */,
+				51012BAB24C8AF330075ABF0 /* MainTabBarViewController.swift in Sources */,
 				518A4B0724C64B0A00DF509D /* SoundTableViewCell.swift in Sources */,
 				51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */,
 				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
@@ -915,10 +919,10 @@
 				51628A9124C89FBA009B083A /* StopwatchView.swift in Sources */,
 				51628A8824C87CFE009B083A /* BannerVC.swift in Sources */,
 				518A4B0524C64AD900DF509D /* SoundTableViewController.swift in Sources */,
-				51CDE473247CEDB60089B6E0 /* TodoMasterView.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */,
+				51187FBC252AD0F300D33E57 /* TimerViewController.swift in Sources */,
 				51628A8524C8787D009B083A /* SoundPickerWrapper.swift in Sources */,
 				51628A8C24C88148009B083A /* TodoCell.swift in Sources */,
 				51D6A186242A261B002AD0DB /* ColorPickerView.swift in Sources */,

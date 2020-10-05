@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ytT-Za-n3I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="lYL-lH-zjQ">
+            <objects>
+                <tabBarController id="ytT-Za-n3I" customClass="MainTabBarViewController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MK-GU-f6X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ldJ-GO-koX" kind="relationship" relationship="viewControllers" id="EAW-8h-lNI"/>
+                        <segue destination="kGV-9T-vl6" kind="relationship" relationship="viewControllers" id="Pg6-GM-AgX"/>
+                        <segue destination="edc-Jc-cKl" kind="relationship" relationship="viewControllers" id="eUN-hb-CPG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5X-ho-OWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-990" y="-224"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="lUC-MY-VfV">
+            <objects>
+                <hostingController storyboardIdentifier="SettingsHostingController" id="edc-Jc-cKl" customClass="SettingsHostingController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="slider.horizontal.3" catalog="system" id="Udj-6z-jkJ"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i94-0n-vbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="530"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="GmG-fh-0nE">
+            <objects>
+                <hostingController storyboardIdentifier="StopwatchHostingController" id="kGV-9T-vl6" customClass="StopwatchHostingController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch" catalog="system" id="CZU-0P-uft"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rP-6a-jPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-991" y="531"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="F3t-Bn-Yd2">
+            <objects>
+                <hostingController storyboardIdentifier="TimerViewController" id="ldJ-GO-koX" customClass="TimerViewController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" catalog="system" id="6Wg-H3-tPW"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezn-Sf-X6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="531"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

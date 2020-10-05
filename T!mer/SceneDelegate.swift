@@ -7,16 +7,9 @@ import CommonT_mer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    @ObservedObject var mainController = CTMainController()
-    @ObservedObject var userSettings = CTUserSettings()
-    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        let mainView = MainMasterView()
-        
-        let mainController = CTMainController()
         
         // MARK: CoreData Context
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
@@ -26,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: mainView
-                .environmentObject(mainController).environment(\.managedObjectContext, context)
-            )
+            guard let vc = UIStoryboard(name: "Tabbar", bundle: nil).instantiateInitialViewController() as? MainTabBarViewController else { return }
+            
+            window.rootViewController = vc
             self.window = window
             window.makeKeyAndVisible()
         }
