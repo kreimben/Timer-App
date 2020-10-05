@@ -94,6 +94,7 @@ struct SettingPageView: View {
                 #endif
             }
             .listStyle(GroupedListStyle())
+            .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
     }
 }
