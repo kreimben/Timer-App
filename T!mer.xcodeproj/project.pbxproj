@@ -25,6 +25,7 @@
 		51179FC924C66517007A568A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51179FC824C66517007A568A /* AudioToolbox.framework */; };
 		51187FBC252AD0F300D33E57 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51187FBB252AD0F300D33E57 /* TimerViewController.swift */; };
 		51187FCD252ADC6900D33E57 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51187FCC252ADC6900D33E57 /* StopwatchViewController.swift */; };
+		51187FD9252ADD9100D33E57 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51187FD8252ADD9100D33E57 /* SettingViewController.swift */; };
 		511FD514245A05880012DCD9 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD513245A05880012DCD9 /* MailView.swift */; };
 		51214AB923E84E0E00FB3332 /* ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51214AB823E84E0E00FB3332 /* ProductIDs.plist */; };
 		51214AC223E9143300FB3332 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51214AC123E9143300FB3332 /* Interstitial.swift */; };
@@ -171,6 +172,7 @@
 		51179FC824C66517007A568A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		51187FBB252AD0F300D33E57 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		51187FCC252ADC6900D33E57 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+		51187FD8252ADD9100D33E57 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		511FD513245A05880012DCD9 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		51214AB823E84E0E00FB3332 /* ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIDs.plist; sourceTree = "<group>"; };
 		51214AC123E9143300FB3332 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		5188B05423701C9700A2258F /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
+				51187FD8252ADD9100D33E57 /* SettingViewController.swift */,
 				51F13BAE2459F1150021622C /* DEBUG */,
 				5180DD97234E419D0074AECC /* SettingPageView.swift */,
 				515DACF62460267D00A495BA /* Notificatioin Sound */,
@@ -902,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51187FD9252ADD9100D33E57 /* SettingViewController.swift in Sources */,
 				510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */,
 				5121EFC1247FB93E00A8EAA4 /* TodoEmptyView.swift in Sources */,
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,

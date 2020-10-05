@@ -29,7 +29,7 @@
         <!--Settings-->
         <scene sceneID="lUC-MY-VfV">
             <objects>
-                <hostingController storyboardIdentifier="SettingsHostingController" id="edc-Jc-cKl" customClass="SettingsHostingController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                <hostingController storyboardIdentifier="SettingViewController" id="edc-Jc-cKl" customClass="SettingViewController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="slider.horizontal.3" catalog="system" id="Udj-6z-jkJ"/>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i94-0n-vbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
