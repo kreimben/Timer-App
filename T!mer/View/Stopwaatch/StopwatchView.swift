@@ -9,7 +9,7 @@ struct StopwatchView: View {
     @ObservedObject var mainController = CTMainController()
     /// @END
     
-    @State var timeDisplay: Float = 1800 + 0.33
+    @State var timeDisplay: Float = 0
     
     @State var center = CGPoint.zero
     @State var atan2Var: CGFloat = 0.0
@@ -18,8 +18,10 @@ struct StopwatchView: View {
     
     @State var fontSize: CGFloat = 77
     
+    @State var isStopwatchStarted = false
+    
     /// @Timer-related
-    let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    let timer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
 //    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
     /// @END
     
@@ -56,8 +58,14 @@ struct StopwatchView: View {
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
                             
-                            DispatchQueue.main.async {
+                            if self.isStopwatchStarted {
                                 
+                                DispatchQueue.main.async {
+                                    self.timeDisplay += 0.01
+                                }
+                            } else {
+                                
+//                                self.timeDisplay = 0
                             }
                         }
                     } // TextBox Elements
@@ -88,7 +96,13 @@ struct StopwatchView: View {
                             .shadow(radius: 10)
                             .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5) {
                                 
-                                print("pressed!")
+                                if self.isStopwatchStarted {
+                                    
+                                    self.stopStopwatch()
+                                } else {
+                                
+                                    self.startStopwatch()
+                                }
                             }
                     }
                     
@@ -105,13 +119,31 @@ struct StopwatchView: View {
         
         let s = self.timeDisplay
         
-        print("s: \(s)")
-        print("Int(s): \(Int(s))")
-        print("(s - Float(Int(s)) ): \((s - Float(Int(s)) ))")
-        
         let result = Int( (s - Float(Int(s)) ) * 100)
         
         return result
+    }
+    
+    private func startStopwatch() {
+        
+        /// @Generate hapticfeedback
+        self.mainController.generateHapticFeedback(as: .heavy)
+        /// @END
+        
+        print("Start!")
+        
+        self.isStopwatchStarted = true
+    }
+    
+    private func stopStopwatch() {
+        
+        /// @Generate hapticfeedback
+        self.mainController.generateHapticFeedback(as: .heavy)
+        /// @END
+        
+        print("Stop!")
+        
+        self.isStopwatchStarted = false
     }
 }
 

@@ -55,7 +55,6 @@
 		516B71F92393A9A800EAAC0E /* Tower bell in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F52393A9A800EAAC0E /* Tower bell */; };
 		516B71FA2393A9A800EAAC0E /* Bell store door in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F62393A9A800EAAC0E /* Bell store door */; };
 		516B71FB2393A9A800EAAC0E /* Cookoo in Resources */ = {isa = PBXBuildFile; fileRef = 516B71F72393A9A800EAAC0E /* Cookoo */; };
-		517917EC237936700074E5D9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517917EB237936700074E5D9 /* SafariView.swift */; };
 		517F6221234E329F00A05205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6220234E329F00A05205 /* AppDelegate.swift */; };
 		517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6222234E329F00A05205 /* SceneDelegate.swift */; };
 		517F6225234E329F00A05205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F6224234E329F00A05205 /* ContentView.swift */; };
@@ -205,7 +204,6 @@
 		516B71F52393A9A800EAAC0E /* Tower bell */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tower bell"; sourceTree = "<group>"; };
 		516B71F62393A9A800EAAC0E /* Bell store door */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bell store door"; sourceTree = "<group>"; };
 		516B71F72393A9A800EAAC0E /* Cookoo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookoo; sourceTree = "<group>"; };
-		517917EB237936700074E5D9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		517F621D234E329F00A05205 /* T!mer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T!mer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517F6220234E329F00A05205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517F6222234E329F00A05205 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -502,7 +500,6 @@
 				515DACF62460267D00A495BA /* Notificatioin Sound */,
 				515DACE9245E8B4200A495BA /* HowToUseThisApp.swift */,
 				51D6A185242A261B002AD0DB /* ColorPickerView.swift */,
-				517917EB237936700074E5D9 /* SafariView.swift */,
 				511FD513245A05880012DCD9 /* MailView.swift */,
 			);
 			path = SettingView;
@@ -914,7 +911,6 @@
 				51012BAB24C8AF330075ABF0 /* MainTabBarViewController.swift in Sources */,
 				518A4B0724C64B0A00DF509D /* SoundTableViewCell.swift in Sources */,
 				51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */,
-				517917EC237936700074E5D9 /* SafariView.swift in Sources */,
 				51DACDD624C5B9F9006C3ED7 /* NotificationSound.swift in Sources */,
 				5121EFBF247FB90200A8EAA4 /* TodoView.swift in Sources */,
 				517F6223234E329F00A05205 /* SceneDelegate.swift in Sources */,
