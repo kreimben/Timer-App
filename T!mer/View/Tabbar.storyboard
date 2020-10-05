@@ -39,7 +39,7 @@
         <!--Stopwatch-->
         <scene sceneID="GmG-fh-0nE">
             <objects>
-                <hostingController storyboardIdentifier="StopwatchHostingController" id="kGV-9T-vl6" customClass="StopwatchHostingController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
+                <hostingController storyboardIdentifier="StopwatchViewController" id="kGV-9T-vl6" customClass="StopwatchViewController" customModule="T_mer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch" catalog="system" id="CZU-0P-uft"/>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rP-6a-jPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
