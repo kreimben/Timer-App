@@ -45,7 +45,7 @@ struct ContentView: View {
     
     /// @Timer-related
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
+//    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
     /// @END
     
     /// @For Interstitial Ads
@@ -108,7 +108,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .onReceive(timer) { _ in
                                 
-                                self.dispatch.async { // DispatchQueue.main.async {
+                                DispatchQueue.main.async { // self.dispatch.async {
                                     // MARK: Reflect other things EVERY SECONDS
                                     self.mainController.setDisplay(completion: { (time, atan2) in
                                         
@@ -210,7 +210,7 @@ struct ContentView: View {
                                     
                                     state = value.location
                                     
-                                    self.dispatch.async { // DispatchQueue.main.async {
+                                    DispatchQueue.main.async { // self.dispatch.async { 
                                         self.currentPoint = CGPoint(x: self.dragAmount.x - self.center.x, y: self.center.y - self.dragAmount.y)
                                         
                                         self.atan2Var = atan2(self.currentPoint.x, self.currentPoint.y)

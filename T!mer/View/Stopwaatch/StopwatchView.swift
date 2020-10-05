@@ -18,23 +18,23 @@ struct StopwatchView: View {
     
     /// @Timer-related
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
-    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
+//    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
     /// @END
     
     // MARK: - Init()
-    init() {
-        
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        
-        appearance.shadowColor = nil
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
-        UINavigationController().hidesBarsOnSwipe = true
-    }
+//    init() {
+//
+//        let appearance = UINavigationBarAppearance()
+//
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+//
+//        appearance.shadowColor = nil
+//        UINavigationBar.appearance().standardAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//
+//        UINavigationController().hidesBarsOnSwipe = true
+//    }
     
     var body: some View {
         
@@ -68,7 +68,7 @@ struct StopwatchView: View {
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
                             
-                            self.dispatch.async { // DispatchQueue.main.async {
+                            DispatchQueue.main.async { // self.dispatch.async { 
                                 // MARK: Reflect other things EVERY SECONDS
                                 self.mainController.setDisplay(completion: { (time, atan2) in
                                     
