@@ -53,8 +53,7 @@ struct StopwatchView: View {
                                 Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
                             }
                         }
-                        .font(.system(size: self.fontSize))
-                        .font(.headline)
+                        .font(.init(UIFont.monospacedDigitSystemFont(ofSize: self.fontSize, weight: .regular)))
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
                             
