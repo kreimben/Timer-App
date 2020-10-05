@@ -9,12 +9,14 @@ struct StopwatchView: View {
     @ObservedObject var mainController = CTMainController()
     /// @END
     
-//    @State var timeDisplay: Double = 0
+    @State var timeDisplay: Double = 3600 - 0.55
     
     @State var center = CGPoint.zero
     @State var atan2Var: CGFloat = 0.0
     @State var circleColor = Color.red
     @State var circleRadius = CGFloat(UIScreen.main.bounds.width * 0.73 / 2)
+    
+    @State var fontSize: CGFloat = 77
     
     /// @Timer-related
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
@@ -41,9 +43,15 @@ struct StopwatchView: View {
                         
                         Group {
                             
-                            Text(String(format: "%02d:%02d", 2, 3))
+                            if self.timeDisplay < 3600 {
+                            
+                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, Int( (self.timeDisplay - CGFloat(Int(self.timeDisplay)) ) * 100) ) )
+                            } else {
+                                
+                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60))
+                            }
                         }
-                        .font(.system(size: 110))
+                        .font(.system(size: self.fontSize))
                         .font(.headline)
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
@@ -73,6 +81,15 @@ struct StopwatchView: View {
                         Image("시계 바늘")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
+                        
+                        Circle() // Touch center
+                            .fill(Color.red.opacity(0.001))
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
+                            .shadow(radius: 10)
+                            .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5) {
+                                
+                                print("pressed!")
+                            }
                     }
                     
                     Spacer()
