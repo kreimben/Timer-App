@@ -108,7 +108,7 @@ struct StopwatchView: View {
                         .frame(width: 320, height: 50, alignment: .center)
                 }
             }
-            .navigationBarTitle("Stopwatch", displayMode: .inline)
+            .navigationBarHidden(true)
         }
     }
 }
