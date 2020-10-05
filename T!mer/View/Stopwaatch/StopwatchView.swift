@@ -9,7 +9,7 @@ struct StopwatchView: View {
     @ObservedObject var mainController = CTMainController()
     /// @END
     
-    @State var timeDisplay: Double = 0
+//    @State var timeDisplay: Double = 0
     
     @State var center = CGPoint.zero
     @State var atan2Var: CGFloat = 0.0
@@ -40,29 +40,16 @@ struct StopwatchView: View {
                             .cornerRadius(30)
                         
                         Group {
-                            if self.mainController.isTimerRunning() {
-                                
-                                Text(String(format: "%02d:%02d", Int(  timeDisplay / 60  ), Int(  timeDisplay  ) % 60 ))
-                            } else {
-                                
-                                Text(String(format: "%02d:00", Int( timeDisplay / 60 ) ))
-                            }
+                            
+                            Text(String(format: "%02d:%02d", 2, 3))
                         }
                         .font(.system(size: 110))
                         .font(.headline)
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
                             
-                            DispatchQueue.main.async { // self.dispatch.async { 
-                                // MARK: Reflect other things EVERY SECONDS
-                                self.mainController.setDisplay(completion: { (time, atan2) in
-                                    
-                                    if time != 0 && atan2 != 0 {
-                                        
-                                        self.timeDisplay = time
-                                        //                                            self.atan2Var = atan2
-                                    }
-                                })
+                            DispatchQueue.main.async {
+                                
                             }
                         }
                     } // TextBox Elements
