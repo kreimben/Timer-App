@@ -54,11 +54,15 @@ struct SettingPageView: View {
                     }
                     
                     Button(action: {
-                        self.showingModal = true
+                        UIApplication.shared.open(URL(string: "https://www.kreimben.com")!)
                     }) {
                         Text("Visit Kreimben.com")
-                    }.sheet(isPresented: $showingModal) {
-                        SafariView(url: URL(string: "http://www.kreimben.com"))
+                    }
+                    
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: "https://paypal.me/kreimben")!)
+                    }) {
+                        Text("Donate!")
                     }
                 }
                 
