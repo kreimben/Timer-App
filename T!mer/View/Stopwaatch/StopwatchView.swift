@@ -9,7 +9,7 @@ struct StopwatchView: View {
     @ObservedObject var mainController = CTMainController()
     /// @END
     
-    @State var timeDisplay: Double = 3600 - 0.55
+    @State var timeDisplay: Float = 1800 + 0.33
     
     @State var center = CGPoint.zero
     @State var atan2Var: CGFloat = 0.0
@@ -45,10 +45,10 @@ struct StopwatchView: View {
                             
                             if self.timeDisplay < 3600 {
                             
-                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, Int( (self.timeDisplay - CGFloat(Int(self.timeDisplay)) ) * 100) ) )
+                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal()))
                             } else {
                                 
-                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60))
+                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
                             }
                         }
                         .font(.system(size: self.fontSize))
@@ -99,6 +99,19 @@ struct StopwatchView: View {
             }
             .navigationBarHidden(true)
         }
+    }
+    
+    private func getTimeDecimal() -> Int {
+        
+        let s = self.timeDisplay
+        
+        print("s: \(s)")
+        print("Int(s): \(Int(s))")
+        print("(s - Float(Int(s)) ): \((s - Float(Int(s)) ))")
+        
+        let result = Int( (s - Float(Int(s)) ) * 100)
+        
+        return result
     }
 }
 
