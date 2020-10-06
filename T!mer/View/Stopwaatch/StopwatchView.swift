@@ -20,7 +20,10 @@ struct StopwatchView: View {
     
     //    @State var isStopwatchStarted = false
     
+    @State var firstButtonColor = Color.blue
     @State var firstButtonLabel = "Reset"
+    
+    @State var secondButtonColor = Color.blue
     @State var secondButtonLabel = "Start"
     
     @State var buttonSpaceHalf = UIScreen.main.bounds.width / 9
@@ -66,17 +69,13 @@ struct StopwatchView: View {
                                     
                                     let flag = self.userSettings.stopwatchTime
                                     self.timeDisplay = Float(flag.distance(to: Date()))
-                                    
-                                    self.firstButtonLabel = "Lap"
-                                    self.secondButtonLabel = "Stop"
-                                } else {
-                                    
-                                    self.firstButtonLabel = "Reset"
-                                    self.secondButtonLabel = "Start"
                                 }
                             }
                         }
                     } // TextBox Elements
+                    .onAppear {
+                        self.updateButtonState()
+                    }
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                     
                     HStack {
@@ -94,6 +93,7 @@ struct StopwatchView: View {
                             
                             ZStack(alignment: .center) {
                                 Circle()
+                                    .fill(self.firstButtonColor)
                                     .frame(width: 120, height: 120)
                                 
                                 Text(self.firstButtonLabel)
@@ -112,11 +112,14 @@ struct StopwatchView: View {
                                 
                                 self.startStopwatch()
                             }
+                            
+                            updateButtonState()
                         }) {
                             
                             ZStack(alignment: .center) {
                                 Circle()
-                                    .frame(width: 120, height: 120)
+                                    .fill(self.secondButtonColor)
+                                    .frame(width: 120)
                                 
                                 Text(self.secondButtonLabel)
                                     .foregroundColor(.white)
@@ -158,6 +161,26 @@ struct StopwatchView: View {
         self.mainController.generateHapticFeedback(as: .heavy)
         
         self.userSettings.isStopwatchStarted = false
+    }
+    
+    private func updateButtonState() {
+        
+        self.firstButtonColor = CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8)
+        
+        if self.userSettings.isStopwatchStarted {
+            // Checker
+            self.firstButtonLabel = "Lap"
+            
+            self.secondButtonColor = .red
+            self.secondButtonLabel = "Stop"
+        } else {
+            
+            // Checker
+            self.firstButtonLabel = "Reset"
+            
+            self.secondButtonColor = CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8)
+            self.secondButtonLabel = "Start"
+        }
     }
 }
 
