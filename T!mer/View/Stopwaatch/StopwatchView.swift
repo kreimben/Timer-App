@@ -172,7 +172,9 @@ struct StopwatchView: View {
                             
                             Text("lap \(Int(lap.globalTime) / 60):\(Int(lap.globalTime) % 60)")
                         }
-                    }.listStyle(PlainListStyle())
+                        .listRowBackground(Color.clear)
+                    }
+//                    .listStyle(PlainListStyle())
                     
                     Spacer()
                     BannerVC()
