@@ -19,6 +19,7 @@
 		5108AE1624BF8A4C001E2294 /* CTUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1224BF8A4C001E2294 /* CTUserSettings.swift */; };
 		5108AE1724BF8A4C001E2294 /* CTColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1324BF8A4C001E2294 /* CTColorScheme.swift */; };
 		5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */; };
+		510AD6B0252C64DF00B6A941 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AD6AF252C64DF00B6A941 /* Lap.swift */; };
 		510BB96924BF4B9B00AD5888 /* TimerEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96824BF4B9B00AD5888 /* TimerEntities.swift */; };
 		510BB96B24BF5E7B00AD5888 /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */; };
 		510BB97324BF68C100AD5888 /* T_merTests_iOS_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BB97224BF68C100AD5888 /* T_merTests_iOS_.swift */; };
@@ -162,6 +163,7 @@
 		5108AE1224BF8A4C001E2294 /* CTUserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTUserSettings.swift; sourceTree = "<group>"; };
 		5108AE1324BF8A4C001E2294 /* CTColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTColorScheme.swift; sourceTree = "<group>"; };
 		5108AE1924BF8AAB001E2294 /* TimerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerCoreData.xcdatamodel; sourceTree = "<group>"; };
+		510AD6AF252C64DF00B6A941 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		510BB96824BF4B9B00AD5888 /* TimerEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEntities.swift; sourceTree = "<group>"; };
 		510BB96A24BF5E7A00AD5888 /* TodoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoContentView.swift; sourceTree = "<group>"; };
 		510BB97024BF68C100AD5888 /* T!merTests(iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T!merTests(iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +330,7 @@
 			children = (
 				510BB96824BF4B9B00AD5888 /* TimerEntities.swift */,
 				5108AE1824BF8AAB001E2294 /* TimerCoreData.xcdatamodeld */,
+				510AD6AF252C64DF00B6A941 /* Lap.swift */,
 			);
 			path = "CoreData ";
 			sourceTree = "<group>";
@@ -923,6 +926,7 @@
 				51628A9124C89FBA009B083A /* StopwatchView.swift in Sources */,
 				51628A8824C87CFE009B083A /* BannerVC.swift in Sources */,
 				518A4B0524C64AD900DF509D /* SoundTableViewController.swift in Sources */,
+				510AD6B0252C64DF00B6A941 /* Lap.swift in Sources */,
 				51214AC223E9143300FB3332 /* Interstitial.swift in Sources */,
 				5108AE1A24BF8AAB001E2294 /* TimerCoreData.xcdatamodeld in Sources */,
 				518A4B0924C64E9D00DF509D /* SoundPicker.swift in Sources */,
