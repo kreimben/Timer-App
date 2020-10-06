@@ -101,22 +101,21 @@ struct ContentView: View {
                                 Text(String(format: "%02d:00", Int( timeDisplay / 60 ) ))
                             }
                         }
-                            .font(.system(size: 110))
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                            .onReceive(timer) { _ in
-                                
-                                DispatchQueue.main.async { // self.dispatch.async {
-                                    // MARK: Reflect other things EVERY SECONDS
-                                    self.mainController.setDisplay(completion: { (time, atan2) in
+                        .font(.init(UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .regular)))
+                        .foregroundColor(Color.white)
+                        .onReceive(timer) { _ in
+                            
+                            DispatchQueue.main.async { // self.dispatch.async {
+                                // MARK: Reflect other things EVERY SECONDS
+                                self.mainController.setDisplay(completion: { (time, atan2) in
+                                    
+                                    if time != 0 && atan2 != 0 {
                                         
-                                        if time != 0 && atan2 != 0 {
-
-                                            self.timeDisplay = time
-                                            self.atan2Var = atan2
-                                        }
-                                    })
-                                }
+                                        self.timeDisplay = time
+                                        self.atan2Var = atan2
+                                    }
+                                })
+                            }
                         }
                     } // TextBox Elements
                         .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))

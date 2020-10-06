@@ -85,26 +85,22 @@ struct StopwatchView: View {
                         CTUserTouchCircle(center: self.$center, atan2: self.$atan2Var, circleColor: self.$circleColor, circleRadius: self.$circleRadius)
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
                         
-                        Image("시계 바늘")
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
+//                        Image("시계 바늘")
+//                            .resizable()
+//                            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
                         
                         Circle() // Touch center
                             .fill(Color.red.opacity(0.001))
                             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
                             .shadow(radius: 10)
-                            .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5) {
-                                
-                                if !self.isStopwatchStarted {
-                                
-                                    self.startStopwatch()
-                                }
-                            }
                             .onTapGesture {
                                 
                                 if self.isStopwatchStarted {
                                     
                                     self.stopStopwatch()
+                                } else {
+                                
+                                    self.startStopwatch()
                                 }
                             }
                     }
