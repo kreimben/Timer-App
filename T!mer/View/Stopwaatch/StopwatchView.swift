@@ -18,7 +18,7 @@ struct StopwatchView: View {
     
     @State var fontSize: CGFloat = 77
     
-    @State var isStopwatchStarted = false
+//    @State var isStopwatchStarted = false
     
     @State var firstButtonLabel = "Reset"
     @State var secondButtonLabel = "Start"
@@ -61,14 +61,19 @@ struct StopwatchView: View {
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
                             
-                            if self.isStopwatchStarted {
-                                
-                                DispatchQueue.main.async {
-                                    self.timeDisplay += 0.01 // TODO: Save to UserDefaults
+                            DispatchQueue.main.async {
+                                if self.userSettings.isStopwatchStarted {
+                                    
+                                    let flag = self.userSettings.stopwatchTime
+                                    self.timeDisplay = Float(flag.distance(to: Date()))
+                                    
+                                    self.firstButtonLabel = "Lap"
+                                    self.secondButtonLabel = "Stop"
+                                } else {
+                                    
+                                    self.firstButtonLabel = "Reset"
+                                    self.secondButtonLabel = "Start"
                                 }
-                            } else {
-                                
-//                                self.timeDisplay = 0
                             }
                         }
                     } // TextBox Elements
@@ -82,7 +87,7 @@ struct StopwatchView: View {
                             
                             Button(action: {
                                 
-                                if self.isStopwatchStarted {
+                                if self.userSettings.isStopwatchStarted {
                                     
                                     
                                 } else {
@@ -104,16 +109,12 @@ struct StopwatchView: View {
                             
                             Button(action: {
                                 
-                                if self.isStopwatchStarted {
+                                if self.userSettings.isStopwatchStarted {
                                     
                                     self.stopStopwatch()
-                                    self.firstButtonLabel = "Reset"
-                                    self.secondButtonLabel = "Start"
                                 } else {
                                     
                                     self.startStopwatch()
-                                    self.firstButtonLabel = "Lap"
-                                    self.secondButtonLabel = "Stop"
                                 }
                             }) {
                                 
@@ -152,15 +153,25 @@ struct StopwatchView: View {
         
         self.mainController.generateHapticFeedback(as: .heavy)
         
-        self.isStopwatchStarted = true
+        self.userSettings.isStopwatchStarted = true
+        self.userSettings.stopwatchTime = Date()
     }
     
     private func stopStopwatch() {
         
         self.mainController.generateHapticFeedback(as: .heavy)
         
-        self.isStopwatchStarted = false
+        self.userSettings.isStopwatchStarted = false
     }
+    
+//    private func isStopwatchStarted() -> Bool {
+//
+//        let flag = self.userSettings.stopwatchTime
+//
+//        print("distance: \(flag.distance(to: Date()))")
+//
+//        return Date().distance(to: flag) > 0
+//    }
 }
 
 struct StopwatchView_Previews: PreviewProvider {
