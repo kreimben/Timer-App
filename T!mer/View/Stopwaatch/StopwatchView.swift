@@ -176,7 +176,6 @@ struct StopwatchView: View {
                         }
                         .listRowBackground(Color.clear)
                     }
-//                    .listStyle(PlainListStyle())
                     
                     Spacer()
                     BannerVC()
