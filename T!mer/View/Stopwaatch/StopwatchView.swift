@@ -156,9 +156,11 @@ struct StopwatchView: View {
                     .frame(height: 120)
                     .padding([.top, .bottom], 24)
                     
-                    VStack {
-                        
-                        Text("asdfasdf")
+                    List {
+                        ForEach(self.lapEntity) { lap in
+                            
+                            Text("lap \(lap.globalTime)")
+                        }
                     }
                     
                     Spacer()
