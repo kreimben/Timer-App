@@ -90,7 +90,9 @@ struct StopwatchView: View {
                                 
                                 let lap = Lap(context: self.managedObjectContext)
                                 
-//                                lap.
+                                lap.globalTime = self.timeDisplay
+                                
+                                Lap.saveContext()
                                 
                             } else {
                                 
@@ -157,10 +159,6 @@ struct StopwatchView: View {
                     VStack {
                         
                         Text("asdfasdf")
-                        
-//                        ForEach(self.lapEntity) { lap in
-//                            Text(lap.index)
-//                        }
                     }
                     
                     Spacer()
