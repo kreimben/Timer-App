@@ -107,17 +107,7 @@ struct StopwatchView: View {
                                 
                                 self.timeDisplay = 0
                                 
-                                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Lap")
-                                fetchRequest.returnsObjectsAsFaults = false
-                                do {
-                                    let results = try self.managedObjectContext.fetch(fetchRequest) //dataController.viewContext.fetch(fetchRequest)
-                                    for object in results {
-                                        guard let objectData = object as? NSManagedObject else {continue}
-                                        self.managedObjectContext.delete(objectData)
-                                    }
-                                } catch let error {
-                                    print("Detele all data in \(self.lapEntity) error :", error)
-                                }
+                                Lap.deleteAll()
                             }
                         }) {
                             
