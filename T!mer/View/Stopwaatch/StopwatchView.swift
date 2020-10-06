@@ -87,7 +87,7 @@ struct StopwatchView: View {
                                 
                             } else {
                                 
-                                
+                                self.timeDisplay = 0
                             }
                         }) {
                             
@@ -175,7 +175,9 @@ struct StopwatchView: View {
         self.mainController.generateHapticFeedback(as: .heavy)
         
         self.userSettings.isStopwatchStarted = true
-        self.userSettings.stopwatchTime = Date()
+        if self.timeDisplay == 0 {
+            self.userSettings.stopwatchTime = Date()
+        }
     }
     
     private func stopStopwatch() {
