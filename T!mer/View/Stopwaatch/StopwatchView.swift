@@ -24,8 +24,6 @@ struct StopwatchView: View {
     
     @State var fontSize: CGFloat = 77
     
-    //    @State var isStopwatchStarted = false
-    
     @State var firstButtonColor = Color.blue
     @State var firstButtonLabel = "Reset"
     
