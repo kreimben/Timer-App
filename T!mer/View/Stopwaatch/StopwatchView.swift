@@ -27,7 +27,6 @@ struct StopwatchView: View {
     
     /// @Timer-related
     let timer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
-//    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
     /// @END
     
     var body: some View {
