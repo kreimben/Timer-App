@@ -58,6 +58,13 @@ public final class CTUserSettings: ObservableObject {
         }
     }
     
+    @UserDefault(key: "isStopwatchStarted", value: false)
+    public var isStopwatchStarted: Bool {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
+    
     @UserDefault(key: "stopwatchTime", value: Date())
     public var stopwatchTime: Date {
         willSet {
