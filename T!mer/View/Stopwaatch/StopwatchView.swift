@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 import CommonT_mer
 
@@ -36,6 +37,14 @@ struct StopwatchView: View {
     let timer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
     /// @END
     
+    // MARK: - Init()
+    init() {
+        
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+    }
+    
+    // MARK: - var body: some View
     var body: some View {
         
         NavigationView {
@@ -97,6 +106,18 @@ struct StopwatchView: View {
                             } else {
                                 
                                 self.timeDisplay = 0
+                                
+                                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Lap")
+                                fetchRequest.returnsObjectsAsFaults = false
+                                do {
+                                    let results = try self.managedObjectContext.fetch(fetchRequest) //dataController.viewContext.fetch(fetchRequest)
+                                    for object in results {
+                                        guard let objectData = object as? NSManagedObject else {continue}
+                                        self.managedObjectContext.delete(objectData)
+                                    }
+                                } catch let error {
+                                    print("Detele all data in \(self.lapEntity) error :", error)
+                                }
                             }
                         }) {
                             
@@ -159,9 +180,9 @@ struct StopwatchView: View {
                     List {
                         ForEach(self.lapEntity) { lap in
                             
-                            Text("lap \(lap.globalTime)")
+                            Text("lap \(Int(lap.globalTime) / 60):\(Int(lap.globalTime) % 60)")
                         }
-                    }
+                    }.listStyle(PlainListStyle())
                     
                     Spacer()
                     BannerVC()
