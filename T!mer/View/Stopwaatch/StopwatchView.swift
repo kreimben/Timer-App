@@ -9,6 +9,12 @@ struct StopwatchView: View {
     @ObservedObject var mainController = CTMainController()
     /// @END
     
+    /// @CoreData related
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: Lap.getAllLaps())
+    var lapEntity: FetchedResults<Lap>
+    /// @END
+    
     @State var timeDisplay: Float = 0
     
     @State var center = CGPoint.zero
@@ -150,6 +156,10 @@ struct StopwatchView: View {
                     HStack {
                         
                         Text("asdfasdf")
+                    }
+                    
+                    List(self.lapEntity.count) { lap in
+                        Text(lap.index)
                     }
                     
                     Spacer()
