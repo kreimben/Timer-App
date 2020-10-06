@@ -57,6 +57,13 @@ public final class CTUserSettings: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    
+    @UserDefault(key: "stopwatchTime", value: Date())
+    public var stopwatchTime: Date {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
 }
 
 // MARK: - @propertyWrapper "UserDefault<T>

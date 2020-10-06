@@ -76,7 +76,7 @@ struct StopwatchView: View {
                     
                     ZStack(alignment: .center) { // MARK: - Circle Timer
                         
-//                        Color.black.opacity(0.1)
+                        Color.black.opacity(0.1)
                         
                         HStack {
                             
