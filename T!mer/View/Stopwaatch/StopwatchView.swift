@@ -60,7 +60,7 @@ struct StopwatchView: View {
                             if self.isStopwatchStarted {
                                 
                                 DispatchQueue.main.async {
-                                    self.timeDisplay += 0.01
+                                    self.timeDisplay += 0.01 // TODO: Save to UserDefaults
                                 }
                             } else {
                                 
@@ -95,12 +95,16 @@ struct StopwatchView: View {
                             .shadow(radius: 10)
                             .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5) {
                                 
+                                if !self.isStopwatchStarted {
+                                
+                                    self.startStopwatch()
+                                }
+                            }
+                            .onTapGesture {
+                                
                                 if self.isStopwatchStarted {
                                     
                                     self.stopStopwatch()
-                                } else {
-                                
-                                    self.startStopwatch()
                                 }
                             }
                     }
