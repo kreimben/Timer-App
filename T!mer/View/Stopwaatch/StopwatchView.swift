@@ -69,7 +69,7 @@ struct StopwatchView: View {
                             
                             if self.timeDisplay < 3600 {
                                 
-                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal()))
+                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal(self.timeDisplay)))
                             } else {
                                 
                                 Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
@@ -102,6 +102,7 @@ struct StopwatchView: View {
                                 let lap = Lap(context: self.managedObjectContext)
                                 
                                 lap.globalTime = self.timeDisplay
+                                lap.index = Int64(self.lapEntity.count + 1)
                                 
                                 Lap.saveContext()
                                 
@@ -170,9 +171,9 @@ struct StopwatchView: View {
                     .padding([.top, .bottom], 24)
                     
                     List {
-                        ForEach(self.lapEntity) { lap in
+                        ForEach(self.lapEntity, id: \.index) { lap in
                             
-                            Text("lap \(Int(lap.globalTime) / 60):\(Int(lap.globalTime) % 60)")
+                            Text("lap \(Int(lap.globalTime) / 60):\(Int(lap.globalTime) % 60).\(self.getTimeDecimal(lap.globalTime)) (\(lap.globalTime))")
                         }
                         .listRowBackground(Color.clear)
                     }
@@ -186,9 +187,9 @@ struct StopwatchView: View {
         }
     }
     
-    private func getTimeDecimal() -> Int {
+    private func getTimeDecimal(_ time: Float) -> Int {
         
-        let s = self.timeDisplay
+        let s = time // self.timeDisplay
         
         let result = Int( (s - Float(Int(s)) ) * 100)
         
