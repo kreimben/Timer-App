@@ -94,7 +94,15 @@ struct StopwatchView: View {
                             ZStack(alignment: .center) {
                                 Circle()
                                     .fill(self.firstButtonColor)
-                                    .frame(width: 120, height: 120)
+                                    .frame(width: 120)
+                                
+                                Circle()
+                                    .fill(Color.white)
+                                    .frame(width: 110)
+                                
+                                Circle()
+                                    .fill(self.firstButtonColor)
+                                    .frame(width: 102.5)
                                 
                                 Text(self.firstButtonLabel)
                                     .foregroundColor(.white)
@@ -121,6 +129,14 @@ struct StopwatchView: View {
                                     .fill(self.secondButtonColor)
                                     .frame(width: 120)
                                 
+                                Circle()
+                                    .fill(Color.white)
+                                    .frame(width: 110)
+                                
+                                Circle()
+                                    .fill(self.secondButtonColor)
+                                    .frame(width: 102.5)
+                                
                                 Text(self.secondButtonLabel)
                                     .foregroundColor(.white)
                                     .font(.system(size: 24))
@@ -128,7 +144,13 @@ struct StopwatchView: View {
                         }
                         .padding(.leading, self.buttonSpaceHalf)
                     }
-                    .padding(.top, 24)
+                    .frame(height: 120)
+                    .padding([.top, .bottom], 24)
+                    
+                    HStack {
+                        
+                        Text("asdfasdf")
+                    }
                     
                     Spacer()
                     BannerVC()
