@@ -18,7 +18,7 @@ struct StopwatchView: View {
     
     @State var fontSize: CGFloat = 77
     
-//    @State var isStopwatchStarted = false
+    //    @State var isStopwatchStarted = false
     
     @State var firstButtonLabel = "Reset"
     @State var secondButtonLabel = "Start"
@@ -50,7 +50,7 @@ struct StopwatchView: View {
                         Group {
                             
                             if self.timeDisplay < 3600 {
-                            
+                                
                                 Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal()))
                             } else {
                                 
@@ -77,59 +77,55 @@ struct StopwatchView: View {
                             }
                         }
                     } // TextBox Elements
-                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                     
-                    ZStack(alignment: .center) { // MARK: - Circle Timer
+                    HStack {
                         
-                        Color.black.opacity(0.1)
-                        
-                        HStack {
+                        Button(action: {
                             
-                            Button(action: {
+                            if self.userSettings.isStopwatchStarted {
                                 
-                                if self.userSettings.isStopwatchStarted {
-                                    
-                                    
-                                } else {
-                                    
-                                    
-                                }
-                            }) {
                                 
-                                ZStack(alignment: .center) {
-                                    Circle()
-                                        .frame(width: 120, height: 120)
-                                    
-                                    Text(self.firstButtonLabel)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 24))
-                                }
+                            } else {
+                                
+                                
                             }
-                            .padding(.trailing, self.buttonSpaceHalf)
+                        }) {
                             
-                            Button(action: {
+                            ZStack(alignment: .center) {
+                                Circle()
+                                    .frame(width: 120, height: 120)
                                 
-                                if self.userSettings.isStopwatchStarted {
-                                    
-                                    self.stopStopwatch()
-                                } else {
-                                    
-                                    self.startStopwatch()
-                                }
-                            }) {
-                                
-                                ZStack(alignment: .center) {
-                                    Circle()
-                                        .frame(width: 120, height: 120)
-                                    
-                                    Text(self.secondButtonLabel)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 24))
-                                }
+                                Text(self.firstButtonLabel)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 24))
                             }
-                            .padding(.leading, self.buttonSpaceHalf)
                         }
+                        .padding(.trailing, self.buttonSpaceHalf)
+                        
+                        Button(action: {
+                            
+                            if self.userSettings.isStopwatchStarted {
+                                
+                                self.stopStopwatch()
+                            } else {
+                                
+                                self.startStopwatch()
+                            }
+                        }) {
+                            
+                            ZStack(alignment: .center) {
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                
+                                Text(self.secondButtonLabel)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 24))
+                            }
+                        }
+                        .padding(.leading, self.buttonSpaceHalf)
                     }
+                    .padding(.top, 24)
                     
                     Spacer()
                     BannerVC()
@@ -163,15 +159,6 @@ struct StopwatchView: View {
         
         self.userSettings.isStopwatchStarted = false
     }
-    
-//    private func isStopwatchStarted() -> Bool {
-//
-//        let flag = self.userSettings.stopwatchTime
-//
-//        print("distance: \(flag.distance(to: Date()))")
-//
-//        return Date().distance(to: flag) > 0
-//    }
 }
 
 struct StopwatchView_Previews: PreviewProvider {
