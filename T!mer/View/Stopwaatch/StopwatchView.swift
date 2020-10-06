@@ -88,6 +88,9 @@ struct StopwatchView: View {
                             
                             if self.userSettings.isStopwatchStarted {
                                 
+                                let lap = Lap(context: self.managedObjectContext)
+                                
+//                                lap.
                                 
                             } else {
                                 
@@ -151,13 +154,13 @@ struct StopwatchView: View {
                     .frame(height: 120)
                     .padding([.top, .bottom], 24)
                     
-                    HStack {
+                    VStack {
                         
                         Text("asdfasdf")
-                    }
-                    
-                    List(self.lapEntity.count) { lap in
-                        Text(lap.index)
+                        
+//                        ForEach(self.lapEntity) { lap in
+//                            Text(lap.index)
+//                        }
                     }
                     
                     Spacer()
