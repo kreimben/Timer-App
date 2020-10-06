@@ -20,6 +20,11 @@ struct StopwatchView: View {
     
     @State var isStopwatchStarted = false
     
+    @State var firstButtonLabel = "Reset"
+    @State var secondButtonLabel = "Start"
+    
+    @State var buttonSpaceHalf = UIScreen.main.bounds.width / 9
+    
     /// @Timer-related
     let timer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
 //    let dispatch = DispatchQueue(label: "Timer", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global())
@@ -72,37 +77,58 @@ struct StopwatchView: View {
                     
                     ZStack(alignment: .center) { // MARK: - Circle Timer
                         
-                        Circle()
-                            .fill(Color(red: 138 / 255, green: 51 / 255, blue: 36 / 255))
-                            .frame(width: UIScreen.main.bounds.width * 0.85)
-                            .shadow(radius: 10)
+//                        Color.black.opacity(0.1)
                         
-                        Circle()
-                            .fill(Color.red.opacity(0.5))
-                            .frame(width: UIScreen.main.bounds.width * 0.77)
-                            .shadow(radius: 10)
-                        
-                        CTUserTouchCircle(center: self.$center, atan2: self.$atan2Var, circleColor: self.$circleColor, circleRadius: self.$circleRadius)
-                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
-                        
-//                        Image("시계 바늘")
-//                            .resizable()
-//                            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 0.85)
-                        
-                        Circle() // Touch center
-                            .fill(Color.red.opacity(0.001))
-                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
-                            .shadow(radius: 10)
-                            .onTapGesture {
+                        HStack {
+                            
+                            Button(action: {
+                                
+                                if self.isStopwatchStarted {
+                                    
+                                    
+                                } else {
+                                    
+                                    
+                                }
+                            }) {
+                                
+                                ZStack(alignment: .center) {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                    
+                                    Text(self.firstButtonLabel)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 24))
+                                }
+                            }
+                            .padding(.trailing, self.buttonSpaceHalf)
+                            
+                            Button(action: {
                                 
                                 if self.isStopwatchStarted {
                                     
                                     self.stopStopwatch()
+//                                    self.firstButtonLabel = "Reset"
+                                    self.secondButtonLabel = "Start"
                                 } else {
-                                
+                                    
                                     self.startStopwatch()
+//                                    self.firstButtonLabel = "Lap"
+                                    self.secondButtonLabel = "Stop"
+                                }
+                            }) {
+                                
+                                ZStack(alignment: .center) {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                    
+                                    Text(self.secondButtonLabel)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 24))
                                 }
                             }
+                            .padding(.leading, self.buttonSpaceHalf)
+                        }
                     }
                     
                     Spacer()
