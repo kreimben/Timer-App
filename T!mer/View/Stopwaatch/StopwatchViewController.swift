@@ -9,14 +9,24 @@
 import UIKit
 import SwiftUI
 
-class StopwatchViewController: UIHostingController<StopwatchView> {
+class StopwatchViewController: UIHostingController<StopwatchWrapper> {
     
     @objc dynamic required init?(coder aCoder: NSCoder) {
-        super.init(coder: aCoder, rootView: StopwatchView())
+        super.init(coder: aCoder, rootView: StopwatchWrapper())
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+}
+
+struct StopwatchWrapper: View {
+    
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var body: some View {
+        
+        StopwatchView().environment(\.managedObjectContext, context)
+    }
 }
