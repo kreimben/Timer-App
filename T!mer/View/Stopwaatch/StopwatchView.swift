@@ -107,12 +107,12 @@ struct StopwatchView: View {
                                 if self.isStopwatchStarted {
                                     
                                     self.stopStopwatch()
-//                                    self.firstButtonLabel = "Reset"
+                                    self.firstButtonLabel = "Reset"
                                     self.secondButtonLabel = "Start"
                                 } else {
                                     
                                     self.startStopwatch()
-//                                    self.firstButtonLabel = "Lap"
+                                    self.firstButtonLabel = "Lap"
                                     self.secondButtonLabel = "Stop"
                                 }
                             }) {
@@ -150,22 +150,14 @@ struct StopwatchView: View {
     
     private func startStopwatch() {
         
-        /// @Generate hapticfeedback
         self.mainController.generateHapticFeedback(as: .heavy)
-        /// @END
-        
-        print("Start!")
         
         self.isStopwatchStarted = true
     }
     
     private func stopStopwatch() {
         
-        /// @Generate hapticfeedback
         self.mainController.generateHapticFeedback(as: .heavy)
-        /// @END
-        
-        print("Stop!")
         
         self.isStopwatchStarted = false
     }
