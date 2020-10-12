@@ -36,7 +36,7 @@ public class CTColorScheme {
         }
     }
     
-    public static func getUIColor(_ color: Int) -> UIColor {
+    public static func getSystemUIColor(_ color: Int) -> UIColor {
         
         switch color {
             
@@ -50,6 +50,27 @@ public class CTColorScheme {
             
         default:
             return UIColor(named: "systemBlue")!
+        }
+    }
+    
+    /// Return custom UIColor based on saved color in `CTUserSettings`.
+    /// 0 = blue / 1 = red / 2 = yellow / 3 = green / 4 = orange / 5 = purple / 6 = black
+    /// - Parameters:
+    ///   - colorIndex: Index from `CTUserSettings`
+    /// - Returns: Converted `UIColor`
+    public static func getUIColor(_ colorIndex: Int, red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 1.0) -> UIColor {
+        
+        switch colorIndex {
+        
+        case 0: return UIColor(red: 0 + red, green: 0 + green, blue: 1 + blue, alpha: alpha)
+        case 1: return UIColor(red: 1 + red, green: 0 + green, blue: 0 + blue, alpha: alpha)
+        case 2: return UIColor(red: 1 + red, green: 1 + green, blue: 0 + blue, alpha: alpha)
+        case 3: return UIColor(red: 0 + red, green: 0.5 + green, blue: 0 + blue, alpha: alpha)
+        case 4: return UIColor(red: 1 + red, green: 0.65 + green, blue: 0 + blue, alpha: alpha)
+        case 5: return UIColor(red: 0.5 + red, green: 0 + green, blue: 1.5 + blue, alpha: alpha)
+        case 6: return UIColor(red: 0 + red, green: 0 + green, blue: 0 + blue, alpha: alpha)
+            
+        default: return UIColor(named: "Blue")!
         }
     }
 }
