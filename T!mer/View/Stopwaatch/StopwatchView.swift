@@ -65,7 +65,7 @@ struct StopwatchView: View {
                             .foregroundColor(CTColorScheme.getColor(self.userSettings.colorIndex).opacity(0.8))
                             .cornerRadius(30)
                         
-                        Text(self.getConvertedTime(self.timeDisplay))
+                        Text(self.getConvertedTime(self.timeDisplay, debugMode: true))
                         .font(.init(UIFont.monospacedDigitSystemFont(ofSize: self.fontSize, weight: .regular)))
                         .foregroundColor(Color.white)
                         .onReceive(timer) { _ in
@@ -170,6 +170,7 @@ struct StopwatchView: View {
                                 Spacer()
                                 
                                 Text(self.getConvertedTime(lap.globalTime))
+                                    .font(.init(UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .regular)))
                             }
                         }
                         .listRowBackground(Color.clear)
