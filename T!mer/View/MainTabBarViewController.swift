@@ -21,7 +21,9 @@ extension MainTabBarViewController {
     @objc
     func changeTabBar() {
         
-        print("Changed!")
+//        print("Changed!")
+        self.tabBar.tintColor = .white
+        self.tabBar.unselectedItemTintColor = .systemGray4
         self.tabBar.barTintColor = UIColor(CTColorScheme.getColor(self.userSettings.colorIndex))
     }
 }
