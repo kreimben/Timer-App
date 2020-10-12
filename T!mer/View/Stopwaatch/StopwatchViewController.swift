@@ -9,7 +9,11 @@
 import UIKit
 import SwiftUI
 
+import CommonT_mer
+
 class StopwatchViewController: UIHostingController<StopwatchWrapper> {
+    
+    private var userSettings = CTUserSettings()
     
     @objc dynamic required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder, rootView: StopwatchWrapper())
@@ -17,6 +21,11 @@ class StopwatchViewController: UIHostingController<StopwatchWrapper> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.barTintColor = UIColor(CTColorScheme.getColor(self.userSettings.colorIndex))
     }
 
 }

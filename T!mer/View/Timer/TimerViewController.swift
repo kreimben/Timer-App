@@ -10,7 +10,11 @@ import UIKit
 import SwiftUI
 import CoreData
 
+import CommonT_mer
+
 class TimerViewController: UIHostingController<TimerVCWrapper> {
+    
+    private var userSettings = CTUserSettings()
     
     @objc dynamic required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder, rootView: TimerVCWrapper())
@@ -20,6 +24,10 @@ class TimerViewController: UIHostingController<TimerVCWrapper> {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.barTintColor = UIColor(CTColorScheme.getColor(self.userSettings.colorIndex))
+    }
 }
 
 struct TimerVCWrapper: View {
