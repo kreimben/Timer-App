@@ -1,12 +1,28 @@
 import UIKit
+import Combine
 
 import CommonT_mer
 
 class MainTabBarViewController: UITabBarController {
+    
+    private var userSettings = CTUserSettings()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeTabBar), name: .changeTabBarColor, object: nil)
+        
+        self.changeTabBar()
+    }
+}
 
+extension MainTabBarViewController {
+    
+    @objc
+    func changeTabBar() {
+        
+        print("Changed!")
+        self.tabBar.barTintColor = UIColor(CTColorScheme.getColor(self.userSettings.colorIndex))
     }
 }
 

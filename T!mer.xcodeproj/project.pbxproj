@@ -74,6 +74,7 @@
 		51DF313623E59A6F008D20D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DF313523E59A6F008D20D6 /* StoreKit.framework */; };
 		51F13BAD2459EFA50021622C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAC2459EFA50021622C /* SnapshotHelper.swift */; };
 		51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F13BAF2459F1290021622C /* HapticFeedbackDebugMenuView.swift */; };
+		51FD2BF22534514E00AF778F /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD2BF12534514E00AF778F /* Notification.Name+Extensions.swift */; };
 		C5DCAA6D9CA0413E25AEE89D /* Pods_T_mer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE2C808766EA044DDD12C5A /* Pods_T_mer.framework */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +230,7 @@
 		51DF313523E59A6F008D20D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		51F13BAC2459EFA50021622C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		51F13BAF2459F1290021622C /* HapticFeedbackDebugMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackDebugMenuView.swift; sourceTree = "<group>"; };
+		51FD2BF12534514E00AF778F /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		9964E574C398E9A9A6E7DC8C /* Pods-T!mer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T!mer.release.xcconfig"; path = "Target Support Files/Pods-T!mer/Pods-T!mer.release.xcconfig"; sourceTree = "<group>"; };
 		9CE2C808766EA044DDD12C5A /* Pods_T_mer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T_mer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -512,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				518A4B0124C6400E00DF509D /* Binding+Extension.swift */,
+				51FD2BF12534514E00AF778F /* Notification.Name+Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				517F6221234E329F00A05205 /* AppDelegate.swift in Sources */,
 				5167E4542368CD88003005AB /* TrailingButtonView.swift in Sources */,
 				511FD514245A05880012DCD9 /* MailView.swift in Sources */,
+				51FD2BF22534514E00AF778F /* Notification.Name+Extensions.swift in Sources */,
 				51012BAB24C8AF330075ABF0 /* MainTabBarViewController.swift in Sources */,
 				518A4B0724C64B0A00DF509D /* SoundTableViewCell.swift in Sources */,
 				51F13BB02459F1290021622C /* HapticFeedbackDebugMenuView.swift in Sources */,
