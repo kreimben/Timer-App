@@ -66,7 +66,7 @@ struct StopwatchView: View {
                             .cornerRadius(30)
                         
                         Group {
-                            Text(self.getConvertedTime(self.timeDisplay))
+                            Text(self.getConvertedTime(self.timeDisplay, debugMode: true))
                         }
                         .font(.init(UIFont.monospacedDigitSystemFont(ofSize: self.fontSize, weight: .regular)))
                         .foregroundColor(Color.white)
@@ -186,12 +186,24 @@ struct StopwatchView: View {
         }
     }
     
-    private func getConvertedTime(_ time: Float) -> String {
+    private func getConvertedTime(_ time: Float, debugMode: Bool = false) -> String {
+        
+        var time: Float = time; if debugMode { print("time: \(time)") }
 
         let hour = Int( time / 3600 )
+        if time > 3600 { time = time - Float(hour) * 3600 }
+        if debugMode { print("after time: \(time)")}
         let minute = Int( time / 60 )
         let second = Int(time) % 60
         let decimal = Int( (time - Float(Int(time)) ) * 100)
+        
+        if debugMode {
+            print("hour: \(hour)")
+            print("minute: \(minute)")
+            print("second: \(second)")
+            print("decimal: \(decimal)")
+            print()
+        }
 
         if hour > 0 {
             return String(format: "%02d:%02d:%02d", hour, minute, second)
