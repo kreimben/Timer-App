@@ -11,6 +11,8 @@ struct ColorPickerView: View {
             ForEach(0 ..< CTColors.allCases.count, id: \.self) { index in
                 ColorPickerCellView(index: index)
             }
+        }.onReceive([self.userSettings.colorIndex].publisher.first()) { (output) in
+            NotificationCenter.default.post(name: .changeTabBarColor, object: nil)
         }
     }
 }
