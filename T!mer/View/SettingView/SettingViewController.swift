@@ -22,9 +22,4 @@ class SettingViewController: UIHostingController<SettingPageView> {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.tabBarController?.tabBar.barTintColor = UIColor(CTColorScheme.getColor(self.userSettings.colorIndex))
-    }
 }
