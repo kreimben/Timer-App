@@ -67,13 +67,14 @@ struct StopwatchView: View {
                         
                         Group {
                             
-                            if self.timeDisplay < 3600 {
-                                
-                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal(self.timeDisplay)))
-                            } else {
-                                
-                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
-                            }
+//                            if self.timeDisplay < 3600 {
+//
+//                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal(self.timeDisplay)))
+//                            } else {
+//
+//                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
+//                            }
+                            Text(self.getConvertedTime(self.timeDisplay))
                         }
                         .font(.init(UIFont.monospacedDigitSystemFont(ofSize: self.fontSize, weight: .regular)))
                         .foregroundColor(Color.white)
@@ -173,7 +174,7 @@ struct StopwatchView: View {
                     List {
                         ForEach(self.lapEntity, id: \.index) { lap in
                             
-                            Text("lap \(Int(lap.globalTime) / 60):\(Int(lap.globalTime) % 60).\(self.getTimeDecimal(lap.globalTime)) (\(lap.globalTime))")
+                            Text("lap \(self.getConvertedTime(lap.globalTime))")
                         }
                         .listRowBackground(Color.clear)
                     }
@@ -187,13 +188,18 @@ struct StopwatchView: View {
         }
     }
     
-    private func getTimeDecimal(_ time: Float) -> Int {
-        
-        let s = time // self.timeDisplay
-        
-        let result = Int( (s - Float(Int(s)) ) * 100)
-        
-        return result
+    private func getConvertedTime(_ time: Float) -> String {
+
+        let hour = Int( time / 3600 )
+        let minute = Int( time / 60 )
+        let second = Int(time) % 60
+        let decimal = Int( (time - Float(Int(time)) ) * 100)
+
+        if hour > 0 {
+            return String(format: "%02d:%02d:%02d", hour, minute, second)
+        } else {
+            return String(format: "%02d:%02d.%02d", minute, second, decimal)
+        }
     }
     
     private func startStopwatch() {
