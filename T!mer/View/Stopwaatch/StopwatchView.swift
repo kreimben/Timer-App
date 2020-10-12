@@ -173,8 +173,14 @@ struct StopwatchView: View {
                     
                     List {
                         ForEach(self.lapEntity, id: \.index) { lap in
-                            
-                            Text("lap \(self.getConvertedTime(lap.globalTime))")
+                            HStack {
+                                
+                                Text("Lap \(lap.index)")
+                                
+                                Spacer()
+                                
+                                Text(self.getConvertedTime(lap.globalTime))
+                            }
                         }
                         .listRowBackground(Color.clear)
                     }
