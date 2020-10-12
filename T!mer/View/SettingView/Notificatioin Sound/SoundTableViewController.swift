@@ -42,7 +42,7 @@ class SoundTableViewController: UITableViewController {
         
         cell.selectionStyle = .blue
         
-        cell.tintColor = CTColorScheme.getUIColor(self.userSettings.colorIndex)
+        cell.tintColor = CTColorScheme.getSystemUIColor(self.userSettings.colorIndex)
         
         cell.nameOfCell?.text = self.sounds[indexPath.row].soundName
         
