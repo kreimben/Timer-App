@@ -1,11 +1,15 @@
 import UIKit
 
+import CommonT_mer
+
 class MainTabBarViewController: UITabBarController {
+    
+    var userSettings = CTUserSettings()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tabBar.barTintColor = CTColorScheme.getUIColor(self.userSettings.colorIndex, red: 0, green: -0.1, blue: 0, alpha: 1)
     }
 
 }
