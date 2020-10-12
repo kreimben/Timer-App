@@ -66,14 +66,6 @@ struct StopwatchView: View {
                             .cornerRadius(30)
                         
                         Group {
-                            
-//                            if self.timeDisplay < 3600 {
-//
-//                                Text(String(format: "%02d:%02d.%02d", Int(self.timeDisplay / 60), Int(self.timeDisplay) % 60, self.getTimeDecimal(self.timeDisplay)))
-//                            } else {
-//
-//                                Text(String(format: "%02d:%02d:%02d", Int(self.timeDisplay / 3600), Int(self.timeDisplay) / 60 - 60, Int(self.timeDisplay) % 60))
-//                            }
                             Text(self.getConvertedTime(self.timeDisplay))
                         }
                         .font(.init(UIFont.monospacedDigitSystemFont(ofSize: self.fontSize, weight: .regular)))
