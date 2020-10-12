@@ -34,7 +34,7 @@ struct StopwatchView: View {
     @State var buttonSpaceHalf = UIScreen.main.bounds.width / 9
     
     /// @Timer-related
-    let timer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
+    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     /// @END
     
     // MARK: - Init()
