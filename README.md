@@ -1,45 +1,28 @@
-#  T!mer app
+# T!mer App
 
-## To-do list
+T!mer is a powerful and user-friendly timer application designed to help you stay on track and manage your time effectively. With a range of features and customization options, T!mer is the perfect tool for anyone looking to boost their productivity and stay organized.
 
-### Whenever
-- [ ] Fix bug about circle color......
-- [ ] Add notification sound player (by using UIKit)
+## Features
+* Timer Functionality
+* Set custom timer durations and start, pause, or stop the timer as needed
+* Background timer operation, allowing the timer to continue running even when the app is minimized
+* Haptic feedback and vibration alerts to keep you informed of the timer's progress
+* Notifications and Alerts
+* Customizable notification sounds to suit your preferences
+* Visual alerts and color changes to indicate timer status
+* Foreground notifications to keep you informed even when the app is open
+* User Interface and Experience
+* Intuitive and user-friendly design for easy navigation and use
+* iPad resolution support for optimal viewing on all devices
+* Customizable settings page to tailor the app to your needs
+* Launch screen with engaging animations for a delightful start to your experience
+* Welcome message for new users to help them get started
+* Productivity Features
+* To-do list integration to help you stay organized and on top of your tasks
+* Widget support for quick and easy access to your timers from your device's home screen
+* Accessibility and Guidelines
+* Adherence to Human Interface Guidelines for a consistent and intuitive user experience
+* Feedback button for users to easily provide suggestions and report issues
 
-### 2.0.0
-- [x] Add to-do feature
-- [ ] Reverse timer (using tabbar maybe...)
-- [x] Refactoring ALL CODES
-
-### 1.3
-- [x] Add welcome message to newbies
-- [x] Add widget
-
-### 1.2
-- [x] Add more notification sound
-- [x] Add "What's new" mini view
-- [x] Add "How to use" View in SettingView
-
-### 1.1
-- [x] Fix haptiptouch framework related code and read documents about CoreHaptics
-- [x] Add "Feedback" Button
-
-### 1.0
-- [x] 설정페이지 세팅하기 
-- [x] 아이패드 해상도 대응하기
-- [x] 버그 있는지 더 살펴보기
-- [x] 광고
-- [x] 백그라운드에서도 시간이 가도록 처리 => 완전히 처리 완료!!!
-- [x] launchscreen 만들기 (되도록 애니메이션)
-- [x] check notification sound
-- [x] isTimerStarted == false 될때 색 상의 하기
-- [x] Foreground에서 Notification 실행 다시 알아보기 => 앱이 실행될때 실행 순서 파악 완료를 통한 Fix.
-- [x] 중간에 onLongPressGesture 과정 할때 작아지고 진동 일으키는 애니메이션 완성하기 => 진동은 완성, shrink animation은 글쎄?
-- [x] 각도가 변할 때 진동 울리는것 포기! => 너무 느려서 포기!
-- [x] 백그라운드로 나가면 진동 없어지는 오류 고치기
-- [x] 멈춰 있는 상태에서 꾹 누르면 1시간 자동으로 작동하는 기능 구현
-- [x] Read "Human Interface Guidelines" about In-app purchase and Implement about that's pages
-- [x] Implement CI (especially **Fastlane**)
-
-- [x] If I can implement in-app purchase, remove almost of UserSettings's **isUserPurchased**
-~~ - [ ] Implement In-app Purchases ~~
+![IMG_0005](https://github.com/kreimben/Timer-App/assets/20333172/36df8061-8f0e-4acc-a776-364e1f26f5ba)
+<img width="1440" alt="SCREEN SHOT 2019-11-18 AT 1 28 30 PM" src="https://github.com/kreimben/Timer-App/assets/20333172/079024ba-fd4c-463a-abc2-de2803fd6197">
